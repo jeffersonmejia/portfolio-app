@@ -7,15 +7,12 @@
     <!-- TITLE, FAVICON -->
     <title>Portfolio: Jefferson Mejía</title>
     <link rel="shortcut icon" href="img/profile.webp" type="image/x-icon" />
-
     <!-- OG METADATA -->
     <meta property="og:title" content="Portfolio: Jefferson Mejía" />
-
     <meta
       property="og:description"
       content="Ingeniería en Tecnologías de la Información, estudiante de la Universidad de las Fuerzas Armadas ESPE"
     />
-
     <meta property="og:image" content="img/profile.webp" />
     <meta
       property="og:url"
@@ -37,9 +34,13 @@
         <li>
           <a href="#">Inicio</a>
         </li>
-        <li><a href="#">Proyectos</a></li>
         <li>
-          <a href="#">Contacto</a>
+          <a href="https://github.com/jeffersonmejia/" target="_blank"
+            >Proyectos</a
+          >
+        </li>
+        <li>
+          <a href="#contact-me">Contacto</a>
         </li>
       </ul>
     </nav>
@@ -54,12 +55,61 @@
           <h1>Jefferson Mejía</h1>
           <h4>Ing. Tecnologías Información</h4>
           <small>📘 4to. semestre</small>
-          <button class="primary-btn">Conoce más</button>
+          <a class="primary-btn" href="#section-experience">Conoce más</a>
         </figcaption>
       </figure>
     </header>
+    <hr class="hr-experience" id="section-experience" />
+    <section class="section-experience">
+      <h2>💼 Experiencia</h2>
+      <article>
+        <h3>Ayudante de cátedra</h3>
+        <figure class="icon-container">
+          <img src="img/espe-icon.png" alt="espe icon" />
+          <span>ESPE </span>
+        </figure>
+        <p>
+          <span>2024-2025</span>
+        </p>
+        <small>
+          Impartir curso de Programación Orientada a Objetos, brindar ayuda a
+          los estudiantes de segundo semestre en sus actividades académicas.
+        </small>
+      </article>
+      <article>
+        <h3>Quantum Software Engineer</h3>
+        <figure class="icon-container">
+          <img src="img/google-icon.png" alt="google icon" />
+          <span>Google</span>
+        </figure>
+        <p>
+          <span>USA</span>
+        </p>
+        <small>
+          Desarrollar algoritmos y aplicaciones que aprovechen la computación
+          cuántica, escribir código en lenguajes como Q# y Python, diseñar
+          soluciones .
+        </small>
+      </article>
+      <article>
+        <h3>AI Accessibility Engineer</h3>
+        <figure class="icon-container">
+          <img src="img/apple-icon.png" alt="apple icon" />
+          <span>Apple</span>
+        </figure>
+        <p>
+          <span>USA</span>
+        </p>
+        <small>
+          Desarrollar soluciones de IA para mejorar la comunicación y
+          accesibilidad de personas con discapacidades del habla, visuales y de
+          movilidad, utilizando Python y Swift para optimizar dispositivos
+          Apple.
+        </small>
+      </article>
+    </section>
     <hr class="hr-education" />
-    <section>
+    <section class="section-education">
       <h2>📚 Educación</h2>
       <article>
         <h3>
@@ -345,8 +395,52 @@
           </li>
         </ul>
       </article>
+      <small class="footer-desktop">© 2025 Jefferson Mejía </small>
     </section>
+    <hr class="hr-footer" />
     <footer>
+      <section class="section-contact">
+        <h2 id="contact-me">☎️ Contacto</h2>
+        <article>
+          <figure>
+            <figcaption>
+              <figure class="icon-container">
+                <img src="img/linkedin-icon.png" alt="linkedIn Icon" />
+                <span>LinkedIn</span>
+              </figure>
+              <h4>Jefferson Mejía</h4>
+              <small>@jeffersonmejia</small>
+            </figcaption>
+            <img src="./img/profile.webp" alt="" />
+          </figure>
+          <a
+            href="https://www.linkedin.com/in/jeffersonmejia/"
+            target="_blank"
+            class="primary-btn"
+            >Seguir</a
+          >
+        </article>
+        <article>
+          <figure>
+            <figcaption>
+              <figure class="icon-container">
+                <img src="img/gmail-icon.png" alt="Gmail Icon" />
+                <span>Correo</span>
+              </figure>
+              <h4>Jefferson Mejía</h4>
+              <small>@jeffersonmejiach01</small>
+            </figcaption>
+            <img src="./img/profile.webp" alt="" />
+          </figure>
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=jeffersonmejiach01@gmail.com&su=Contacto&body=Hola,%20Jefferson.%20Deseo%20contactarme%20contigo."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="primary-btn"
+            >Contactar</a
+          >
+        </article>
+      </section>
       <small>© 2025 Jefferson Mejía </small>
     </footer>
     <figure class="container-working">
