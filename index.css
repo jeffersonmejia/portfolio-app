@@ -2,11 +2,28 @@
 :root {
   --primary-color: white;
   --secondary-color: rgb(212, 175, 55);
-  --secondary-color-highlight: rgb(226, 187, 60);
+  --hover-color: rgb(226, 187, 60);
   --progress-empty-color: rgb(255, 223, 186);
   --progress-filled-color: rgb(212, 175, 55);
   --title-color: rgb(30, 30, 30);
   --text-color: rgb(80, 80, 80);
+  --border-color: rgb(225, 225, 225);
+  --box-shadow-color: rgb(100, 100, 100);
+  --border-size-pic: 8px;
+}
+
+/* DARK MODE, COMING SOON... */
+.dark {
+  --primary-color: rgb(0, 0, 0);
+  --secondary-color: rgb(255, 255, 255);
+  --hover-color: rgb(255, 223, 70);
+  --progress-empty-color: rgb(70, 70, 70);
+  --progress-filled-color: rgb(160, 160, 160);
+  --title-color: rgb(230, 230, 230);
+  --text-color: rgb(200, 200, 200);
+  --border-color: rgb(32, 32, 32);
+  --border-size-pic: 4px;
+  --box-shadow-color: transparent;
 }
 
 /* RESET */
@@ -27,6 +44,7 @@ h4,
 h5,
 h6 {
   color: var(--title-color);
+  background-color: var(--primary-color);
 }
 
 p,
@@ -37,6 +55,10 @@ small {
 
 a {
   color: var(--secondary-color);
+}
+
+a:hover {
+  color: var(--hover-color);
 }
 
 html {
@@ -50,9 +72,11 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   transition: opacity 0.2s ease-in;
   height: 100vh;
   font-family: 'Noto Sans', sans-serif;
+  background-color: var(--primary-color);
 }
 
 nav {
@@ -61,7 +85,7 @@ nav {
   left: 0;
   right: 0;
   background-color: var(--primary-color);
-  border-top: 1px solid rgb(220, 220, 220);
+  border-top: 1px solid var(--border-color);
   z-index: 999;
 }
 
@@ -81,7 +105,7 @@ nav li {
 }
 
 nav a:hover {
-  color: var(--secondary-color-highlight);
+  color: var(--hover-color);
 }
 
 nav a {
@@ -105,7 +129,7 @@ header {
 }
 
 hr {
-  border: 1px solid rgb(225, 225, 225);
+  border: 1px solid var(--border-color);
   margin: auto;
   width: 91%;
 }
@@ -138,7 +162,7 @@ figcaption {
 .profile-pic {
   width: 200px;
   border-radius: 50%;
-  border: 8px solid var(--secondary-color);
+  border: var(--border-size-pic) solid var(--secondary-color);
 }
 
 .primary-btn {
@@ -151,13 +175,13 @@ figcaption {
 }
 
 .primary-btn:hover {
-  background-color: var(--secondary-color-highlight);
+  background-color: var(--hover-color);
 }
 
 header .primary-btn {
   padding: 1rem;
   margin-top: 2rem;
-  box-shadow: 1px 1px 3px rgb(100, 100, 100);
+  box-shadow: 1px 1px 3px var(--box-shadow-color);
 }
 
 section {
@@ -171,7 +195,7 @@ section {
 .section-skills h2:first-child {
   position: sticky;
   top: 0;
-  background-color: white;
+  background-color: var(--primary-color);
   margin-top: -1rem;
   margin-bottom: -1.1rem;
   padding-top: 1rem;
@@ -179,7 +203,7 @@ section {
 }
 
 .sticky-on {
-  border-bottom: 2px solid rgb(225, 225, 225);
+  border-bottom: 2px solid var(--border-color);
 }
 
 section :is(a, span, p) {
@@ -316,7 +340,7 @@ footer {
   padding-bottom: 1.5rem;
   width: 100%;
   border-radius: 4px;
-  border: 1px solid rgb(230, 230, 230);
+  border: 1px solid var(--border-color);
 }
 
 .section-contact figure:not(.icon-container) {
@@ -374,7 +398,7 @@ footer {
 }
 
 .section-contact .primary-btn:hover {
-  background-color: var(--secondary-color-highlight);
+  background-color: var(--hover-color);
 }
 
 .section-contact article:nth-child(3) h4 {
@@ -409,6 +433,9 @@ footer section + small,
     grid-template-columns: 35% 35% 30%;
     height: 100%;
   }
+  .sticky-on {
+    border: none;
+  }
   header {
     grid-column: 1/2;
     height: 100%;
@@ -422,22 +449,17 @@ footer section + small,
   hr,
   .section-experience,
   .section-education,
-  .section-skills,
-  footer {
+  .section-skills {
     grid-column: 2/-1;
   }
 
   .section-skills {
-    grid-column: 2/3;
-  }
-
-  .hr-footer {
-    display: none;
+    grid-column: 2/-1;
   }
 
   footer {
-    grid-column: 3/-1;
     padding-bottom: 0;
+    grid-column: 2/-1;
     justify-content: flex-start;
   }
 
@@ -479,12 +501,7 @@ footer section + small,
   .section-contact article {
     max-width: 330px;
   }
-  .section-skills {
-    margin-bottom: 6rem;
-  }
-  .footer-desktop {
-    display: block;
-  }
+
   footer section + small {
     display: none;
   }
@@ -513,9 +530,24 @@ footer section + small,
     height: fit-content;
     grid-column: 1/-1;
     position: sticky;
+    border: none;
     top: 0;
   }
-
+  .hr-footer {
+    display: none;
+  }
+  .section-skills {
+    margin-bottom: 6rem;
+  }
+  .footer-desktop {
+    display: block;
+  }
+  .section-skills {
+    grid-column: 2/3;
+  }
+  footer {
+    grid-column: 3/-1;
+  }
   nav a {
     font-size: 0.8rem;
   }
