@@ -6,7 +6,14 @@ const d = document,
   $body = d.querySelector('body'),
   $headers = document.querySelectorAll(
     '.section-experience h2, .section-education h2, .section-skills h2'
-  )
+  ),
+  $headerAncle = d.getElementById('header-btn')
+
+function changeLinkHeader() {
+  if (w.innerWidth >= 700) {
+    $headerAncle.href = '#section-education'
+  }
+}
 
 function typeValueProgress() {
   $listProgressText.forEach((p) => {
@@ -44,3 +51,4 @@ w.addEventListener('scroll', () => {
     }
   })
 })
+changeLinkHeader()
