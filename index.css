@@ -1,13 +1,12 @@
 /* VARS */
 :root {
   --primary-color: white;
-  --secondary-color: rgb(119, 184, 0);
-  --secondary-color-highlight: rgb(131, 202, 0);
-  --tertiary-color: rgb(90, 90, 90);
-  --quaternary-color: rgb(245, 245, 245);
-  --green-soft-color: rgb(190, 255, 230);
-  --green-hard-color: rgb(0, 161, 100);
-  --title-color: black;
+  --secondary-color: rgb(212, 175, 55);
+  --secondary-color-highlight: rgb(226, 187, 60);
+  --progress-empty-color: rgb(255, 223, 186);
+  --progress-filled-color: rgb(212, 175, 55);
+  --title-color: rgb(30, 30, 30);
+  --text-color: rgb(80, 80, 80);
 }
 
 /* RESET */
@@ -19,6 +18,25 @@
 
 img {
   width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--title-color);
+}
+
+p,
+span,
+small {
+  color: var(--text-color);
+}
+
+a {
+  color: var(--secondary-color);
 }
 
 html {
@@ -35,7 +53,6 @@ body {
   transition: opacity 0.2s ease-in;
   height: 100vh;
   font-family: 'Noto Sans', sans-serif;
-  color: var(--title-color);
 }
 
 nav {
@@ -76,17 +93,6 @@ nav a {
   color: var(--secondary-color);
 }
 
-.btn-dark-mode {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding: 0.8rem;
-  justify-content: center;
-  background-color: rgb(240, 240, 240);
-  border-radius: 50%;
-  font-size: 0.8rem;
-}
-
 header .primary-btn {
   width: 160px;
   margin-top: 1rem;
@@ -101,7 +107,6 @@ header {
 hr {
   border: 1px solid rgb(225, 225, 225);
   margin: auto;
-
   width: 91%;
 }
 
@@ -123,10 +128,7 @@ figcaption {
 header h5 {
   margin-top: 1rem;
   text-align: center;
-}
-
-header :is(h5, small) {
-  color: var(--tertiary-color);
+  color: var(--text-color);
 }
 
 figcaption {
@@ -151,10 +153,7 @@ figcaption {
 .primary-btn:hover {
   background-color: var(--secondary-color-highlight);
 }
-.ancle-disabled {
-  color: gray;
-  pointer-events: none;
-}
+
 header .primary-btn {
   padding: 1rem;
   margin-top: 2rem;
@@ -177,15 +176,10 @@ section {
   margin-bottom: -1.1rem;
   padding-top: 1rem;
   padding-bottom: 1.1rem;
-  /* transition: border-bottom 0.1s ease; */
 }
 
 .sticky-on {
   border-bottom: 2px solid rgb(225, 225, 225);
-}
-
-section a {
-  color: var(--secondary-color);
 }
 
 section :is(a, span, p) {
@@ -194,7 +188,6 @@ section :is(a, span, p) {
 
 section span {
   margin: 0.3rem 0;
-  color: var(--tertiary-color);
 }
 section p span {
   font-style: italic;
@@ -211,10 +204,6 @@ section p {
 article,
 section h2 {
   padding: 0 1.5rem;
-}
-
-article small {
-  color: var(--tertiary-color);
 }
 
 .icon-container {
@@ -251,7 +240,7 @@ article:nth-child(8) .icon-container figcaption {
   padding-bottom: 0.5rem;
   padding-top: 1.1rem;
   font-size: 0.9rem;
-  color: var(--tertiary-color);
+  color: var(--text-color);
 }
 
 .section-skills span {
@@ -271,28 +260,28 @@ progress {
   height: 12px;
   border-radius: 4px;
   overflow: hidden;
-  background-color: var(--green-soft-color);
+  background-color: var(--progress-empty-color);
 }
 
 progress::-webkit-progress-bar {
-  background-color: var(--green-soft-color);
+  background-color: var(--progress-empty-color);
 }
 
 progress::-webkit-progress-value {
-  background-color: var(--green-soft-color);
+  background-color: var(--progress-empty-color);
 }
 
 progress::-moz-progress-bar {
-  background-color: var(--green-soft-color);
+  background-color: var(--progress-empty-color);
 }
 
 progress::-webkit-progress-value {
-  background-color: var(--green-hard-color);
+  background-color: var(--progress-filled-color);
   transition: width 0.5s ease;
 }
 
 progress::-moz-progress-bar {
-  background-color: var(--green-hard-color);
+  background-color: var(--progress-filled-color);
   transition: width 0.5s ease;
 }
 
@@ -316,7 +305,6 @@ footer {
   gap: 2rem;
   width: 100%;
   max-width: 300px;
-  /* background-color: rgb(216, 249, 255); */
 }
 
 .section-contact h2 {
@@ -327,7 +315,6 @@ footer {
   padding: 1rem 1.5rem;
   padding-bottom: 1.5rem;
   width: 100%;
-  /* background-color: rgb(245, 245, 245); */
   border-radius: 4px;
   border: 1px solid rgb(230, 230, 230);
 }
@@ -376,7 +363,6 @@ footer {
   width: 100%;
   margin-top: 1.2rem;
   padding: 0.5rem 0;
-  /* width: 80px; */
   margin-left: auto;
   border-radius: 4px;
   background-color: var(--secondary-color);
@@ -397,7 +383,6 @@ footer {
 
 footer section + small,
 .footer-desktop {
-  color: var(--tertiary-color);
   text-align: center;
   font-size: 0.75rem;
   padding-top: 2rem;
@@ -422,7 +407,6 @@ footer section + small,
   body {
     display: grid;
     grid-template-columns: 35% 35% 30%;
-    /* grid-template-rows: repeat(5, 1fr); */
     height: 100%;
   }
   header {
