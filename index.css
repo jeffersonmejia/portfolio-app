@@ -217,9 +217,9 @@ article small {
   width: 20px;
 }
 
-article:nth-child(7) .icon-container img,
-article:nth-child(8) .icon-container img {
-  padding-top: 1rem;
+article:nth-child(7) .icon-container figcaption,
+article:nth-child(8) .icon-container figcaption {
+  margin-top: 0;
 }
 
 .container-working {
