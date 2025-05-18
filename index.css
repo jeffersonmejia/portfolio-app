@@ -156,6 +156,23 @@ section {
   gap: 1.1rem;
 }
 
+.section-experience h2,
+.section-education h2,
+.section-skills h2:first-child {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  margin-top: -1rem;
+  margin-bottom: -1.1rem;
+  padding-top: 1rem;
+  padding-bottom: 1.1rem;
+  /* transition: border-bottom 0.1s ease; */
+}
+
+.sticky-on {
+  border-bottom: 2px solid rgb(225, 225, 225);
+}
+
 section a {
   color: var(--secondary-color);
 }
@@ -426,6 +443,10 @@ footer section + small,
     justify-content: flex-start;
   }
 
+  footer section {
+    position: sticky;
+    top: 0;
+  }
   hr {
     width: 95%;
   }
@@ -503,5 +524,11 @@ footer section + small,
   .section-skills {
     padding-bottom: 2rem;
     margin-bottom: 0;
+  }
+  .section-experience h2,
+  .section-education h2,
+  .section-skills h2:first-child,
+  footer section {
+    top: 10vh;
   }
 }
