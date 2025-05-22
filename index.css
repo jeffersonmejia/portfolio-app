@@ -399,6 +399,7 @@ footer {
 
 .section-contact .primary-btn:hover {
   background-color: var(--hover-color);
+  color:var(--primary-color);
 }
 
 .section-contact article:nth-child(3) h4 {
