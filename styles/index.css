@@ -12,20 +12,6 @@
   --border-size-pic: 8px;
 }
 
-/* DARK MODE, COMING SOON... */
-.dark {
-  --primary-color: rgb(0, 0, 0);
-  --secondary-color: rgb(255, 255, 255);
-  --hover-color: rgb(255, 223, 70);
-  --progress-empty-color: rgb(70, 70, 70);
-  --progress-filled-color: rgb(160, 160, 160);
-  --title-color: rgb(230, 230, 230);
-  --text-color: rgb(200, 200, 200);
-  --border-color: rgb(32, 32, 32);
-  --border-size-pic: 4px;
-  --box-shadow-color: transparent;
-}
-
 /* RESET */
 * {
   margin: 0;
@@ -397,14 +383,12 @@ footer {
   font-size: 0.8rem;
 }
 
-header .primary-btn:hover{
-color:var(--primary-color);
-  
+header .primary-btn:hover {
+  color: var(--primary-color);
 }
 
 .section-contact .primary-btn:hover {
   background-color: var(--hover-color);
-  
 }
 
 .section-contact article:nth-child(3) h4 {
