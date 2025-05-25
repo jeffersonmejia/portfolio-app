@@ -444,7 +444,6 @@ footer section + small,
   flex-direction: column;
   gap: 0.5rem;
   padding: 1rem;
-  padding-left: 3rem;
   background-color: rgb(243, 243, 243);
   border-radius: var(--primary-border-radius);
   border: 1px solid var(--border-color);
@@ -452,6 +451,7 @@ footer section + small,
 }
 .box-transcript li {
   text-align: justify;
+  list-style: none;
 }
 
 .hidden {
