@@ -212,6 +212,9 @@ footer {
     margin-top: 0;
     width: 82%;
   }
+  .section-projects small {
+    font-size: 0.95rem;
+  }
   footer {
     padding-bottom: 0;
   }

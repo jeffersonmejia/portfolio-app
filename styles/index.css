@@ -553,6 +553,16 @@ footer section + small,
   .hr-footer {
     display: none;
   }
+  .section-skills small,
+  .section-education small,
+  .section-experience small,
+  .section-skills small {
+    font-size: 0.95rem;
+  }
+
+  .section-skills small.footer-desktop {
+    font-size: 0.8rem;
+  }
   .section-skills {
     margin-bottom: 6rem;
   }
