@@ -141,11 +141,48 @@ section {
   margin-top: 1.5rem;
 }
 
+.section-projects a {
+  text-decoration: none;
+}
+
 .section-projects img {
   border-radius: var(--primary-border-radius);
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
 }
 .sticky-on {
   border-bottom: 2px solid var(--border-color);
+}
+
+.section-projects figure {
+  width: fit-content;
+}
+
+.section-projects figcaption {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.filter-box {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  position: absolute;
+  transform: translateY(-129%);
+  border-bottom-right-radius: var(--primary-border-radius);
+  border-top-left-radius: var(--primary-border-radius);
+  padding-right: 0.2rem;
+  background-color: rgba(179, 148, 46, 0.9);
+}
+
+.filter-box li {
+  padding: 0.1rem 0.3rem;
+  font-size: 0.65rem;
+  color: white;
+  font-weight: bold;
 }
 
 section :is(a, span, p) {
@@ -182,7 +219,7 @@ footer {
 @media screen and (min-width: 600px) {
   .section-projects {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, auto));
+    grid-template-columns: repeat(auto-fill, minmax(350px, auto));
   }
   h2 {
     grid-column: 1/-1;

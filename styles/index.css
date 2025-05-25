@@ -123,11 +123,16 @@ hr {
   width: 91%;
 }
 
+.hr-professional-purpose {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
 .hr-experience,
 .hr-education,
 .hr-footer {
   margin-bottom: 3rem;
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 
 figure,
@@ -176,7 +181,12 @@ header .primary-btn {
 section {
   display: flex;
   flex-direction: column;
-  gap: 1.1rem;
+  gap: 1.3rem;
+}
+
+section small {
+  text-align: justify;
+  display: block;
 }
 
 .section-experience h2,
@@ -189,6 +199,10 @@ section {
   margin-bottom: -1.1rem;
   padding-top: 1rem;
   padding-bottom: 1.1rem;
+}
+
+section a {
+  text-decoration: none;
 }
 
 .sticky-on {
