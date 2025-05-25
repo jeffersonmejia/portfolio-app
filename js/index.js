@@ -10,7 +10,8 @@ const d = document,
   $headerAncle = d.getElementById('header-btn'),
   $audioSpeaking = d.getElementById('audio-speaking'),
   $btnSpeaker = d.getElementById('speaker-btn')
-let intervalAudioSpeaking = null
+let intervalAudioSpeaking = null,
+  isPlayingAudioSpeaking = false
 
 function changeLinkHeader() {
   if (w.innerWidth >= 700) {
@@ -39,13 +40,22 @@ function playAudioSpeaking() {
   const $speakerText = $btnSpeaker.querySelector('span'),
     $speakerImg = $btnSpeaker.querySelector('img')
   let timeAudio = Math.round($audioSpeaking.duration)
-  //audio.playbackRate = 2.0
-  if ($speakerText.textContent.includes('Escuchar')) {
+  if (isPlayingAudioSpeaking) {
+    $audioSpeaking.pause()
+    $audioSpeaking.currentTime = 0
+    $speakerText.textContent = 'Escuchar'
+    $speakerImg.src = './img/icons/speaking-icon.png'
+    clearInterval(intervalAudioSpeaking)
+    isPlayingAudioSpeaking = false
+  } else if ($speakerText.textContent.includes('Escuchar')) {
+    $speakerText.textContent = `Detener (${timeAudio})s`
+    $speakerImg.src = './img/icons/stop-sound-icon.png'
+    $audioSpeaking.play()
+    isPlayingAudioSpeaking = true
     intervalAudioSpeaking = setInterval(() => {
       if (timeAudio > 0) {
         $speakerText.textContent = `Detener (${timeAudio})s`
         $speakerImg.src = './img/icons/stop-sound-icon.png'
-        $audioSpeaking.play()
         timeAudio = timeAudio - 1
       } else {
         $audioSpeaking.pause()
@@ -53,14 +63,9 @@ function playAudioSpeaking() {
         $speakerText.textContent = 'Escuchar'
         $speakerImg.src = './img/icons/speaking-icon.png'
         clearInterval(intervalAudioSpeaking)
+        isPlayingAudioSpeaking = false
       }
-    }, 1020)
-  } else {
-    $audioSpeaking.pause()
-    $audioSpeaking.currentTime = 0
-    $speakerText.textContent = 'Escuchar'
-    $speakerImg.src = './img/icons/speaking-icon.png'
-    clearInterval(intervalAudioSpeaking)
+    }, 1000)
   }
 }
 
