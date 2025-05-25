@@ -1,3 +1,4 @@
+//GLOBAL SCOPE CTES.
 const d = document,
   n = navigator,
   w = window,
@@ -9,7 +10,9 @@ const d = document,
   ),
   $headerAncle = d.getElementById('header-btn'),
   $audioSpeaking = d.getElementById('audio-speaking'),
-  $btnSpeaker = d.getElementById('speaker-btn')
+  $btnSpeaker = d.getElementById('speaker-btn'),
+  $boxTranscript = d.getElementById('box-transcript')
+//GLOBAL SCOPE VARS
 let intervalAudioSpeaking = null,
   isPlayingAudioSpeaking = false
 
@@ -36,6 +39,36 @@ function animateProgress() {
   })
 }
 
+function disableTranscript() {
+  $boxTranscript.querySelectorAll('li').forEach((li) => {
+    li.classList.add('hidden')
+  })
+  $boxTranscript.classList.add('hidden-opacity')
+}
+
+function enableTranscript() {
+  let currentTime = 50,
+    intervalTime = 1000
+  $boxTranscript.classList.remove('hidden-opacity')
+  const items = $boxTranscript.querySelectorAll('li')
+
+  const timer = setInterval(() => {
+    items.forEach((li) => {
+      const start = parseInt(li.getAttribute('data-start'), 10)
+      const end = parseInt(li.getAttribute('data-end'), 10)
+      if (currentTime <= start && currentTime >= end) {
+        li.classList.remove('hidden')
+      } else {
+        li.classList.add('hidden')
+      }
+    })
+    currentTime--
+    if (currentTime < 0) {
+      clearInterval(timer)
+    }
+  }, intervalTime)
+}
+
 function playAudioSpeaking() {
   const $speakerText = $btnSpeaker.querySelector('span'),
     $speakerImg = $btnSpeaker.querySelector('img')
@@ -47,11 +80,13 @@ function playAudioSpeaking() {
     $speakerImg.src = './img/icons/speaking-icon.png'
     clearInterval(intervalAudioSpeaking)
     isPlayingAudioSpeaking = false
+    disableTranscript()
   } else if ($speakerText.textContent.includes('Escuchar')) {
     $speakerText.textContent = `Detener (${timeAudio})s`
     $speakerImg.src = './img/icons/stop-sound-icon.png'
     $audioSpeaking.play()
     isPlayingAudioSpeaking = true
+    enableTranscript()
     intervalAudioSpeaking = setInterval(() => {
       if (timeAudio > 0) {
         $speakerText.textContent = `Detener (${timeAudio})s`
@@ -64,6 +99,7 @@ function playAudioSpeaking() {
         $speakerImg.src = './img/icons/speaking-icon.png'
         clearInterval(intervalAudioSpeaking)
         isPlayingAudioSpeaking = false
+        disableTranscript()
       }
     }, 1000)
   }
