@@ -14,7 +14,8 @@ const d = document,
   $boxTranscript = d.getElementById('box-transcript')
 //GLOBAL SCOPE VARS
 let intervalAudioSpeaking = null,
-  isPlayingAudioSpeaking = false
+  timer = null
+isPlayingAudioSpeaking = false
 
 function changeLinkHeader() {
   if (w.innerWidth >= 700) {
@@ -44,6 +45,7 @@ function disableTranscript() {
     li.classList.add('hidden')
   })
   $boxTranscript.classList.add('hidden-opacity')
+  clearInterval(timer)
 }
 
 function enableTranscript() {
@@ -51,8 +53,7 @@ function enableTranscript() {
     intervalTime = 1000
   $boxTranscript.classList.remove('hidden-opacity')
   const items = $boxTranscript.querySelectorAll('li')
-
-  const timer = setInterval(() => {
+  timer = setInterval(() => {
     items.forEach((li) => {
       const start = parseInt(li.getAttribute('data-start'), 10)
       const end = parseInt(li.getAttribute('data-end'), 10)
