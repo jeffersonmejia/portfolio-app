@@ -7,7 +7,10 @@ const d = document,
   $headers = document.querySelectorAll(
     '.section-experience h2, .section-education h2, .section-skills h2'
   ),
-  $headerAncle = d.getElementById('header-btn')
+  $headerAncle = d.getElementById('header-btn'),
+  $audioSpeaking = d.getElementById('audio-speaking'),
+  $btnSpeaker = d.getElementById('speaker-btn')
+let intervalAudioSpeaking = null
 
 function changeLinkHeader() {
   if (w.innerWidth >= 700) {
@@ -32,10 +35,45 @@ function animateProgress() {
   })
 }
 
+function playAudioSpeaking() {
+  const $speakerText = $btnSpeaker.querySelector('span'),
+    $speakerImg = $btnSpeaker.querySelector('img')
+  let timeAudio = Math.round($audioSpeaking.duration)
+  //audio.playbackRate = 2.0
+  if ($speakerText.textContent.includes('Escuchar')) {
+    intervalAudioSpeaking = setInterval(() => {
+      if (timeAudio > 0) {
+        $speakerText.textContent = `Detener (${timeAudio})s`
+        $speakerImg.src = './img/icons/stop-sound-icon.png'
+        $audioSpeaking.play()
+        timeAudio = timeAudio - 1
+      } else {
+        $audioSpeaking.pause()
+        $audioSpeaking.currentTime = 0
+        $speakerText.textContent = 'Escuchar'
+        $speakerImg.src = './img/icons/speaking-icon.png'
+        clearInterval(intervalAudioSpeaking)
+      }
+    }, 1020)
+  } else {
+    $audioSpeaking.pause()
+    $audioSpeaking.currentTime = 0
+    $speakerText.textContent = 'Escuchar'
+    $speakerImg.src = './img/icons/speaking-icon.png'
+    clearInterval(intervalAudioSpeaking)
+  }
+}
+
 d.addEventListener('DOMContentLoaded', (e) => {
   typeValueProgress()
   animateProgress()
   $body.classList.toggle('body-hidden')
+})
+
+d.addEventListener('click', (e) => {
+  if (e.target.matches('#speaker-btn') || e.target.matches('#speaker-btn *')) {
+    playAudioSpeaking()
+  }
 })
 
 w.addEventListener('scroll', () => {

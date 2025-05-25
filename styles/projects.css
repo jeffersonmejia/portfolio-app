@@ -204,6 +204,9 @@ footer {
     border: none;
     top: 0;
   }
+  nav a {
+    font-size: 0.8rem;
+  }
   .section-projects {
     margin: auto;
     margin-top: 0;

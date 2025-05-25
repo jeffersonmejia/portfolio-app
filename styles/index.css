@@ -2,6 +2,8 @@
 :root {
   --primary-color: white;
   --secondary-color: rgb(212, 175, 55);
+  --secondary-btn-bg: rgb(0, 0, 0);
+  --secondary-btn-hover: rgb(40, 40, 40);
   --hover-color: rgb(226, 187, 60);
   --progress-empty-color: rgb(255, 223, 186);
   --progress-filled-color: rgb(212, 175, 55);
@@ -10,6 +12,7 @@
   --border-color: rgb(225, 225, 225);
   --box-shadow-color: rgb(100, 100, 100);
   --border-size-pic: 8px;
+  --primary-border-radius: 4px;
 }
 
 /* RESET */
@@ -406,8 +409,32 @@ footer section + small,
   display: none;
 }
 
-.arrow-up img {
-  width: 24px;
+.button-icon {
+  text-decoration: none;
+  width: fit-content;
+  border-radius: var(--primary-border-radius);
+  padding: 0.1rem 0.65rem;
+  margin-left: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  border: none;
+  cursor: pointer;
+  background-color: var(--secondary-btn-bg);
+  transition: background-color 0.3s ease-in;
+}
+
+.button-icon:hover {
+  background-color: var(--secondary-btn-hover);
+}
+
+.button-icon span {
+  color: var(--primary-color);
+  font-size: 0.75rem;
+}
+.button-icon img {
+  width: 14px;
 }
 
 /* TABLET VERSION #1*/
@@ -541,13 +568,16 @@ footer section + small,
   nav a {
     font-size: 0.8rem;
   }
+
   .section-skills {
     padding-bottom: 2rem;
     margin-bottom: 0;
   }
   .section-experience h2,
   .section-education h2,
-  .section-skills h2:first-child,
+  .section-skills h2:first-child {
+    top: 9vh;
+  }
   footer section {
     top: 10vh;
   }
