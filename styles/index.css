@@ -130,7 +130,8 @@ hr {
 
 .hr-experience,
 .hr-education,
-.hr-footer {
+.hr-footer,
+.hr-training {
   margin-bottom: 3rem;
   margin-top: 3rem;
 }
@@ -191,7 +192,8 @@ section small {
 
 .section-experience h2,
 .section-education h2,
-.section-skills h2:first-child {
+.section-skills h2:first-child,
+.section-training h2 {
   position: sticky;
   top: 0;
   background-color: var(--primary-color);
@@ -443,6 +445,10 @@ footer section + small,
   background-color: var(--secondary-btn-hover);
 }
 
+.section-education .icon-container figcaption {
+  margin-top: 0;
+}
+
 .button-icon span {
   color: var(--primary-color);
   font-size: 0.75rem;
@@ -509,7 +515,8 @@ footer section + small,
   hr,
   .section-experience,
   .section-education,
-  .section-skills {
+  .section-skills,
+  .section-training {
     grid-column: 2/-1;
   }
 
@@ -628,7 +635,8 @@ footer section + small,
   }
   .section-experience h2,
   .section-education h2,
-  .section-skills h2:first-child {
+  .section-skills h2:first-child,
+  .section-training h2 {
     top: 9vh;
   }
   footer section {

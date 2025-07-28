@@ -14,8 +14,8 @@ const d = document,
   $boxTranscript = d.getElementById('box-transcript')
 //GLOBAL SCOPE VARS
 let intervalAudioSpeaking = null,
-  timer = null
-isPlayingAudioSpeaking = false
+  timer = null,
+  isPlayingAudioSpeaking = false
 
 function changeLinkHeader() {
   if (w.innerWidth >= 700) {
