@@ -449,6 +449,10 @@ footer section + small,
   margin-top: 0;
 }
 
+.section-experience h3 {
+  color: rgb(120, 120, 120);
+}
+
 .button-icon span {
   color: var(--primary-color);
   font-size: 0.75rem;
