@@ -137,12 +137,16 @@ hr {
 }
 
 .hr-experience {
-	margin-top: 1rem;
+	margin-top: 1.5rem;
 	margin-bottom: 1rem;
 }
 
-.section-about-me h2 {
-	padding-left: 0;
+.hr-about-me {
+	margin-top: 2.5rem;
+}
+
+.section-about-me {
+	margin-top: 1.5rem;
 }
 
 figure,
@@ -151,6 +155,10 @@ figcaption {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+}
+
+header figure {
+	height: 80%;
 }
 
 header h5 {
@@ -182,9 +190,13 @@ figcaption {
 	background-color: var(--hover-color);
 }
 
+header figcaption {
+	margin-top: 1rem;
+}
+
 header .primary-btn {
 	padding: 1rem;
-	margin-top: 2rem;
+	margin-top: 0.7rem;
 	box-shadow: 1px 1px 3px var(--box-shadow-color);
 }
 
@@ -273,6 +285,24 @@ article:nth-child(8) .icon-container figcaption {
 	list-style: none;
 	display: flex;
 	align-items: center;
+}
+
+h1 {
+	font-size: 1.5rem;
+	text-align: center;
+	font-weight: 600;
+	color: rgb(120, 120, 120);
+}
+
+.section-about-me b,
+.section-experience b,
+h3 {
+	font-weight: 600;
+}
+
+.section-training h3,
+.section-education h3 {
+	font-weight: 600;
 }
 
 .section-skills h3 {
@@ -459,6 +489,7 @@ footer section + small,
 	margin-top: 0;
 }
 
+.section-about-me h3,
 .section-experience h3 {
 	color: rgb(120, 120, 120);
 }
@@ -489,7 +520,6 @@ footer section + small,
 }
 
 .section-about-me p {
-	padding-top: 1rem;
 	text-align: justify;
 }
 
@@ -609,6 +639,13 @@ footer section + small,
 		width: 32%;
 		top: 0;
 	}
+	.hr-about-me {
+		margin-top: 0;
+	}
+
+	.section-about-me {
+		margin-top: 0;
+	}
 }
 
 /* DESKTOP VERSION */
@@ -633,6 +670,10 @@ footer section + small,
 	.section-skills small,
 	.section-about-me small {
 		font-size: 0.9rem;
+	}
+
+	section {
+		/* min-height: 100vh; */
 	}
 
 	.section-skills small.footer-desktop {
