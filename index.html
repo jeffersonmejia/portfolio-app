@@ -43,7 +43,7 @@
 				</li>
 			</ul>
 		</nav>
-		<header>
+		<!-- <header>
 			<figure>
 				<img
 					src="assets/img/profile.webp"
@@ -56,8 +56,8 @@
 					<a class="primary-btn" id="header-btn" href="#section-experience">Conoce más</a>
 				</figcaption>
 			</figure>
-		</header>
-		<hr class="hr-about-me" id="section-about-me" />
+		</header> -->
+		<!-- <hr class="hr-about-me" id="section-about-me" /> -->
 		<section class="section-about-me">
 			<h2>👤 Sobre mí</h2>
 			<article>
@@ -73,6 +73,7 @@
 					archivos SFTP.
 				</p>
 			</article>
+			<img src="assets/img/profile.webp" alt="" />
 		</section>
 		<hr class="hr-experience" id="section-experience" />
 		<section class="section-experience">
@@ -111,91 +112,84 @@
 		<hr class="hr-education" id="section-education" />
 		<section class="section-education">
 			<h2>📚 Educación</h2>
-			<article>
-				<h3>
-					<a
-						href="https://santodomingo.espe.edu.ec/ingenieria-en-tecnologias-de-la-informacion/"
-						target="_blank"
-					>
-						Ing. Tecnologías de Información
-					</a>
-				</h3>
-				<figure class="icon-container">
-					<img src="assets/img/icons/espe-icon.png" alt="espe icon" loading="lazy" />
-					<figcaption class="date-education">
-						<span>Universidad Técnica de Manabí</span>
-						<span class="dot">•</span>
-						<span> 2023 - actualidad </span>
-					</figcaption>
-				</figure>
-
-				<small>
-					Diseñar redes, bases de datos y aplicaciones seguras. Desarrollar soluciones
-					tecnológicas en entornos web, móviles y en la nube. Gestionar riesgos de
-					seguridad de la información, administrar el ciclo de vida tecnológico.
-				</small>
-			</article>
-			<article>
-				<h3>
-					<a
-						href="https://drive.google.com/file/d/1bxDSQJ0t-v2JacUq7VjHWbpSjNP_frSE/view?usp=sharing"
-						target="_blank"
-					>
-						Inglés B1.2
-					</a>
-				</h3>
-				<figure class="icon-container">
-					<img src="assets/img/icons/utm-icon.png" alt="utm icon" loading="lazy" />
-					<figcaption class="date-education">
-						<span>Universidad Técnica de Manabí</span>
-						<span class="dot">•</span>
-						<span> 2021 </span>
-					</figcaption>
-				</figure>
-				<small class="english-experience" data-nosnippet>
-					Comunicar ideas, participar en conversaciones laborales y académicas.
-					Comprensión de documentación técnica en inglés en relación al área de TI.
-					Escucha activa en inglés, comprensión de ideas principales y detalles
-					específicos en conversaciones y presentaciones.
-					<button class="button-icon" id="speaker-btn">
-						<span>Escuchar</span>
-						<img
-							src="assets/img/icons/speaking-icon.png"
-							alt="speaking icon"
-							loading="lazy"
-						/>
-					</button>
-					<ul class="box-transcript hidden-opacity" id="box-transcript">
-						<li class="hidden" data-start="50" data-end="37">
-							Sure, Marco. I’m Jefferson Paul Mejía Chávez, 22 years old, and I’m studying
-							Information Technology Engineering. I'v been working on my English online
-							too. So, Marco, what’s your take on it?
-						</li>
-						<li class="hidden" data-start="36" data-end="30">
-							Same, love the flexibility! I can replay lessons and connect with native
-							speakers. But I miss in-person vibes—screens make it hard to stay focused.
-						</li>
-						<li class="hidden" data-start="29" data-end="18">
-							Yep, speaking’s tricky. Plus, I get distracted scrolling my phone. They
-							should step up with more interactive stuff, like live group chats, for
-							example.
-						</li>
-						<li class="hidden" data-start="17" data-end="8">
-							Maybe real-world tasks, like writing emails or mock interviews. And better
-							tech support—glitches drive me nuts! Short lessons would keep it fresh too.
-						</li>
-						<li class="hidden" data-start="7" data-end="0">
-							Stay focused, and let’s push for more engaging classes. Wanna practice
-							together sometime?
-						</li>
-					</ul>
-					<audio
-						id="audio-speaking"
-						preload="none"
-						src="assets/audio/speaking.m4a"
-					></audio>
-				</small>
-			</article>
+			<div class="container-university">
+				<article>
+					<h3>Ingeniería en Tecnologías de Información y Comunicación</h3>
+					<figure class="icon-container">
+						<img src="assets/img/icons/espe-icon.png" alt="espe icon" loading="lazy" />
+						<figcaption class="date-education">
+							<span>Universidad de las Fuerzas Armadas ESPE</span>
+							<span class="dot">•</span>
+							<span> 2023 </span>
+						</figcaption>
+					</figure>
+					<small>
+						Diseñar redes, bases de datos y aplicaciones seguras. Desarrollar soluciones
+						tecnológicas en entornos web, móviles y en la nube. Gestionar riesgos de
+						seguridad de la información, administrar el ciclo de vida tecnológico.
+						Actualmente me encuentro en el <b>5to.</b> semestre de <b>8</b>.
+					</small>
+				</article>
+				<img src="assets/img/cover/espe.png" alt="" class="container-university-img" />
+			</div>
+			<div class="container-english-certificate">
+				<article>
+					<h3>Inglés B1</h3>
+					<figure class="icon-container">
+						<img src="assets/img/icons/espe-icon.png" alt="utm icon" loading="lazy" />
+						<figcaption class="date-education">
+							<span>Instituto de Idiomas ESPE</span>
+							<span class="dot">•</span>
+							<span> 2025 </span>
+						</figcaption>
+					</figure>
+					<small class="english-experience" data-nosnippet>
+						Comunicar ideas, participar en conversaciones laborales y académicas.
+						Comprensión de documentación técnica en inglés en relación al área de TI.
+						Escucha activa en inglés, comprensión de ideas principales y detalles
+						específicos en conversaciones y presentaciones.
+						<button class="button-icon" id="speaker-btn">
+							<span>Escuchar</span>
+							<img
+								src="assets/img/icons/speaking-icon.png"
+								alt="speaking icon"
+								loading="lazy"
+							/>
+						</button>
+						<ul class="box-transcript hidden-opacity" id="box-transcript">
+							<li class="hidden" data-start="50" data-end="37">
+								Sure, Marco. I’m Jefferson Paul Mejía Chávez, 22 years old, and I’m
+								studying Information Technology Engineering. I'v been working on my
+								English online too. So, Marco, what’s your take on it?
+							</li>
+							<li class="hidden" data-start="36" data-end="30">
+								Same, love the flexibility! I can replay lessons and connect with native
+								speakers. But I miss in-person vibes—screens make it hard to stay focused.
+							</li>
+							<li class="hidden" data-start="29" data-end="18">
+								Yep, speaking’s tricky. Plus, I get distracted scrolling my phone. They
+								should step up with more interactive stuff, like live group chats, for
+								example.
+							</li>
+							<li class="hidden" data-start="17" data-end="8">
+								Maybe real-world tasks, like writing emails or mock interviews. And better
+								tech support—glitches drive me nuts! Short lessons would keep it fresh
+								too.
+							</li>
+							<li class="hidden" data-start="7" data-end="0">
+								Stay focused, and let’s push for more engaging classes. Wanna practice
+								together sometime?
+							</li>
+						</ul>
+						<audio
+							id="audio-speaking"
+							preload="none"
+							src="assets/audio/speaking.m4a"
+						></audio>
+					</small>
+				</article>
+				<img src="assets/certificates/diploma-ingles.jpg" alt="" />
+			</div>
 		</section>
 		<hr class="hr-training" id="hr-training" />
 		<section class="section-training">

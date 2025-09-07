@@ -2,6 +2,7 @@
 :root {
 	--primary-color: white;
 	--secondary-color: rgb(212, 175, 55);
+	--text-color-muted: rgb(120, 120, 120);
 	--hover-color: rgb(226, 187, 60);
 	--progress-empty-color: rgb(255, 223, 186);
 	--progress-filled-color: rgb(212, 175, 55);
@@ -59,21 +60,31 @@ html {
 }
 
 body {
+	width: 100%;
+	margin: auto;
+	max-width: 750px;
 	overflow-x: hidden;
 	transition: opacity 0.2s ease-in;
-	height: 100vh;
 	font-family: 'Noto Sans', sans-serif;
 	background-color: var(--primary-color);
 }
 
 nav {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
 	background-color: var(--primary-color);
-	border-top: 1px solid var(--border-color);
 	z-index: 999;
+}
+section {
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
 }
 
 nav ul {
@@ -81,7 +92,7 @@ nav ul {
 	flex-direction: row;
 	list-style: none;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: space-between;
 	width: 100%;
 	height: 100%;
 }
@@ -109,7 +120,8 @@ nav a {
 hr {
 	border: 1px solid var(--border-color);
 	margin: auto;
-	width: 91%;
+	width: 100%;
+	grid-column: 1/-1;
 }
 
 .primary-btn {
@@ -200,15 +212,50 @@ section p {
 	padding-bottom: 0.5rem;
 }
 
-article,
 section h2 {
-	padding: 0 1.5rem;
+	font-size: 1rem;
+	color: rgb(120, 120, 120);
+}
+
+.hr-footer {
+	margin: 1.5rem;
+	margin-right: 2rem;
+	width: 100%;
+	margin-bottom: 0;
 }
 
 footer {
-	padding-top: 1.5rem;
-	padding-bottom: 6rem;
-	text-align: center;
+	padding: 0 1.5rem 5rem;
+	grid-column: 2/-1;
+}
+footer ul {
+	display: flex;
+	list-style: none;
+	justify-content: space-between;
+	align-items: center;
+}
+footer li {
+	font-size: 0.8rem;
+}
+footer li:first-child {
+	padding-bottom: 0.5rem;
+}
+footer :is(a, span) {
+	color: var(--text-color-muted);
+}
+.footer-social-networks {
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+}
+
+.dot {
+	font-size: 0.5rem;
+	height: 100%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
 }
 
 /* DESKTOP VERSION */
@@ -217,11 +264,9 @@ footer {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(350px, auto));
 	}
+
 	h2 {
 		grid-column: 1/-1;
-	}
-	hr {
-		display: none;
 	}
 	footer {
 		padding-top: 4rem;
@@ -244,7 +289,6 @@ footer {
 	.section-projects {
 		margin: auto;
 		margin-top: 0;
-		width: 82%;
 	}
 	.section-projects small {
 		font-size: 0.9rem;
@@ -255,6 +299,9 @@ footer {
 	footer {
 		padding-top: 2rem;
 		padding-bottom: 2rem;
+	}
+	section {
+		padding-right: 0;
 	}
 	.section-projects h2 {
 		font-size: 1.35rem;
