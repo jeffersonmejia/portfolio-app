@@ -154,7 +154,12 @@ section {
 }
 
 .section-projects a {
-	text-decoration: none;
+		color: black;
+		text-decoration: none;
+}
+
+.section-projects p{
+	margin-bottom: 0.5rem;
 }
 
 .section-projects img {
@@ -206,6 +211,8 @@ section p span {
 
 section h3 {
 	padding-bottom: 0.5rem;
+}
+
 }
 
 section p {
@@ -307,5 +314,11 @@ footer :is(a, span) {
 		font-size: 1.35rem;
 		padding-top: 0.5rem;
 		padding-bottom: 0.5rem;
+	}
+	.section-projects article:nth-child(3) {
+		grid-column: 1/-1;
+	}
+	.stay-app img {
+		object-position: top;
 	}
 }

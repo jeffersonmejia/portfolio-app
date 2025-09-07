@@ -302,6 +302,10 @@ section h2 {
 	grid-row: 2/3;
 }
 
+.section-training article:nth-child(5) {
+	grid-column: 1/-1;
+}
+
 .icon-container {
 	display: flex;
 	flex-direction: row;
