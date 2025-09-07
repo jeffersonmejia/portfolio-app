@@ -225,6 +225,30 @@ section small {
 	padding-bottom: 1.1rem;
 }
 
+.section-training .icon-container {
+	margin-bottom: 1rem;
+}
+
+.training-date {
+	display: flex;
+	align-items: center;
+	margin-top: 0;
+}
+
+.training-date h4 {
+	font-weight: 400;
+	font-style: italic;
+}
+
+.section-training {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.section-training h2 {
+	grid-column: 1/-1;
+}
+
 section a {
 	text-decoration: none;
 }
@@ -238,7 +262,7 @@ section :is(a, span, p) {
 }
 
 section span {
-	margin: 0.3rem 0;
+	margin: 0.4rem 0;
 }
 section p span {
 	font-style: italic;
@@ -248,13 +272,43 @@ section h3 {
 	padding-bottom: 0.5rem;
 }
 
-section p {
-	padding-bottom: 0.5rem;
-}
-
 article,
 section h2 {
 	padding: 0 1.5rem;
+}
+
+.section-training {
+	padding: 0 1.5rem;
+	gap: 1.5rem;
+}
+
+.section-training article {
+	padding: 0;
+}
+
+.date-education {
+	flex-direction: row;
+	gap: 0.4rem;
+}
+
+.section-training small {
+	margin-top: 0.5rem;
+}
+.section-training .icon-container + img {
+	border-radius: 4px;
+	transition: transform 0.3s ease;
+}
+.section-training .icon-container + img:not(.no-hover) {
+	cursor: pointer;
+}
+
+.section-training article:nth-child(2) {
+	grid-column: 1/-1;
+	grid-row: 2/3;
+}
+
+.section-training .icon-container + img:hover:not(.no-hover) {
+	transform: scale(1.1);
 }
 
 .icon-container {
@@ -360,20 +414,22 @@ progress::-moz-progress-bar {
 	padding-bottom: 1.5rem;
 }
 
-footer {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	padding-bottom: 6rem;
-}
-
 .section-contact {
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
 	width: 100%;
 	max-width: 300px;
+	padding-left: 1rem;
+	margin-right: auto;
+}
+
+.section-contact small {
+	text-align: center;
+	display: block;
+	margin: auto;
+	margin-top: 1rem;
+	grid-column: 1/-1;
 }
 
 .section-contact h2 {
@@ -454,17 +510,6 @@ header .primary-btn:hover {
 	padding-right: 0.5rem;
 }
 
-footer section + small,
-.footer-desktop {
-	text-align: center;
-	font-size: 0.75rem;
-	padding-top: 2rem;
-}
-
-.footer-desktop {
-	display: none;
-}
-
 .button-icon {
 	text-decoration: none;
 	width: fit-content;
@@ -523,6 +568,50 @@ footer section + small,
 	text-align: justify;
 }
 
+footer {
+	padding: 0 1.5rem;
+	padding-bottom: 2rem;
+}
+
+footer ul {
+	display: flex;
+	list-style: none;
+	justify-content: space-between;
+	align-items: center;
+}
+
+footer li {
+	font-size: 0.8rem;
+}
+section h3 {
+	color: rgb(120, 120, 120);
+	font-weight: 600;
+}
+
+footer li:first-child {
+	padding-bottom: 0.5rem;
+}
+
+footer :is(a, span) {
+	color: rgb(120, 120, 120);
+}
+
+.footer-social-networks {
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+}
+
+.dot {
+	font-size: 0.5rem;
+	height: 100%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
 .hidden {
 	display: none;
 }
@@ -574,16 +663,6 @@ footer section + small,
 		grid-column: 2/-1;
 	}
 
-	footer {
-		padding-bottom: 0;
-		grid-column: 2/-1;
-		justify-content: flex-start;
-	}
-
-	footer section {
-		position: sticky;
-		top: 0;
-	}
 	hr {
 		width: 95%;
 	}
@@ -606,7 +685,6 @@ footer section + small,
 		width: 100%;
 		gap: 1rem;
 		flex-wrap: wrap;
-		padding-left: 4rem;
 	}
 	.section-contact h2 {
 		flex-grow: 1;
@@ -621,10 +699,6 @@ footer section + small,
 	}
 	.section-contact article {
 		max-width: 330px;
-	}
-
-	footer section + small {
-		display: none;
 	}
 }
 
@@ -661,9 +735,7 @@ footer section + small,
 		border: none;
 		top: 0;
 	}
-	.hr-footer {
-		display: none;
-	}
+
 	.section-skills small,
 	.section-education small,
 	.section-experience small,
@@ -676,21 +748,14 @@ footer section + small,
 		/* min-height: 100vh; */
 	}
 
-	.section-skills small.footer-desktop {
-		font-size: 0.8rem;
-	}
 	.section-skills {
 		margin-bottom: 6rem;
 	}
-	.footer-desktop {
-		display: block;
-	}
+
 	.section-skills {
 		grid-column: 2/3;
 	}
-	footer {
-		grid-column: 3/-1;
-	}
+
 	nav a {
 		font-size: 0.8rem;
 	}
@@ -706,9 +771,16 @@ footer section + small,
 	.section-about-me h2 {
 		top: 9vh;
 	}
-
-	footer section {
-		top: 10vh;
+	footer {
+		grid-column: 2/-1;
+	}
+	.section-contact {
+		flex-wrap: nowrap;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: auto 1fr;
+		max-width: 650px;
+		margin-top: 1rem;
 	}
 }
 

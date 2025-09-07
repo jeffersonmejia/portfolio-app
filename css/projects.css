@@ -155,10 +155,6 @@ section {
 	border-bottom: 2px solid var(--border-color);
 }
 
-.section-projects figure {
-	width: fit-content;
-}
-
 .section-projects figcaption {
 	display: flex;
 	justify-content: flex-end;
