@@ -257,7 +257,8 @@ footer {
 		object-position: right;
 	}
 	footer {
-		padding-bottom: 0;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
 	}
 	.section-projects h2 {
 		font-size: 1.35rem;
