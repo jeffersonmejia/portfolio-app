@@ -1,20 +1,3 @@
-/* VARS */
-:root {
-	--primary-color: white;
-	--secondary-color: rgb(212, 175, 55);
-	--text-color-muted: rgb(120, 120, 120);
-	--hover-color: rgb(226, 187, 60);
-	--progress-empty-color: rgb(255, 223, 186);
-	--progress-filled-color: rgb(212, 175, 55);
-	--title-color: rgb(30, 30, 30);
-	--text-color: rgb(80, 80, 80);
-	--border-color: rgb(225, 225, 225);
-	--box-shadow-color: rgb(100, 100, 100);
-	--border-size-pic: 8px;
-	--primary-border-radius: 4px;
-}
-
-/* RESET */
 * {
 	margin: 0;
 	padding: 0;
@@ -31,14 +14,14 @@ h3,
 h4,
 h5,
 h6 {
-	color: var(--title-color);
+	color: var(--primary-title-color);
 	background-color: var(--primary-color);
 }
 
 p,
 span,
 small {
-	color: var(--text-color);
+	color: var(--primary-text-color);
 }
 
 a {
@@ -46,14 +29,12 @@ a {
 }
 
 a:hover {
-	color: var(--hover-color);
+	color: var(--secondary-color-hover);
 }
 
 html {
 	scroll-behavior: smooth;
 }
-
-/* STYLES */
 
 .body-hidden {
 	opacity: 0;
@@ -69,56 +50,13 @@ body {
 	background-color: var(--primary-color);
 }
 
-nav {
-	display: flex;
-	flex-direction: row;
-	list-style: none;
-	align-items: center;
-	justify-content: space-between;
-	width: 100%;
-	height: 100%;
-	padding-left: 1.5rem;
-	padding-right: 1.5rem;
-	background-color: var(--primary-color);
-	z-index: 999;
-}
 section {
 	padding-left: 1.5rem;
 	padding-right: 1.5rem;
 }
 
-nav ul {
-	display: flex;
-	flex-direction: row;
-	list-style: none;
-	align-items: center;
-	justify-content: space-between;
-	width: 100%;
-	height: 100%;
-}
-
-nav li {
-	height: 100%;
-	display: flex;
-}
-
-nav a:hover {
-	color: var(--hover-color);
-}
-
-nav a {
-	padding: 1.5rem 0;
-	height: 100%;
-	text-decoration: none;
-	font-weight: 600;
-	font-size: 0.7rem;
-	color: var(--secondary-color);
-}
-
-/* MUST EDIT */
-
 hr {
-	border: 1px solid var(--border-color);
+	border: 1px solid var(--primary-border-color);
 	margin: auto;
 	width: 100%;
 	grid-column: 1/-1;
@@ -135,12 +73,6 @@ hr {
 
 .primary-btn:hover {
 	background-color: var(--hover-color);
-}
-
-header .primary-btn {
-	padding: 1rem;
-	margin-top: 2rem;
-	box-shadow: 1px 1px 3px var(--box-shadow-color);
 }
 
 section {
@@ -219,48 +151,12 @@ section p {
 
 section h2 {
 	font-size: 1rem;
-	color: rgb(120, 120, 120);
-}
-
-.hr-footer {
-	margin: 1.5rem;
-	margin-right: 2rem;
-	width: 100%;
-	margin-bottom: 0;
-}
-
-footer {
-	padding: 0 1.5rem 5rem;
-	grid-column: 2/-1;
-}
-footer ul {
-	display: flex;
-	list-style: none;
-	justify-content: space-between;
-	align-items: center;
-}
-footer li {
-	font-size: 0.8rem;
-}
-footer li:first-child {
-	padding-bottom: 0.5rem;
-}
-footer :is(a, span) {
-	color: var(--text-color-muted);
-}
-.footer-social-networks {
-	display: flex;
-	align-items: center;
-	gap: 0.4rem;
-}
-
-.dot {
-	font-size: 0.5rem;
-	height: 100%;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	margin: 0;
+	color: var(--primary-title-color);
+	position: sticky;
+	top: 0;
+	background-color: var(--primary-bg-color);
+	padding: 1rem 0;
+	z-index: 999;
 }
 
 /* DESKTOP VERSION */
@@ -279,21 +175,12 @@ footer :is(a, span) {
 }
 
 @media screen and (min-width: 1080px) {
-	nav {
-		position: relative;
-		height: fit-content;
-		grid-column: 1/-1;
-		position: sticky;
-		border: none;
-		top: 0;
-	}
-
-	nav a {
-		font-size: 0.8rem;
-	}
 	.section-projects {
 		margin: auto;
 		margin-top: 0;
+	}
+	section h2 {
+		top: 10vh;
 	}
 	.section-projects small {
 		font-size: 0.9rem;

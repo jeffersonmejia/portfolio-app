@@ -1,41 +1,3 @@
-:root {
-	--primary-bg-color: white;
-	--primary-title-color: rgb(32, 33, 36);
-	--primary-text-color: rgb(95, 99, 104);
-	--primary-btn-color: rgb(212, 175, 55);
-	--primary-btn-color-hover: rgb(226, 187, 60);
-	--primary-border-color: rgb(225, 225, 225);
-	--primary-border-radius: 4px;
-}
-
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-html {
-	scroll-behavior: smooth;
-}
-
-body {
-	width: 100%;
-	margin: auto;
-	max-width: 750px;
-	overflow-x: hidden;
-	transition: opacity 0.2s ease-in;
-	font-family: 'Noto Sans', sans-serif;
-	background-color: var(--primary-bg-color);
-
-	&.body-hidden {
-		opacity: 0;
-	}
-}
-
-img {
-	width: 100%;
-}
-
 hgroup {
 	display: flex;
 	flex-direction: column;
@@ -67,7 +29,6 @@ small {
 
 a {
 	color: var(--primary-btn-color);
-	text-decoration: none;
 	transition: color 0.3s ease;
 
 	&:hover {
@@ -85,90 +46,11 @@ hr {
 	}
 	&.hr-experience,
 	&.hr-education,
-	&.hr-training,
-	&.hr-footer {
-		margin: 3rem auto;
-	}
-	&.hr-experience {
+	&.hr-training &.hr-experience {
 		margin: 1.5rem auto 1rem;
 	}
 	&.hr-about-me {
 		margin-top: 2.5rem;
-	}
-	&.hr-footer {
-		margin: 1.5rem auto;
-	}
-}
-
-nav {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background-color: var(--primary-bg-color);
-	box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.15);
-	z-index: 999;
-
-	ul {
-		display: flex;
-		flex-direction: row;
-		list-style: none;
-		align-items: center;
-		justify-content: space-around;
-		width: 100%;
-		max-width: 550px;
-		margin: auto;
-		height: 100%;
-
-		li {
-			height: 100%;
-			display: flex;
-		}
-	}
-
-	a {
-		padding: 1.5rem 0;
-		height: 100%;
-		font-weight: 600;
-		font-size: 0.7rem;
-		color: var(--primary-btn-color);
-
-		&:hover {
-			color: var(--primary-btn-color-hover);
-		}
-	}
-
-	.secondary-btn {
-		color: var(--primary-text-color);
-	}
-	.secondary-btn-active {
-		color: var(--primary-btn-color);
-	}
-}
-
-header {
-	margin-top: 2rem;
-
-	figure {
-		height: 80%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	h5 {
-		margin-top: 1rem;
-		text-align: center;
-		color: var(--primary-text-color);
-	}
-
-	figcaption {
-		margin-top: 1rem;
-	}
-
-	.primary-btn:hover {
-		color: var(--primary-bg-color);
 	}
 }
 
@@ -469,45 +351,6 @@ section {
 	}
 }
 
-footer {
-	padding: 0 1.5rem 5rem;
-	grid-column: 2/-1;
-
-	ul {
-		display: flex;
-		list-style: none;
-		justify-content: space-between;
-		align-items: center;
-	}
-
-	li {
-		font-size: 0.8rem;
-
-		&:first-child {
-			padding-bottom: 0.5rem;
-		}
-	}
-
-	:is(a, span) {
-		color: var(--primary-text-color);
-	}
-
-	.footer-social-networks {
-		display: flex;
-		align-items: center;
-		gap: 0.4rem;
-	}
-}
-
-.dot {
-	font-size: 0.5rem;
-	height: 100%;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	margin: 0;
-}
-
 .container-english-certificate,
 .container-university {
 	display: grid;
@@ -558,21 +401,6 @@ footer {
 }
 
 @media screen and (min-width: 700px) {
-	header + hr {
-		display: none;
-	}
-	.profile-pic {
-		width: 250px;
-	}
-	header {
-		grid-column: 1/2;
-		height: 100%;
-		margin-top: 0;
-		padding-top: 2rem;
-		position: fixed;
-		width: 38%;
-		top: 0;
-	}
 	hr,
 	.section-experience,
 	.section-education,
@@ -607,9 +435,6 @@ footer {
 }
 
 @media screen and (min-width: 800px) {
-	header {
-		width: 32%;
-	}
 	.hr-about-me,
 	.section-about-me {
 		margin-top: 0;
@@ -617,25 +442,11 @@ footer {
 }
 
 @media screen and (min-width: 1080px) {
-	header {
-		top: 8vh;
-	}
 	.section-about-me h2 {
 		padding-top: 0;
 		top: 10.5vh;
 	}
-	nav {
-		position: sticky;
-		top: 0;
-		height: fit-content;
-		grid-column: 1/-1;
-		border: none;
-		box-shadow: none;
 
-		a {
-			font-size: 0.8rem;
-		}
-	}
 	.section-skills,
 	.section-education,
 	.section-experience,
@@ -648,16 +459,16 @@ footer {
 		grid-column: 2/3;
 		margin-bottom: 0;
 	}
+
 	.section-experience h2,
 	.section-education h2,
 	.section-skills h2:first-child,
 	.section-training h2,
 	.section-about-me h2 {
-		top: 9vh;
+		top: 10vh;
+		position: sticky;
 	}
-	footer {
-		padding-bottom: 1.5rem;
-	}
+
 	.section-contact {
 		flex-wrap: nowrap;
 		display: grid;
