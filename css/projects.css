@@ -43,6 +43,10 @@ section {
 	padding-right: 1.5rem;
 }
 
+.last-update {
+	margin-right: 0;
+}
+
 hr {
 	border: 1px solid var(--primary-border-color);
 	margin: auto;

@@ -5,6 +5,7 @@
 	--primary-text-color: rgb(95, 99, 104);
 	--primary-btn-color: rgb(59, 76, 224);
 	--primary-btn-color-hover: rgb(59, 76, 224);
+	--secondary-btn-color: rgb(59, 76, 224);
 	--filter-box-bg-color: rgba(46, 152, 179, 0.9);
 	--filter-box-color: white;
 	--primary-box-shadow-color: rgba(0, 0, 0, 0.15);
@@ -15,22 +16,35 @@
 }
 
 body.dark {
-	--primary-bg-color: #1c1b25;
+	--primary-bg-color: #100f14;
 	--secondary-bg-color: #383649;
 	--primary-title-color: #ffffff;
-	--primary-text-color: #c0c0c0;
+	--primary-text-color: #b1b1b1;
 	--primary-btn-color: #8698fc;
+	--secondary-btn-color: rgb(38, 47, 126);
 	--primary-btn-color-hover: #8698fc;
-	--filter-box-bg-color: rgba(100, 100, 100, 0.8);
-	--filter-box-color: #ffffff;
+	--filter-box-bg-color: rgba(27, 93, 109, 0.9);
+	--filter-box-color: #ececec;
 	--primary-box-shadow-color: rgba(0, 0, 0, 0.5);
-	--primary-border-color: #333333;
+	--primary-border-color: #2d2c3b;
 }
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+}
+
+.last-update {
+	margin-left: 1.5rem;
+	margin-right: 1.5rem;
+	margin-top: 1rem;
+	display: block;
+	text-align: right;
+}
+
+.dark .last-update span:nth-child(2) {
+	color: var(--primary-title-color);
 }
 
 html {
