@@ -107,6 +107,13 @@ section {
 	margin-bottom: 2rem;
 }
 
+.section-training h2,
+.section-education h2,
+.section-experience h2 {
+	padding-bottom: 1.5rem;
+	margin-bottom: -1.5rem;
+}
+
 hr.hr-experience {
 	margin-top: 2.5rem;
 }

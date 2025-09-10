@@ -2,8 +2,10 @@
 	--primary-bg-color: white;
 	--primary-title-color: rgb(32, 33, 36);
 	--primary-text-color: rgb(95, 99, 104);
-	--primary-btn-color: rgb(212, 175, 55);
-	--primary-btn-color-hover: rgb(212, 175, 55);
+	--primary-btn-color: rgb(59, 76, 224);
+	--primary-btn-color-hover: rgb(59, 76, 224);
+	--filter-box-bg-color: rgba(46, 152, 179, 0.9);
+	--filter-box-color: white;
 	--primary-border-color: rgb(230, 230, 230);
 	--primary-border-radius: 4px;
 	--font-family: 'DM Sans', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI',

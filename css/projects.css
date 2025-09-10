@@ -95,6 +95,11 @@ section {
 	font-weight: 600;
 }
 
+.section-proyects h2 {
+	margin-bottom: -1.5rem;
+	padding-top: 1.5rem;
+}
+
 .section-projects a:hover {
 	color: var(--primary-btn-color-hover);
 }
@@ -129,13 +134,13 @@ section {
 	border-bottom-right-radius: var(--primary-border-radius);
 	border-top-left-radius: var(--primary-border-radius);
 	padding-right: 0.2rem;
-	background-color: rgba(179, 148, 46, 0.9);
+	background-color: var(--filter-box-bg-color);
 }
 
 .filter-box li {
 	padding: 0.1rem 0.3rem;
 	font-size: 0.65rem;
-	color: white;
+	color: var(--filter-box-color);
 	font-weight: bold;
 }
 
