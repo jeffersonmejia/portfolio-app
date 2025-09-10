@@ -1,15 +1,30 @@
 :root {
 	--primary-bg-color: white;
+	--secondary-bg-color: rgb(241, 241, 241);
 	--primary-title-color: rgb(32, 33, 36);
 	--primary-text-color: rgb(95, 99, 104);
 	--primary-btn-color: rgb(59, 76, 224);
 	--primary-btn-color-hover: rgb(59, 76, 224);
 	--filter-box-bg-color: rgba(46, 152, 179, 0.9);
 	--filter-box-color: white;
+	--primary-box-shadow-color: rgba(0, 0, 0, 0.15);
 	--primary-border-color: rgb(230, 230, 230);
 	--primary-border-radius: 4px;
 	--font-family: 'DM Sans', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI',
 		Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+}
+
+body.dark {
+	--primary-bg-color: #1c1b25;
+	--secondary-bg-color: #282735;
+	--primary-title-color: #ffffff;
+	--primary-text-color: #c0c0c0;
+	--primary-btn-color: #8698fc;
+	--primary-btn-color-hover: #8698fc;
+	--filter-box-bg-color: rgba(100, 100, 100, 0.8);
+	--filter-box-color: #ffffff;
+	--primary-box-shadow-color: rgba(0, 0, 0, 0.5);
+	--primary-border-color: #333333;
 }
 
 * {
@@ -42,7 +57,7 @@ nav {
 	left: 0;
 	right: 0;
 	background-color: var(--primary-bg-color);
-	box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 -2px 6px var(--primary-box-shadow-color);
 	z-index: 999;
 	a {
 		text-decoration: none;
@@ -74,6 +89,18 @@ nav {
 		&:hover {
 			color: var(--primary-btn-color-hover);
 		}
+	}
+	span {
+		font-size: 0.7rem;
+		font-weight: 550;
+		cursor: pointer;
+	}
+	img {
+		width: 32px;
+		cursor: pointer;
+		background-color: var(--secondary-bg-color);
+		border-radius: 50%;
+		padding: 0.5rem;
 	}
 
 	.secondary-btn {
@@ -131,8 +158,13 @@ footer {
 }
 
 @media screen and (min-width: 800px) {
-	nav .secondary-btn {
+	nav .secondary-btn,
+	nav ul span {
 		font-size: 0.9rem;
+	}
+	nav img {
+		padding: 0.5rem;
+		width: 36px;
 	}
 }
 
@@ -146,6 +178,9 @@ footer {
 		box-shadow: none;
 
 		a {
+			font-size: 0.8rem;
+		}
+		span {
 			font-size: 0.8rem;
 		}
 	}

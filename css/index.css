@@ -331,6 +331,11 @@ hr.hr-experience {
 	}
 }
 
+.section-education img {
+	object-fit: cover;
+	object-position: center;
+}
+
 .button-icon {
 	text-decoration: none;
 	width: fit-content;
@@ -343,7 +348,7 @@ hr.hr-experience {
 	gap: 0.2rem;
 	border: none;
 	cursor: pointer;
-	background-color: var(--btn-bg-dark);
+	background-color: var(--primary-btn-color);
 	transition: background-color 0.3s ease-in;
 
 	&:hover {
