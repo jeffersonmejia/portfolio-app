@@ -1,7 +1,7 @@
 :root {
 	--primary-bg-color: white;
 	--secondary-bg-color: rgb(241, 241, 241);
-	--primary-title-color: rgb(32, 33, 36);
+	--primary-title-color: #202124;
 	--primary-text-color: rgb(95, 99, 104);
 	--primary-btn-color: rgb(59, 76, 224);
 	--primary-btn-color-hover: rgb(59, 76, 224);
@@ -16,7 +16,7 @@
 
 body.dark {
 	--primary-bg-color: #1c1b25;
-	--secondary-bg-color: #282735;
+	--secondary-bg-color: #383649;
 	--primary-title-color: #ffffff;
 	--primary-text-color: #c0c0c0;
 	--primary-btn-color: #8698fc;
