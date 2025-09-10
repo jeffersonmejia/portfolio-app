@@ -62,6 +62,11 @@ hr {
 	grid-column: 1/-1;
 }
 
+.hr-footer {
+	width: 97%;
+	margin-left: 1.5rem;
+}
+
 .primary-btn {
 	border-radius: 4px;
 	background-color: var(--secondary-color);
@@ -174,9 +179,6 @@ section h2 {
 	h2 {
 		grid-column: 1/-1;
 	}
-	footer {
-		padding-top: 4rem;
-	}
 }
 
 @media screen and (min-width: 1080px) {
@@ -192,10 +194,6 @@ section h2 {
 	}
 	.stay-app img {
 		object-position: right;
-	}
-	footer {
-		padding-top: 2rem;
-		padding-bottom: 2rem;
 	}
 	section {
 		padding-right: 0;
