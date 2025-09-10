@@ -86,8 +86,13 @@ section {
 }
 
 .section-projects a {
-	color: black;
+	color: var(--primary-text-color);
 	text-decoration: none;
+	font-weight: 600;
+}
+
+.section-projects a:hover {
+	color: var(--primary-btn-color-hover);
 }
 
 .section-projects p {

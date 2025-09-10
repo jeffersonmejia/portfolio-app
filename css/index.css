@@ -17,7 +17,7 @@ h6 {
 
 h1 {
 	font-size: 1.5rem;
-	font-weight: 600;
+	font-weight: 700;
 	color: var(--primary-title-color);
 }
 
@@ -90,13 +90,25 @@ section {
 	h3 {
 		padding-bottom: 0.5rem;
 		color: var(--primary-text-color);
-		font-weight: 500;
+		font-weight: 600;
 		text-align: justify;
 	}
 
 	h2 {
 		padding: 0 1.5rem 0 0;
+		font-weight: 600;
 	}
+}
+
+.hr-training,
+.hr-experience,
+.hr-education {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+hr.hr-experience {
+	margin-top: 2.5rem;
 }
 
 .section-about-me,
@@ -124,11 +136,6 @@ section {
 		padding: 2rem 0 1.1rem;
 	}
 
-	h3 {
-		color: var(--primary-text-color);
-		font-weight: 500;
-	}
-
 	img {
 		padding: 0 1.5rem;
 		width: 300px;
@@ -143,6 +150,17 @@ section {
 	}
 	p {
 		text-align: justify;
+	}
+}
+
+.section-education {
+	.icon-container {
+		margin-bottom: 0.5rem;
+	}
+}
+.section-experience {
+	.icon-container {
+		margin-bottom: 0.5rem;
 	}
 }
 
