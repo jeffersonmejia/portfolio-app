@@ -21,6 +21,10 @@ h1 {
 	color: var(--primary-title-color);
 }
 
+.section-about-me :is(h1, h3) {
+	background-color: transparent;
+}
+
 p,
 span,
 small {
@@ -437,6 +441,8 @@ hr.hr-experience {
 		grid-template-columns: repeat(2, auto);
 		align-items: center;
 
+		border-radius: var(--primary-border-radius);
+
 		.img-square {
 			width: 210px;
 			grid-column: 1/2;
@@ -486,6 +492,14 @@ hr.hr-experience {
 	.hr-about-me,
 	.section-about-me {
 		margin-top: 0;
+	}
+	body .section-about-me {
+		background-color: var(--tertiary-bg-color);
+		padding: 6rem 5rem;
+		padding-top: 5rem;
+		margin-top: 1.5rem;
+		border: 1px solid var(--primary-border-color);
+		gap: 2rem;
 	}
 }
 
