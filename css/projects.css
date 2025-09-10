@@ -46,7 +46,6 @@ body {
 	max-width: 750px;
 	overflow-x: hidden;
 	transition: opacity 0.2s ease-in;
-	font-family: 'Noto Sans', sans-serif;
 	background-color: var(--primary-color);
 }
 
