@@ -50,6 +50,11 @@ body.dark {
 	color: var(--primary-title-color);
 }
 
+.dark .last-update time {
+	color: white;
+	font-weight: 400;
+}
+
 aside {
 	position: fixed;
 	top: 14vh;
@@ -215,6 +220,12 @@ footer span {
 
 .training-date h4 {
 	font-weight: 600;
+}
+
+time {
+	font-weight: 600;
+	font-size: 0.9rem;
+	color: var(--primary-text-color);
 }
 
 @media screen and (min-width: 800px) {

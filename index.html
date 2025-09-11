@@ -1,20 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 	<head>
-		<!-- METADATA -->
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
 		<!-- TITLE, FAVICON -->
 		<title>Jefferson Mejía - inicio</title>
 		<link rel="shortcut icon" href="assets/img/icons/favico.ico" type="image/x-icon" />
+		<!-- SEO METADATA -->
+		<meta
+			name="description"
+			content="Jefferson Mejía - Estudiante de Ingeniería en Tecnologías de la Información en la Universidad de las Fuerzas Armadas ESPE, Cyber Defender autodidacta y Desarrollador web."
+		/>
+		<meta
+			name="keywords"
+			content="Jefferson Mejía, desarrollador web, frontend, backend, ciberseguridad, ESPE, Universidad de las Fuerzas Armadas, Ingeniería TI, Ingeniería En Tecnologías de Información"
+		/>
+		<meta name="author" content="Jefferson Mejía" />
+		<meta name="robots" content="index, follow" />
+		<meta name="language" content="es" />
+		<meta name="theme-color" content="#ffffff" />
+		<link rel="canonical" href="https://jeffersonmejia.github.io/portfolio-app/" />
 		<!-- OG METADATA -->
 		<meta property="og:title" content="Portfolio: Jefferson Mejía" />
 		<meta
 			property="og:description"
-			content="Ingeniería en Tecnologías de la Información, estudiante de la Universidad de las Fuerzas Armadas ESPE"
+			content="Jefferson Mejía - Estudiante de Ingeniería en Tecnologías de la Información en la Universidad de las Fuerzas Armadas ESPE, Cyber Defender autodidacta y Desarrollador web."
 		/>
-		<meta property="og:image" content="img/profile.webp" />
+		<meta property="og:image" content="assets/img/profile.webp" />
 		<meta property="og:url" content="https://jeffersonmejia.github.io/portfolio-app/" />
+		<!-- TWITTER METADATA -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta
+			name="twitter:title"
+			content="Jefferson Mejía - Ing. TI, Desarrollador Web y Cyber Defender"
+		/>
+		<meta
+			name="twitter:description"
+			content="Jefferson Mejía - Estudiante de Ingeniería en Tecnologías de la Información en la Universidad de las Fuerzas Armadas ESPE, Cyber Defender autodidacta y Desarrollador web."
+		/>
+		<meta name="twitter:image" content="assets/img/profile.webp" />
+		<meta name="twitter:url" content="https://jeffersonmejia.github.io/portfolio-app/" />
 		<!-- FONTS -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,292 +55,368 @@
 		<link rel="stylesheet" href="css/index.css" />
 	</head>
 
-	<body class="body-hidden">
+	<body class="body-hidden" itemscope itemtype="https://schema.org/WebSite">
 		<nav>
 			<ul>
 				<li>
-					<a href="#" class="secondary-btn secondary-btn-active">Inicio</a>
+					<a href="#" class="secondary-btn secondary-btn-active" itemprop="url">Inicio</a>
 				</li>
 				<li>
-					<a href="projects.html" class="secondary-btn">Proyectos</a>
+					<a href="projects.html" class="secondary-btn" itemprop="url">Proyectos</a>
 				</li>
 				<li>
-					<a href="#contact-me" class="secondary-btn">Contacto</a>
+					<a href="#contact-me" class="secondary-btn" itemprop="url">Contacto</a>
 				</li>
 				<li>
-					<a href="assets/docs/curriculum.pdf" target="_blank" class="secondary-btn">
+					<a
+						href="assets/docs/curriculum.pdf"
+						target="_blank"
+						class="secondary-btn"
+						itemprop="url"
+					>
 						Curriculum
 					</a>
 				</li>
 				<li>
 					<img
 						src="assets/img/icons/dark.svg"
-						alt=""
+						alt="Botón modo oscuro"
 						class="dark-mode-btn"
 						title="Atajo: Presiona la tecla D para activar/desactivar Dark Mode."
 					/>
 				</li>
 			</ul>
 		</nav>
-		<section class="section-about-me">
+
+		<!-- PERFIL -->
+		<section
+			class="section-about-me"
+			itemscope
+			itemtype="https://schema.org/Person"
+			itemprop="about"
+		>
 			<article>
 				<hgroup>
-					<h1>Jefferson Mejía</h1>
-					<h3>Ing. TI, Desarrollador Web</h3>
+					<h1 itemprop="name">Jefferson Mejía</h1>
+					<h3 itemprop="jobTitle">Ing. TI, Desarrollador Web</h3>
 				</hgroup>
 				<div class="img-square profile-mobile">
-					<img src="assets/img/profile.webp" alt="" />
+					<img
+						src="assets/img/profile.webp"
+						alt="Foto de Jefferson Mejía"
+						itemprop="image"
+					/>
 					<div class="img-behind"></div>
 				</div>
-				<p>
-					Soy estudiante de Ingeniería en Tecnologías de Información y Comunicación ,
-					actualmente en 5to. semestre en la Universidad de las Fuerzas Armadas ESPE y
-					Desarrollador Web.
+				<p itemprop="description">
+					Estudiante de Ingeniería en Tecnologías de Información y Comunicación en la
+					Universidad de las Fuerzas Armadas ESPE, desarrollador web con experiencia en
+					frontend y backend.
 				</p>
 				<br />
 				<p>
-					Tengo mayor experiencia en desarrollo frontend con JavaScript, sin embargo he
-					realizado proyectos backend con PHP, automatización de tareas con Bash,
-					PowerShell y Docker para la gestión de contenedores en servidores web, bases de
-					datos y sistemas de archivos SFTP.
+					Experiencia en frontend con JavaScript y proyectos backend con PHP,
+					automatización con Bash y PowerShell, uso de Docker, bases de datos MySQL y
+					administración de sistemas en Linux.
 				</p>
 			</article>
 			<div class="img-square profile-desktop">
-				<img src="assets/img/profile.webp" alt="" />
+				<img src="assets/img/profile.webp" alt="Foto de perfil" itemprop="image" />
 				<div class="img-behind"></div>
 			</div>
 		</section>
+
+		<!-- OBJETIVO PROFESIONAL -->
 		<hr class="hr-experience" id="section-experience" />
-		<section class="section-experience">
-			<h2>🎯 Objetivo Profesional</h2>
+		<section
+			class="section-experience"
+			itemscope
+			itemtype="https://schema.org/CreativeWork"
+			itemprop="hasPart"
+		>
+			<h2>🎯 <span itemprop="headline">Objetivo Profesional</span></h2>
 			<article>
-				<h3 class="personal-target">Ciberseguridad defensiva</h3>
-				<p>
-					Aspiro a desarrollarme como ingeniero en ciberseguridad defensiva, fortaleciendo
-					la detección, monitoreo y respuesta ante ataques cibernéticos. Certificándome en
-					CompTIA CASP+, aplicando ISO 27035 y plataformas como SIEM, IDS/IPS y EDR para
-					garantizar una protección anticipada y una reacción ágil frente a incidentes.
+				<h3 class="personal-target" itemprop="about">Ciberseguridad defensiva</h3>
+				<p itemprop="text">
+					Aspiro a desarrollarme como ingeniero en ciberseguridad defensiva, aplicando
+					normativas ISO 27035, CompTIA CASP+ y plataformas como SIEM, IDS/IPS y EDR para
+					garantizar detección y respuesta ágil a incidentes.
 				</p>
 			</article>
-			<hr class="hr-professional-purpose" />
-			<h2>💼 Experiencia Académica</h2>
-			<article>
-				<h3>Ayudante de cátedra</h3>
-				<figure class="icon-container">
-					<img src="assets/img/icons/espe-icon.png" alt="espe icon" loading="lazy" />
+		</section>
+
+		<!-- EXPERIENCIA -->
+		<hr class="hr-professional-purpose" />
+		<section
+			class="section-experience"
+			itemscope
+			itemtype="https://schema.org/CreativeWork"
+			itemprop="hasPart"
+		>
+			<h2>💼 <span itemprop="headline">Experiencia Académica</span></h2>
+			<article itemscope itemtype="https://schema.org/OrganizationRole">
+				<h3 itemprop="roleName">Ayudante de cátedra</h3>
+				<figure
+					class="icon-container"
+					itemscope
+					itemtype="https://schema.org/Organization"
+					itemprop="memberOf"
+				>
+					<img
+						src="assets/img/icons/espe-icon.png"
+						alt="espe icon"
+						loading="lazy"
+						itemprop="logo"
+					/>
 					<figcaption class="training-date">
 						<h4>
-							<span>Universidad de las Fuerzas Armadas ESPE </span>
+							<span itemprop="name">Universidad de las Fuerzas Armadas ESPE</span>
 							<span class="dot">•</span>
-							<span> 2024 </span>
+							<time itemprop="startDate" datetime="2024">2024</time>
 						</h4>
 					</figcaption>
 				</figure>
-				<p>
-					Impartí clases teóricas y prácticas de Programación Orientada a Objetos,
-					patrones de diseño y arquitectura MVC para resolver dudas, elaborar material de
-					apoyo guiando a los estudiantes en la solución de problemas y desarrollo de
+				<p itemprop="description">
+					Impartí clases de Programación Orientada a Objetos, patrones de diseño y
+					arquitectura MVC, elaborando material de apoyo y guiando a estudiantes en
 					proyectos académicos.
 				</p>
 			</article>
 		</section>
 
+		<!-- EDUCACIÓN -->
 		<hr class="hr-education" id="section-education" />
-		<section class="section-education">
+		<section
+			class="section-education"
+			itemscope
+			itemtype="https://schema.org/EducationalOccupationalCredential"
+			itemprop="hasCredential"
+		>
 			<h2>📚 Educación</h2>
 			<div class="container-university">
 				<article>
-					<h3>Ingeniería en Tecnologías de Información y Comunicación</h3>
-					<figure class="icon-container">
-						<img src="assets/img/icons/espe-icon.png" alt="espe icon" loading="lazy" />
+					<h3 itemprop="name">Ingeniería en Tecnologías de Información y Comunicación</h3>
+					<figure
+						class="icon-container"
+						itemscope
+						itemtype="https://schema.org/CollegeOrUniversity"
+						itemprop="educationalLevel"
+					>
+						<img
+							src="assets/img/icons/espe-icon.png"
+							alt="espe icon"
+							loading="lazy"
+							itemprop="logo"
+						/>
 						<figcaption class="training-date">
 							<h4>
-								<span>Universidad de las Fuerzas Armadas ESPE </span>
+								<span itemprop="name">Universidad de las Fuerzas Armadas ESPE</span>
 								<span class="dot">•</span>
-								<span> 2023 </span>
+								<time itemprop="startDate" datetime="2023">2023</time>
 							</h4>
 						</figcaption>
 					</figure>
-					<p>
-						Diseñar redes, bases de datos y aplicaciones seguras. Desarrollar soluciones
-						tecnológicas en entornos web, móviles y en la nube. Gestionar riesgos de
-						seguridad de la información, administrar el ciclo de vida tecnológico.
-						Actualmente me encuentro en el 5to. semestre y mi fecha tentativa de
-						graduación es en Octubre de 2027.
+					<p itemprop="description">
+						Formación en diseño de redes, bases de datos y aplicaciones seguras. Gestión
+						de riesgos en seguridad de la información, desarrollo de soluciones web,
+						móviles y en la nube.
 					</p>
 				</article>
-				<img src="assets/img/cover/espe.png" alt="" class="container-university-img" />
+				<img
+					src="assets/img/cover/espe.png"
+					alt="Campus ESPE"
+					class="container-university-img"
+				/>
 			</div>
+
 			<div class="container-english-certificate">
 				<article>
-					<h3>Inglés B1</h3>
-					<figure class="icon-container">
-						<img src="assets/img/icons/espe-icon.png" alt="utm icon" loading="lazy" />
+					<h3 itemprop="name">Inglés B1</h3>
+					<figure
+						class="icon-container"
+						itemscope
+						itemtype="https://schema.org/Organization"
+						itemprop="provider"
+					>
+						<img
+							src="assets/img/icons/espe-icon.png"
+							alt="utm icon"
+							loading="lazy"
+							itemprop="logo"
+						/>
 						<figcaption class="date-education">
 							<h4>
-								<span>Instituto de Idiomas ESPE </span>
+								<span itemprop="name">Instituto de Idiomas ESPE</span>
 								<span class="dot">•</span>
-								<span> 2025 </span>
+								<time itemprop="dateCreated" datetime="2025">2025</time>
 							</h4>
 						</figcaption>
 					</figure>
-					<div class="english-experience" data-nosnippet>
-						<p>
-							Comunicar ideas, participar en conversaciones laborales y académicas.
-							Comprensión de documentación técnica en inglés en relación al área de TI.
-							Escucha activa en inglés, comprensión de ideas principales y detalles
-							específicos en conversaciones y presentaciones.
-							<button class="button-icon" id="speaker-btn">
-								<span>Escuchar</span>
-								<img
-									src="assets/img/icons/speaking-icon.png"
-									alt="speaking icon"
-									loading="lazy"
-								/>
-							</button>
-						</p>
-
-						<ul class="box-transcript hidden-opacity" id="box-transcript">
-							<li class="hidden" data-start="50" data-end="37">
-								Sure, Marco. I’m Jefferson Paul Mejía Chávez, 22 years old, and I’m
-								studying Information Technology Engineering. I'v been working on my
-								English online too. So, Marco, what’s your take on it?
-							</li>
-							<li class="hidden" data-start="36" data-end="30">
-								Same, love the flexibility! I can replay lessons and connect with native
-								speakers. But I miss in-person vibes—screens make it hard to stay focused.
-							</li>
-							<li class="hidden" data-start="29" data-end="18">
-								Yep, speaking’s tricky. Plus, I get distracted scrolling my phone. They
-								should step up with more interactive stuff, like live group chats, for
-								example.
-							</li>
-							<li class="hidden" data-start="17" data-end="8">
-								Maybe real-world tasks, like writing emails or mock interviews. And better
-								tech support—glitches drive me nuts! Short lessons would keep it fresh
-								too.
-							</li>
-							<li class="hidden" data-start="7" data-end="0">
-								Stay focused, and let’s push for more engaging classes. Wanna practice
-								together sometime?
-							</li>
-						</ul>
-						<audio
-							id="audio-speaking"
-							preload="none"
-							src="assets/audio/speaking.m4a"
-						></audio>
-					</div>
+					<p itemprop="description">
+						Comunicación de ideas, comprensión de documentación técnica en inglés aplicada
+						a TI, escucha activa y expresión oral en contextos laborales y académicos.
+					</p>
 				</article>
-				<img src="assets/certificates/diploma-ingles.jpg" alt="" />
+				<img src="assets/certificates/diploma-ingles.jpg" alt="Certificado inglés B1" />
 			</div>
 		</section>
+
+		<!-- CAPACITACIONES -->
 		<hr class="hr-training" id="hr-training" />
-		<section class="section-training">
+		<section
+			class="section-training"
+			itemscope
+			itemtype="https://schema.org/ItemList"
+			itemprop="hasPart"
+		>
 			<h2>📖 Capacitaciones profesionales</h2>
-			<article>
-				<h3>Fundamentos de base de datos</h3>
-				<figure class="icon-container">
-					<img src="assets/img/icons/platzi-icon.png" alt="platzi icon" loading="lazy" />
+
+			<article itemscope itemtype="https://schema.org/Course">
+				<h3 itemprop="name">Fundamentos de base de datos</h3>
+				<figure
+					class="icon-container"
+					itemscope
+					itemtype="https://schema.org/Organization"
+					itemprop="provider"
+				>
+					<img
+						src="assets/img/icons/platzi-icon.png"
+						alt="platzi icon"
+						loading="lazy"
+						itemprop="logo"
+					/>
 					<figcaption class="training-date">
 						<h4>
-							<span>Platzi</span>
+							<span itemprop="name">Platzi</span>
 							<span class="dot">•</span>
-							<span> 2022 </span>
+							<time datetime="2022" itemprop="dateCreated">2022</time>
 						</h4>
 					</figcaption>
 				</figure>
-
-				<img src="assets/certificates/diploma-db.jpg" alt="" class="no-hover" />
-				<p>
-					Diseño de Base de datos aplicando DDL, DML y SQL como Lenguaje de Consulta
-					Estructurada. Obtener queries, reportes a través de consultas complejas como
-					"like", "joins" u otros.
+				<p itemprop="description">
+					Diseño de bases de datos con SQL, consultas complejas, DDL y DML.
 				</p>
 			</article>
-			<article>
-				<h3>Curso Git y Github</h3>
-				<figure class="icon-container">
-					<img src="assets/img/icons/platzi-icon.png" alt="platzi icon" loading="lazy" />
+
+			<article itemscope itemtype="https://schema.org/Course">
+				<h3 itemprop="name">Curso Git y Github</h3>
+				<figure
+					class="icon-container"
+					itemscope
+					itemtype="https://schema.org/Organization"
+					itemprop="provider"
+				>
+					<img
+						src="assets/img/icons/platzi-icon.png"
+						alt="platzi icon"
+						loading="lazy"
+						itemprop="logo"
+					/>
 					<figcaption class="training-date">
 						<h4>
-							<span>Platzi</span>
+							<span itemprop="name">Platzi</span>
 							<span class="dot">•</span>
-							<span> 2022 </span>
+
+							<time datetime="2022" itemprop="dateCreated">2022</time>
 						</h4>
 					</figcaption>
 				</figure>
-
-				<img src="assets/certificates/diploma-git.jpg" alt="" />
-
-				<p>
-					Inicialización de repositorios, creación de ramas, tags, fixos y gestión de
-					trabajo en equipo con git, repositorios en github e inicio sesión seguro con
-					SSH.
+				<p itemprop="description">
+					Gestión de repositorios, ramas y trabajo colaborativo en GitHub con
+					autenticación SSH.
 				</p>
 			</article>
-			<article>
-				<h3>Curso de línea de comandos</h3>
-				<figure class="icon-container">
-					<img src="assets/img/icons/platzi-icon.png" alt="platzi icon" loading="lazy" />
+
+			<article itemscope itemtype="https://schema.org/Course">
+				<h3 itemprop="name">Curso de línea de comandos</h3>
+				<figure
+					class="icon-container"
+					itemscope
+					itemtype="https://schema.org/Organization"
+					itemprop="provider"
+				>
+					<img
+						src="assets/img/icons/platzi-icon.png"
+						alt="platzi icon"
+						loading="lazy"
+						itemprop="logo"
+					/>
 					<figcaption class="training-date">
 						<h4>
-							<span>Platzi</span>
+							<span itemprop="name">Platzi</span>
 							<span class="dot">•</span>
-							<span> 2022 </span>
+
+							<time datetime="2022" itemprop="dateCreated">2022</time>
 						</h4>
 					</figcaption>
 				</figure>
-				<img src="assets/certificates/diploma-terminal.jpg" alt="" />
-				<p>
-					Manejo de archivos, dependencias y servicios en el sistema operativo linux y
-					windows. Configuración de ficheros, permisos, procesos y usuarios.
+				<p itemprop="description">
+					Manejo de archivos, procesos, permisos y usuarios en Linux y Windows.
 				</p>
 			</article>
-			<article>
-				<h3>Curso frontend</h3>
-				<figure class="icon-container">
-					<img src="assets/img/icons/platzi-icon.png" alt="platzi icon" loading="lazy" />
+
+			<article itemscope itemtype="https://schema.org/Course">
+				<h3 itemprop="name">Curso frontend</h3>
+				<figure
+					class="icon-container"
+					itemscope
+					itemtype="https://schema.org/Organization"
+					itemprop="provider"
+				>
+					<img
+						src="assets/img/icons/platzi-icon.png"
+						alt="platzi icon"
+						loading="lazy"
+						itemprop="logo"
+					/>
 					<figcaption class="training-date">
 						<h4>
-							<span>Platzi</span>
+							<span itemprop="name">Platzi</span>
 							<span class="dot">•</span>
-							<span> 2022 </span>
+
+							<time datetime="2022" itemprop="dateCreated">2022</time>
 						</h4>
 					</figcaption>
 				</figure>
-
-				<img src="assets/certificates/diploma-frontend.jpg" alt="" class="no-hover" />
-				<p>
-					Desarrollo de aplicaciones web Frontend con HTML, CSS y JS. Implementación de
-					buenas prácticas en el desarrollo, maquetación y diseño web.
+				<p itemprop="description">
+					Desarrollo frontend con HTML, CSS y JS aplicando buenas prácticas.
 				</p>
 			</article>
 		</section>
+
+		<!-- FECHA ACTUALIZACIÓN -->
 		<small class="last-update">
 			<span>Última actualización:</span>
-			<span datetime="2025-09-10" itemprop="dateModified">10 de septiembre de 2025</span>
+			<time datetime="2025-09-10" itemprop="dateModified">10 de septiembre de 2025</time>
 		</small>
+
+		<!-- FOOTER -->
 		<hr class="hr-footer" />
-		<footer>
+		<footer itemscope itemtype="https://schema.org/Person" itemprop="author">
 			<ul>
 				<li id="contact-me">
-					<span>© 2025 Jefferson Mejía</span>
+					<span
+						>© <time datetime="2025">2025</time>
+						<span itemprop="name">Jefferson Mejía</span></span
+					>
 				</li>
 				<li class="footer-social-networks">
 					<a
-						href="https://mail.google.com/mail/?view=cm&fs=1&to=jeffersonmejiach01@gmail.com&su=Contacto&body=Hola,%20Jefferson.%20Deseo%20contactarme%20contigo."
+						href="https://mail.google.com/mail/?view=cm&fs=1&to=jeffersonmejiach01@gmail.com&su=Hola,%20Jefferson.&body=Hola,%20Jefferson."
 						target="_blank"
+						itemprop="email"
 						>Correo</a
 					>
 					<span class="dot">•</span>
-					<a href="https://www.linkedin.com/in/jeffersonmejia/" target="_blank"
+					<a
+						href="https://www.linkedin.com/in/jeffersonmejia/"
+						target="_blank"
+						itemprop="sameAs"
 						>LinkedIn</a
 					>
 				</li>
 			</ul>
 		</footer>
-
 		<script src="./js/index.js"></script>
 	</body>
 </html>

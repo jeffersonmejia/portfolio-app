@@ -1,20 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 	<head>
-		<!-- METADATA -->
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
 		<!-- TITLE, FAVICON -->
 		<title>Jefferson Mejía - proyectos</title>
 		<link rel="shortcut icon" href="assets/img/icons/favico.ico" type="image/x-icon" />
+		<!-- SEO METADATA -->
+		<meta
+			name="description"
+			content="Jefferson Mejía - Estudiante de Ingeniería en Tecnologías de la Información en la Universidad de las Fuerzas Armadas ESPE, Cyber Defender autodidacta y Desarrollador web."
+		/>
+		<meta
+			name="keywords"
+			content="Jefferson Mejía, desarrollador web, frontend, backend, ciberseguridad, ESPE, Universidad de las Fuerzas Armadas, Ingeniería TI, Ingeniería En Tecnologías de Información"
+		/>
+		<meta name="author" content="Jefferson Mejía" />
+		<meta name="robots" content="index, follow" />
+		<meta name="language" content="es" />
+		<meta name="theme-color" content="#ffffff" />
+		<link rel="canonical" href="https://jeffersonmejia.github.io/portfolio-app/" />
 		<!-- OG METADATA -->
 		<meta property="og:title" content="Portfolio: Jefferson Mejía" />
 		<meta
 			property="og:description"
-			content="Ingeniería en Tecnologías de la Información, estudiante de la Universidad de las Fuerzas Armadas ESPE"
+			content="Jefferson Mejía - Estudiante de Ingeniería en Tecnologías de la Información en la Universidad de las Fuerzas Armadas ESPE, Cyber Defender autodidacta y Desarrollador web."
 		/>
-		<meta property="og:image" content="img/profile.webp" />
+		<meta property="og:image" content="assets/img/profile.webp" />
 		<meta property="og:url" content="https://jeffersonmejia.github.io/portfolio-app/" />
+		<!-- TWITTER METADATA -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta
+			name="twitter:title"
+			content="Jefferson Mejía - Ing. TI, Desarrollador Web y Cyber Defender"
+		/>
+		<meta
+			name="twitter:description"
+			content="Jefferson Mejía - Estudiante de Ingeniería en Tecnologías de la Información en la Universidad de las Fuerzas Armadas ESPE, Cyber Defender autodidacta y Desarrollador web."
+		/>
+		<meta name="twitter:image" content="assets/img/profile.webp" />
+		<meta name="twitter:url" content="https://jeffersonmejia.github.io/portfolio-app/" />
 		<!-- FONTS -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,7 +55,12 @@
 		<link rel="stylesheet" href="./css/projects.css" />
 	</head>
 
-	<body class="body-hidden">
+	<body
+		class="body-hidden"
+		itemprop="mainEntityOfPage"
+		itemscope
+		itemtype="http://schema.org/WebPage"
+	>
 		<nav>
 			<ul>
 				<li>
@@ -44,8 +77,13 @@
 						href="assets/docs/curriculum.pdf"
 						download="curriculum.pdf"
 						class="secondary-btn"
+						itemprop="hasPart"
+						itemscope
+						itemtype="http://schema.org/MediaObject"
 					>
 						Curriculum
+						<meta itemprop="encodingFormat" content="application/pdf" />
+						<meta itemprop="name" content="Curriculum Jefferson Mejía" />
 					</a>
 				</li>
 				<li>
@@ -58,19 +96,35 @@
 				</li>
 			</ul>
 		</nav>
+
 		<section class="section-projects">
 			<h2>🚀 Proyectos académicos</h2>
 			<hr class="hr-projects" />
 
-			<article class="stay-app">
+			<article
+				class="stay-app"
+				itemscope
+				itemtype="http://schema.org/SoftwareApplication"
+			>
 				<h3>
-					<a href="https://github.com/jeffersonmejia/stay-app" target="_blank"
+					<a
+						href="https://github.com/jeffersonmejia/stay-app"
+						target="_blank"
+						itemprop="name"
 						>Stay App</a
 					>
-					<small class="date-project">Ago - Sept 2025</small>
+					<small class="date-project"
+						><time datetime="2025-08-01" itemprop="datePublished"
+							>Ago - Sept 2025</time
+						></small
+					>
 				</h3>
 				<figure>
-					<img src="assets/img/projects/stay-cover.png" alt="" />
+					<img
+						src="assets/img/projects/stay-cover.png"
+						alt="Stay App Cover"
+						itemprop="image"
+					/>
 					<figcaption>
 						<ul class="filter-box">
 							<li>Docker</li>
@@ -82,21 +136,30 @@
 						</ul>
 					</figcaption>
 				</figure>
-				<small
-					>Escribe, lee y elimina notas fácilemente. Todas tus notas almacenadas en una
-					sola cuenta 📝.
-				</small>
+				<small itemprop="description"
+					>Escribe, lee y elimina notas fácilmente. Todas tus notas almacenadas en una
+					sola cuenta 📝.</small
+				>
 			</article>
 
-			<article>
+			<article itemscope itemtype="http://schema.org/SoftwareApplication">
 				<h3>
-					<a href="https://jeffersonmejia.github.io/restaurant-app" target="_blank"
+					<a
+						href="https://jeffersonmejia.github.io/restaurant-app"
+						target="_blank"
+						itemprop="name"
 						>Restaurant App</a
 					>
-					<small class="date-project">Ago. 2025</small>
+					<small class="date-project"
+						><time datetime="2025-08-01" itemprop="datePublished">Ago. 2025</time></small
+					>
 				</h3>
 				<figure>
-					<img src="assets/img/projects/restaurant-cover.png" alt="" />
+					<img
+						src="assets/img/projects/restaurant-cover.png"
+						alt="Restaurant App Cover"
+						itemprop="image"
+					/>
 					<figcaption>
 						<ul class="filter-box">
 							<li>HTML</li>
@@ -105,21 +168,30 @@
 						</ul>
 					</figcaption>
 				</figure>
-				<small
+				<small itemprop="description"
 					>Simulación de atención al cliente en un restaurante: Menú, cuenta y cierre de
-					caja 🍽️.
-				</small>
+					caja 🍽️.</small
+				>
 			</article>
 
-			<article>
+			<article itemscope itemtype="http://schema.org/SoftwareApplication">
 				<h3>
-					<a href="https://jeffersonmejia.github.io/weather/" target="_blank"
+					<a
+						href="https://jeffersonmejia.github.io/weather/"
+						target="_blank"
+						itemprop="name"
 						>Weather App</a
 					>
-					<small class="date-project">Ene. 2023</small>
+					<small class="date-project"
+						><time datetime="2023-01-01" itemprop="datePublished">Ene. 2023</time></small
+					>
 				</h3>
 				<figure>
-					<img src="assets/img/projects/weather-cover.png" alt="" />
+					<img
+						src="assets/img/projects/weather-cover.png"
+						alt="Weather App Cover"
+						itemprop="image"
+					/>
 					<figcaption>
 						<ul class="filter-box">
 							<li>HTML</li>
@@ -128,20 +200,30 @@
 						</ul>
 					</figcaption>
 				</figure>
-				<small>Consulta el clima de tu ubicación actual en tiempo real ☀️.</small>
+				<small itemprop="description"
+					>Consulta el clima de tu ubicación actual en tiempo real ☀️.</small
+				>
 			</article>
 
-			<article>
+			<article itemscope itemtype="http://schema.org/SoftwareApplication">
 				<h3>
-					<a href="https://jeffersonmejia.github.io/universe-app/" target="_blank"
+					<a
+						href="https://jeffersonmejia.github.io/universe-app/"
+						target="_blank"
+						itemprop="name"
 						>Universe App</a
 					>
-					<small class="date-project">Jun - Jul 2023</small>
+					<small class="date-project"
+						><time datetime="2023-06-01" itemprop="datePublished"
+							>Jun - Jul 2023</time
+						></small
+					>
 				</h3>
 				<figure>
 					<img
 						src="assets/img/projects/universe-cover.png"
-						alt="universe project cover"
+						alt="Universe App Cover"
+						itemprop="image"
 					/>
 					<figcaption>
 						<ul class="filter-box">
@@ -151,20 +233,29 @@
 						</ul>
 					</figcaption>
 				</figure>
-				<small
-					>Descubre cómo esta formado nuestro sistema solar y simula eventos 🪐.</small
+				<small itemprop="description"
+					>Descubre cómo está formado nuestro sistema solar y simula eventos 🪐.</small
 				>
 			</article>
 
-			<article>
+			<article itemscope itemtype="http://schema.org/SoftwareApplication">
 				<h3>
-					<a href="https://github.com/jeffersonmejia/http-lib" target="_blank"
+					<a
+						href="https://github.com/jeffersonmejia/http-lib"
+						target="_blank"
+						itemprop="name"
 						>Librería HTTP</a
 					>
-					<small class="date-project">Ago. 2023</small>
+					<small class="date-project"
+						><time datetime="2023-08-01" itemprop="datePublished">Ago. 2023</time></small
+					>
 				</h3>
 				<figure>
-					<img src="assets/img/projects/https-cover.png" alt="http project cover" />
+					<img
+						src="assets/img/projects/https-cover.png"
+						alt="HTTP Library Cover"
+						itemprop="image"
+					/>
 					<figcaption>
 						<ul class="filter-box">
 							<li>HTTPS</li>
@@ -173,14 +264,17 @@
 						</ul>
 					</figcaption>
 				</figure>
-				<small>Haz peticiones HTTP con desde el cliente de manera sencilla 🌐. </small>
+				<small itemprop="description"
+					>Haz peticiones HTTP desde el cliente de manera sencilla 🌐.</small
+				>
 			</article>
 		</section>
 
 		<small class="last-update">
 			<span>Última actualización:</span>
-			<span datetime="2025-09-10" itemprop="dateModified">10 de septiembre de 2025</span>
+			<time datetime="2025-09-10" itemprop="dateModified">10 de septiembre de 2025</time>
 		</small>
+
 		<hr class="hr-footer" />
 		<footer>
 			<ul>
@@ -191,15 +285,20 @@
 					<a
 						href="https://mail.google.com/mail/?view=cm&fs=1&to=jeffersonmejiach01@gmail.com&su=Contacto&body=Hola,%20Jefferson.%20Deseo%20contactarme%20contigo."
 						target="_blank"
+						itemprop="email"
 						>Correo</a
 					>
 					<span class="dot">•</span>
-					<a href="https://www.linkedin.com/in/jeffersonmejia/" target="_blank"
+					<a
+						href="https://www.linkedin.com/in/jeffersonmejia/"
+						target="_blank"
+						itemprop="sameAs"
 						>LinkedIn</a
 					>
 				</li>
 			</ul>
 		</footer>
+
 		<script src="js/projects.js"></script>
 	</body>
 </html>

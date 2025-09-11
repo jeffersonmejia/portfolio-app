@@ -444,6 +444,7 @@ hr.hr-experience {
 .box-transcript li {
 	text-align: justify;
 	list-style: none;
+	color: var(--primary-text-color);
 }
 
 .container-english-certificate,
