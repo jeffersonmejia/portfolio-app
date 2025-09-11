@@ -41,6 +41,9 @@ body {
 section {
 	padding-left: 1.5rem;
 	padding-right: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.1rem;
 }
 
 .last-update {
@@ -72,14 +75,10 @@ hr {
 	background-color: var(--hover-color);
 }
 
-section {
-	display: flex;
-	flex-direction: column;
-	gap: 1.1rem;
-}
-
 .section-projects {
 	margin-top: 1.5rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(350px, auto));
 }
 
 .section-projects a {
@@ -88,13 +87,13 @@ section {
 	font-weight: 600;
 }
 
+.section-projects a:hover {
+	color: var(--primary-btn-color-hover);
+}
+
 .section-proyects h2 {
 	margin-bottom: -1.5rem;
 	padding-top: 1.5rem;
-}
-
-.section-projects a:hover {
-	color: var(--primary-btn-color-hover);
 }
 
 .section-projects p {
@@ -107,6 +106,7 @@ section {
 	object-fit: cover;
 	object-position: center;
 }
+
 .sticky-on {
 	border-bottom: 2px solid var(--border-color);
 }
@@ -137,13 +137,16 @@ section {
 	font-weight: bold;
 }
 
-section :is(a, span, p) {
+section a,
+section span,
+section p {
 	font-size: 0.9rem;
 }
 
 section span {
 	margin: 0.3rem 0;
 }
+
 section p span {
 	font-style: italic;
 }
@@ -169,7 +172,6 @@ section h2 {
 /* DESKTOP VERSION */
 @media screen and (min-width: 600px) {
 	.section-projects {
-		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(350px, auto));
 	}
 
@@ -183,26 +185,33 @@ section h2 {
 		margin: auto;
 		margin-top: 0;
 	}
+
 	section h2 {
 		top: 10vh;
 	}
+
 	.section-projects small {
 		font-size: 0.9rem;
 	}
+
 	.stay-app img {
 		object-position: right;
 	}
+
 	section {
 		padding-right: 0;
 	}
+
 	.section-projects h2 {
 		font-size: 1.35rem;
 		padding-top: 0.5rem;
 		padding-bottom: 0.5rem;
 	}
+
 	.section-projects article:nth-child(3) {
 		grid-column: 1/-1;
 	}
+
 	.stay-app img {
 		object-position: top;
 	}
