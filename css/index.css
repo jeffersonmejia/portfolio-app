@@ -546,12 +546,7 @@ hr.hr-experience {
 }
 
 .container-english-certificate > img {
-	cursor: pointer;
 	transition: transform 0.3s ease;
-}
-
-.container-english-certificate > img:hover {
-	transform: scale(1.1);
 }
 
 .hidden {
