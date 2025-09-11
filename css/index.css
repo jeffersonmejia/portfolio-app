@@ -44,8 +44,12 @@ a {
 	transition: color 0.3s ease;
 }
 
-a:hover {
-	color: var(--primary-btn-color-hover);
+section p {
+	text-align: justify;
+}
+
+.section-education .button-icon span {
+	font-style: normal;
 }
 
 hr {

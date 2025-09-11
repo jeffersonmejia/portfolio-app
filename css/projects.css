@@ -18,10 +18,6 @@ a {
 	color: var(--secondary-color);
 }
 
-a:hover {
-	color: var(--secondary-color-hover);
-}
-
 html {
 	scroll-behavior: smooth;
 }

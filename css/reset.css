@@ -115,8 +115,16 @@ nav a {
 	color: var(--primary-btn-color);
 }
 
-nav a:hover {
+nav a:hover,
+footer a:hover {
 	color: var(--primary-btn-color-hover);
+}
+
+@media (hover: none) {
+	nav a:hover,
+	footer a:hover {
+		color: var(--primary-text-color);
+	}
 }
 
 nav ul {
@@ -170,6 +178,10 @@ img {
 	align-items: center;
 	justify-content: center;
 	margin: 0;
+}
+
+.hr-projects {
+	margin-top: -0.5rem;
 }
 
 .hr-footer {
