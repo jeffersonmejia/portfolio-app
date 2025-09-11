@@ -65,7 +65,7 @@ hr.hr-professional-purpose {
 hr.hr-experience,
 hr.hr-education,
 hr.hr-training.hr-experience {
-	margin: 1.5rem auto 1rem;
+	margin: 1.5rem 0;
 }
 
 hr.hr-about-me {
@@ -256,7 +256,8 @@ hr.hr-experience {
 }
 
 .section-training .icon-container + img:hover {
-	transform: scale(1.1);
+	transform: scale(1.01);
+	z-index: 999;
 }
 
 .section-training article:nth-child(2) {
@@ -525,7 +526,7 @@ hr.hr-experience {
 	}
 
 	hr {
-		width: 95%;
+		width: 100%;
 	}
 
 	.section-about-me,
@@ -549,6 +550,17 @@ hr.hr-experience {
 
 	.section-contact article {
 		margin-top: 1rem;
+	}
+	.section-experience,
+	.section-education,
+	.section-training {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.section-experience article,
+	.section-education article,
+	.section-training article {
+		padding-right: 0;
 	}
 }
 

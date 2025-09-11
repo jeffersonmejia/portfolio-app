@@ -108,7 +108,7 @@ nav {
 	right: 0;
 	background-color: var(--primary-bg-color);
 	box-shadow: 0 -2px 6px var(--primary-box-shadow-color);
-	z-index: 999;
+	z-index: 998;
 }
 
 nav a {
