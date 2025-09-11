@@ -164,6 +164,9 @@ d.addEventListener('click', (e) => {
 		toggleDarkMode()
 	}
 })
+d.addEventListener('keydown', (e) => {
+	if (e.key.toLowerCase() === 'd') toggleDarkMode()
+})
 
 w.addEventListener('scroll', () => {
 	$headers.forEach((header) => {
@@ -178,4 +181,5 @@ w.addEventListener('scroll', () => {
 		}
 	})
 })
+
 //changeLinkHeader()

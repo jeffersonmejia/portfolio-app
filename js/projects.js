@@ -34,3 +34,7 @@ d.addEventListener('DOMContentLoaded', (e) => {
 	$body.classList.toggle('body-hidden')
 	localDarkMode()
 })
+
+d.addEventListener('keydown', (e) => {
+	if (e.key.toLowerCase() === 'd') toggleDarkMode()
+})
