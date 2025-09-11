@@ -264,9 +264,9 @@ hr.hr-experience {
 	grid-row: 2/3;
 }
 
-.section-training article:nth-child(5) {
+/* .section-training article:nth-child(5) {
 	grid-column: 1/-1;
-}
+} */
 
 .icon-container {
 	display: flex;
