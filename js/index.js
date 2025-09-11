@@ -12,7 +12,18 @@ const d = document,
 	$audioSpeaking = d.getElementById('audio-speaking'),
 	$btnSpeaker = d.getElementById('speaker-btn'),
 	$boxTranscript = d.getElementById('box-transcript'),
-	$darkBtn = d.querySelector('.dark-mode-btn')
+	$darkBtn = d.querySelector('.dark-mode-btn'),
+	$modalCertificate = d.querySelector('.modal-certificate'),
+	$modalCertificateTitle = $modalCertificate.querySelector('.modal-certificate-title'),
+	$modalCertificateLogo = $modalCertificate.querySelector('.modal-certificate-logo'),
+	$modalCertificateLogoName = $modalCertificate.querySelector(
+		'.modal-certificate-logo-name'
+	),
+	$modalCertificateDate = $modalCertificate.querySelector('.modal-certificate-date'),
+	$modalCertificateImg = $modalCertificate.querySelector('.modal-certificate-img'),
+	$modalCertificateDescription = $modalCertificate.querySelector(
+		'.modal-certificate-description'
+	)
 
 //GLOBAL SCOPE VARS
 let intervalAudioSpeaking = null,
@@ -151,6 +162,30 @@ function localDarkMode() {
 	}
 }
 
+function openCertificateModal(article) {
+	const title = article.querySelector('.training-title').textContent
+	const logoSrc = article.querySelector('.training-logo-src').src
+	const logoName = article.querySelector('.training-logo-name').textContent
+	const date = article.querySelector('.training-date-year').textContent
+	const imgSrc = article.querySelector('.training-certificate-img').src
+	const description = article.querySelector('p[itemprop="description"]').textContent
+
+	$modalCertificateTitle.textContent = title
+	$modalCertificateLogo.src = logoSrc
+	$modalCertificateLogoName.textContent = logoName
+	$modalCertificateDate.textContent = date
+	$modalCertificateImg.src = imgSrc
+	$modalCertificateDescription.textContent = description
+
+	$modalCertificate.classList.add('modal-certificate-active')
+	$body.style.overflowY = 'hidden'
+}
+
+function closeModal() {
+	$modalCertificate.classList.remove('modal-certificate-active')
+	$body.style.overflowY = 'scroll'
+}
+
 d.addEventListener('DOMContentLoaded', (e) => {
 	$body.classList.toggle('body-hidden')
 	localDarkMode()
@@ -162,6 +197,12 @@ d.addEventListener('click', (e) => {
 	}
 	if (e.target.matches('.dark-mode-btn')) {
 		toggleDarkMode()
+	}
+	if (e.target.matches('.training-certificate-img')) {
+		openCertificateModal(e.target.parentElement)
+	}
+	if (e.target.matches('.close-certificate-modal')) {
+		closeModal()
 	}
 })
 d.addEventListener('keydown', (e) => {
@@ -180,6 +221,15 @@ w.addEventListener('scroll', () => {
 			header.classList.remove('sticky-on')
 		}
 	})
+})
+w.addEventListener('resize', () => {
+	if (
+		w.innerWidth < 800 &&
+		$modalCertificate.classList.contains('modal-certificate-active')
+	) {
+		$modalCertificate.classList.remove('modal-certificate-active')
+		$body.style.overflowY = 'scroll'
+	}
 })
 
 //changeLinkHeader()

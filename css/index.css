@@ -252,12 +252,92 @@ hr.hr-experience {
 .section-training .icon-container + img {
 	border-radius: var(--primary-border-radius);
 	transition: transform 0.3s ease;
-	cursor: pointer;
+	/* cursor: pointer; */
+	cursor: zoom-in;
+}
+
+.training-certificate-img {
+	pointer-events: none;
+}
+
+.modal-certificate {
+	display: none;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 0 3rem;
+	background-color: var(--primary-bg-color-50);
+	z-index: 999;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
+.modal-certificate article {
+	background-color: var(--primary-bg-color);
+	width: 100%;
+	max-width: 1200px;
+	margin: auto;
+	height: fit-content;
+	padding: 2rem;
+	border-radius: var(--primary-border-radius);
+	border: 1px solid var(--primary-border-color);
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-content: center;
+	align-items: center;
+	gap: 1.5rem;
+}
+
+.modal-certificate-img {
+	border-radius: var(--primary-border-radius);
+}
+
+.modal-certificate-info {
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+	justify-content: center;
+}
+
+.modal-certificate-active {
+	display: flex;
+}
+
+.modal-certificate .icon-container {
+	margin-bottom: 0.5rem;
+}
+
+.modal-certificate .primary-btn {
+	margin-bottom: 0.5rem;
+}
+
+.modal-certificate-description {
+	/* margin-top: 1rem; */
+	margin-bottom: 0.5rem;
+	text-align: justify;
+}
+
+.certi .modal-certificate-img {
+	border-radius: var(--primary-border-radius);
+}
+
+.modal-certificate .training-date h4 {
+	font-weight: 400;
 }
 
 .section-training .icon-container + img:hover {
-	transform: scale(1.01);
-	z-index: 999;
+	/* transform: scale(1.01); */
+	/* z-index: 999; */
+}
+
+.zoom-in-btn {
+	width: 24px;
+	position: absolute;
+	right: 6vb;
+	top: 4vh;
 }
 
 .section-training article:nth-child(2) {
@@ -378,7 +458,7 @@ hr.hr-experience {
 .section-contact h3 {
 	padding: 0;
 }
-
+/* 
 .primary-btn {
 	width: 100%;
 	margin-top: 1.2rem;
@@ -390,10 +470,11 @@ hr.hr-experience {
 	display: block;
 	text-align: center;
 	font-size: 0.8rem;
-}
+} */
 
-.primary-btn:hover {
-	background-color: var(--primary-btn-color-hover);
+.modal-certificate .primary-btn {
+	width: 80px;
+	/* margin-left: auto; */
 }
 
 .section-contact article:nth-child(3) h4 {
@@ -488,6 +569,10 @@ hr.hr-experience {
 /* ==================== MEDIA QUERIES ==================== */
 
 @media screen and (min-width: 700px) {
+	.training-certificate-img {
+		pointer-events: all;
+	}
+
 	hr,
 	.section-experience,
 	.section-education,
@@ -577,6 +662,9 @@ hr.hr-experience {
 		margin-top: 1.5rem;
 		border: 1px solid var(--primary-border-color);
 		gap: 2rem;
+	}
+	.modal-certificate .primary-btn {
+		font-size: 0.8rem;
 	}
 }
 

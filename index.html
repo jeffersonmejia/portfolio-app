@@ -88,7 +88,6 @@
 			</ul>
 		</nav>
 
-		<!-- PERFIL -->
 		<section
 			class="section-about-me"
 			itemscope
@@ -126,7 +125,6 @@
 			</div>
 		</section>
 
-		<!-- OBJETIVO PROFESIONAL -->
 		<hr class="hr-experience" id="section-experience" />
 		<section
 			class="section-experience"
@@ -148,7 +146,6 @@
 			</article>
 		</section>
 
-		<!-- EXPERIENCIA -->
 		<hr class="hr-professional-purpose" />
 		<section
 			class="section-experience"
@@ -187,7 +184,6 @@
 			</article>
 		</section>
 
-		<!-- EDUCACIÓN -->
 		<hr class="hr-education" id="section-education" />
 		<section
 			class="section-education"
@@ -264,18 +260,11 @@
 			</div>
 		</section>
 
-		<!-- CAPACITACIONES -->
 		<hr class="hr-training" id="hr-training" />
-		<section
-			class="section-training"
-			itemscope
-			itemtype="https://schema.org/ItemList"
-			itemprop="hasPart"
-		>
-			<h2 itemprop="headline">📖 Capacitaciones profesionales</h2>
-
+		<section class="section-training">
+			<h2>📖 Capacitaciones profesionales</h2>
 			<article itemscope itemtype="https://schema.org/Course">
-				<h3 itemprop="name">Fullstack Developer con JavaScript</h3>
+				<h3 itemprop="name" class="training-title">Fullstack Developer con JavaScript</h3>
 				<figure
 					class="icon-container"
 					itemscope
@@ -284,15 +273,18 @@
 				>
 					<img
 						src="assets/img/icons/platzi-icon.png"
+						class="training-logo-src"
 						alt="platzi icon"
 						loading="lazy"
 						itemprop="logo"
 					/>
 					<figcaption class="training-date">
 						<h4>
-							<span itemprop="name">Platzi</span>
+							<span itemprop="name" class="training-logo-name">Platzi</span>
 							<span class="dot">•</span>
-							<time datetime="2023" itemprop="dateCreated">2023</time>
+							<time datetime="2023" itemprop="dateCreated" class="training-date-year"
+								>2023</time
+							>
 						</h4>
 					</figcaption>
 				</figure>
@@ -302,8 +294,9 @@
 					itemprop="image"
 					loading="lazy"
 					title="Certificado Fullstack Javascript - Platzi"
+					class="training-certificate-img"
 				/>
-				<p itemprop="description">
+				<p itemprop="description" class="training-date-description">
 					Desarrollo web considerando frontend, backend y JavaScript como lenguaje
 					principal de programación. Desarrollo de interfaces de usuario con React.js, de
 					servidores con Node.js y Express, de bases de datos, autenticación de usuarios,
@@ -313,7 +306,7 @@
 			</article>
 
 			<article itemscope itemtype="https://schema.org/Course">
-				<h3 itemprop="name">Curso frontend</h3>
+				<h3 itemprop="name" class="training-title">Curso frontend</h3>
 				<figure
 					class="icon-container"
 					itemscope
@@ -322,16 +315,18 @@
 				>
 					<img
 						src="assets/img/icons/platzi-icon.png"
+						class="training-logo-src"
 						alt="platzi icon"
 						loading="lazy"
 						itemprop="logo"
 					/>
 					<figcaption class="training-date">
 						<h4>
-							<span itemprop="name">Platzi</span>
+							<span itemprop="name" class="training-logo-name">Platzi</span>
 							<span class="dot">•</span>
-
-							<time datetime="2022" itemprop="dateCreated">2022</time>
+							<time datetime="2022" itemprop="dateCreated" class="training-date-year"
+								>2022</time
+							>
 						</h4>
 					</figcaption>
 				</figure>
@@ -341,14 +336,15 @@
 					itemprop="image"
 					loading="lazy"
 					title="Certificado Frontend Developer Web - Platzi"
+					class="training-certificate-img"
 				/>
-				<p itemprop="description">
+				<p itemprop="description" class="training-date-description">
 					Desarrollo frontend con HTML, CSS y JS aplicando buenas prácticas.
 				</p>
 			</article>
 
 			<article itemscope itemtype="https://schema.org/Course">
-				<h3 itemprop="name">Fundamentos de base de datos</h3>
+				<h3 itemprop="name" class="training-title">Fundamentos de base de datos</h3>
 				<figure
 					class="icon-container"
 					itemscope
@@ -357,15 +353,18 @@
 				>
 					<img
 						src="assets/img/icons/platzi-icon.png"
+						class="training-logo-src"
 						alt="platzi icon"
 						loading="lazy"
 						itemprop="logo"
 					/>
 					<figcaption class="training-date">
 						<h4>
-							<span itemprop="name">Platzi</span>
+							<span itemprop="name" class="training-logo-name">Platzi</span>
 							<span class="dot">•</span>
-							<time datetime="2022" itemprop="dateCreated">2022</time>
+							<time datetime="2022" itemprop="dateCreated" class="training-date-year"
+								>2022</time
+							>
 						</h4>
 					</figcaption>
 				</figure>
@@ -374,15 +373,16 @@
 					alt="Certificado Base de Datos Platzi"
 					itemprop="image"
 					loading="lazy"
+					class="training-certificate-img"
 					title="Certificado de Fundamentos de Base de Datos - Platzi"
 				/>
-				<p itemprop="description">
+				<p itemprop="description" class="training-date-description">
 					Diseño de bases de datos con SQL, consultas complejas, DDL y DML.
 				</p>
 			</article>
 
 			<article itemscope itemtype="https://schema.org/Course">
-				<h3 itemprop="name">Curso Git y Github</h3>
+				<h3 itemprop="name" class="training-title">Curso Git y Github</h3>
 				<figure
 					class="icon-container"
 					itemscope
@@ -391,16 +391,18 @@
 				>
 					<img
 						src="assets/img/icons/platzi-icon.png"
+						class="training-logo-src"
 						alt="platzi icon"
 						loading="lazy"
 						itemprop="logo"
 					/>
 					<figcaption class="training-date">
 						<h4>
-							<span itemprop="name">Platzi</span>
+							<span itemprop="name" class="training-logo-name">Platzi</span>
 							<span class="dot">•</span>
-
-							<time datetime="2022" itemprop="dateCreated">2022</time>
+							<time datetime="2022" itemprop="dateCreated" class="training-date-year"
+								>2022</time
+							>
 						</h4>
 					</figcaption>
 				</figure>
@@ -410,15 +412,16 @@
 					itemprop="image"
 					loading="lazy"
 					title="Certificado de Git y Github - Platzi"
+					class="training-certificate-img"
 				/>
-				<p itemprop="description">
+				<p itemprop="description" class="training-date-description">
 					Gestión de repositorios, ramas y trabajo colaborativo en GitHub con
 					autenticación SSH.
 				</p>
 			</article>
 
 			<article itemscope itemtype="https://schema.org/Course">
-				<h3 itemprop="name">Curso de línea de comandos</h3>
+				<h3 itemprop="name" class="training-title">Curso de línea de comandos</h3>
 				<figure
 					class="icon-container"
 					itemscope
@@ -427,16 +430,18 @@
 				>
 					<img
 						src="assets/img/icons/platzi-icon.png"
+						class="training-logo-src"
 						alt="platzi icon"
 						loading="lazy"
 						itemprop="logo"
 					/>
 					<figcaption class="training-date">
 						<h4>
-							<span itemprop="name">Platzi</span>
+							<span itemprop="name" class="training-logo-name">Platzi</span>
 							<span class="dot">•</span>
-
-							<time datetime="2022" itemprop="dateCreated">2022</time>
+							<time datetime="2022" itemprop="dateCreated" class="training-date-year"
+								>2022</time
+							>
 						</h4>
 					</figcaption>
 				</figure>
@@ -446,8 +451,9 @@
 					itemprop="image"
 					loading="lazy"
 					title="Certificado Linux Terminal Platzi"
+					class="training-certificate-img"
 				/>
-				<p itemprop="description">
+				<p itemprop="description" class="training-date-description">
 					Manejo de archivos, procesos, permisos y usuarios en Linux y Windows.
 				</p>
 			</article>
@@ -486,6 +492,26 @@
 				</li>
 			</ul>
 		</footer>
+		<div class="modal-certificate">
+			<article>
+				<img src="" class="modal-certificate-img" />
+				<div class="modal-certificate-info">
+					<h3 class="modal-certificate-title"></h3>
+					<figure class="icon-container" itemscope>
+						<img src="" class="modal-certificate-logo" />
+						<figcaption class="training-date">
+							<h4>
+								<span class="modal-certificate-logo-name">Platzi</span>
+								<span class="dot">•</span>
+								<time class="modal-certificate-date"></time>
+							</h4>
+						</figcaption>
+					</figure>
+					<p itemprop="description" class="modal-certificate-description"></p>
+					<button class="primary-btn close-certificate-modal">Cerrar</button>
+				</div>
+			</article>
+		</div>
 		<script src="./js/index.js"></script>
 	</body>
 </html>

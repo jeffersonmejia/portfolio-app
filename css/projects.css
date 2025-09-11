@@ -58,19 +58,6 @@ hr {
 	margin-left: 1.5rem;
 }
 
-.primary-btn {
-	border-radius: 4px;
-	background-color: var(--secondary-color);
-	border: none;
-	color: var(--primary-color);
-	text-decoration: none;
-	transition: background-color 0.3s ease-in;
-}
-
-.primary-btn:hover {
-	background-color: var(--hover-color);
-}
-
 .section-projects {
 	margin-top: 1.5rem;
 	display: grid;
@@ -78,7 +65,6 @@ hr {
 }
 
 .section-projects a {
-	color: var(--primary-text-color);
 	text-decoration: none;
 	font-weight: 600;
 }
@@ -92,14 +78,6 @@ hr {
 .date-project {
 	margin-left: auto;
 	font-size: 0.8rem;
-}
-
-.section-projects a {
-	background-color: var(--primary-btn-color);
-	color: var(--primary-bg-color);
-	padding: 0.5rem;
-	border-radius: var(--secondary-border-radius);
-	font-size: 0.7rem;
 }
 
 .section-proyects h2 {

@@ -1,5 +1,6 @@
 :root {
 	--primary-bg-color: white;
+	--primary-bg-color-50: rgba(255, 255, 255, 0.5);
 	--secondary-bg-color: rgb(241, 241, 241);
 	--primary-title-color: #202124;
 	--primary-text-color: rgb(95, 99, 104);
@@ -19,6 +20,7 @@
 
 body.dark {
 	--primary-bg-color: #100f14;
+	--primary-bg-color-50: rgba(0, 0, 0, 0.9);
 	--secondary-bg-color: #383649;
 	--primary-title-color: #ffffff;
 	--primary-text-color: #b1b1b1;
@@ -29,7 +31,7 @@ body.dark {
 	--filter-box-color: #ececec;
 	--primary-box-shadow-color: rgba(0, 0, 0, 0.5);
 	--primary-border-color: #2d2c3b;
-	--tertiary-bg-color: #23212b;
+	--tertiary-bg-color: #17151b;
 }
 
 * {
@@ -191,6 +193,16 @@ img {
 
 .hr-footer {
 	margin: 1.5rem auto;
+}
+
+.primary-btn {
+	background-color: var(--primary-btn-color);
+	color: white;
+	padding: 0.5rem;
+	border-radius: var(--secondary-border-radius);
+	font-size: 0.7rem;
+	border: none;
+	cursor: pointer;
 }
 
 footer {
