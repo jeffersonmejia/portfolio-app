@@ -87,8 +87,23 @@ hr {
 	font-weight: 600;
 }
 
-.section-projects a:hover {
-	color: var(--primary-btn-color-hover);
+.section-projects h3 {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.date-project {
+	margin-left: auto;
+	font-size: 0.8rem;
+}
+
+.section-projects a {
+	background-color: var(--primary-btn-color);
+	color: var(--primary-bg-color);
+	padding: 0.5rem;
+	border-radius: var(--secondary-border-radius);
+	font-size: 0.7rem;
 }
 
 .section-proyects h2 {
@@ -172,7 +187,12 @@ section h2 {
 /* DESKTOP VERSION */
 @media screen and (min-width: 600px) {
 	.section-projects {
-		grid-template-columns: repeat(auto-fill, minmax(350px, auto));
+		grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+		column-gap: 2rem;
+		row-gap: 2rem;
+	}
+	.section-projects h3 {
+		margin-bottom: 0.5rem;
 	}
 
 	h2 {
@@ -181,6 +201,12 @@ section h2 {
 }
 
 @media screen and (min-width: 1080px) {
+	.section-projects {
+		grid-template-columns: repeat(auto-fill, minmax(350px, auto));
+	}
+	.section-projects a {
+		font-size: 0.85rem;
+	}
 	.section-projects {
 		margin: auto;
 		margin-top: 0;
