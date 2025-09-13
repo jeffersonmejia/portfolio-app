@@ -23,7 +23,10 @@ const d = document,
 	$modalCertificateImg = $modalCertificate.querySelector('.modal-certificate-img'),
 	$modalCertificateDescription = $modalCertificate.querySelector(
 		'.modal-certificate-description'
-	)
+	),
+	$curriculumAncle = d.getElementById('curriculum-ancle'),
+	$modalNotification = d.querySelector('.modal-notification'),
+	$modalNotificationMessage = d.querySelector('.modal-notification small')
 
 //GLOBAL SCOPE VARS
 let intervalAudioSpeaking = null,
@@ -185,6 +188,42 @@ function closeModal() {
 	$modalCertificate.classList.remove('modal-certificate-active')
 	$body.style.overflowY = 'scroll'
 }
+function updateCurriculumLink() {
+	const isDark =
+		$body.classList.contains('dark') || localStorage.getItem('dark-mode') === 'enabled'
+	if (isDark) {
+		$curriculumAncle.href = 'assets/docs/curriculum-dark.pdf'
+	} else {
+		$curriculumAncle.href = 'assets/docs/curriculum-light.pdf'
+	}
+	notifyCurriculum()
+}
+
+function pushNotification(message) {
+	if (!$modalNotification.classList.contains('.modal-notification-active')) {
+		$modalNotification.classList.add('modal-notification-active')
+		$modalNotificationMessage.textContent = message
+		setTimeout(() => {
+			$modalNotification.classList.remove('modal-notification-active')
+		}, 4500)
+	} else {
+		$modalNotification.classList.remove('modal-notification-active')
+		$modalNotificationMessage.textContent = ''
+	}
+	$darkBtn.classList.add('beat-anim')
+	setTimeout(() => {
+		$darkBtn.classList.remove('beat-anim')
+	}, 3000)
+}
+
+function notifyCurriculum() {
+	const isDark =
+			$body.classList.contains('dark') || localStorage.getItem('dark-mode') === 'enabled',
+		customModeStyleUserOn = isDark ? 'oscuro' : 'claro',
+		customModeStyleUserOff = isDark ? 'claro' : 'oscuro',
+		message = `Se descargará el curriculum en modo ${customModeStyleUserOn}. Si deseas el modo ${customModeStyleUserOff} actívalo.`
+	pushNotification(message)
+}
 
 d.addEventListener('DOMContentLoaded', (e) => {
 	$body.classList.toggle('body-hidden')
@@ -192,6 +231,10 @@ d.addEventListener('DOMContentLoaded', (e) => {
 })
 
 d.addEventListener('click', (e) => {
+	if (e.target.matches('#curriculum-ancle') || e.target.matches('#curriculum-ancle *')) {
+		updateCurriculumLink()
+	}
+
 	if (e.target.matches('#speaker-btn') || e.target.matches('#speaker-btn *')) {
 		playAudioSpeaking()
 	}

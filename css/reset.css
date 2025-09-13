@@ -2,6 +2,7 @@
 	--primary-bg-color: white;
 	--primary-bg-color-50: rgba(255, 255, 255, 0.5);
 	--secondary-bg-color: rgb(241, 241, 241);
+	--quaternary-bg-color: rgb(225, 225, 225);
 	--primary-title-color: #202124;
 	--primary-text-color: rgb(95, 99, 104);
 	--primary-btn-color: rgb(59, 76, 224);
@@ -22,6 +23,8 @@ body.dark {
 	--primary-bg-color: #100f14;
 	--primary-bg-color-50: rgba(0, 0, 0, 0.9);
 	--secondary-bg-color: #383649;
+	--quaternary-bg-color: #3e3c52;
+
 	--primary-title-color: #ffffff;
 	--primary-text-color: #b1b1b1;
 	--primary-btn-color: #8698fc;
@@ -120,6 +123,38 @@ nav a {
 	font-weight: 550;
 	font-size: 0.7rem;
 	color: var(--primary-btn-color);
+}
+
+.beat-anim {
+	animation: beat 3s infinite;
+	transform-origin: center;
+}
+
+@keyframes beat {
+	0% {
+		transform: scale(1);
+		background-color: var(--secondary-bg-color);
+	}
+	20% {
+		transform: scale(1.05);
+		background-color: var(--quaternary-bg-color);
+	}
+	40% {
+		transform: scale(1);
+		background-color: var(--secondary-bg-color);
+	}
+	60% {
+		transform: scale(1.05);
+		background-color: var(--quaternary-bg-color);
+	}
+	80% {
+		transform: scale(1);
+		background-color: var(--secondary-bg-color);
+	}
+	100% {
+		transform: scale(1);
+		background-color: var(--secondary-bg-color);
+	}
 }
 
 nav a:hover,
@@ -240,6 +275,32 @@ time {
 	color: var(--primary-text-color);
 }
 
+.modal-notification {
+	position: fixed;
+	bottom: 12vh;
+	right: 3vh;
+	width: 80%;
+	background-color: var(--tertiary-bg-color);
+	border: 1px solid var(--primary-border-color);
+	border-radius: var(--primary-border-radius);
+	padding: 1rem;
+	max-width: 300px;
+	transform: translateY(150%);
+	transition: transform 0.3s ease-in;
+}
+
+.modal-notification h5 {
+	background-color: var(--tertiary-bg-color);
+	padding-bottom: 0.5rem;
+}
+.modal-notification small {
+	text-align: justify;
+}
+
+.modal-notification-active {
+	transform: translateY(0);
+}
+
 @media screen and (min-width: 800px) {
 	nav .secondary-btn,
 	nav ul span {
@@ -259,6 +320,10 @@ time {
 		grid-column: 1/-1;
 		border: none;
 		box-shadow: none;
+	}
+
+	.modal-notification {
+		bottom: 2vh;
 	}
 
 	nav a {

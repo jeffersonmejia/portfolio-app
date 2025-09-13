@@ -25,9 +25,20 @@ function localDarkMode() {
 	}
 }
 
+function updateCurriculumLink() {
+	const isDark =
+		$body.classList.contains('dark') || localStorage.getItem('dark-mode') === 'enabled'
+	$curriculumAncle.href = isDark
+		? 'assets/docs/curriculum-dark.pdf'
+		: 'assets/docs/curriculum-light.pdf'
+}
+
 d.addEventListener('click', (e) => {
 	if (e.target.matches('.dark-mode-btn')) {
 		toggleDarkMode()
+	}
+	if (e.target.matches('#curriculum-ancle') || e.target.matches('#curriculum-ancle *')) {
+		updateCurriculumLink()
 	}
 })
 d.addEventListener('DOMContentLoaded', (e) => {

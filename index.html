@@ -69,12 +69,17 @@
 				</li>
 				<li>
 					<a
-						href="assets/docs/curriculum.pdf"
-						target="_blank"
+						href="assets/docs/curriculum-light.pdf"
+						download="curriculum.pdf"
 						class="secondary-btn"
-						itemprop="url"
+						itemprop="hasPart"
+						id="curriculum-ancle"
+						itemscope
+						itemtype="http://schema.org/MediaObject"
 					>
 						Curriculum
+						<meta itemprop="encodingFormat" content="application/pdf" />
+						<meta itemprop="name" content="Curriculum Jefferson Mejía" />
 					</a>
 				</li>
 				<li>
@@ -302,7 +307,7 @@
 		<section class="section-training">
 			<h2>📖 Capacitaciones profesionales</h2>
 			<article itemscope itemtype="https://schema.org/Course">
-				<h3 itemprop="name" class="training-title">Fullstack Developer con JavaScript</h3>
+				<h3 itemprop="name" class="training-title">JavaScript Fullstack Developer</h3>
 				<figure
 					class="icon-container"
 					itemscope
@@ -415,7 +420,9 @@
 					title="Certificado de Fundamentos de Base de Datos - Platzi"
 				/>
 				<p itemprop="description" class="training-date-description">
-					Diseño de bases de datos con SQL, consultas complejas, DDL y DML.
+					Diseño de bases de datos con SQL Database Diagram Language DDL y Database Model
+					Language DML. Aplicación de operadores CRUD select, insert, update y delete,
+					manejando consultas complejas con selectores aninados.
 				</p>
 			</article>
 
@@ -549,6 +556,10 @@
 					<button class="primary-btn close-certificate-modal">Cerrar</button>
 				</div>
 			</article>
+		</div>
+		<div class="modal-notification">
+			<h5>Notificación</h5>
+			<small></small>
 		</div>
 		<script src="./js/index.js"></script>
 	</body>
