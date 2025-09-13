@@ -1,6 +1,9 @@
 const d = document,
 	$body = d.querySelector('body'),
-	$darkBtn = d.querySelector('.dark-mode-btn')
+	$darkBtn = d.querySelector('.dark-mode-btn'),
+	$curriculumAncle = d.getElementById('curriculum-ancle'),
+	$modalNotification = d.querySelector('.modal-notification'),
+	$modalNotificationMessage = d.querySelector('.modal-notification small')
 
 function toggleDarkMode() {
 	if (!$body.classList.contains('dark')) {
@@ -28,9 +31,38 @@ function localDarkMode() {
 function updateCurriculumLink() {
 	const isDark =
 		$body.classList.contains('dark') || localStorage.getItem('dark-mode') === 'enabled'
-	$curriculumAncle.href = isDark
-		? 'assets/docs/curriculum-dark.pdf'
-		: 'assets/docs/curriculum-light.pdf'
+	if (isDark) {
+		$curriculumAncle.href = 'assets/docs/curriculum-dark.pdf'
+	} else {
+		$curriculumAncle.href = 'assets/docs/curriculum-light.pdf'
+	}
+	notifyCurriculum()
+}
+
+function pushNotification(message) {
+	if (!$modalNotification.classList.contains('.modal-notification-active')) {
+		$modalNotification.classList.add('modal-notification-active')
+		$modalNotificationMessage.textContent = message
+		setTimeout(() => {
+			$modalNotification.classList.remove('modal-notification-active')
+		}, 4500)
+	} else {
+		$modalNotification.classList.remove('modal-notification-active')
+		$modalNotificationMessage.textContent = ''
+	}
+	$darkBtn.classList.add('beat-anim')
+	setTimeout(() => {
+		$darkBtn.classList.remove('beat-anim')
+	}, 3000)
+}
+
+function notifyCurriculum() {
+	const isDark =
+			$body.classList.contains('dark') || localStorage.getItem('dark-mode') === 'enabled',
+		customModeStyleUserOn = isDark ? 'oscuro' : 'claro',
+		customModeStyleUserOff = isDark ? 'claro' : 'oscuro',
+		message = `Se descargará el curriculum en modo ${customModeStyleUserOn}. Si deseas el modo ${customModeStyleUserOff} actívalo.`
+	pushNotification(message)
 }
 
 d.addEventListener('click', (e) => {
