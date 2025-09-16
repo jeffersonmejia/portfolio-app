@@ -17,6 +17,8 @@
 	--font-family: 'DM Sans', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI',
 		Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
 	--tertiary-bg-color: rgb(248, 248, 248);
+	--quinary-bg-color: #e6eef4;
+	--color-behind-box: #bcc3ca;
 }
 
 body.dark {
@@ -24,7 +26,8 @@ body.dark {
 	--primary-bg-color-50: rgba(0, 0, 0, 0.9);
 	--secondary-bg-color: #383649;
 	--quaternary-bg-color: #3e3c52;
-
+	--quinary-bg-color: #202524;
+	--color-behind-box: #2d3533;
 	--primary-title-color: #ffffff;
 	--primary-text-color: #b1b1b1;
 	--primary-btn-color: #8698fc;
@@ -232,7 +235,7 @@ img {
 
 .primary-btn {
 	background-color: var(--primary-btn-color);
-	color: white;
+	color: var(--primary-bg-color);
 	padding: 0.5rem;
 	border-radius: var(--secondary-border-radius);
 	font-size: 0.7rem;
