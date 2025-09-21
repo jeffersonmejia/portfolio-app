@@ -17,8 +17,8 @@
 	--font-family: 'DM Sans', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI',
 		Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
 	--tertiary-bg-color: rgb(248, 248, 248);
-	--quinary-bg-color: #e6eef4;
-	--color-behind-box: #bcc3ca;
+	--quinary-bg-color: #e6f4ee;
+	--color-behind-box: #cfdad7;
 }
 
 body.dark {
