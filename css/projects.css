@@ -179,7 +179,7 @@ section h2 {
 
 @media screen and (min-width: 1080px) {
 	.section-projects {
-		grid-template-columns: repeat(auto-fill, minmax(350px, auto));
+		grid-template-columns: repeat(auto-fill, minmax(345px, auto));
 	}
 	.section-projects a {
 		font-size: 0.85rem;
