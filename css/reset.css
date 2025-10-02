@@ -304,6 +304,105 @@ time {
 	transform: translateY(0);
 }
 
+.email-send-modal {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: var(--primary-bg-color-50);
+	z-index: 999;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.email-send-modal form {
+	background-color: var(--tertiary-bg-color);
+	display: flex;
+	flex-direction: column;
+	padding: 1.5rem;
+	border-radius: var(--primary-border-radius);
+	width: 90%;
+	max-width: 400px;
+	gap: 1rem;
+	border: 1px solid var(--primary-border-color);
+	padding-bottom: 2rem;
+}
+.email-send-modal h3 {
+	background-color: transparent;
+	margin-top: 0.5rem;
+}
+
+.get-curriculum-btn-desktop {
+	display: none;
+}
+
+.get-curriculum-btn-mobile {
+	margin: auto;
+	display: flex;
+	margin-bottom: 1.5rem;
+}
+
+.email-send-modal input,
+.email-send-modal textarea {
+	border-radius: var(--primary-border-radius);
+	border: 1px solid var(--primary-border-color);
+	background-color: var(--primary-bg-color);
+	color: var(--primary-text-color);
+	padding: 1rem;
+}
+
+.email-send-modal input:focus,
+.email-send-modal textarea:focus {
+	outline: 2px solid var(--primary-btn-color);
+	border: 1px solid transparent;
+}
+
+.email-send-modal input[type='submit'],
+.email-send-modal input[type='button'] {
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	cursor: pointer;
+	outline: none;
+	border: 1px solid var(--primary-border-color);
+	font-weight: 400;
+	width: 100px;
+}
+
+.email-send-modal input[type='submit'] {
+	background-color: var(--primary-btn-color);
+	border: none;
+	color: var(--primary-bg-color);
+}
+.email-send-modal .group-btn {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+textarea {
+	resize: none;
+}
+
+@media screen and (min-width: 500px) {
+	.get-curriculum-btn-desktop {
+		display: inline-block;
+		margin-right: 0.5rem;
+	}
+
+	.get-curriculum-btn-mobile {
+		display: none;
+	}
+}
+
 @media screen and (min-width: 800px) {
 	nav .secondary-btn,
 	nav ul span {

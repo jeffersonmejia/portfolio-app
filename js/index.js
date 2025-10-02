@@ -26,7 +26,10 @@ const d = document,
 	),
 	$curriculumAncle = d.getElementById('curriculum-ancle'),
 	$modalNotification = d.querySelector('.modal-notification'),
-	$modalNotificationMessage = d.querySelector('.modal-notification small')
+	$modalNotificationMessage = d.querySelector('.modal-notification small'),
+	$modalCurriculumForm = d.querySelector('.email-send-modal'),
+	$formEmailCurriculum = d.getElementById('email-form-curriculum'),
+	$curriculumMessage = d.querySelector('.curriculum-message')
 
 //GLOBAL SCOPE VARS
 let intervalAudioSpeaking = null,
@@ -225,14 +228,39 @@ function notifyCurriculum() {
 	pushNotification(message)
 }
 
+async function sendEmail() {
+	emailjs.init('aWC6F_7PfAJcrh2SF')
+	console.log('ok')
+	try {
+		await emailjs.send('service_pik9mne', 'template_xfzrv13', $formEmailCurriculum)
+		$curriculumMessage.textContent = 'Correo enviado.'
+	} catch (err) {
+		$curriculumMessage.textContent = 'Correo no enviado, intenta más tarde.'
+	}
+}
+
+function toggleModalCurriculum() {
+	$modalCurriculumForm.classList.toggle('hidden')
+}
+
 d.addEventListener('DOMContentLoaded', (e) => {
 	$body.classList.toggle('body-hidden')
 	localDarkMode()
 })
 
-d.addEventListener('click', (e) => {
+d.addEventListener('click', async (e) => {
 	if (e.target.matches('#curriculum-ancle') || e.target.matches('#curriculum-ancle *')) {
 		updateCurriculumLink()
+	}
+	if (
+		e.target.matches('#email-form-cancel-btn') ||
+		e.target.matches('.get-curriculum-btn')
+	) {
+		toggleModalCurriculum()
+	}
+	if (e.target.matches('#email-form-submit-btn')) {
+		e.preventDefault()
+		await sendEmail()
 	}
 
 	if (e.target.matches('#speaker-btn') || e.target.matches('#speaker-btn *')) {
@@ -249,7 +277,10 @@ d.addEventListener('click', (e) => {
 	}
 })
 d.addEventListener('keydown', (e) => {
-	if (e.key.toLowerCase() === 'd') toggleDarkMode()
+	const tag = e.target.tagName.toLowerCase()
+	if (tag !== 'input' && tag !== 'textarea' && e.key.toLowerCase() === 'd') {
+		toggleDarkMode()
+	}
 })
 
 w.addEventListener('scroll', () => {

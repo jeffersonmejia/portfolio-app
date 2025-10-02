@@ -68,21 +68,6 @@
 					<a href="#contact-me" class="secondary-btn" itemprop="url">Contacto</a>
 				</li>
 				<li>
-					<a
-						href="assets/docs/curriculum-light.pdf"
-						class="secondary-btn"
-						itemprop="hasPart"
-						id="curriculum-ancle"
-						download="curriculum.pdf"
-						itemscope
-						itemtype="http://schema.org/MediaObject"
-					>
-						Curriculum
-						<meta itemprop="encodingFormat" content="application/pdf" />
-						<meta itemprop="name" content="Curriculum Jefferson Mejía" />
-					</a>
-				</li>
-				<li>
 					<img
 						src="assets/img/icons/dark.svg"
 						alt="Botón modo oscuro"
@@ -140,9 +125,19 @@
 		>
 			<h2 itemprop="headline">🎯 Objetivo Profesional</h2>
 			<article>
-				<h3 class="personal-target" itemprop="about" title="Especializado en ciberseguridad defensiva de aplicaciones web y móvil, SIEM, IPS, EDR y hacking ético">Ingeniero SOC - Application Security AppSec</h3>
+				<h3
+					class="personal-target"
+					itemprop="about"
+					title="Especializado en ciberseguridad defensiva de aplicaciones web y móvil, SIEM, IPS, EDR y hacking ético"
+				>
+					Ingeniero SOC - Application Security AppSec
+				</h3>
 				<p itemprop="text">
-					Especializarme en Application Security AppSec mediante la certificación CompTIA CASP+, aplicando ciberseguridad defensiva en aplicaciones web y móvil, implementando SIEM, IPS y EDR para mejorar la detección temprana de intrusos y la respuesta a incidentes, complementando mi formación con técnicas de hacking ético para anticipar vectores de ataque y prevenir exploits
+					Especializarme en Application Security AppSec mediante la certificación CompTIA
+					CASP+, aplicando ciberseguridad defensiva en aplicaciones web y móvil,
+					implementando SIEM, IPS y EDR para mejorar la detección temprana de intrusos y
+					la respuesta a incidentes, complementando mi formación con técnicas de hacking
+					ético para anticipar vectores de ataque y prevenir exploits
 				</p>
 			</article>
 		</section>
@@ -509,6 +504,9 @@
 		<!-- FOOTER -->
 		<hr class="hr-footer" />
 		<footer itemscope itemtype="https://schema.org/Person" itemprop="author">
+			<button class="primary-btn get-curriculum-btn get-curriculum-btn-mobile">
+				Solicitar curriculum
+			</button>
 			<ul>
 				<li id="contact-me">
 					<span
@@ -517,13 +515,9 @@
 					>
 				</li>
 				<li class="footer-social-networks">
-					<a
-						href="https://mail.google.com/mail/?view=cm&fs=1&to=jeffersonmejiach01@gmail.com&su=Hola,%20Jefferson.&body=Hola,%20Jefferson."
-						target="_blank"
-						itemprop="email"
-						>Correo</a
-					>
-					<span class="dot">•</span>
+					<button class="primary-btn get-curriculum-btn get-curriculum-btn-desktop">
+						Solicitar curriculum
+					</button>
 					<a
 						href="https://www.linkedin.com/in/jeffersonmejia/"
 						target="_blank"
@@ -553,10 +547,29 @@
 				</div>
 			</article>
 		</div>
-		<div class="modal-notification">
-			<h5>Notificación</h5>
-			<small></small>
+		<div class="email-send-modal hidden">
+			<form action="" id="email-form-curriculum">
+				<legend>
+					<h3>Solicitar curriculum</h3>
+				</legend>
+				<input type="text" placeholder="Correo electrónico" required autocomplete="off" />
+				<textarea
+					name=""
+					id=""
+					rows="5"
+					value="Hola, solicito su curriculum para conocer más información."
+					placeholder="Escribe tu mensaje adicional"
+					required
+					maxlength="200"
+				></textarea>
+				<small class="curriculum-message"> </small>
+				<div class="group-btn">
+					<input type="button" value="Cancelar" id="email-form-cancel-btn" />
+					<input type="submit" value="Enviar" id="email-form-submit-btn" />
+				</div>
+			</form>
 		</div>
+		<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 		<script src="./js/index.js"></script>
 	</body>
 </html>
