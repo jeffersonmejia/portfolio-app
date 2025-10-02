@@ -263,23 +263,25 @@
 
 		<small class="last-update">
 			<span>Última actualización:</span>
-			<time datetime="2025-09-10" itemprop="dateModified">10 de septiembre de 2025</time>
+			<time datetime="2025-09-10" itemprop="dateModified">02 de octubre de 2025</time>
 		</small>
 
 		<hr class="hr-footer" />
-		<footer>
+		<footer itemscope itemtype="https://schema.org/Person" itemprop="author">
+			<button class="primary-btn get-curriculum-btn get-curriculum-btn-mobile">
+				Solicitar curriculum
+			</button>
 			<ul>
 				<li id="contact-me">
-					<span>© 2025 Jefferson Mejía</span>
+					<span
+						>© <time datetime="2025">2025</time>
+						<span itemprop="name">Jefferson Mejía</span></span
+					>
 				</li>
 				<li class="footer-social-networks">
-					<a
-						href="https://mail.google.com/mail/?view=cm&fs=1&to=jeffersonmejiach01@gmail.com&su=Contacto&body=Hola,%20Jefferson.%20Deseo%20contactarme%20contigo."
-						target="_blank"
-						itemprop="email"
-						>Correo</a
-					>
-					<span class="dot">•</span>
+					<button class="primary-btn get-curriculum-btn get-curriculum-btn-desktop">
+						Solicitar curriculum
+					</button>
 					<a
 						href="https://www.linkedin.com/in/jeffersonmejia/"
 						target="_blank"
@@ -293,6 +295,29 @@
 			<h5>Notificación</h5>
 			<small></small>
 		</div>
+		<div class="email-send-modal hidden">
+			<form action="" id="email-form-curriculum">
+				<legend>
+					<h3>Solicitar curriculum</h3>
+				</legend>
+				<input type="text" placeholder="Correo electrónico" required autocomplete="off" />
+				<textarea
+					name=""
+					id=""
+					rows="5"
+					placeholder="Escribe un mensaje adicional."
+					required
+					autocomplete="off"
+					maxlength="200"
+				></textarea>
+				<small class="curriculum-message"> </small>
+				<div class="group-btn">
+					<input type="button" value="Cancelar" id="email-form-cancel-btn" />
+					<input type="submit" value="Enviar" id="email-form-submit-btn" />
+				</div>
+			</form>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 		<script src="js/projects.js"></script>
 	</body>
 </html>
