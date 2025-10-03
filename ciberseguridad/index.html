@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
+		<!-- TITLE, FAVICON -->
+		<title>Jefferson Mejía - inicio</title>
+		<link rel="shortcut icon" href="../assets/img/icons/favico.ico" type="image/x-icon" />
+		<!-- SEO METADATA -->
+		<meta
+			name="description"
+			content="Jefferson Mejía - Estudiante de Ingeniería en Tecnologías de la Información en la Universidad de las Fuerzas Armadas ESPE, Cyber Defender autodidacta y Desarrollador web."
+		/>
+		<meta
+			name="keywords"
+			content="Jefferson Mejía, desarrollador web, frontend, backend, ciberseguridad, ESPE, Universidad de las Fuerzas Armadas, Ingeniería TI, Ingeniería En Tecnologías de Información"
+		/>
+		<meta name="author" content="Jefferson Mejía" />
+		<meta name="robots" content="index, follow" />
+		<meta name="language" content="es" />
+		<meta name="theme-color" content="#ffffff" />
+		<link rel="canonical" href="https://jeffersonmejia.github.io/portfolio-app/" />
+		<!-- OG METADATA -->
+		<meta property="og:title" content="Ing. TI, Desarrollador Web y Cyber Defender" />
+		<meta
+			property="og:description"
+			content="Jefferson Mejía - Estudiante de Ingeniería en Tecnologías de la Información en la Universidad de las Fuerzas Armadas ESPE, Cyber Defender autodidacta y Desarrollador web."
+		/>
+		<meta property="og:image" content="assets/img/profile.webp" />
+		<meta property="og:url" content="https://jeffersonmejia.github.io/portfolio-app/" />
+		<!-- TWITTER METADATA -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta
+			name="twitter:title"
+			content="Jefferson Mejía - Ing. TI, Desarrollador Web y Cyber Defender"
+		/>
+		<meta
+			name="twitter:description"
+			content="Jefferson Mejía - Estudiante de Ingeniería en Tecnologías de la Información en la Universidad de las Fuerzas Armadas ESPE, Cyber Defender autodidacta y Desarrollador web."
+		/>
+		<meta name="twitter:image" content="assets/img/profile.webp" />
+		<meta name="twitter:url" content="https://jeffersonmejia.github.io/portfolio-app/" />
+		<!-- FONTS -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- STYLES -->
+		<link rel="stylesheet" href="../css/reset.css" />
+		<link rel="stylesheet" href="../css/ciberseguridad.css" />
+		<link rel="stylesheet" href="../css/article.css" />
+	</head>
+
+	<body class="body-hidden" itemscope itemtype="https://schema.org/WebSite">
+		<nav>
+			<ul>
+				<li>
+					<a href="../index.html" class="secondary-btn" itemprop="url">Inicio</a>
+				</li>
+				<li>
+					<a href="../proyectos.html" class="secondary-btn" itemprop="url">Proyectos</a>
+				</li>
+				<li>
+					<a href="#contact-me" class="secondary-btn" itemprop="url">Contacto</a>
+				</li>
+				<li>
+					<a
+						href="/ciberseguridad/index.html"
+						class="secondary-btn secondary-btn-active"
+						title="Aprende ciberseguridad: tutoriales y artículos"
+						>Ciberseguridad</a
+					>
+				</li>
+				<li>
+					<img
+						src="../assets/img/icons/dark.svg"
+						alt="Botón modo oscuro"
+						class="dark-mode-btn"
+						title="Atajo: Presiona la tecla D para activar/desactivar Dark Mode."
+					/>
+				</li>
+			</ul>
+		</nav>
+		<main>
+			<h1 class="logo">Aprende ciberserguridad</h1>
+			<section>
+				<h2>Proximamente.</h2>
+				<img
+					src="../assets/img/cover/cybersecurity-cover.jpeg"
+					alt=""
+					class="preview-img"
+				/>
+				<!-- <article>
+					<h2 class="article-title">...</h2>
+					<h3 class="article-subtitle">...</h3>
+					<div class="article-meta">
+						<span class="article-author">Jefferson Mejía</span>
+						<span class="dot">•</span>
+						<time class="article-datetime" datetime="2025-10-03"
+							>3 de octubre de 2025</time
+						>
+					</div>
+
+					<div class="article-references">
+						<h4>Referencias</h4>
+						<ul>
+							<li>
+								...
+								<a href="#" target="_blank">...</a>
+							</li>
+						</ul>
+					</div>
+				</article> -->
+			</section>
+		</main>
+		<!-- FOOTER -->
+		<hr class="hr-footer" />
+		<footer itemscope itemtype="https://schema.org/Person" itemprop="author">
+			<button class="primary-btn get-curriculum-btn get-curriculum-btn-mobile">
+				Solicitar curriculum
+			</button>
+			<ul>
+				<li id="contact-me">
+					<span
+						>© <time datetime="2025">2025</time>
+						<span itemprop="name">Jefferson Mejía</span></span
+					>
+				</li>
+				<li class="footer-social-networks">
+					<button class="primary-btn get-curriculum-btn get-curriculum-btn-desktop">
+						Solicitar curriculum
+					</button>
+					<a
+						href="https://www.linkedin.com/in/jeffersonmejia/"
+						target="_blank"
+						itemprop="sameAs"
+						class="tertiary-btn"
+						>LinkedIn</a
+					>
+				</li>
+			</ul>
+		</footer>
+		<div class="email-send-modal hidden">
+			<form action="" id="email-form-curriculum">
+				<legend>
+					<h3>Solicitar curriculum</h3>
+				</legend>
+				<input type="text" placeholder="Correo electrónico" required autocomplete="off" />
+				<textarea
+					name=""
+					id=""
+					rows="5"
+					placeholder="Escribe un mensaje adicional."
+					required
+					autocomplete="off"
+					maxlength="200"
+				></textarea>
+				<small class="curriculum-message"> </small>
+				<div class="group-btn">
+					<input type="button" value="Cancelar" id="email-form-cancel-btn" />
+					<input type="submit" value="Enviar" id="email-form-submit-btn" />
+				</div>
+			</form>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+		<script src="../js/ciberseguridad.js"></script>
+	</body>
+</html>

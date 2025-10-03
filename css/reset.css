@@ -5,35 +5,44 @@
 	--quaternary-bg-color: rgb(225, 225, 225);
 	--primary-title-color: #202124;
 	--primary-text-color: rgb(95, 99, 104);
-	--primary-btn-color: rgb(59, 76, 224);
-	--primary-btn-color-hover: rgb(59, 76, 224);
-	--secondary-btn-color: rgb(59, 76, 224);
-	--filter-box-bg-color: rgba(46, 152, 179, 0.9);
+
+	/* MODIFICADO, NUEVO COLOR */
+	--primary-btn-color: rgb(0, 168, 142);
+	--primary-btn-color-hover: rgb(9, 190, 163);
+
+	/* MODIFICADO, NUEVO COLOR */
+	--secondary-btn-color: rgb(0, 168, 142);
+	--filter-box-bg-color: rgb(109, 109, 109);
+
 	--filter-box-color: white;
 	--primary-box-shadow-color: rgba(0, 0, 0, 0.15);
 	--primary-border-color: rgb(230, 230, 230);
 	--primary-border-radius: 4px;
 	--secondary-border-radius: 24px;
-	--font-family: 'DM Sans', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI',
-		Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+	--font-family: 'Inter', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
 	--tertiary-bg-color: rgb(248, 248, 248);
-	--quinary-bg-color: #e6f4ee;
-	--color-behind-box: #cfdad7;
+	/* MODIFICADO, NUEVO COLOR */
+	--quinary-bg-color: rgb(245, 255, 254);
+	--color-behind-box: rgb(217, 230, 228);
 }
 
 body.dark {
-	--primary-bg-color: #100f14;
+	--primary-bg-color: rgb(0, 0, 0);
 	--primary-bg-color-50: rgba(0, 0, 0, 0.9);
 	--secondary-bg-color: #383649;
 	--quaternary-bg-color: #3e3c52;
-	--quinary-bg-color: #202524;
+	--quinary-bg-color: rgb(3, 24, 21);
 	--color-behind-box: #2d3533;
 	--primary-title-color: #ffffff;
 	--primary-text-color: #b1b1b1;
-	--primary-btn-color: #8698fc;
-	--secondary-btn-color: rgb(38, 47, 126);
-	--primary-btn-color-hover: #8698fc;
-	--filter-box-bg-color: rgba(27, 93, 109, 0.9);
+
+	--primary-btn-color: rgb(35, 209, 174);
+	--primary-btn-color-hover: rgb(37, 224, 187);
+
+	--secondary-btn-color: rgb(35, 209, 174);
+
+	--filter-box-bg-color: rgb(29, 29, 29);
 	--filter-box-color: #ececec;
 	--primary-box-shadow-color: rgba(0, 0, 0, 0.5);
 	--primary-border-color: #2d2c3b;
@@ -123,6 +132,7 @@ nav a {
 	text-decoration: none;
 	padding: 1.5rem 0;
 	height: 100%;
+	transition: color 0.3s ease-in;
 	font-weight: 550;
 	font-size: 0.7rem;
 	color: var(--primary-btn-color);
@@ -237,12 +247,27 @@ img {
 	background-color: var(--primary-btn-color);
 	color: var(--primary-bg-color);
 	padding: 0.5rem;
-	border-radius: var(--secondary-border-radius);
+	border-radius: var(--primary-border-radius);
 	font-size: 0.7rem;
 	border: none;
 	cursor: pointer;
+	transition: background 0.3s ease-in;
 }
 
+.primary-btn:hover {
+	background-color: var(--primary-btn-color-hover);
+}
+.tertiary-btn {
+	border: 1px solid var(--primary-btn-color);
+	background-color: var(--primary-bg-color);
+	color: var(--primary-btn-color);
+	padding: 0.45rem;
+	border-radius: var(--primary-border-radius);
+	font-size: 0.7rem;
+	cursor: pointer;
+	transition: background 0.3s ease-in;
+	text-decoration: none;
+}
 footer {
 	padding: 0 1.5rem 5rem;
 	grid-column: 2/-1;
@@ -269,12 +294,15 @@ footer span {
 }
 
 .training-date h4 {
-	font-weight: 600;
+	font-weight: 400;
+	display: flex;
+	align-items: center;
+	gap: 0.2rem;
 }
 
 time {
-	font-weight: 400;
 	font-size: 0.9rem;
+	font-weight: 400;
 	color: var(--primary-text-color);
 }
 
@@ -380,7 +408,12 @@ time {
 	background-color: var(--primary-btn-color);
 	border: none;
 	color: var(--primary-bg-color);
+	transition: background 0.3s ease-in;
 }
+.email-send-modal input[type='submit']:hover {
+	background-color: var(--primary-btn-color-hover);
+}
+
 .email-send-modal .group-btn {
 	display: flex;
 	align-items: center;
@@ -408,6 +441,10 @@ textarea {
 }
 
 @media screen and (min-width: 800px) {
+	footer {
+		padding-left: 0;
+		padding-right: 0;
+	}
 	nav .secondary-btn,
 	nav ul span {
 		font-size: 0.9rem;
