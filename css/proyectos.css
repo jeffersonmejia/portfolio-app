@@ -142,6 +142,9 @@ section p span {
 
 section h3 {
 	padding-bottom: 0.5rem;
+	display: flex;
+	flex-direction: row-reverse;
+	gap: 0.7rem;
 }
 
 section p {
@@ -184,6 +187,13 @@ section h1 {
 	}
 }
 
+@media screen and (min-width: 700px) {
+	h1 {
+		margin-top: 1.2rem;
+		margin-bottom: -1rem;
+	}
+}
+
 @media screen and (min-width: 1080px) {
 	.section-projects {
 		grid-template-columns: repeat(auto-fill, minmax(345px, auto));
@@ -197,7 +207,7 @@ section h1 {
 	}
 
 	section h1 {
-		top: 10vh;
+		top: 9.9vh;
 	}
 
 	.section-projects small {

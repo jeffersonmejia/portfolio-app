@@ -715,7 +715,7 @@ hr.hr-experience {
 	.section-skills h2:first-child,
 	.section-training h2,
 	.section-about-me h2 {
-		top: 10vh;
+		top: 9.9vh;
 		position: sticky;
 	}
 

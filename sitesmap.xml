@@ -9,8 +9,14 @@
   </url>
 
   <url>
-    <loc>https://jeffersonmejia.github.io/portfolio-app/projects.html</loc>
+    <loc>https://jeffersonmejia.github.io/portfolio-app/proyectos.html</loc>
     <lastmod>2025-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+    <url>
+    <loc>https://jeffersonmejia.github.io/portfolio-app/ciberseguridad</loc>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
