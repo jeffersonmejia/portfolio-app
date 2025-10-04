@@ -302,17 +302,32 @@
 				<legend>
 					<h3>Solicitar curriculum</h3>
 				</legend>
-				<input type="text" placeholder="Correo electrónico" required autocomplete="off" />
+				<input
+					type="text"
+					placeholder="Entidad que representa"
+					required
+					autocomplete="off"
+				/>
+				<input type="text" placeholder="Nombres" required autocomplete="off" />
+
+				<input
+					type="email"
+					placeholder="Correo electrónico"
+					required
+					autocomplete="off"
+				/>
+				<input type="text" placeholder="Área de aplicación" required autocomplete="off" />
 				<textarea
 					name=""
 					id=""
 					rows="5"
-					placeholder="Escribe un mensaje adicional."
-					required
+					placeholder="Escribe un mensaje (opcional)"
 					autocomplete="off"
 					maxlength="200"
 				></textarea>
-				<small class="curriculum-message"> </small>
+				<small class="curriculum-message"
+					>La información enviada será tratada con absoluta confidencialidad.
+				</small>
 				<div class="group-btn">
 					<input type="button" value="Cancelar" id="email-form-cancel-btn" />
 					<input type="submit" value="Enviar" id="email-form-submit-btn" />

@@ -1,6 +1,6 @@
 :root {
 	--primary-bg-color: white;
-	--primary-bg-color-50: rgba(255, 255, 255, 0.5);
+	--primary-bg-color-50: rgba(0, 0, 0, 0.5);
 	--secondary-bg-color: rgb(241, 241, 241);
 	--quaternary-bg-color: rgb(225, 225, 225);
 	--primary-title-color: #202124;
@@ -344,6 +344,8 @@ time {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	backdrop-filter: blur(2px);
+	-webkit-backdrop-filter: blur(2px);
 }
 
 .email-send-modal form {
@@ -355,12 +357,38 @@ time {
 	width: 90%;
 	max-width: 400px;
 	gap: 1rem;
-	border: 1px solid var(--primary-border-color);
+	/* border: 1px solid var(--primary-border-color); */
 	padding-bottom: 2rem;
 }
 .email-send-modal h3 {
 	background-color: transparent;
-	margin-top: 0.5rem;
+	margin-top: 0.5re m;
+}
+
+.curriculum-text-email span:first-child {
+	color: var(--primary-title-color);
+}
+
+.email-send-modal h3 {
+	color: var(--primary-title-color);
+}
+
+.curriculum-text-email {
+	text-align: justify;
+}
+
+.politics-list {
+	color: var(--primary-text-color);
+	font-size: 0.8rem;
+	text-align: justify;
+	padding-left: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.curriculum-message {
+	text-align: justify;
 }
 
 .get-curriculum-btn-desktop {

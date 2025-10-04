@@ -30,12 +30,16 @@ const d = document,
 	$modalCurriculumForm = d.querySelector('.email-send-modal'),
 	$formEmailCurriculum = d.getElementById('email-form-curriculum'),
 	$curriculumMessage = d.querySelector('.curriculum-message'),
-	$speakerImg = d.querySelector('.speaker-img')
+	$speakerImg = d.querySelector('.speaker-img'),
+	$politicsList = d.querySelector('.politics-list'),
+	$curriculumTextEmail = d.querySelector('.curriculum-text-email'),
+	$curriculumTextEmailContent = d.querySelector('.curriculum-text-email-content')
 
 //GLOBAL SCOPE VARS
 let intervalAudioSpeaking = null,
 	timer = null,
-	isPlayingAudioSpeaking = false
+	isPlayingAudioSpeaking = false,
+	hasReadPolitics = false
 
 function changeLinkHeader() {
 	if (w.innerWidth >= 700) {
@@ -236,25 +240,49 @@ function notifyCurriculum() {
 	pushNotification(message)
 }
 
-async function sendEmail() {
-	const serviceID = 'service_pik9mne'
-	const templateID = 'template_xfzrv13'
-	const publicKey = 'aWC6F_7PfAJcrh2SF'
+async function sendEmail(submitBtn) {
+	const serviceID = 'service_pik9mne',
+		templateID = 'template_xfzrv13',
+		publicKey = 'aWC6F_7PfAJcrh2SF',
+		entity = $formEmailCurriculum.querySelector('input[name="entity"]').value,
+		nameUser = $formEmailCurriculum.querySelector('input[name="name"]').value,
+		email = $formEmailCurriculum.querySelector('input[name="email"]').value,
+		jobApplication = $formEmailCurriculum.querySelector(
+			'input[name="job_application"]'
+		).value,
+		messageOptional =
+			$formEmailCurriculum.querySelector('textarea[name="message_optional"]')?.value ||
+			'',
+		$hiddenInputs = Array.from(d.querySelectorAll('.email-form-hidden-input'))
 
-	const $inputEmail = $formEmailCurriculum.querySelector('input[type="text"]')
-	const $inputMessage = $formEmailCurriculum.querySelector('textarea')
-	const params = {
-		name: 'Usuario',
-		title: $inputMessage.value,
-		email: $inputEmail.value,
+	let titleMessage = `Hola, soy ${nameUser}, me identifico con correo: ${email}. Represento a la entidad ${entity}. El motivo del mensaje es para solicitar su curriculum y determinar si aplica al empleo ${jobApplication}.`
+	if (messageOptional.length > 0) {
+		titleMessage += ` ${messageOptional}`
 	}
-
-	emailjs.init(publicKey)
-	try {
-		await emailjs.send(serviceID, templateID, params)
-		$curriculumMessage.textContent = 'Correo enviado, pronto me contactaré contigo.'
-	} catch (err) {
-		$curriculumMessage.textContent = 'Correo no enviado, intenta más tarde.'
+	if (submitBtn.value !== 'Enviar') {
+		submitBtn.value = 'Enviar'
+		$hiddenInputs.forEach((el) => {
+			el.classList.add('hidden')
+		})
+		$curriculumTextEmail.classList.remove('hidden')
+		$curriculumTextEmailContent.innerText = `${titleMessage}`
+		$politicsList.classList.remove('hidden')
+	} else {
+		params = {
+			name: nameUser,
+			title: titleMessage,
+			email,
+		}
+		emailjs.init(publicKey)
+		try {
+			await emailjs.send(serviceID, templateID, params)
+			$curriculumMessage.textContent = 'Correo enviado, pronto me contactaré contigo.'
+		} catch (err) {
+			$curriculumMessage.textContent = 'Correo no enviado, intenta más tarde.'
+		}
+		setTimeout(() => {
+			location.reload()
+		}, 1500)
 	}
 }
 
@@ -283,8 +311,10 @@ d.addEventListener('click', async (e) => {
 		toggleModalCurriculum()
 	}
 	if (e.target.matches('#email-form-submit-btn')) {
-		e.preventDefault()
-		await sendEmail()
+		if ($formEmailCurriculum.checkValidity()) {
+			e.preventDefault()
+			await sendEmail(e.target)
+		}
 	}
 
 	if (e.target.matches('#speaker-btn') || e.target.matches('#speaker-btn *')) {

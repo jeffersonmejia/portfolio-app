@@ -277,6 +277,8 @@ hr.hr-experience {
 	align-items: center;
 	justify-content: center;
 	height: 100%;
+	backdrop-filter: blur(2px);
+	-webkit-backdrop-filter: blur(2px);
 }
 
 .modal-certificate article {
@@ -287,7 +289,7 @@ hr.hr-experience {
 	height: fit-content;
 	padding: 2rem;
 	border-radius: var(--primary-border-radius);
-	border: 1px solid var(--primary-border-color);
+	/* border: 1px solid var(--primary-border-color); */
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	justify-content: center;
