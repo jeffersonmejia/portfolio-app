@@ -121,46 +121,26 @@ function playAudioSpeaking() {
 	}
 }
 function toggleDarkMode() {
-	const $iconsPlatzi = d.querySelectorAll('img[src*="platzi"]')
 	if (!$body.classList.contains('dark')) {
 		$body.classList.toggle('dark')
-		$speakerImg.setAttribute('src', '../assets/img/icons/speaking-icon-dark.png')
 		$darkBtn.setAttribute('src', '../assets/img/icons/light.svg')
-		$iconsPlatzi.forEach((img) =>
-			img.setAttribute('src', '../assets/img/icons/platzi-icon-dark.png')
-		)
 		localStorage.setItem('dark-mode', 'enabled')
 	} else {
 		$body.classList.toggle('dark')
 		$darkBtn.setAttribute('src', '../assets/img/icons/dark.svg')
-		$speakerImg.setAttribute('src', '../assets/img/icons/speaking-icon.png')
 
-		$iconsPlatzi.forEach((img) =>
-			img.setAttribute('src', '../assets/img/icons/platzi-icon.png')
-		)
 		localStorage.setItem('dark-mode', 'disabled')
 	}
 }
 
 function localDarkMode() {
 	const darkMode = localStorage.getItem('dark-mode')
-	const $iconsPlatzi = d.querySelectorAll('img[src*="platzi"]')
 	if (darkMode === 'enabled') {
 		$body.classList.add('dark')
 		$darkBtn.setAttribute('src', '../assets/img/icons/light.svg')
-		$speakerImg.setAttribute('src', '../assets/img/icons/speaking-icon-dark.png')
-
-		$iconsPlatzi.forEach((img) =>
-			img.setAttribute('src', '../assets/img/icons/platzi-icon-dark.png')
-		)
 	} else {
 		$body.classList.remove('dark')
 		$darkBtn.setAttribute('src', '../assets/img/icons/dark.svg')
-		$speakerImg.setAttribute('src', '../assets/img/icons/speaking-icon.png')
-
-		$iconsPlatzi.forEach((img) =>
-			img.setAttribute('src', '../assets/img/icons/platzi-icon.png')
-		)
 	}
 }
 
