@@ -223,35 +223,72 @@
 				<legend>
 					<h3>Solicitar curriculum</h3>
 				</legend>
+				<h4 class="hidden-title hidden">Política de privacidad</h4>
 				<input
 					type="text"
 					placeholder="Entidad que representa"
 					required
+					name="entity"
 					autocomplete="off"
+					class="email-form-hidden-input"
 				/>
-				<input type="text" placeholder="Nombres" required autocomplete="off" />
+				<input
+					type="text"
+					name="name"
+					placeholder="Nombres"
+					required
+					autocomplete="off"
+					class="email-form-hidden-input"
+				/>
 
 				<input
 					type="email"
+					name="email"
 					placeholder="Correo electrónico"
 					required
 					autocomplete="off"
+					class="email-form-hidden-input"
 				/>
-				<input type="text" placeholder="Área de aplicación" required autocomplete="off" />
+				<input
+					type="text"
+					name="job_application"
+					placeholder="Puesto de empleo"
+					required
+					autocomplete="off"
+					class="email-form-hidden-input"
+				/>
 				<textarea
 					name=""
 					id=""
 					rows="5"
+					name="message_optional"
 					placeholder="Escribe un mensaje (opcional)"
 					autocomplete="off"
 					maxlength="200"
+					class="email-form-hidden-input"
 				></textarea>
-				<small class="curriculum-message"
-					>La información enviada será tratada con absoluta confidencialidad.
-				</small>
+				<ul class="politics-list hidden">
+					<li>Yo, Jefferson Mejía, me comprometo a proteger tu información personal.</li>
+
+					<li>
+						Los correos que me envíes para solicitar mi currículum serán utilizados
+						únicamente para responder tu solicitud y no serán compartidos con terceros.
+					</li>
+
+					<li>
+						Puedes solicitar en cualquier momento que elimine tu información. Al enviar tu
+						correo, aceptas esta política de privacidad.
+					</li>
+				</ul>
+				<h4 class="hidden-title hidden">Resumen</h4>
+				<small class="curriculum-text-email hidden">
+					<span>Mensaje: </span>
+					<span class="curriculum-text-email-content"></span
+				></small>
+				<small class="curriculum-message"> </small>
 				<div class="group-btn">
 					<input type="button" value="Cancelar" id="email-form-cancel-btn" />
-					<input type="submit" value="Enviar" id="email-form-submit-btn" />
+					<input type="submit" value="Continuar" id="email-form-submit-btn" />
 				</div>
 			</form>
 		</div>

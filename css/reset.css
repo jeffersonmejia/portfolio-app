@@ -348,6 +348,10 @@ time {
 	-webkit-backdrop-filter: blur(2px);
 }
 
+.email-send-modal h4 {
+	background-color: var(--tertiary-bg-color);
+}
+
 .email-send-modal form {
 	background-color: var(--tertiary-bg-color);
 	display: flex;
@@ -365,8 +369,9 @@ time {
 	margin-top: 0.5re m;
 }
 
-.curriculum-text-email span:first-child {
-	color: var(--primary-title-color);
+.email-send-modal h4 {
+	color: var(--primary-text-color);
+	margin-bottom: -0.6rem;
 }
 
 .email-send-modal h3 {

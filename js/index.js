@@ -33,7 +33,8 @@ const d = document,
 	$speakerImg = d.querySelector('.speaker-img'),
 	$politicsList = d.querySelector('.politics-list'),
 	$curriculumTextEmail = d.querySelector('.curriculum-text-email'),
-	$curriculumTextEmailContent = d.querySelector('.curriculum-text-email-content')
+	$curriculumTextEmailContent = d.querySelector('.curriculum-text-email-content'),
+	$hiddenTitle = d.querySelectorAll('.hidden-title')
 
 //GLOBAL SCOPE VARS
 let intervalAudioSpeaking = null,
@@ -267,6 +268,9 @@ async function sendEmail(submitBtn) {
 		$curriculumTextEmail.classList.remove('hidden')
 		$curriculumTextEmailContent.innerText = `${titleMessage}`
 		$politicsList.classList.remove('hidden')
+		$hiddenTitle.forEach((el) => {
+			el.classList.remove('hidden')
+		})
 	} else {
 		params = {
 			name: nameUser,
@@ -304,10 +308,10 @@ d.addEventListener('click', async (e) => {
 	if (e.target.matches('#curriculum-ancle') || e.target.matches('#curriculum-ancle *')) {
 		updateCurriculumLink()
 	}
-	if (
-		e.target.matches('#email-form-cancel-btn') ||
-		e.target.matches('.get-curriculum-btn')
-	) {
+	if (e.target.matches('#email-form-cancel-btn')) {
+		location.reload()
+	}
+	if (e.target.matches('.get-curriculum-btn')) {
 		toggleModalCurriculum()
 	}
 	if (e.target.matches('#email-form-submit-btn')) {
