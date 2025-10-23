@@ -1,5 +1,7 @@
 hgroup {
-	gap: 0.25rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
 	margin-bottom: 0.5rem;
 	margin-top: auto;
 }
