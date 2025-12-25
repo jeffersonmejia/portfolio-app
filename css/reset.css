@@ -25,6 +25,10 @@
 	/* MODIFICADO, NUEVO COLOR */
 	--quinary-bg-color: rgb(225, 255, 254);
 	--color-behind-box: rgb(217, 230, 228);
+
+	/* training */
+	--bg-color-training: #f6f6ff;
+	--border-color-training: rgb(220, 220, 241);
 }
 
 body.dark {
@@ -47,6 +51,10 @@ body.dark {
 	--primary-box-shadow-color: rgba(0, 0, 0, 0.5);
 	--primary-border-color: #2d2c3b;
 	--tertiary-bg-color: #17151b;
+
+	/*training*/
+	--bg-color-training: rgba(20, 20, 20, 1);
+	--border-color-training: transparent;
 }
 
 * {
@@ -480,7 +488,7 @@ textarea {
 	}
 	nav .secondary-btn,
 	nav ul span {
-		font-size: 0.9rem;
+		font-size: 1rem;
 	}
 	nav img {
 		padding: 0.5rem;
