@@ -581,11 +581,23 @@ hr.hr-experience {
 	border: none;
 }
 
+textarea {
+	font-family: inherit;
+}
+
 /* ==================== MEDIA QUERIES ==================== */
 
 @media screen and (min-width: 700px) {
 	.training-certificate-img {
 		pointer-events: all;
+	}
+
+	body .section-about-me {
+		padding: 4rem 5rem;
+	}
+
+	.section-about-me :is(h1) {
+		font-size: 2.55rem;
 	}
 
 	.section-experience h2,
@@ -650,6 +662,13 @@ hr.hr-experience {
 		align-items: center;
 	}
 
+	.section-training h3 {
+		text-align: left;
+	}
+
+	.section-training p {
+		font-size: 1rem;
+	}
 	.section-about-me hgroup {
 		margin-bottom: 0;
 		margin-top: 0;
@@ -769,8 +788,6 @@ hr.hr-experience {
 	}
 
 	body .section-about-me {
-		padding: 6rem 5rem;
-		padding-top: 5rem;
 		margin-top: 1.5rem;
 		gap: 2rem;
 		border-radius: var(--secondary-border-radius);

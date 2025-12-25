@@ -494,6 +494,13 @@ textarea {
 		padding: 0.5rem;
 		width: 36px;
 	}
+	.primary-btn,
+	.tertiary-btn {
+		font-size: 0.85rem;
+	}
+	.contact-text :is(span, time) {
+		font-size: 0.85rem;
+	}
 }
 
 @media screen and (min-width: 1080px) {
