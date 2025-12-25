@@ -41,7 +41,7 @@ body.dark {
 	--primary-box-shadow-color: rgba(0, 0, 0, 0.5);
 	--primary-border-color: #2d2c3b;
 	--bg-color-training: rgba(20, 20, 20, 1);
-	--border-color-training: transparent;
+	--border-color-training: rgba(20, 20, 20, 1);
 }
 
 * {
@@ -361,6 +361,11 @@ textarea {
 	footer {
 		padding-left: 0;
 		padding-right: 0;
+	}
+
+	footer :is(a, button) {
+		font-size: 1rem;
+		font-weight: bold;
 	}
 	nav .secondary-btn,
 	nav ul span {
