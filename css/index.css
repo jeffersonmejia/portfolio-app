@@ -593,6 +593,18 @@ textarea {
 	font-family: inherit;
 }
 
+.personal-target {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: 1rem;
+}
+
+.personal-target img {
+	width: 128px;
+	height: auto;
+}
+
 /* ==================== MEDIA QUERIES ==================== */
 
 @media screen and (min-width: 700px) {
