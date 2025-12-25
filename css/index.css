@@ -4,7 +4,6 @@ body {
 }
 .section-about-me,
 .section-experience,
-.section-education,
 body hr.hr-experience,
 body hr.hr-education,
 body hr.hr-professional-purpose,
@@ -235,7 +234,7 @@ hr.hr-experience {
 .section-about-me img {
 	display: block;
 	width: 100%;
-	border-radius: var(--primary-border-radius);
+	border-radius: 50%;
 	position: relative;
 	z-index: 2;
 }
@@ -611,7 +610,12 @@ textarea {
 	.training-certificate-img {
 		pointer-events: all;
 	}
-
+	.section-education {
+		max-width: 900px;
+		margin-top: 2rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
 	.personal-target span {
 		font-size: 1.17rem;
 	}
@@ -658,7 +662,9 @@ textarea {
 	}
 
 	body .section-about-me {
-		padding: 2rem 5rem;
+		padding: 5rem 5rem;
+		margin-top: 3.5rem;
+		margin-bottom: 4rem;
 	}
 
 	.section-about-me :is(h1) {
@@ -858,7 +864,6 @@ textarea {
 	}
 
 	body .section-about-me {
-		margin-top: 1.5rem;
 		gap: 2rem;
 		border-radius: var(--secondary-border-radius);
 		background-color: var(--quinary-bg-color);
