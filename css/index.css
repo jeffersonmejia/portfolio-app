@@ -689,9 +689,13 @@ hr.hr-experience {
 		padding-top: 5rem;
 		margin-top: 1.5rem;
 		gap: 2rem;
-		border-radius: var(--primary-border-radius);
+		border-radius: var(--secondary-border-radius);
 		background-color: var(--quinary-bg-color);
-		border: 1px solid var(--primary-btn-color);
+		/* border: 1px solid var(--primary-btn-color); */
+	}
+
+	.section-about-me p:nth-child(5) {
+		margin-top: -0.3rem;
 	}
 
 	body .section-about-me :is(h3, p) {
