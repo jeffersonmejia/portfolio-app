@@ -612,6 +612,10 @@ textarea {
 		pointer-events: all;
 	}
 
+	.personal-target span {
+		font-size: 1.17rem;
+	}
+
 	.container-purpose-education {
 		padding: 0 2rem;
 	}
