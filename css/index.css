@@ -852,12 +852,28 @@ textarea {
 	}
 
 	.section-training article:nth-child(2) {
-		border-radius: var(--primary-border-radius);
 		border: none;
 		display: flex;
 		flex-direction: column;
 		margin-bottom: 1.5rem;
 		background-color: var(--bg-color-training);
+	}
+
+	.section-training .training-date-description {
+		display: none;
+		transition: transform 0.3s ease-in;
+	}
+
+	.section-training article:nth-child(2) .training-date-description {
+		display: block;
+	}
+
+	.section-training .training-certificate-img:hover {
+		transform: scale(1.1);
+	}
+
+	.section-training article:nth-child(2) .training-certificate-img:hover {
+		transform: none;
 	}
 
 	.section-training
@@ -866,6 +882,7 @@ textarea {
 		max-width: 750px;
 		margin: auto;
 	}
+
 	.training-certificate-img {
 		padding-top: 1rem;
 		padding-bottom: 1rem;
