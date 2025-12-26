@@ -307,7 +307,11 @@ hr.hr-experience {
 }
 
 .modal-certificate {
-	display: none;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transition: opacity 0.3s ease, transform 0.3s ease;
+	/* transform: scale(1.1); */
 	position: fixed;
 	top: 0;
 	bottom: 0;
@@ -352,6 +356,10 @@ hr.hr-experience {
 
 .modal-certificate-active {
 	display: flex;
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+	transform: scale(1);
 }
 
 .modal-certificate .icon-container {
@@ -616,7 +624,7 @@ textarea {
 	font-size: 1rem;
 }
 .section-about-me span:nth-child(3) {
-	font-weight: 400;
+	font-weight: 100;
 	font-size: 0.8rem;
 	grid-row: 2/-1;
 	grid-column: 1/-1;
