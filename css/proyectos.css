@@ -8,6 +8,11 @@ h6 {
 	background-color: var(--primary-color);
 }
 
+.type-project {
+	font-weight: 100;
+	color: var(--primary-text-color);
+}
+
 p,
 span,
 small {
@@ -34,12 +39,36 @@ body {
 	transition: opacity 0.2s ease-in;
 }
 
+.section-cybersecurity {
+	gap: 0;
+	padding: 0;
+}
+
+.temp-text-work {
+	text-align: center;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+
+	font-weight: 300;
+	gap: 0;
+	color: var(--primary-text-color);
+	padding-bottom: 0.5rem;
+}
+
 section {
 	padding-left: 1.5rem;
 	padding-right: 1.5rem;
 	display: flex;
 	flex-direction: column;
 	gap: 2.1rem;
+}
+
+.section-projects .primary-btn {
+	background-color: transparent;
+	border: 1px solid var(--primary-btn-color);
+	color: var(--primary-btn-color);
 }
 
 .last-update {
@@ -182,7 +211,9 @@ section h1 {
 		margin-bottom: 0.5rem;
 	}
 
-	h1 {
+	h1,
+	.type-project,
+	.section-cybersecurity {
 		grid-column: 1/-1;
 	}
 }
