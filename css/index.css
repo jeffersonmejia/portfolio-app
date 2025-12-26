@@ -596,12 +596,18 @@ textarea {
 	display: flex;
 	align-items: center;
 	gap: 1rem;
-	margin-bottom: 1rem;
 }
 
-.personal-target img {
-	width: 128px;
+.section-about-me .role-badges {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.section-about-me .role-badges img {
+	width: 16px;
 	height: auto;
+	object-fit: contain;
 }
 
 /* ==================== MEDIA QUERIES ==================== */
@@ -616,7 +622,8 @@ textarea {
 		margin-left: auto;
 		margin-right: auto;
 	}
-	.personal-target span {
+	.personal-target span,
+	.section-experience h3 {
 		font-size: 1.17rem;
 	}
 
