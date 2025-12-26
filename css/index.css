@@ -169,6 +169,17 @@ h2 {
 	margin-bottom: 2rem;
 }
 
+.section-training article:nth-child(2) .date-title-container-mobile,
+.training-date-description {
+	display: flex;
+}
+
+.section-training article:nth-child(2) .date-title-container-desktop {
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+}
+
 .section-training h2,
 .section-education h2,
 .section-experience h2 {
@@ -861,10 +872,24 @@ textarea {
 
 	.section-training article:nth-child(2) {
 		border: none;
-		display: flex;
-		flex-direction: column;
 		margin-bottom: 1.5rem;
 		background-color: var(--bg-color-training);
+		display: grid;
+
+		display: flex;
+		flex-direction: row;
+		gap: 1.5rem;
+	}
+
+	.section-training article:nth-child(2) .training-certificate-img {
+		grid-column: 1/2;
+	}
+
+	.section-training article:nth-child(2) .date-title-container-mobile {
+		display: none;
+	}
+	.section-training article:nth-child(2) .date-title-container-desktop {
+		display: flex;
 	}
 
 	.section-training .training-date-description {
@@ -872,7 +897,7 @@ textarea {
 		transition: transform 0.3s ease-in;
 	}
 
-	.section-training article:nth-child(2) .training-date-description {
+	.date-title-container-desktop .training-date-description {
 		display: block;
 	}
 
@@ -882,13 +907,27 @@ textarea {
 
 	.section-training article:nth-child(2) .training-certificate-img:hover {
 		transform: none;
+		pointer-events: none;
+	}
+	.section-training article:nth-child(2) .date-title-container-desktop .training-title {
+		padding-bottom: 0;
+	}
+
+	.section-training article:nth-child(2) .date-title-container-desktop .icon-container {
+		margin-bottom: 0.5rem;
+	}
+
+	.section-training
+		article:nth-child(2)
+		.date-title-container-desktop
+		.training-date-description {
+		width: 70%;
 	}
 
 	.section-training
 		article:nth-child(2)
 		:is(h3, figure, .training-certificate-img, .training-date-description) {
 		max-width: 750px;
-		margin: auto;
 	}
 
 	.training-certificate-img {
