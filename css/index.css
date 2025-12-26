@@ -714,7 +714,7 @@ textarea {
 	}
 
 	.section-about-me :is(h1) {
-		font-size: 2.55rem;
+		font-size: 2.5rem;
 	}
 
 	.section-experience h2,
@@ -850,7 +850,7 @@ textarea {
 	.section-training h2 {
 		padding-top: 3rem;
 		padding-bottom: 3rem;
-		font-size: 3rem;
+		font-size: 2.5rem;
 		position: static;
 	}
 
@@ -912,7 +912,7 @@ textarea {
 	}
 	.section-training article:nth-child(2) h3 {
 		padding-top: 1rem;
-		font-size: 2rem;
+		font-size: 1.5rem;
 		color: var(--primary-text-color);
 	}
 	.section-training article:nth-child(2) p {

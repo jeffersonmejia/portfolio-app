@@ -4,11 +4,12 @@
 	--secondary-bg-color: rgb(241, 241, 241);
 	--tertiary-bg-color: rgb(248, 248, 248);
 	--quaternary-bg-color: rgb(225, 225, 225);
-	--quinary-bg-color: rgb(225, 255, 254);
+	/* BG ON BOX PROFILE */
+	--quinary-bg-color: rgb(200, 255, 254);
+	--primary-btn-color: rgb(0, 168, 142);
 	--color-behind-box: rgb(217, 230, 228);
 	--primary-title-color: #202124;
 	--primary-text-color: rgb(95, 99, 104);
-	--primary-btn-color: rgb(0, 168, 142);
 	--primary-btn-color-hover: rgb(9, 190, 163);
 	--secondary-btn-color: rgb(0, 168, 142);
 	--filter-box-bg-color: rgb(109, 109, 109);
@@ -19,7 +20,8 @@
 	--secondary-border-radius: 24px;
 	--font-family: 'Inter', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,
 		Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
-	--bg-color-training: #f6f6ff;
+
+	--bg-color-training: rgb(243, 243, 255);
 	--border-color-training: rgb(220, 220, 241);
 }
 
