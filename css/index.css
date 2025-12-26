@@ -51,6 +51,20 @@ h1 {
 .section-about-me h1,
 .section-about-me h3 {
 	background-color: transparent;
+	text-align: left;
+}
+
+.section-about-me h3 {
+	display: grid;
+	grid-template-columns: max-content 1fr;
+	grid-template-rows: repeat(2, auto);
+	column-gap: 0.35rem;
+	row-gap: 0.35rem;
+	padding: 0;
+}
+
+.section-about-me span {
+	margin: 0;
 }
 
 p,
@@ -598,10 +612,19 @@ textarea {
 	gap: 1rem;
 }
 
+.section-about-me span:nth-child(2) {
+	font-size: 1rem;
+}
+.section-about-me span:nth-child(3) {
+	font-weight: 400;
+	font-size: 0.8rem;
+	grid-row: 2/-1;
+	grid-column: 1/-1;
+}
+
 .section-about-me .role-badges {
 	display: inline-flex;
 	align-items: center;
-	justify-content: center;
 }
 
 .section-about-me .role-badges img {
@@ -613,6 +636,14 @@ textarea {
 /* ==================== MEDIA QUERIES ==================== */
 
 @media screen and (min-width: 700px) {
+	.section-about-me span:nth-child(2) {
+		font-size: 1.4rem;
+	}
+
+	.section-about-me span:nth-child(3) {
+		font-size: 1.1rem;
+	}
+
 	.training-certificate-img {
 		pointer-events: all;
 	}
