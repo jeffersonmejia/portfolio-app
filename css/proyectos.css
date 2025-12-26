@@ -32,9 +32,9 @@ html {
 }
 
 body {
-	width: 100%;
+	width: 90%;
+	max-width: none;
 	margin: auto;
-	max-width: 750px;
 	overflow-x: hidden;
 	transition: opacity 0.2s ease-in;
 }
