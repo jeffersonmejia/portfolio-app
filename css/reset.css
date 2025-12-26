@@ -133,12 +133,17 @@ nav ul li {
 }
 nav a,
 nav span {
-	font-weight: 550;
+	font-weight: 100;
 	font-size: 0.7rem;
 	cursor: pointer;
 	text-decoration: none;
 	transition: color 0.3s ease-in;
 }
+
+nav .secondary-btn-active {
+	font-weight: 550;
+}
+
 nav a {
 	color: var(--primary-btn-color);
 	padding: 1.5rem 0;
