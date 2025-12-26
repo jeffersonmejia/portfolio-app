@@ -43,18 +43,41 @@ body {
 	gap: 0;
 	padding: 0;
 }
-
 .temp-text-work {
 	text-align: center;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
 	padding: 0;
-
 	font-weight: 300;
 	gap: 0;
-	color: var(--primary-text-color);
+	color: var(--primary-btn-color);
 	padding-bottom: 0.5rem;
+
+	font-size: 1.5rem;
+	font-weight: bold;
+
+	background: linear-gradient(
+		90deg,
+		var(--primary-btn-color) 0%,
+		var(--primary-bg-color) 50%,
+		var(--primary-btn-color) 100%
+	);
+	background-size: 200% auto;
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+
+	animation: shine 2s linear infinite;
+}
+
+@keyframes shine {
+	0% {
+		background-position: 200% center;
+	}
+	100% {
+		background-position: -200% center;
+	}
 }
 
 section {
@@ -123,6 +146,10 @@ hr {
 	height: 250px;
 	object-fit: cover;
 	object-position: center;
+}
+
+.section-projects .section-cybersecurity img {
+	height: 350px;
 }
 
 .sticky-on {
