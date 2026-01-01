@@ -105,8 +105,7 @@ hr.hr-professional-purpose {
 }
 
 hr.hr-experience,
-hr.hr-education,
-hr.hr-training.hr-experience {
+hr.hr-education {
 	margin: 1.5rem 0;
 }
 
@@ -400,13 +399,6 @@ hr.hr-experience {
 	/* z-index: 999; */
 }
 
-.zoom-in-btn {
-	width: 24px;
-	position: absolute;
-	right: 6vb;
-	top: 4vh;
-}
-
 .section-training article:nth-child(2) {
 	grid-column: 1/-1;
 	grid-row: 2/3;
@@ -652,7 +644,7 @@ textarea {
 	object-fit: contain;
 }
 
-/* ==================== MEDIA QUERIES ==================== */
+/* ======  MEDIA QUERIE TABLET: 700PX ====== */
 
 @media screen and (min-width: 700px) {
 	.section-about-me span:nth-child(2) {
@@ -959,6 +951,7 @@ textarea {
 	}
 }
 
+/* ======  MEDIA QUERIE TABLET: 800PX ====== */
 @media screen and (min-width: 800px) {
 	.hr-about-me,
 	.section-about-me {
@@ -984,6 +977,7 @@ textarea {
 	}
 }
 
+/* ======  MEDIA QUERIE TABLET: 1080PX ====== */
 @media screen and (min-width: 1080px) {
 	.section-about-me h2 {
 		padding-top: 0;
@@ -1012,6 +1006,7 @@ textarea {
 	}
 }
 
+/* ======  MEDIA QUERIE DESKTOP: 1265PX ====== */
 @media screen and (min-width: 1265px) {
 	.button-icon {
 		margin-left: 0;
