@@ -6,7 +6,7 @@
 	--quaternary-bg-color: rgb(225, 225, 225);
 	/* BG ON BOX PROFILE */
 	--quinary-bg-color: rgb(234, 252, 255);
-	--primary-btn-color: rgb(0, 168, 142);
+	--primary-btn-color: #00a88e;
 	--color-behind-box: rgb(217, 230, 228);
 	--primary-title-color: #202124;
 	--primary-text-color: rgb(95, 99, 104);
@@ -35,7 +35,7 @@ body.dark {
 	--color-behind-box: #2d3533;
 	--primary-title-color: #fff;
 	--primary-text-color: #b1b1b1;
-	--primary-btn-color: rgb(35, 209, 174);
+	--primary-btn-color: #23d1ae;
 	--primary-btn-color-hover: rgb(37, 224, 187);
 	--secondary-btn-color: rgb(35, 209, 174);
 	--filter-box-bg-color: rgb(29, 29, 29);
@@ -146,10 +146,14 @@ nav .secondary-btn-active {
 
 nav a {
 	color: var(--primary-btn-color);
-	padding: 1.5rem 0;
+	padding: 0.5rem 0;
 	height: 100%;
 }
-nav a:hover,
+
+nav a:hover svg {
+	fill: var(--primary-btn-color);
+}
+nav a:hover span,
 footer a:hover {
 	color: var(--primary-btn-color-hover);
 }
@@ -163,6 +167,30 @@ footer a:hover {
 nav img {
 	width: 32px;
 	padding: 0.5rem;
+}
+
+nav a {
+	padding: 1rem 0;
+}
+
+nav li:not(:last-child) a {
+	display: flex;
+	align-items: center;
+	justify-items: center;
+}
+
+nav svg {
+	width: 16px;
+}
+
+nav .secondary-btn svg {
+	fill: var(--primary-text-color);
+}
+nav .secondary-btn-active svg {
+	fill: var(--primary-btn-color);
+}
+
+nav li:last-child img {
 	cursor: pointer;
 	background-color: var(--secondary-bg-color);
 	border-radius: 50%;
@@ -171,8 +199,11 @@ nav .secondary-btn {
 	color: var(--primary-text-color);
 }
 nav .secondary-btn-active {
-	color: var(--primary-btn-color);
 	border-top: 3px solid var(--primary-btn-color);
+}
+
+nav .secondary-btn-active span {
+	color: var(--primary-btn-color);
 }
 
 img {
@@ -373,9 +404,13 @@ textarea {
 	}
 }
 @media screen and (min-width: 800px) {
-	footer {
+	nav footer {
 		padding-left: 0;
 		padding-right: 0;
+	}
+
+	nav li:not(:last-child) svg {
+		width: 40px;
 	}
 
 	footer :is(a, button) {
@@ -386,7 +421,7 @@ textarea {
 	nav ul span {
 		font-size: 1rem;
 	}
-	nav img {
+	nav li:last-child img {
 		width: 36px;
 		padding: 0.5rem;
 	}
