@@ -23,6 +23,7 @@
 
 	--bg-color-training: rgb(243, 243, 255);
 	--border-color-training: rgb(220, 220, 241);
+	--presentation-color: #006858;
 }
 
 body.dark {
@@ -44,6 +45,7 @@ body.dark {
 	--primary-border-color: #2d2c3b;
 	--bg-color-training: rgba(20, 20, 20, 1);
 	--border-color-training: rgba(20, 20, 20, 1);
+	--presentation-color: #09aa92;
 }
 
 * {
