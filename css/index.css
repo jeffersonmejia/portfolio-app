@@ -3,7 +3,6 @@ body {
 	max-width: none;
 }
 .section-about-me,
-.section-experience,
 body hr.hr-experience,
 body hr.hr-education,
 body hr.hr-professional-purpose,
@@ -662,12 +661,6 @@ textarea {
 	.training-certificate-img {
 		pointer-events: all;
 	}
-	.section-education {
-		max-width: 900px;
-		margin-top: 2rem;
-		margin-left: auto;
-		margin-right: auto;
-	}
 	.personal-target span,
 	.section-experience h3 {
 		font-size: 1.17rem;
@@ -677,8 +670,7 @@ textarea {
 		padding: 0 2rem;
 	}
 
-	.container-purpose-education,
-	.section-education {
+	.container-purpose-education {
 		gap: 2rem;
 	}
 
@@ -687,17 +679,13 @@ textarea {
 		flex-direction: row;
 	}
 	.section-education {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
 	}
 
 	.section-education h2 {
 		grid-column: 1/-1;
 	}
 
-	.container-purpose-education section,
-	.container-university,
-	.container-english-certificate {
+	.container-purpose-education section {
 		background-color: var(--bg-color-training);
 		padding: 1.5rem;
 		border-radius: var(--secondary-border-radius);
@@ -855,10 +843,10 @@ textarea {
 	}
 
 	.section-training h2 {
-		padding-top: 3rem;
-		padding-bottom: 3rem;
-		font-size: 2.5rem;
+		padding: 4rem 0;
+		font-size: 3rem;
 		position: static;
+		text-align: center;
 	}
 
 	.section-training :is(h3, h4),
@@ -875,6 +863,10 @@ textarea {
 		display: flex;
 		flex-direction: row;
 		gap: 1.5rem;
+	}
+
+	.section-training article:nth-child(2) img {
+		filter: grayscale(1);
 	}
 
 	.section-training article:nth-child(2) .training-certificate-img {
