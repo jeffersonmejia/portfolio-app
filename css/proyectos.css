@@ -218,6 +218,20 @@ section h1 {
 	text-align: right;
 }
 
+section figure + small {
+	text-align: justify;
+	display: block;
+}
+
+.project-security {
+	grid-column: 1/-1;
+}
+
+.project-security img {
+	object-fit: cover;
+	object-position: bottom;
+}
+
 @media screen and (min-width: 550px) {
 	section h1 {
 		font-size: 1.5rem;
@@ -230,6 +244,10 @@ section h1 {
 		grid-template-columns: repeat(auto-fill, minmax(300px, auto));
 		column-gap: 2rem;
 		row-gap: 2rem;
+	}
+	.section-projects .project-security img {
+		height: 320px;
+		object-position: bottom;
 	}
 	section {
 		gap: 1.1;
