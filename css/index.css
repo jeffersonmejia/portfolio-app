@@ -678,8 +678,6 @@ textarea {
 		display: flex;
 		flex-direction: row;
 	}
-	.section-education {
-	}
 
 	.section-education h2 {
 		grid-column: 1/-1;
@@ -752,14 +750,6 @@ textarea {
 		padding-top: 0.8rem;
 		padding-right: 0.5rem;
 	}
-	hr,
-	.section-experience,
-	.section-education,
-	.section-skills,
-	.section-training,
-	.section-about-me {
-		grid-column: 2/-1;
-	}
 
 	.section-about-me .img-square {
 		width: 210px;
@@ -773,13 +763,6 @@ textarea {
 		align-items: center;
 	}
 
-	.section-training h3 {
-		text-align: left;
-	}
-
-	.section-training p {
-		font-size: 1rem;
-	}
 	.section-about-me hgroup {
 		margin-bottom: 0;
 		margin-top: 0;
@@ -825,8 +808,7 @@ textarea {
 		margin-top: 1rem;
 	}
 	.section-experience,
-	.section-education,
-	.section-training {
+	.section-education {
 		padding-left: 0;
 		padding-right: 0;
 	}
@@ -842,16 +824,9 @@ textarea {
 		padding: 1rem;
 	}
 
-	.section-training h2 {
-		padding: 4rem 0;
-		font-size: 3rem;
-		position: static;
-		text-align: center;
-	}
-
-	.section-training :is(h3, h4),
-	.container-purpose-education :is(h2, h3, h4) {
-		background-color: transparent;
+	.section-training {
+		padding-left: 0;
+		padding-right: 0;
 	}
 
 	.section-training article:nth-child(2) {
@@ -865,7 +840,45 @@ textarea {
 		gap: 1.5rem;
 	}
 
-	.section-training article:nth-child(2) img {
+	.section-training h2 {
+		padding: 4rem 0;
+		font-size: 3rem;
+		position: static;
+		text-align: center;
+	}
+
+	.section-training h3 {
+		text-align: left;
+	}
+
+	.section-training p {
+		font-size: 1rem;
+	}
+
+	.section-training :is(h3, h4),
+	.container-purpose-education :is(h2, h3, h4) {
+		background-color: transparent;
+	}
+
+	.section-training .training-date-description {
+		display: none;
+		transition: transform 0.3s ease-in;
+	}
+
+	.date-title-container-desktop .training-date-description {
+		display: block;
+	}
+
+	.training-certificate-img {
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+
+	footer {
+		padding-top: 1rem;
+	}
+
+	.section-training article:nth-child(2) > img {
 		filter: grayscale(1);
 	}
 
@@ -878,15 +891,6 @@ textarea {
 	}
 	.section-training article:nth-child(2) .date-title-container-desktop {
 		display: flex;
-	}
-
-	.section-training .training-date-description {
-		display: none;
-		transition: transform 0.3s ease-in;
-	}
-
-	.date-title-container-desktop .training-date-description {
-		display: block;
 	}
 
 	.section-training .training-certificate-img:hover {
@@ -905,6 +909,10 @@ textarea {
 		margin-bottom: 0.5rem;
 	}
 
+	.section-training h3 {
+		color: var(--primary-title-color);
+	}
+
 	.section-training
 		article:nth-child(2)
 		.date-title-container-desktop
@@ -918,24 +926,12 @@ textarea {
 		max-width: 750px;
 	}
 
-	.training-certificate-img {
-		padding-top: 1rem;
-		padding-bottom: 1rem;
-	}
-
 	.section-training article:nth-child(3) {
 		margin-left: 2rem;
 	}
 
 	.section-training article:nth-child(6) {
 		margin-right: 2rem;
-	}
-	footer {
-		padding-top: 1rem;
-	}
-
-	.section-training h3 {
-		color: var(--primary-title-color);
 	}
 	.section-training article:nth-child(2) h3 {
 		padding-top: 1rem;
