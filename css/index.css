@@ -671,8 +671,8 @@ textarea {
 	}
 
 	.container-purpose-education {
-		display: flex;
-		flex-direction: row;
+		display: grid;
+		grid-template-columns: 50% 48.5%;
 	}
 
 	.section-education h2 {
