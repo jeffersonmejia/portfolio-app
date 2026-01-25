@@ -247,7 +247,7 @@ section figure + small {
 	}
 	.section-projects .project-security img {
 		height: 320px;
-		object-position: bottom;
+		object-position: center;
 	}
 	section {
 		gap: 1.1;
