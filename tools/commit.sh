@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 C_RESET='\033[0m'
 C_FEAT='\033[38;5;114m'
 C_FIX='\033[38;5;210m'
@@ -20,7 +22,7 @@ select_commit_type() {
   echo -e "${C_TEST}6. test     -> add or update tests${C_RESET}" >&2
   echo -e "${C_CHORE}7. chore    -> other changes${C_RESET}" >&2
 
-  read -p "enter your choice (1-7): " typeChoice
+  read -r "?enter your choice (1-7): " typeChoice
 
   case "$typeChoice" in
     1) echo "feat" ;;
@@ -36,7 +38,7 @@ select_commit_type() {
 
 get_commit_message() {
   echo >&2
-  read -p "enter commit message: " msg
+  read -r "?enter commit message: " msg
   [[ -z "${msg// }" ]] && get_commit_message || echo "$msg"
 }
 
