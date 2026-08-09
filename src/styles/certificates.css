@@ -5,23 +5,25 @@
   gap: .85rem;
   min-height: 17rem;
   padding: 1.15rem;
-  border: 1px solid var(--border);
   border-radius: 1.35rem;
   background: var(--sheen), var(--surface);
   box-shadow: var(--shadow);
   -webkit-backdrop-filter: blur(24px) saturate(160%);
   backdrop-filter: blur(24px) saturate(160%);
+  animation: glass-materialize .5s var(--liquid-ease) both;
+  transition: transform .45s var(--liquid-ease), box-shadow .45s ease;
 }
+.certificate-card:hover { transform: translateY(-3px) scale(1.008); box-shadow: 0 14px 36px rgba(31,31,41,.06), inset 0 2px 7px rgba(255,255,255,.6); }
 .certificate-provider { display: grid; grid-template-columns: auto 1fr auto; gap: .7rem; align-items: center; color: var(--muted); font-size: .78rem; }
 .provider-logo {
   display: grid;
   width: 3.25rem;
   height: 3.25rem;
   padding: .45rem;
-  border: 1px solid var(--line);
   border-radius: .9rem;
   place-items: center;
   background: rgba(255, 255, 255, .82);
+  box-shadow: inset 0 2px 6px rgba(255,255,255,.62), 0 5px 16px rgba(31,31,41,.04);
 }
 .provider-logo img { width: 100%; height: 100%; object-fit: contain; }
 .certificate-provider time { color: var(--accent); font-weight: 800; }
@@ -33,14 +35,21 @@
   max-height: calc(100dvh - 2rem);
   margin: auto;
   padding: 1rem;
-  border: 1px solid var(--border);
+  border: 0;
   border-radius: 1.5rem;
   color: var(--text);
-  background: var(--page);
-  box-shadow: 0 12px 40px rgba(0,0,0,.16);
+  background: var(--sheen), rgba(250,250,252,.88);
+  box-shadow: 0 10px 32px rgba(31,31,41,.09), inset 0 3px 12px rgba(255,255,255,.55);
+  -webkit-backdrop-filter: blur(20px) saturate(145%);
+  backdrop-filter: blur(20px) saturate(145%);
+  animation: glass-materialize .4s var(--liquid-ease) both;
   overflow: auto;
 }
-.modal::backdrop { background: rgba(10, 8, 9, .62); backdrop-filter: blur(8px); }
+.modal::backdrop {
+  background: rgba(20,20,24,.16);
+  -webkit-backdrop-filter: blur(2px) saturate(105%);
+  backdrop-filter: blur(2px) saturate(105%);
+}
 .modal-close { position: sticky; top: 0; z-index: 2; margin-left: auto; color: var(--text); background: var(--surface-strong); }
 .certificate-modal { display: grid; gap: 1rem; }
 .certificate-modal img { width: 100%; max-height: 70dvh; border-radius: 1rem; object-fit: contain; }

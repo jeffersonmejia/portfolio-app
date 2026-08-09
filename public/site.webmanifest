@@ -3,7 +3,7 @@
   "short_name": "Jefferson Mejía",
   "start_url": "/portfolio-app/",
   "display": "standalone",
-  "background_color": "#f8eef4",
+  "background_color": "#ffffff",
   "theme_color": "#ff2d55",
   "icons": [
     {

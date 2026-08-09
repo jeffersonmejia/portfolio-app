@@ -1,10 +1,10 @@
 export const projectCategories = [
-  'Todos',
-  'Backend',
-  'Ciberseguridad',
-  'Aplicaciones móviles',
-  'Aplicaciones web',
-  'Frontend',
+  { label: 'Todos', icon: 'folder' },
+  { label: 'Backend', icon: 'server' },
+  { label: 'Ciberseguridad', icon: 'shield' },
+  { label: 'Aplicaciones móviles', icon: 'smartphone' },
+  { label: 'Aplicaciones web', icon: 'code' },
+  { label: 'Frontend', icon: 'cloud' },
 ]
 
 export const projects = [

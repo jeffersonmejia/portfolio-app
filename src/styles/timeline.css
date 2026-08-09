@@ -11,14 +11,17 @@
   width: 2rem;
   height: 2rem;
   padding: 0;
-  border: 1px solid var(--border);
+  border: 0;
   border-radius: 50%;
   place-items: center;
   color: var(--text);
   background: var(--surface-strong);
+  box-shadow: inset 0 2px 6px rgba(255,255,255,.5), 0 5px 16px rgba(31,31,41,.035);
   cursor: pointer;
+  transition: color .3s ease, transform .35s var(--liquid-ease), box-shadow .35s ease;
 }
-.timeline-controls button:hover:not(:disabled) { color: var(--accent); border-color: var(--accent); }
+.timeline-controls button:hover:not(:disabled) { color: var(--accent); transform: scale(1.08); box-shadow: inset 0 2px 6px rgba(255,255,255,.6), 0 8px 22px rgba(31,31,41,.055); }
+.timeline-controls button:active:not(:disabled) { transform: scale(.92); }
 .timeline-controls button:disabled { opacity: .35; cursor: default; }
 .timeline-stage {
   display: grid;
@@ -27,12 +30,13 @@
   align-items: start;
   min-height: 6.7rem;
   padding: .85rem;
-  border: 1px solid var(--border);
   border-radius: 1rem;
   background: var(--surface-strong);
+  box-shadow: inset 0 2px 7px rgba(255,255,255,.4), 0 6px 20px rgba(31,31,41,.03);
+  animation: glass-materialize .42s var(--liquid-ease) both;
 }
 .timeline-icon { color: var(--accent); }
 .timeline-stage > div { display: grid; gap: .15rem; }
 .timeline-stage time { color: var(--accent); font-size: .72rem; font-weight: 800; }
-.timeline-stage h3 { font-size: .9rem; font-weight: 500; line-height: 1.2; }
+.timeline-stage h3 { font-size: .9rem; font-weight: 400; line-height: 1.2; }
 .timeline-stage p { font-size: .8rem; line-height: 1.45; }

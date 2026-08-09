@@ -69,13 +69,19 @@ main { display: grid; gap: 3.5rem; }
 .filter-list { display: flex; gap: .4rem; padding-bottom: .2rem; overflow-x: auto; scrollbar-width: none; }
 .filter-list::-webkit-scrollbar { display: none; }
 .filter-list button {
+  display: inline-flex;
   flex: 0 0 auto;
+  align-items: center;
+  gap: .4rem;
   padding: .6rem .9rem;
-  border: 1px solid var(--border);
+  border: 0;
   border-radius: 999px;
   color: var(--muted);
   background: var(--surface);
+  box-shadow: inset 0 2px 6px rgba(255,255,255,.5), 0 5px 16px rgba(31,31,41,.035);
   cursor: pointer;
+  transition: color .3s ease, background .35s ease, transform .35s var(--liquid-ease), box-shadow .35s ease;
 }
-.filter-list button:hover { color: var(--text); }
-.filter-list button.is-active { border-color: transparent; color: white; background: var(--accent-contrast); font-weight: 750; }
+.filter-list button:hover { color: var(--text); transform: translateY(-1px) scale(1.025); }
+.filter-list button:active { transform: scale(.96); }
+.filter-list button.is-active { color: white; background: var(--accent-contrast); box-shadow: inset 0 2px 6px rgba(255,255,255,.28), 0 7px 20px rgba(201,20,60,.12); font-weight: 750; }

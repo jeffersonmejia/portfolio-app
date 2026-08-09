@@ -45,7 +45,7 @@ export const timeline = [
     description:
       'Completé Hacking Ético, Seguridad en redes y Hacking de aplicaciones web con enfoque en OWASP, redes empresariales y postexplotación.',
     target: '#certificados',
-    linkLabel: 'Ver certificados',
+    linkLabel: 'Ver capacitaciones profesionales',
   },
   {
     year: '2025',

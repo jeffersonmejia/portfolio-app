@@ -1,9 +1,9 @@
 export const certificateCategories = [
-  'Todos',
-  'Ciberseguridad',
-  'Desarrollo',
-  'Bases de datos',
-  'Idiomas',
+  { label: 'Todos', icon: 'award' },
+  { label: 'Ciberseguridad', icon: 'shield' },
+  { label: 'Desarrollo', icon: 'code' },
+  { label: 'Bases de datos', icon: 'database' },
+  { label: 'Idiomas', icon: 'languages' },
 ]
 
 export const certificates = [

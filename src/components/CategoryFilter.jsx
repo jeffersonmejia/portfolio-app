@@ -1,15 +1,18 @@
+import { Icon } from './Icon'
+
 export function CategoryFilter({ label, items, selected, onSelect }) {
   return (
     <div className="filter-list" aria-label={label}>
       {items.map((item) => (
         <button
-          className={selected === item ? 'is-active' : ''}
-          key={item}
+          className={selected === item.label ? 'is-active' : ''}
+          key={item.label}
           type="button"
-          aria-pressed={selected === item}
-          onClick={() => onSelect(item)}
+          aria-pressed={selected === item.label}
+          onClick={() => onSelect(item.label)}
         >
-          {item}
+          <Icon name={item.icon} size={16} />
+          {item.label}
         </button>
       ))}
     </div>

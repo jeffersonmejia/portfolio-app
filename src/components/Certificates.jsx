@@ -17,12 +17,12 @@ export function Certificates() {
     <section className="content-section page-shell" id="certificados" aria-labelledby="certificates-title">
       <SectionHeading
         eyebrow="Formación"
-        title="Certificados que respaldan mi experiencia."
+        title="Capacitaciones profesionales que respaldan mi experiencia."
         description="Estas credenciales representan formación académica. No definen por sí solas mi especialidad profesional."
         titleId="certificates-title"
       />
       <CategoryFilter
-        label="Filtrar certificados"
+        label="Filtrar capacitaciones profesionales"
         items={certificateCategories}
         selected={category}
         onSelect={setCategory}

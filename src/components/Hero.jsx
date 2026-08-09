@@ -29,7 +29,7 @@ export function Hero() {
         </section>
         <HorizontalTimeline />
         <nav className="hero-actions" aria-label="Enlaces destacados">
-          <a className="button button-primary" href={routeHref('/certificados/')}>Certificados</a>
+          <a className="button button-primary" href={routeHref('/certificados/')}>Capacitaciones profesionales</a>
           <a className="button button-quiet" href={routeHref('/proyectos/')}>Proyectos</a>
         </nav>
       </article>

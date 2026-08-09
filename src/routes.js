@@ -14,8 +14,8 @@ export const routeDefinitions = [
   {
     key: 'certificados',
     path: '/certificados/',
-    title: 'Certificados | Jefferson Mejía',
-    description: 'Certificados de bases de datos, JavaScript, inglés y ciberseguridad obtenidos por Jefferson Mejía.',
+    title: 'Capacitaciones profesionales | Jefferson Mejía',
+    description: 'Capacitaciones profesionales en bases de datos, JavaScript, inglés y ciberseguridad realizadas por Jefferson Mejía.',
   },
   {
     key: 'contacto',

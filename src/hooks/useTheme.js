@@ -15,7 +15,7 @@ export function useTheme() {
     document.body.classList.add('theme-ready')
     document.querySelector('meta[name="theme-color"]')?.setAttribute(
       'content',
-      dark ? '#111113' : '#f8eef4',
+      dark ? '#111113' : '#ffffff',
     )
   }, [dark])
 

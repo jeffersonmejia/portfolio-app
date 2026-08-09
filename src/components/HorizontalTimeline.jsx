@@ -22,7 +22,7 @@ export function HorizontalTimeline() {
           </button>
         </div>
       </header>
-      <div className="timeline-stage" aria-live="polite">
+      <div className="timeline-stage" key={activeIndex} aria-live="polite">
         <span className="timeline-icon"><Icon name={activeItem.icon} size={20} /></span>
         <div>
           <time>{activeItem.year}</time>

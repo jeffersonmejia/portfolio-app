@@ -1,6 +1,6 @@
 export const navigation = [
   { path: '/', key: 'inicio', label: 'Inicio', icon: 'home' },
-  { path: '/certificados/', key: 'certificados', label: 'Certificados', icon: 'award' },
+  { path: '/certificados/', key: 'certificados', label: 'Capacitaciones profesionales', icon: 'award' },
   { path: '/proyectos/', key: 'proyectos', label: 'Proyectos', icon: 'folder' },
   { path: '/contacto/', key: 'contacto', label: 'Contacto', icon: 'contact' },
 ]
