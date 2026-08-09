@@ -1,9 +1,5 @@
 @media (max-width: 950px) {
-  .hero { grid-template-columns: .8fr 1.2fr; }
-  .hero-copy { padding: 1.5rem; }
-  .highlight-grid { grid-template-columns: 1fr; }
-  .highlight { grid-template-columns: auto 1fr auto; align-items: center; }
-  .focus { grid-template-columns: 1fr; }
+  .hero-card { grid-template-columns: minmax(11rem, .55fr) minmax(0, 1.45fr); }
   .project-grid { grid-template-columns: 1fr; }
   .certificate-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -17,14 +13,12 @@
   .site-nav::-webkit-scrollbar { display: none; }
   .nav-link { flex: 0 0 auto; padding-inline: .7rem; }
   .nav-link span { display: none; }
-  .hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero-visual { min-height: 18rem; }
-  .hero-copy { min-height: auto; }
-  .highlight-grid { grid-template-columns: repeat(3, 1fr); }
-  .highlight { display: grid; grid-template-columns: 1fr; }
-  .focus-grid { grid-template-columns: 1fr; }
-  .focus-card { min-height: 8.5rem; }
-  .focus-card h3 { margin-top: 1.5rem; }
+  .hero { min-height: calc(100dvh - 9.5rem); }
+  .hero-card { grid-template-columns: 1fr; gap: 1rem; min-height: auto; padding: 1.2rem; }
+  .hero-visual img { width: 8.5rem; }
+  .hero-copy { text-align: center; }
+  .hero-objective { width: 100%; text-align: left; }
+  .hero-actions { justify-content: center; }
   .timeline-main { grid-template-columns: 1fr; }
   .timeline-main time { grid-row: auto; }
   .timeline-detail { padding-left: 4.15rem; padding-right: .5rem; }
@@ -33,11 +27,10 @@
 }
 
 @media (max-width: 520px) {
-  .hero-copy h1 { font-size: 2.85rem; }
-  .hero-visual { min-height: 17rem; }
-  .hero-status { max-width: calc(100% - 1.2rem); font-size: .74rem; }
-  .highlight-grid { grid-template-columns: 1fr; }
-  .highlight { grid-template-columns: auto 1fr auto; }
+  .hero-copy h1 { font-size: 2.9rem; }
+  .hero-card { gap: .75rem; padding: 1rem; }
+  .hero-visual img { width: 7.5rem; }
+  .hero-actions .button { flex: 1 1 auto; min-height: 2.55rem; padding: .55rem .8rem; font-size: .88rem; }
   .project-card { grid-template-columns: 1fr; }
   .project-image, .project-placeholder { min-height: 13rem; }
   .project-image img { aspect-ratio: 16 / 10; }
@@ -46,5 +39,4 @@
   .contact { padding: 1.2rem; border-radius: 1.4rem; }
   .contact-form { grid-template-columns: 1fr; }
   .form-wide { grid-column: auto; }
-  .site-footer { flex-direction: column; align-items: center; }
 }

@@ -1,77 +1,63 @@
 .hero {
   display: grid;
-  grid-template-columns: minmax(17rem, .75fr) minmax(0, 1.25fr);
-  gap: .9rem;
-  min-height: 28rem;
+  align-items: center;
+  min-height: calc(100dvh - 10.5rem);
 }
 
-.hero-visual,
-.hero-copy,
-.focus-intro,
-.focus-card {
+.hero-card {
+  display: grid;
+  grid-template-columns: minmax(14rem, .7fr) minmax(0, 1.3fr);
+  align-items: center;
+  gap: clamp(1.5rem, 5vw, 4rem);
+  min-height: 29rem;
+  padding: clamp(1.5rem, 5vw, 3.5rem);
   border: 1px solid var(--border);
+  border-radius: 1.75rem;
   background: var(--sheen), var(--surface);
   box-shadow: var(--shadow);
 }
 
-.hero-visual {
-  position: relative;
-  display: grid;
-  min-height: 24rem;
-  border-radius: 2rem;
-  place-items: center;
-  overflow: hidden;
-}
-.hero-visual::before {
-  display: none;
-}
+.hero-visual { display: grid; place-items: center; }
 .hero-visual img {
-  position: relative;
-  z-index: 1;
-  width: min(50%, 11rem);
+  width: min(72%, 12rem);
   height: auto;
-  border: 3px solid rgba(255,255,255,.58);
+  border: 2px solid var(--border);
   border-radius: 50%;
-  box-shadow: 0 25px 60px rgba(67, 10, 31, .3);
 }
-.hero-status {
-  position: absolute;
-  z-index: 2;
-  bottom: 1.25rem;
-  display: flex;
-  align-items: center;
-  gap: .5rem;
-  padding: .65rem .85rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  color: var(--text);
-  background: var(--nav);
-  backdrop-filter: blur(22px);
-  font-size: .82rem;
-  font-weight: 700;
-}
-.hero-status span { width: .55rem; height: .55rem; border-radius: 50%; background: #32d74b; }
 
 .hero-copy {
   display: grid;
   align-content: center;
-  gap: 1.15rem;
-  padding: clamp(1.5rem, 5vw, 4.5rem);
-  border-radius: 2rem;
+  gap: .75rem;
 }
-.hero-copy h1 { max-width: 680px; font-size: clamp(2.7rem, 4.5vw, 4.2rem); letter-spacing: -.06em; line-height: .94; }
-.hero-copy > p { max-width: 630px; font-size: clamp(1rem, 2vw, 1.2rem); }
-.hero-actions { display: flex; flex-wrap: wrap; gap: .6rem; }
-.highlight-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .55rem; margin-top: .5rem; }
-.highlight { display: grid; gap: .3rem; padding: .8rem; border: 1px solid var(--border); border-radius: 1rem; background: var(--surface-strong); }
-.highlight svg { color: var(--accent); }
-.highlight strong { font-size: .9rem; }
-.highlight small { color: var(--muted); }
+.hero-copy h1 {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  letter-spacing: -.065em;
+  line-height: .92;
+}
+.hero-career { color: var(--text); font-size: clamp(1.05rem, 2vw, 1.35rem); font-weight: 750; }
+.hero-study { font-size: .95rem; }
 
-.focus { display: grid; grid-template-columns: .85fr 1.15fr; gap: .9rem; }
-.focus-intro { display: grid; align-content: center; gap: .8rem; padding: 1.5rem; border-radius: 1.5rem; }
-.focus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; }
-.focus-card { min-height: 9.5rem; padding: 1.15rem; border-radius: 1.35rem; }
-.focus-card svg { color: var(--accent); }
-.focus-card h3 { margin-top: 1.35rem; font-size: 1.15rem; }
-.focus-card p { margin-top: .55rem; font-size: .9rem; line-height: 1.5; }
+.hero-objective {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 620px;
+  margin-top: .25rem;
+  padding: .8rem 0;
+  border-block: 1px solid var(--line);
+  border-inline: 0;
+  color: var(--accent);
+  background: transparent;
+  font-weight: 780;
+  cursor: pointer;
+}
+.hero-actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .25rem; }
+
+.objective-modal { display: grid; gap: .75rem; padding: clamp(1rem, 4vw, 2rem); }
+.objective-modal p { max-width: 520px; color: var(--text); font-size: 1.1rem; }
+
+.trajectory-modal { padding: .25rem; }
+.trajectory-modal .content-section { width: 100%; }
+.trajectory-modal .section-heading h2 { font-size: clamp(2rem, 5vw, 3.6rem); }

@@ -18,7 +18,7 @@
   border-radius: 999px;
   background: var(--sheen), var(--nav);
   background-blend-mode: screen, normal;
-  box-shadow: 0 12px 35px rgba(35, 19, 25, .08);
+  box-shadow: 0 6px 18px rgba(35, 19, 25, .06);
   backdrop-filter: blur(34px) saturate(210%) contrast(1.06);
   pointer-events: auto;
 }

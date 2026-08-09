@@ -6,12 +6,6 @@ export const routeDefinitions = [
     description: 'Portafolio de Jefferson Mejía, Backend Developer y estudiante de Ingeniería en Tecnologías de Información y Comunicación en la ESPE.',
   },
   {
-    key: 'trayectoria',
-    path: '/trayectoria/',
-    title: 'Trayectoria | Jefferson Mejía',
-    description: 'Experiencia académica, educación, proyectos y formación técnica de Jefferson Mejía desde 2022.',
-  },
-  {
     key: 'proyectos',
     path: '/proyectos/',
     title: 'Proyectos backend y software | Jefferson Mejía',

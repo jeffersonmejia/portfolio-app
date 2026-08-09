@@ -49,5 +49,4 @@
 .consent input { width: 1rem; margin-top: .2rem; accent-color: var(--accent); }
 .form-status { min-height: 1.5rem; color: var(--muted); }
 
-.site-footer { display: flex; justify-content: space-between; gap: 1rem; padding-block: 3rem 2rem; color: var(--muted); font-size: .86rem; }
-.site-footer a { color: var(--accent); font-weight: 750; text-decoration: none; }
+.site-footer { display: flex; justify-content: center; padding-block: 2rem; color: var(--muted); font-size: .86rem; text-align: center; }

@@ -6,21 +6,21 @@
 
 :root {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: #1d1d1f;
-  background: #f8eef4;
+  color: #2d2529;
+  background: #fff8fb;
   font-synthesis: none;
   --accent: #ff2d55;
   --accent-strong: #e9163f;
   --accent-contrast: #c9143c;
-  --text: #1d1d1f;
-  --muted: #6e6e73;
-  --page: #f8eef4;
-  --surface: rgba(255, 255, 255, 0.36);
-  --surface-strong: rgba(255, 255, 255, 0.5);
+  --text: #2d2529;
+  --muted: #72676c;
+  --page: #fff8fb;
+  --surface: rgba(255, 255, 255, 0.68);
+  --surface-strong: rgba(255, 255, 255, 0.82);
   --nav: rgba(255, 255, 255, 0.34);
   --border: rgba(255, 255, 255, 0.64);
   --line: rgba(110, 110, 115, 0.2);
-  --shadow: 0 24px 70px rgba(123, 44, 75, 0.1);
+  --shadow: 0 10px 30px rgba(123, 44, 75, 0.07);
   --sheen: linear-gradient(145deg, rgba(255,255,255,.58), rgba(255,255,255,.16) 42%, rgba(255,45,85,.08));
 }
 
@@ -49,7 +49,7 @@ body {
   --nav: rgba(22, 22, 26, 0.58);
   --border: rgba(255, 255, 255, 0.18);
   --line: rgba(255, 255, 255, 0.13);
-  --shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
   --sheen: linear-gradient(145deg, rgba(255,255,255,.18), rgba(255,255,255,.04) 42%, rgba(255,45,85,.08));
 }
 

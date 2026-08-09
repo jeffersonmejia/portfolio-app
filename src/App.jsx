@@ -5,13 +5,11 @@ import { CertificatesPage } from './pages/CertificatesPage'
 import { ContactPage } from './pages/ContactPage'
 import { HomePage } from './pages/HomePage'
 import { ProjectsPage } from './pages/ProjectsPage'
-import { TimelinePage } from './pages/TimelinePage'
 import { pageFromPath } from './routes'
 import './styles/index.css'
 
 const pages = {
   inicio: HomePage,
-  trayectoria: TimelinePage,
   proyectos: ProjectsPage,
   certificados: CertificatesPage,
   contacto: ContactPage,
