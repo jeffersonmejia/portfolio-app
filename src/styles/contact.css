@@ -20,6 +20,7 @@
   align-items: center;
   width: 100%;
   padding: .9rem;
+  border: 0;
   border-radius: 1rem;
   color: var(--text);
   background: var(--surface-strong);
@@ -35,12 +36,14 @@
 .contact-link span { display: grid; gap: .15rem; }
 .contact-link small { color: var(--muted); }
 
-.form-modal { display: grid; gap: .7rem; padding: .5rem; }
+.form-modal { display: grid; min-width: 0; max-width: 100%; gap: .7rem; padding: .5rem; }
 .form-modal > p { max-width: 600px; }
-.contact-form { display: grid; grid-template-columns: repeat(2, 1fr); gap: .8rem; margin-top: .5rem; }
-.contact-form label { display: grid; gap: .35rem; color: var(--muted); font-size: .82rem; font-weight: 700; }
+.contact-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); min-width: 0; max-width: 100%; gap: .8rem; margin-top: .5rem; }
+.contact-form label { display: grid; min-width: 0; gap: .35rem; color: var(--muted); font-size: .82rem; font-weight: 700; }
 .contact-form input, .contact-form textarea {
   width: 100%;
+  min-width: 0;
+  max-width: 100%;
   padding: .75rem;
   border: 0;
   border-radius: .75rem;

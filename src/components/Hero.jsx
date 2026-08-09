@@ -8,30 +8,33 @@ export function Hero() {
   return (
     <section className="hero page-shell" id="inicio" aria-labelledby="hero-title">
       <article className="hero-card">
-        <header className="hero-heading">
-          <img
-            src={asset('assets/img/profile-large.webp')}
-            alt="Jefferson Mejía"
-            width="500"
-            height="500"
-            fetchPriority="high"
-          />
-          <div>
-            <span className="eyebrow">{profile.eyebrow}</span>
-            <h1 id="hero-title">{profile.name}</h1>
-            <p className="hero-career">{profile.career}</p>
-            <p className="hero-study">{profile.university} · {profile.semester}</p>
-          </div>
-        </header>
-        <section className="hero-objective" aria-labelledby="objective-title">
-          <h2 id="objective-title"><Icon name="route" size={18} /> Objetivo profesional</h2>
-          <p>{profile.objective}</p>
+        <section className="hero-profile">
+          <header className="hero-heading">
+            <img
+              src={asset('assets/img/profile-large.webp')}
+              alt="Jefferson Mejía"
+              width="500"
+              height="500"
+              fetchPriority="high"
+            />
+            <div>
+              <span className="eyebrow">{profile.eyebrow}</span>
+              <h1 id="hero-title">{profile.name}</h1>
+              <p className="hero-career">{profile.career}</p>
+              <p className="hero-study">{profile.university}</p>
+              <p className="hero-semester">{profile.semester}</p>
+            </div>
+          </header>
+          <section className="hero-objective" aria-labelledby="objective-title">
+            <h2 id="objective-title"><Icon name="route" size={18} /> Objetivo profesional</h2>
+            <p>{profile.objective}</p>
+          </section>
+          <nav className="hero-actions" aria-label="Enlaces destacados">
+            <a className="button button-primary" href={routeHref('/certificados/')}>Capacitaciones profesionales</a>
+            <a className="button button-quiet" href={routeHref('/proyectos/')}>Proyectos</a>
+          </nav>
         </section>
         <HorizontalTimeline />
-        <nav className="hero-actions" aria-label="Enlaces destacados">
-          <a className="button button-primary" href={routeHref('/certificados/')}>Capacitaciones profesionales</a>
-          <a className="button button-quiet" href={routeHref('/proyectos/')}>Proyectos</a>
-        </nav>
       </article>
     </section>
   )

@@ -1,4 +1,5 @@
 @media (max-width: 950px) {
+  .hero-card { grid-template-columns: 1fr; min-height: auto; }
   .project-grid { grid-template-columns: 1fr; }
   .certificate-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -13,22 +14,27 @@
   .nav-link { flex: 0 0 auto; padding-inline: .7rem; }
   .nav-link span { display: none; }
   .hero { min-height: calc(100dvh - 9.5rem); }
-  .hero-card { gap: .8rem; padding: 1.2rem; }
+  .hero { width: min(100% - 1rem, 680px); }
+  .hero-card { gap: 1.25rem; padding: 1.2rem; }
   .hero-heading { gap: 1rem; }
   .hero-heading img { width: 7rem; }
   .hero-actions { justify-content: center; }
+  .timeline-stage { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .certificate-grid { grid-template-columns: 1fr; }
   .contact { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 520px) {
-  .hero-heading h1 { font-size: 2.7rem; }
+  .hero-heading h1 { font-size: 2.3rem; }
   .hero-card { gap: .75rem; padding: 1rem; }
   .hero-heading img { width: 6.25rem; }
   .hero-career { font-size: .88rem; }
   .hero-study { font-size: .78rem; }
   .hero-objective { grid-template-columns: 1fr; gap: .25rem; }
   .hero-actions .button { flex: 1 1 auto; min-height: 2.55rem; padding: .55rem .8rem; font-size: .88rem; }
+  .timeline-stage { grid-template-columns: 1fr; }
+  .timeline-item { min-height: 6.5rem; }
+  .timeline-stage p { -webkit-line-clamp: 2; }
   .project-card { grid-template-columns: 1fr; }
   .project-image, .project-placeholder { min-height: 13rem; }
   .project-image img { aspect-ratio: 16 / 10; }

@@ -1,6 +1,6 @@
 export const navigation = [
   { path: '/', key: 'inicio', label: 'Inicio', icon: 'home' },
-  { path: '/certificados/', key: 'certificados', label: 'Capacitaciones profesionales', icon: 'award' },
+  { path: '/certificados/', key: 'certificados', label: 'Capacitaciones', icon: 'award' },
   { path: '/proyectos/', key: 'proyectos', label: 'Proyectos', icon: 'folder' },
   { path: '/contacto/', key: 'contacto', label: 'Contacto', icon: 'contact' },
 ]
@@ -10,7 +10,7 @@ export const profile = {
   eyebrow: 'Backend Developer',
   career: 'Ingeniería en Tecnologías de Información y Comunicación',
   university: 'Universidad de las Fuerzas Armadas ESPE',
-  semester: 'Séptimo de ocho semestres',
+  semester: '7 de 8 semestres',
   objective: 'Desarrollo soluciones backend claras, mantenibles y preparadas para crecer.',
 }
 
