@@ -6,58 +6,50 @@
 
 .hero-card {
   display: grid;
-  grid-template-columns: minmax(14rem, .7fr) minmax(0, 1.3fr);
-  align-items: center;
-  gap: clamp(1.5rem, 5vw, 4rem);
-  min-height: 29rem;
-  padding: clamp(1.5rem, 5vw, 3.5rem);
+  gap: 1rem;
+  width: min(100%, 980px);
+  margin-inline: auto;
+  padding: clamp(1.25rem, 3vw, 2rem);
   border: 1px solid var(--border);
-  border-radius: 1.75rem;
+  border-radius: 1.5rem;
   background: var(--sheen), var(--surface);
   box-shadow: var(--shadow);
+  -webkit-backdrop-filter: blur(28px) saturate(170%);
+  backdrop-filter: blur(28px) saturate(170%);
 }
 
-.hero-visual { display: grid; place-items: center; }
-.hero-visual img {
-  width: min(72%, 12rem);
+.hero-heading {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.25rem;
+  align-items: center;
+}
+.hero-heading img {
+  width: clamp(6.5rem, 12vw, 9rem);
   height: auto;
   border: 2px solid var(--border);
   border-radius: 50%;
 }
-
-.hero-copy {
-  display: grid;
-  align-content: center;
-  gap: .75rem;
-}
-.hero-copy h1 {
-  font-size: clamp(3rem, 6vw, 5.5rem);
-  letter-spacing: -.065em;
-  line-height: .92;
-}
-.hero-career { color: var(--text); font-size: clamp(1.05rem, 2vw, 1.35rem); font-weight: 750; }
-.hero-study { font-size: .95rem; }
+.hero-heading > div { display: grid; gap: .25rem; }
+.hero-heading h1 { font-size: clamp(2.7rem, 5vw, 4.6rem); letter-spacing: -.06em; line-height: .95; }
+.hero-career { color: var(--text); font-size: clamp(.95rem, 2vw, 1.2rem); font-weight: 750; }
+.hero-study { font-size: .88rem; }
 
 .hero-objective {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: .75rem;
   align-items: center;
-  width: 100%;
-  max-width: 620px;
-  margin-top: .25rem;
-  padding: .8rem 0;
+  padding-block: .65rem;
   border-block: 1px solid var(--line);
-  border-inline: 0;
-  color: var(--accent);
-  background: transparent;
-  font-weight: 780;
-  cursor: pointer;
 }
-.hero-actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .25rem; }
-
-.objective-modal { display: grid; gap: .75rem; padding: clamp(1rem, 4vw, 2rem); }
-.objective-modal p { max-width: 520px; color: var(--text); font-size: 1.1rem; }
-
-.trajectory-modal { padding: .25rem; }
-.trajectory-modal .content-section { width: 100%; }
-.trajectory-modal .section-heading h2 { font-size: clamp(2rem, 5vw, 3.6rem); }
+.hero-objective h2 {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  color: var(--accent);
+  font-size: .82rem;
+  font-weight: 780;
+}
+.hero-objective p { font-size: .86rem; }
+.hero-actions { display: flex; justify-content: flex-end; gap: .5rem; }

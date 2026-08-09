@@ -7,6 +7,8 @@
   border-radius: 2rem;
   background: var(--sheen), var(--surface);
   box-shadow: var(--shadow);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  backdrop-filter: blur(24px) saturate(160%);
 }
 .contact-copy { display: grid; align-content: center; gap: .8rem; }
 .contact-copy p { max-width: 520px; }

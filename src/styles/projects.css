@@ -1,17 +1,3 @@
-.filter-list { display: flex; gap: .4rem; padding-bottom: .2rem; overflow-x: auto; scrollbar-width: none; }
-.filter-list::-webkit-scrollbar { display: none; }
-.filter-list button {
-  flex: 0 0 auto;
-  padding: .6rem .9rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  color: var(--muted);
-  background: var(--surface);
-  cursor: pointer;
-}
-.filter-list button:hover { color: var(--text); }
-.filter-list button.is-active { border-color: transparent; color: white; background: var(--accent-contrast); font-weight: 750; }
-
 .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem; }
 .project-card {
   display: grid;
@@ -21,6 +7,8 @@
   border-radius: 1.5rem;
   background: var(--sheen), var(--surface);
   box-shadow: var(--shadow);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  backdrop-filter: blur(24px) saturate(160%);
   overflow: hidden;
 }
 .project-image { position: relative; min-height: 100%; overflow: hidden; }

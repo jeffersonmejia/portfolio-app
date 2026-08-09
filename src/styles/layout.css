@@ -65,3 +65,17 @@ main { display: grid; gap: 3.5rem; }
   cursor: pointer;
 }
 .text-link:hover { text-decoration: underline; }
+
+.filter-list { display: flex; gap: .4rem; padding-bottom: .2rem; overflow-x: auto; scrollbar-width: none; }
+.filter-list::-webkit-scrollbar { display: none; }
+.filter-list button {
+  flex: 0 0 auto;
+  padding: .6rem .9rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  background: var(--surface);
+  cursor: pointer;
+}
+.filter-list button:hover { color: var(--text); }
+.filter-list button.is-active { border-color: transparent; color: white; background: var(--accent-contrast); font-weight: 750; }

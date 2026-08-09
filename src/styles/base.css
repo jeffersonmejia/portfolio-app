@@ -7,21 +7,21 @@
 :root {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: #2d2529;
-  background: #fff8fb;
+  background: #fff;
   font-synthesis: none;
   --accent: #ff2d55;
   --accent-strong: #e9163f;
   --accent-contrast: #c9143c;
   --text: #2d2529;
   --muted: #72676c;
-  --page: #fff8fb;
-  --surface: rgba(255, 255, 255, 0.68);
-  --surface-strong: rgba(255, 255, 255, 0.82);
-  --nav: rgba(255, 255, 255, 0.34);
-  --border: rgba(255, 255, 255, 0.64);
+  --page: #fff;
+  --surface: rgba(255, 255, 255, 0.62);
+  --surface-strong: rgba(248, 248, 250, 0.78);
+  --nav: rgba(255, 255, 255, 0.58);
+  --border: rgba(110, 110, 115, 0.18);
   --line: rgba(110, 110, 115, 0.2);
-  --shadow: 0 10px 30px rgba(123, 44, 75, 0.07);
-  --sheen: linear-gradient(145deg, rgba(255,255,255,.58), rgba(255,255,255,.16) 42%, rgba(255,45,85,.08));
+  --shadow: 0 2px 12px rgba(20, 20, 25, 0.035), inset 0 1px rgba(255, 255, 255, 0.8);
+  --sheen: linear-gradient(145deg, rgba(255,255,255,.72), rgba(255,255,255,.18) 48%, rgba(238,238,242,.16));
 }
 
 html {
@@ -34,10 +34,7 @@ body {
   min-height: 100vh;
   padding-top: 5.5rem;
   color: var(--text);
-  background:
-    radial-gradient(circle at 12% 4%, rgba(255, 45, 85, 0.14), transparent 30rem),
-    radial-gradient(circle at 92% 35%, rgba(255, 129, 162, 0.12), transparent 26rem),
-    var(--page);
+  background: var(--page);
 }
 
 :root[data-theme='dark'] {
@@ -49,8 +46,8 @@ body {
   --nav: rgba(22, 22, 26, 0.58);
   --border: rgba(255, 255, 255, 0.18);
   --line: rgba(255, 255, 255, 0.13);
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
-  --sheen: linear-gradient(145deg, rgba(255,255,255,.18), rgba(255,255,255,.04) 42%, rgba(255,45,85,.08));
+  --shadow: 0 3px 16px rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.08);
+  --sheen: linear-gradient(145deg, rgba(255,255,255,.15), rgba(255,255,255,.025) 48%, rgba(255,255,255,.05));
 }
 
 body.theme-ready { transition: color .25s ease, background .25s ease; }
