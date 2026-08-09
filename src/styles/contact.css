@@ -6,8 +6,6 @@
   border-radius: 2rem;
   background: var(--sheen), var(--surface);
   box-shadow: var(--shadow);
-  -webkit-backdrop-filter: blur(24px) saturate(160%);
-  backdrop-filter: blur(24px) saturate(160%);
   animation: glass-materialize .55s var(--liquid-ease) both;
 }
 .contact-copy { display: grid; align-content: center; gap: .8rem; }
@@ -32,6 +30,8 @@
 .contact-link { transition: transform .4s var(--liquid-ease), box-shadow .4s ease; }
 .contact-link:hover { transform: translateY(-2px) scale(1.012); box-shadow: inset 0 2px 7px rgba(255,255,255,.6), 0 10px 28px rgba(31,31,41,.055); }
 .contact-link:active { transform: scale(.975); }
+.contact-link:nth-child(2) { background: var(--pastel-blush); }
+.contact-link:nth-child(3) { background: var(--pastel-berry); }
 .contact-link > svg { color: var(--accent); }
 .contact-link span { display: grid; gap: .15rem; }
 .contact-link small { color: var(--muted); }

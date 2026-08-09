@@ -3,6 +3,7 @@ import { routeHref } from '../routes'
 import { asset } from '../utils/asset'
 import { HorizontalTimeline } from './HorizontalTimeline'
 import { Icon } from './Icon'
+import { ProgressiveImage } from './ProgressiveImage'
 
 export function Hero() {
   return (
@@ -10,7 +11,8 @@ export function Hero() {
       <article className="hero-card">
         <section className="hero-profile">
           <header className="hero-heading">
-            <img
+            <ProgressiveImage
+              shellClassName="profile-image"
               src={asset('assets/img/profile-large.webp')}
               alt="Jefferson Mejía"
               width="500"

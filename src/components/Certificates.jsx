@@ -4,6 +4,7 @@ import { asset } from '../utils/asset'
 import { CategoryFilter } from './CategoryFilter'
 import { Icon } from './Icon'
 import { Modal } from './Modal'
+import { ProgressiveImage } from './ProgressiveImage'
 import { SectionHeading } from './SectionHeading'
 
 export function Certificates() {
@@ -32,7 +33,7 @@ export function Certificates() {
           <article className="certificate-card" key={certificate.id} itemScope itemType="https://schema.org/EducationalOccupationalCredential">
             <div className="certificate-provider">
               <span className="provider-logo" aria-hidden="true">
-                <img src={asset(certificate.logo)} alt="" width="52" height="52" loading="lazy" />
+                <ProgressiveImage src={asset(certificate.logo)} alt="" width="52" height="52" loading="lazy" />
               </span>
               <span itemProp="recognizedBy">{certificate.provider}</span>
               <time itemProp="dateCreated" dateTime={certificate.year}>{certificate.year}</time>
@@ -48,7 +49,11 @@ export function Certificates() {
       <Modal open={Boolean(selected)} onClose={() => setSelected(null)} label={selected?.title}>
         {selected && (
           <figure className="certificate-modal">
-            <img src={asset(selected.image)} alt={`Certificado ${selected.title}`} />
+            <ProgressiveImage
+              shellClassName="certificate-preview"
+              src={asset(selected.image)}
+              alt={`Certificado ${selected.title}`}
+            />
             <figcaption>
               <strong>{selected.title}</strong>
               <span>{selected.provider} · {selected.year}</span>

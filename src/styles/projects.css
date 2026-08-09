@@ -6,16 +6,19 @@
   border-radius: 1.5rem;
   background: var(--sheen), var(--surface);
   box-shadow: var(--shadow);
-  -webkit-backdrop-filter: blur(24px) saturate(160%);
-  backdrop-filter: blur(24px) saturate(160%);
   overflow: hidden;
   animation: glass-materialize .5s var(--liquid-ease) both;
   transition: transform .45s var(--liquid-ease), box-shadow .45s ease;
 }
 .project-card:hover { transform: translateY(-3px) scale(1.006); box-shadow: 0 14px 36px rgba(31,31,41,.06), inset 0 2px 7px rgba(255,255,255,.6); }
+.project-card:nth-child(5n+2) { background: var(--sheen), var(--pastel-mauve); }
+.project-card:nth-child(5n+3) { background: var(--sheen), var(--pastel-blush); }
+.project-card:nth-child(5n+4) { background: var(--sheen), var(--pastel-berry); }
+.project-card:nth-child(5n+5) { background: var(--sheen), var(--pastel-coral); }
 .project-image { position: relative; min-height: 100%; overflow: hidden; }
+.project-image-media { width: 100%; height: 100%; }
 .project-image::after { content: ''; position: absolute; inset: 0; background: rgba(255,45,85,.2); mix-blend-mode: color; pointer-events: none; }
-.project-image img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.72) contrast(.96); transition: transform .55s var(--liquid-ease), filter .4s ease; }
+.project-image img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.72) contrast(.96); transition: opacity .4s ease, transform .55s var(--liquid-ease), filter .4s ease; }
 .project-image:hover img { transform: scale(1.035); }
 .project-image:hover::after { background: rgba(255,45,85,.12); }
 .project-copy { display: grid; align-content: center; gap: .7rem; padding: 1.15rem; }

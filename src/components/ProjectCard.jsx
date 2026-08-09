@@ -1,5 +1,6 @@
 import { asset } from '../utils/asset'
 import { Icon } from './Icon'
+import { ProgressiveImage } from './ProgressiveImage'
 
 export function ProjectCard({ project }) {
   if (project.upcoming) {
@@ -19,7 +20,8 @@ export function ProjectCard({ project }) {
   return (
     <article className="project-card" itemScope itemType="https://schema.org/SoftwareApplication">
       <a className="project-image" href={project.href} target="_blank" rel="noreferrer" tabIndex="-1">
-        <img
+        <ProgressiveImage
+          shellClassName="project-image-media"
           src={asset(project.image)}
           alt={`Vista de ${project.title}`}
           width="720"
