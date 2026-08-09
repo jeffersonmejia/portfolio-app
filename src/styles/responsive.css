@@ -1,0 +1,50 @@
+@media (max-width: 950px) {
+  .hero { grid-template-columns: .8fr 1.2fr; }
+  .hero-copy { padding: 1.5rem; }
+  .highlight-grid { grid-template-columns: 1fr; }
+  .highlight { grid-template-columns: auto 1fr auto; align-items: center; }
+  .focus { grid-template-columns: 1fr; }
+  .project-grid { grid-template-columns: 1fr; }
+  .certificate-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 720px) {
+  body { padding-top: 5rem; }
+  main { gap: 3rem; }
+  .page-shell { width: min(100% - 1rem, 680px); }
+  .site-header { padding-inline: .5rem; }
+  .site-nav { justify-content: flex-start; width: 100%; overflow-x: auto; scrollbar-width: none; }
+  .site-nav::-webkit-scrollbar { display: none; }
+  .nav-link { flex: 0 0 auto; padding-inline: .7rem; }
+  .nav-link span { display: none; }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-visual { min-height: 18rem; }
+  .hero-copy { min-height: auto; }
+  .highlight-grid { grid-template-columns: repeat(3, 1fr); }
+  .highlight { display: grid; grid-template-columns: 1fr; }
+  .focus-grid { grid-template-columns: 1fr; }
+  .focus-card { min-height: 8.5rem; }
+  .focus-card h3 { margin-top: 1.5rem; }
+  .timeline-main { grid-template-columns: 1fr; }
+  .timeline-main time { grid-row: auto; }
+  .timeline-detail { padding-left: 4.15rem; padding-right: .5rem; }
+  .certificate-grid { grid-template-columns: 1fr; }
+  .contact { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 520px) {
+  .hero-copy h1 { font-size: 2.85rem; }
+  .hero-visual { min-height: 17rem; }
+  .hero-status { max-width: calc(100% - 1.2rem); font-size: .74rem; }
+  .highlight-grid { grid-template-columns: 1fr; }
+  .highlight { grid-template-columns: auto 1fr auto; }
+  .project-card { grid-template-columns: 1fr; }
+  .project-image, .project-placeholder { min-height: 13rem; }
+  .project-image img { aspect-ratio: 16 / 10; }
+  .timeline-item summary { gap: .6rem; }
+  .timeline-detail { padding-left: .4rem; }
+  .contact { padding: 1.2rem; border-radius: 1.4rem; }
+  .contact-form { grid-template-columns: 1fr; }
+  .form-wide { grid-column: auto; }
+  .site-footer { flex-direction: column; align-items: center; }
+}
