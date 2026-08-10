@@ -5,30 +5,10 @@
 }
 
 :root {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: #2d2529;
-  background: #fff8fb;
+  font-family: var(--font-family);
+  color: var(--text);
+  background: var(--page-background);
   font-synthesis: none;
-  --accent: #ff2d55;
-  --accent-strong: #e9163f;
-  --accent-contrast: #c9143c;
-  --text: #2d2529;
-  --muted: #6d586a;
-  --page: #fff8fb;
-  --pastel-rose: rgba(255, 205, 217, .76);
-  --pastel-blush: rgba(255, 226, 232, .8);
-  --pastel-coral: rgba(255, 211, 207, .76);
-  --pastel-mauve: rgba(244, 211, 232, .76);
-  --pastel-berry: rgba(232, 204, 220, .72);
-  --surface: rgba(255, 255, 255, .76);
-  --surface-strong: rgba(255, 255, 255, .68);
-  --subsurface: var(--page);
-  --nav: rgba(255, 255, 255, .76);
-  --line: rgba(110, 110, 115, 0.2);
-  --shadow: 0 18px 46px rgba(255,45,85,.085), inset 0 0 0 1px rgba(255,255,255,.86), inset 0 4px 12px rgba(255,255,255,.96), inset 0 -5px 14px rgba(255,205,217,.18);
-  --subshadow: 0 12px 30px rgba(255,45,85,.12), 0 -5px 16px rgba(255,255,255,.82), inset 0 4px 11px rgba(255,255,255,.98), inset 0 -5px 12px rgba(255,205,217,.3);
-  --sheen: linear-gradient(145deg, rgba(255,255,255,.86), rgba(255,255,255,.28) 36%, transparent 58%, rgba(255,205,217,.22));
-  --liquid-ease: cubic-bezier(.22, 1, .36, 1);
 }
 
 html {
@@ -44,50 +24,20 @@ body {
   background: var(--page);
 }
 
-:root[data-theme='dark'] {
-  --text: #f5f5f7;
-  --muted: #d2c3ca;
-  --page: #08080b;
-  --pastel-rose: rgba(255, 82, 124, .12);
-  --pastel-blush: rgba(255, 126, 156, .075);
-  --pastel-coral: rgba(255, 112, 102, .095);
-  --pastel-mauve: rgba(221, 104, 172, .095);
-  --pastel-berry: rgba(190, 75, 130, .1);
-  --surface: rgba(255, 255, 255, .035);
-  --surface-strong: rgba(255, 82, 124, .055);
-  --nav: rgba(24, 10, 17, .48);
-  --line: rgba(255, 255, 255, .1);
-  --shadow: 0 14px 34px rgba(255,45,85,.035), inset 0 0 0 1px rgba(255,255,255,.2), inset 0 3px 8px rgba(255,255,255,.22), inset 0 -5px 12px rgba(255,255,255,.025);
-  --sheen: linear-gradient(145deg, rgba(255,255,255,.19), rgba(255,255,255,.035) 34%, transparent 58%, rgba(255,45,85,.045));
-}
-
 :root[data-theme='dark'] body {
-  background: radial-gradient(circle at 12% 8%, rgba(255,45,85,.13), transparent 24rem), radial-gradient(circle at 88% 82%, rgba(255,126,156,.075), transparent 30rem), var(--page);
   background-attachment: fixed;
 }
 
 :root[data-theme='dark'] :is(.hero-card, .project-card, .certificate-card, .contact, .modal) {
+  border: var(--border-width) solid var(--glass-line);
   background: var(--sheen), var(--surface);
   box-shadow: var(--shadow);
-  -webkit-backdrop-filter: blur(16px) saturate(130%);
-  backdrop-filter: blur(16px) saturate(130%);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
 }
 
-:root[data-theme='dark'] :is(.hero-objective, .timeline-item, .contact-link) {
-  background: var(--sheen), var(--surface-strong);
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,.13), inset 0 2px 7px rgba(255,255,255,.13), 0 10px 24px rgba(255,45,85,.025);
-}
-
-:root[data-theme='light'] :is(.hero-card, .project-card, .certificate-card, .contact, .modal) {
-  background: var(--sheen), var(--surface);
-  box-shadow: var(--shadow);
-  -webkit-backdrop-filter: blur(10px) saturate(120%);
-  backdrop-filter: blur(10px) saturate(120%);
-}
-
-:root[data-theme='light'] :is(
+:root[data-theme='dark'] :is(
   .hero-objective,
-  .hero-semester,
   .timeline-item,
   .timeline-controls button,
   .button-quiet,
@@ -99,6 +49,33 @@ body {
   .contact-form input,
   .contact-form textarea
 ) {
+  border: var(--border-width) solid var(--subline);
+  background: var(--sheen), var(--surface-strong);
+  box-shadow: none;
+}
+
+:root[data-theme='light'] :is(.hero-card, .project-card, .certificate-card, .contact, .modal) {
+  border: var(--border-width) solid var(--glass-line);
+  background: var(--sheen), var(--surface);
+  box-shadow: var(--shadow);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+}
+
+:root[data-theme='light'] :is(
+  .hero-objective,
+  .timeline-item,
+  .timeline-controls button,
+  .button-quiet,
+  .contact-link,
+  .provider-logo,
+  .tag-list span,
+  .filter-list button:not(.is-active),
+  .modal-close,
+  .contact-form input,
+  .contact-form textarea
+) {
+  border: var(--border-width) solid var(--subline);
   background: var(--subsurface);
   box-shadow: var(--subshadow);
 }
@@ -113,7 +90,7 @@ p { color: var(--muted); line-height: 1.65; }
 h1, h2, h3 { text-wrap: balance; }
 
 button:focus-visible, a:focus-visible, summary:focus-visible, input:focus-visible, textarea:focus-visible {
-  outline: 3px solid rgba(255, 45, 85, 0.45);
+  outline: 3px solid var(--focus);
   outline-offset: 3px;
 }
 
@@ -123,7 +100,7 @@ button:focus-visible, a:focus-visible, summary:focus-visible, input:focus-visibl
   left: .5rem;
   z-index: 100;
   padding: .7rem 1rem;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   color: white;
   background: var(--accent);
   transform: translateY(-150%);
@@ -134,20 +111,20 @@ button:focus-visible, a:focus-visible, summary:focus-visible, input:focus-visibl
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  min-height: 2.8rem;
+  min-height: var(--button-min-height);
   padding: .7rem 1.1rem;
   border: 0;
-  border-radius: 999px;
-  font-weight: 750;
+  border-radius: var(--radius-pill);
+  font-weight: var(--weight-semibold);
   text-decoration: none;
   cursor: pointer;
-  box-shadow: inset 0 2px 5px rgba(255,255,255,.38), 0 5px 18px rgba(255,45,85,.045);
+  box-shadow: none;
   transition: transform .35s var(--liquid-ease), background .35s ease, box-shadow .35s ease;
 }
-.button-primary { color: white; background: var(--accent-contrast); box-shadow: inset 0 3px 10px rgba(255,255,255,.18), 0 7px 20px rgba(201,20,60,.1); }
+.button-primary { color: white; background: var(--accent-contrast); box-shadow: none; }
 .button-primary:hover { background: var(--accent-strong); transform: translateY(-1px) scale(1.015); }
 .button-quiet { color: var(--text); background: var(--surface-strong); }
-.button-quiet:hover { transform: translateY(-1px) scale(1.015); box-shadow: inset 0 2px 6px rgba(255,255,255,.58), 0 8px 24px rgba(255,45,85,.06); }
+.button-quiet:hover { transform: translateY(-1px) scale(1.015); box-shadow: none; }
 .button:active { transform: scale(.97); }
 .button:disabled { opacity: .58; cursor: wait; }
 

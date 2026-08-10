@@ -24,7 +24,6 @@ export function Hero() {
               <h1 id="hero-title">{profile.name}</h1>
               <p className="hero-career">{profile.career}</p>
               <p className="hero-study">{profile.university}</p>
-              <p className="hero-semester">{profile.semester}</p>
             </div>
           </header>
           <section className="hero-objective" aria-labelledby="objective-title">

@@ -27,6 +27,7 @@ export function Header({ currentPage, onThemeToggle }) {
         >
           <span className="theme-icon theme-icon-light"><Icon name="moon" /></span>
           <span className="theme-icon theme-icon-dark"><Icon name="sun" /></span>
+          <span className="theme-label">Tema</span>
         </button>
       </nav>
     </header>

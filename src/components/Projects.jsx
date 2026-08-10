@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { projectCategories, projects } from '../data/projects'
 import { CategoryFilter } from './CategoryFilter'
 import { ProjectCard } from './ProjectCard'
-import { SectionHeading } from './SectionHeading'
+import { SectionIntro } from './SectionIntro'
 
 export function Projects() {
   const [category, setCategory] = useState('Todos')
@@ -12,11 +12,13 @@ export function Projects() {
 
   return (
     <section className="content-section page-shell" id="proyectos" aria-labelledby="projects-title">
-      <SectionHeading
+      <SectionIntro
         eyebrow="Proyectos"
         title="Backend es mi especialidad."
         description="Mis proyectos backend estarán disponibles pronto. También conservo los trabajos realizados durante mi formación."
         titleId="projects-title"
+        src="assets/img/vectors/projects.svg"
+        alt="Ilustración sobre desarrollo y organización de proyectos"
       />
       <CategoryFilter
         label="Filtrar proyectos"

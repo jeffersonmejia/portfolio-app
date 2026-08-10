@@ -1,5 +1,6 @@
 .home-timeline { display: grid; align-content: center; gap: .9rem; min-width: 0; }
 .home-timeline > header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+#home-timeline-title { color: var(--text); }
 .timeline-controls {
   display: flex;
   align-items: center;
@@ -15,12 +16,12 @@
   border-radius: 50%;
   place-items: center;
   color: var(--text);
-  background: var(--pastel-mauve);
-  box-shadow: inset 0 2px 6px rgba(255,255,255,.5), 0 5px 16px rgba(255,45,85,.035);
+  background: var(--pastel-lavender);
+  box-shadow: none;
   cursor: pointer;
   transition: color .3s ease, transform .35s var(--liquid-ease), box-shadow .35s ease;
 }
-.timeline-controls button:hover:not(:disabled) { color: var(--accent); transform: scale(1.08); box-shadow: inset 0 2px 6px rgba(255,255,255,.6), 0 8px 22px rgba(255,45,85,.055); }
+.timeline-controls button:hover:not(:disabled) { color: var(--accent); transform: scale(1.08); box-shadow: none; }
 .timeline-controls button:active:not(:disabled) { transform: scale(.92); }
 .timeline-controls button:disabled { opacity: .35; cursor: default; }
 .timeline-stage {
@@ -37,17 +38,17 @@
   min-width: 0;
   padding: 1rem;
   border-radius: 1.15rem;
-  background: var(--pastel-coral);
-  box-shadow: inset 0 2px 7px rgba(255,255,255,.4), 0 6px 20px rgba(255,45,85,.03);
+  background: var(--pastel-periwinkle);
+  box-shadow: none;
   transition: transform .4s var(--liquid-ease), box-shadow .4s ease;
 }
-.timeline-item:nth-child(3n+2) { background: var(--pastel-blush); }
-.timeline-item:nth-child(3n+3) { background: var(--pastel-berry); }
-.timeline-item:hover { transform: translateY(-2px); box-shadow: inset 0 2px 8px rgba(255,255,255,.48), 0 10px 26px rgba(255,45,85,.045); }
+.timeline-item:nth-child(3n+2) { background: var(--pastel-mist); }
+.timeline-item:nth-child(3n+3) { background: var(--pastel-indigo); }
+.timeline-item:hover { transform: translateY(-2px); box-shadow: none; }
 .timeline-item.is-expanded { grid-column: 1 / -1; min-height: 13rem; padding: 1.35rem; }
-.timeline-icon { color: var(--accent); }
+.timeline-icon { color: var(--muted); }
 .timeline-item > div { display: grid; align-content: start; gap: .25rem; min-width: 0; }
-.timeline-stage time { color: var(--accent); font-size: .72rem; font-weight: 800; }
+.timeline-stage time { color: var(--muted); font-size: .72rem; font-weight: 800; }
 .timeline-stage h3 { font-size: .92rem; font-weight: 400; line-height: 1.2; }
 .timeline-item small { color: var(--muted); font-size: .72rem; line-height: 1.35; }
 .timeline-stage p { margin-top: .4rem; color: var(--muted); font-size: .86rem; line-height: 1.55; }

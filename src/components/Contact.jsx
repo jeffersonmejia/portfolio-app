@@ -3,16 +3,23 @@ import { contact } from '../data/site'
 import { ContactForm } from './ContactForm'
 import { Icon } from './Icon'
 import { Modal } from './Modal'
+import { SectionVisual } from './SectionVisual'
 
 export function Contact() {
   const [formOpen, setFormOpen] = useState(false)
 
   return (
     <section className="contact page-shell" id="contacto" aria-labelledby="contact-title">
-      <div className="contact-copy">
-        <span className="eyebrow">Contacto</span>
-        <h2 id="contact-title">Conversemos sobre el siguiente reto.</h2>
-        <p>Puedes revisar mi trabajo, conectar conmigo y solicitar mi currículum.</p>
+      <div className="contact-intro">
+        <div className="contact-copy">
+          <span className="eyebrow">Contacto</span>
+          <h2 id="contact-title">Conversemos sobre el siguiente reto.</h2>
+          <p>Puedes revisar mi trabajo, conectar conmigo y solicitar mi currículum.</p>
+        </div>
+        <SectionVisual
+          src="assets/img/vectors/contact.svg"
+          alt="Ilustración sobre comunicación y contacto profesional"
+        />
       </div>
       <div className="contact-actions">
         <a className="contact-link" href={contact.linkedin} target="_blank" rel="noreferrer">

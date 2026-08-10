@@ -4,7 +4,7 @@
   "start_url": "/portfolio-app/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#ff2d55",
+  "theme_color": "#0003ff",
   "icons": [
     {
       "src": "/portfolio-app/assets/img/icons/favicon-64.png?v=6",

@@ -5,7 +5,7 @@ import { CategoryFilter } from './CategoryFilter'
 import { Icon } from './Icon'
 import { Modal } from './Modal'
 import { ProgressiveImage } from './ProgressiveImage'
-import { SectionHeading } from './SectionHeading'
+import { SectionIntro } from './SectionIntro'
 
 export function Certificates() {
   const [selected, setSelected] = useState(null)
@@ -16,11 +16,13 @@ export function Certificates() {
 
   return (
     <section className="content-section page-shell" id="certificados" aria-labelledby="certificates-title">
-      <SectionHeading
+      <SectionIntro
         eyebrow="Formación"
         title="Capacitaciones profesionales que respaldan mi experiencia."
         description="Estas credenciales representan formación académica. No definen por sí solas mi especialidad profesional."
         titleId="certificates-title"
+        src="assets/img/vectors/skills.svg"
+        alt="Ilustración sobre capacitación profesional y habilidades técnicas"
       />
       <CategoryFilter
         label="Filtrar capacitaciones profesionales"

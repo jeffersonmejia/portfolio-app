@@ -1,0 +1,115 @@
+:root {
+  --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --brand: #0003ff;
+  --accent: #3346eb;
+  --accent-strong: #1424ef;
+  --accent-contrast: #2637c7;
+  --text: #1d1d1f;
+  --muted: #5f5b60;
+  --page: #f5f5f7;
+  --white: #fff;
+  --pastel-blue: rgba(185, 192, 255, .76);
+  --pastel-mist: rgba(225, 228, 255, .82);
+  --pastel-periwinkle: rgba(204, 213, 255, .76);
+  --pastel-lavender: rgba(216, 209, 255, .76);
+  --pastel-indigo: rgba(190, 202, 245, .72);
+  --surface: rgba(255, 255, 255, .76);
+  --surface-strong: rgba(255, 255, 255, .68);
+  --subsurface: var(--page);
+  --nav: rgba(255, 255, 255, .76);
+  --nav-hover: rgba(255, 255, 255, .38);
+  --logo-surface: rgba(255, 255, 255, .82);
+  --modal-backdrop: rgba(20, 20, 24, .16);
+  --media-tint: rgba(45, 37, 41, .08);
+  --media-tint-hover: rgba(45, 37, 41, .04);
+  --skeleton-shine: rgba(255, 255, 255, .52);
+  --glass-line: rgba(45, 37, 41, .075);
+  --subline: rgba(45, 37, 41, .13);
+  --line: rgba(110, 110, 115, .2);
+  --focus: rgba(51, 70, 235, .45);
+  --page-background: var(--page);
+  --sheen: linear-gradient(145deg, rgba(255,255,255,.86), rgba(255,255,255,.28) 36%, transparent 58%, rgba(255,255,255,.18));
+  --shadow: none;
+  --subshadow: none;
+  --space-1: .25rem;
+  --space-2: .5rem;
+  --space-3: .75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --font-eyebrow: .76rem;
+  --font-heading: clamp(2rem, 5vw, 4.2rem);
+  --font-hero-name: clamp(2.1rem, 2.8vw, 3rem);
+  --font-profile-meta: clamp(.76rem, .95vw, .84rem);
+  --font-nav: .88rem;
+  --font-nav-mobile: .5rem;
+  --font-small: .82rem;
+  --font-body-small: .86rem;
+  --weight-regular: 400;
+  --weight-semibold: 700;
+  --weight-bold: 800;
+  --weight-heavy: 850;
+  --radius-sm: .75rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+  --radius-pill: 999px;
+  --content-max: 70rem;
+  --content-gutter: 2rem;
+  --content-gutter-mobile: 1rem;
+  --nav-max: 32rem;
+  --mobile-content-max: 42.5rem;
+  --button-min-height: 2.8rem;
+  --profile-size: clamp(6.5rem, 9vw, 8rem);
+  --border-width: 1px;
+  --glass-blur: 10px;
+  --glass-saturation: 120%;
+  --nav-blur: 12px;
+  --nav-saturation: 135%;
+  --duration-fast: .25s;
+  --duration-normal: .35s;
+  --duration-slow: .55s;
+  --liquid-ease: cubic-bezier(.22, 1, .36, 1);
+  --z-header: 50;
+  --z-skeleton: 45;
+}
+
+:root[data-theme='dark'] {
+  --accent: #7480ff;
+  --accent-strong: #929bff;
+  --accent-contrast: #4254df;
+  --text: #f5f5f7;
+  --muted: #bdb8bc;
+  --page: #08080b;
+  --pastel-blue: rgba(116, 128, 255, .12);
+  --pastel-mist: rgba(146, 155, 255, .075);
+  --pastel-periwinkle: rgba(89, 109, 255, .095);
+  --pastel-lavender: rgba(139, 115, 255, .095);
+  --pastel-indigo: rgba(74, 91, 205, .1);
+  --surface: rgba(255, 255, 255, .035);
+  --surface-strong: rgba(116, 128, 255, .055);
+  --nav: rgba(24, 10, 17, .48);
+  --nav-hover: rgba(255, 255, 255, .075);
+  --glass-line: rgba(255, 255, 255, .16);
+  --subline: rgba(255, 255, 255, .12);
+  --line: rgba(255, 255, 255, .1);
+  --sheen: linear-gradient(145deg, rgba(255,255,255,.19), rgba(255,255,255,.035) 34%, transparent 58%, rgba(255,255,255,.025));
+  --page-background: radial-gradient(circle at 12% 8%, rgba(255,255,255,.075), transparent 24rem), radial-gradient(circle at 88% 82%, rgba(255,255,255,.035), transparent 30rem), var(--page);
+  --glass-blur: 16px;
+  --glass-saturation: 130%;
+}
+
+@media (max-width: 720px) {
+  :root { --profile-size: 7rem; }
+}
+
+@media (max-width: 520px) {
+  :root {
+    --font-hero-name: 2.15rem;
+    --font-profile-meta: .75rem;
+    --profile-size: 6.25rem;
+  }
+}
