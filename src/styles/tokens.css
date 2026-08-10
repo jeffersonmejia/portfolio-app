@@ -20,6 +20,7 @@
   --timeline-accent-two: #74459b;
   --timeline-accent-three: #a84f16;
   --timeline-icon-surface: rgba(255, 255, 255, .68);
+  --timeline-skeleton-line: rgba(255, 255, 255, .76);
   --profile-card-surface: #dff3ff;
   --profile-card-accent: #176b96;
   --profile-card-text: #173f61;
@@ -131,6 +132,7 @@
   --timeline-accent-two: #d1a1f2;
   --timeline-accent-three: #ffad78;
   --timeline-icon-surface: rgba(255, 255, 255, .09);
+  --timeline-skeleton-line: rgba(255, 255, 255, .13);
   --profile-card-surface: rgba(67, 169, 224, .2);
   --profile-card-accent: #86d5ff;
   --profile-card-text: #e0f3ff;

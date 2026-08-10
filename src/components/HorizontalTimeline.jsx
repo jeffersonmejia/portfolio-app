@@ -21,7 +21,7 @@ export function HorizontalTimeline() {
     transitionTimer.current = setTimeout(() => {
       setActivePage(page)
       setLoading(false)
-    }, 320)
+    }, 560)
   }
   const goBack = () => changePage(Math.max(0, activePage - 1))
   const goForward = () => changePage(Math.min(pageCount - 1, activePage + 1))
