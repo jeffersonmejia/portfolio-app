@@ -29,6 +29,8 @@
   align-items: center;
 }
 .profile-card {
+  display: grid;
+  gap: var(--space-4);
   padding: var(--space-4);
   border-radius: var(--radius-md);
   background: var(--profile-card-surface);
@@ -52,9 +54,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: .3rem;
-  padding: .8rem 1rem;
-  border-radius: var(--radius-md);
-  background: var(--objective-card-surface);
+  padding-top: var(--space-2);
   box-shadow: none;
 }
 .hero-objective h2 {
@@ -65,8 +65,8 @@
   font-size: var(--font-small);
   font-weight: var(--weight-bold);
 }
-.hero-objective h2 svg { color: var(--objective-card-accent); }
-.hero-objective p { font-size: var(--font-body-small); }
+.hero-objective h2 svg { color: var(--profile-card-accent); }
+.hero-objective p { color: var(--profile-card-muted); font-size: var(--font-body-small); }
 .hero-actions { display: flex; flex-wrap: wrap; gap: .5rem; }
 .hero-actions .button { gap: .4rem; font-size: .8rem; }
 .hero-actions .button-primary { color: var(--accent-contrast); background: var(--primary-action-surface); }

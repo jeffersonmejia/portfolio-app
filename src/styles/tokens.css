@@ -25,8 +25,6 @@
   --profile-card-accent: #176b96;
   --profile-card-text: #173f61;
   --profile-card-muted: #42657d;
-  --objective-card-surface: #d9f5df;
-  --objective-card-accent: #14733c;
   --project-card-one: #e8f0fe;
   --project-card-two: #fce8e6;
   --project-card-three: #e6f4ea;
@@ -139,8 +137,6 @@
   --profile-card-accent: #86d5ff;
   --profile-card-text: #e0f3ff;
   --profile-card-muted: #b6d9ec;
-  --objective-card-surface: rgba(67, 190, 112, .18);
-  --objective-card-accent: #79dfa0;
   --project-card-one: rgba(83, 132, 226, .16);
   --project-card-two: rgba(220, 83, 74, .16);
   --project-card-three: rgba(67, 190, 112, .15);
