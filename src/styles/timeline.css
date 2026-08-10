@@ -88,6 +88,7 @@
 .timeline-item .text-link { color: var(--timeline-item-accent); }
 .timeline-toggle svg { transition: transform .35s var(--liquid-ease); }
 .timeline-item.is-expanded .timeline-toggle svg { transform: rotate(180deg); }
+.timeline-hint { color: var(--muted); font-size: .66rem; text-align: center; }
 .timeline-pages { display: flex; justify-content: center; gap: .55rem; }
 .timeline-pages button {
   width: .5rem;
@@ -98,8 +99,8 @@
   background: var(--muted);
   opacity: .35;
   cursor: pointer;
-  transition: width .25s ease, opacity .25s ease, background .25s ease;
+  transition: opacity .25s ease, background .25s ease;
 }
 .timeline-pages button:hover { opacity: .7; }
-.timeline-pages button.is-active { width: 1rem; background: var(--accent); opacity: 1; }
+.timeline-pages button.is-active { background: var(--accent); opacity: 1; }
 @keyframes timeline-fade-in { from { opacity: 0; } to { opacity: 1; } }

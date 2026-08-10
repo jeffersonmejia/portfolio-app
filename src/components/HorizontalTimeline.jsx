@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { timeline } from '../data/timeline'
 import { Icon } from './Icon'
 import { TimelineItem } from './TimelineItem'
@@ -14,7 +14,7 @@ export function HorizontalTimeline() {
   const pageItems = timeline.slice(start, start + itemsPerPage).map((item, offset) => ({ item, index: start + offset }))
   const visibleItems = expandedIndex === null ? pageItems : pageItems.filter(({ index }) => index === expandedIndex)
   useEffect(() => () => clearTimeout(transitionTimer.current), [])
-  const changePage = (page) => {
+  const changePage = useCallback((page) => {
     if (page === activePage || loading) return
     setExpandedIndex(null)
     setLoading(true)
@@ -22,7 +22,22 @@ export function HorizontalTimeline() {
       setActivePage(page)
       setLoading(false)
     }, 560)
-  }
+  }, [activePage, loading])
+  useEffect(() => {
+    const handleArrowKeys = (event) => {
+      if (event.target.matches('input, textarea, select') || event.altKey || event.ctrlKey || event.metaKey) return
+      if (event.key === 'ArrowLeft' && activePage > 0) {
+        event.preventDefault()
+        changePage(activePage - 1)
+      }
+      if (event.key === 'ArrowRight' && activePage < pageCount - 1) {
+        event.preventDefault()
+        changePage(activePage + 1)
+      }
+    }
+    window.addEventListener('keydown', handleArrowKeys)
+    return () => window.removeEventListener('keydown', handleArrowKeys)
+  }, [activePage, changePage, pageCount])
   const goBack = () => changePage(Math.max(0, activePage - 1))
   const goForward = () => changePage(Math.min(pageCount - 1, activePage + 1))
 
@@ -55,6 +70,7 @@ export function HorizontalTimeline() {
           />
         ))}
       </div>
+      <small className="timeline-hint">Flechas del teclado para cambiar de página</small>
       <nav className="timeline-pages" aria-label="Páginas de la trayectoria">
         {Array.from({ length: pageCount }, (_, index) => (
           <button
