@@ -9,11 +9,16 @@ export function HorizontalTimeline() {
   const [activePage, setActivePage] = useState(0)
   const [expandedIndex, setExpandedIndex] = useState(null)
   const [loading, setLoading] = useState(false)
+  const [itemTransitioning, setItemTransitioning] = useState(false)
   const transitionTimer = useRef(null)
+  const itemTimer = useRef(null)
   const start = activePage * itemsPerPage
   const pageItems = timeline.slice(start, start + itemsPerPage).map((item, offset) => ({ item, index: start + offset }))
   const visibleItems = expandedIndex === null ? pageItems : pageItems.filter(({ index }) => index === expandedIndex)
-  useEffect(() => () => clearTimeout(transitionTimer.current), [])
+  useEffect(() => () => {
+    clearTimeout(transitionTimer.current)
+    clearTimeout(itemTimer.current)
+  }, [])
   const changePage = useCallback((page) => {
     if (page === activePage || loading) return
     setExpandedIndex(null)
@@ -40,6 +45,14 @@ export function HorizontalTimeline() {
   }, [activePage, changePage, pageCount])
   const goBack = () => changePage(Math.max(0, activePage - 1))
   const goForward = () => changePage(Math.min(pageCount - 1, activePage + 1))
+  const toggleItem = (index) => {
+    if (itemTransitioning) return
+    setItemTransitioning(true)
+    itemTimer.current = setTimeout(() => {
+      setExpandedIndex((current) => current === index ? null : index)
+      requestAnimationFrame(() => setItemTransitioning(false))
+    }, 180)
+  }
 
   return (
     <section className="home-timeline" aria-labelledby="home-timeline-title">
@@ -55,7 +68,7 @@ export function HorizontalTimeline() {
           </button>
         </div>
       </header>
-      <div className={`timeline-stage ${loading ? 'is-loading' : ''}`} aria-busy={loading} aria-live="polite">
+      <div className={`timeline-stage ${loading ? 'is-loading' : ''} ${itemTransitioning ? 'is-switching' : ''}`} aria-busy={loading || itemTransitioning} aria-live="polite">
         {loading ? Array.from({ length: itemsPerPage }, (_, index) => (
           <article className="timeline-skeleton" key={index} aria-hidden="true">
             <span className="timeline-skeleton-icon" />
@@ -66,11 +79,11 @@ export function HorizontalTimeline() {
             expanded={expandedIndex === index}
             item={item}
             key={`${item.year}-${item.title}`}
-            onToggle={() => setExpandedIndex((current) => current === index ? null : index)}
+            onToggle={() => toggleItem(index)}
           />
         ))}
       </div>
-      <small className="timeline-hint">Flechas del teclado para cambiar de página</small>
+      <small className="timeline-hint">Usa las flechas del teclado para cambiar de página</small>
       <nav className="timeline-pages" aria-label="Páginas de la trayectoria">
         {Array.from({ length: pageCount }, (_, index) => (
           <button

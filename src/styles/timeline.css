@@ -29,7 +29,9 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: .65rem;
   min-height: 13rem;
+  transition: opacity .18s ease;
 }
+.timeline-stage.is-switching { opacity: 0; }
 .timeline-skeleton {
   position: relative;
   display: grid;
