@@ -81,23 +81,3 @@ main { display: grid; gap: calc(var(--space-12) + var(--space-2)); }
   cursor: pointer;
 }
 .text-link:hover { text-decoration: underline; }
-
-.filter-list { display: flex; gap: .4rem; padding-bottom: .2rem; overflow-x: auto; scrollbar-width: none; }
-.filter-list::-webkit-scrollbar { display: none; }
-.filter-list button {
-  display: inline-flex;
-  flex: 0 0 auto;
-  align-items: center;
-  gap: .4rem;
-  padding: .6rem .9rem;
-  border: 0;
-  border-radius: var(--radius-pill);
-  color: var(--muted);
-  background: var(--surface);
-  box-shadow: none;
-  cursor: pointer;
-  transition: color .3s ease, background .35s ease, transform .35s var(--liquid-ease), box-shadow .35s ease;
-}
-.filter-list button:hover { color: var(--text); transform: translateY(-1px) scale(1.025); }
-.filter-list button:active { transform: scale(.96); }
-.filter-list button.is-active { color: white; background: var(--accent-contrast); box-shadow: none; font-weight: 750; }

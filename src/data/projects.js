@@ -1,12 +1,3 @@
-export const projectCategories = [
-  { label: 'Todos', icon: 'folder' },
-  { label: 'Backend', icon: 'server' },
-  { label: 'Ciberseguridad', icon: 'shield' },
-  { label: 'Aplicaciones móviles', icon: 'smartphone' },
-  { label: 'Aplicaciones web', icon: 'code' },
-  { label: 'Frontend', icon: 'cloud' },
-]
-
 export const projects = [
   {
     id: 'backend-next',
