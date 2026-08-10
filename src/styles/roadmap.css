@@ -4,11 +4,6 @@
   background: var(--roadmap-main-surface);
 }
 
-:root[data-theme='light'] body:has(:is(.page-proyectos, .page-certificados)),
-:root[data-theme='light'] body:has(:is(.page-proyectos, .page-certificados)) .page-skeleton {
-  background: var(--roadmap-main-surface);
-}
-
 .roadmap-list {
   position: relative;
   display: grid;
