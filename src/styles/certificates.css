@@ -1,9 +1,16 @@
-.certificate-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); }
+.certificate-roadmap {
+  position: relative;
+  display: grid;
+  gap: var(--space-4);
+  padding-left: var(--space-8);
+}
+.certificate-roadmap::before { position: absolute; inset: 0 auto 0 .45rem; width: var(--border-width); background: var(--muted); content: ''; opacity: .45; }
 .certificate-card {
+  position: relative;
   display: grid;
   align-content: start;
   gap: .85rem;
-  min-height: 17rem;
+  min-height: 0;
   padding: 1.15rem;
   border-radius: var(--radius-lg);
   background: var(--sheen), var(--surface);
@@ -11,6 +18,18 @@
   animation: glass-materialize .5s var(--liquid-ease) both;
   transition: transform .45s var(--liquid-ease), box-shadow .45s ease;
 }
+.roadmap-step {
+  position: absolute;
+  top: var(--space-6);
+  left: calc(var(--space-8) * -1);
+  width: .9rem;
+  aspect-ratio: 1;
+  border: 2px solid var(--muted);
+  border-radius: var(--radius-pill);
+  background: var(--page);
+  transform: translateX(-.05rem);
+}
+.certificate-card:first-of-type .roadmap-step { background: var(--text); }
 .certificate-card:hover { transform: translateY(-3px) scale(1.008); box-shadow: none; }
 .certificate-provider { display: grid; grid-template-columns: auto 1fr auto; gap: .7rem; align-items: center; color: var(--muted); font-size: .78rem; }
 .provider-logo {
@@ -52,3 +71,8 @@
 .certificate-modal img { width: 100%; max-height: 70dvh; object-fit: contain; }
 .certificate-modal figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .4rem; }
 .certificate-modal figcaption span { color: var(--muted); }
+
+@media (max-width: 720px) {
+  .certificate-roadmap { padding-left: var(--space-6); }
+  .certificate-card .roadmap-step { left: calc(var(--space-6) * -1); }
+}

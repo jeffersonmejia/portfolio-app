@@ -1,7 +1,6 @@
 import { useState } from 'react'
-import { certificateCategories, certificates } from '../data/certificates'
+import { certificates } from '../data/certificates'
 import { asset } from '../utils/asset'
-import { CategoryFilter } from './CategoryFilter'
 import { Icon } from './Icon'
 import { Modal } from './Modal'
 import { ProgressiveImage } from './ProgressiveImage'
@@ -9,10 +8,6 @@ import { SectionIntro } from './SectionIntro'
 
 export function Certificates() {
   const [selected, setSelected] = useState(null)
-  const [category, setCategory] = useState('Todos')
-  const visible = category === 'Todos'
-    ? certificates
-    : certificates.filter((certificate) => certificate.category === category)
 
   return (
     <section className="content-section page-shell" id="certificados" aria-labelledby="certificates-title">
@@ -24,15 +19,10 @@ export function Certificates() {
         src="assets/img/vectors/skills.svg"
         alt="Ilustración sobre capacitación profesional y habilidades técnicas"
       />
-      <CategoryFilter
-        label="Filtrar capacitaciones profesionales"
-        items={certificateCategories}
-        selected={category}
-        onSelect={setCategory}
-      />
-      <div className="certificate-grid" aria-live="polite">
-        {visible.map((certificate) => (
+      <div className="certificate-roadmap">
+        {certificates.map((certificate) => (
           <article className="certificate-card" key={certificate.id} itemScope itemType="https://schema.org/EducationalOccupationalCredential">
+            <span className="roadmap-step" aria-hidden="true" />
             <div className="certificate-provider">
               <span className="provider-logo" aria-hidden="true">
                 <ProgressiveImage src={asset(certificate.logo)} alt="" width="52" height="52" loading="lazy" />
