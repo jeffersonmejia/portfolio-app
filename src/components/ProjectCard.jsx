@@ -8,7 +8,7 @@ export function ProjectCard({ project }) {
       <article className="project-card project-card-upcoming">
         <div className="project-placeholder"><Icon name="server" size={42} /></div>
         <div className="project-copy">
-          <span className="project-meta">{project.date}</span>
+          <span className="project-meta"><Icon name={project.icon} size={15} /> {project.date}</span>
           <h3>{project.title}</h3>
           <p>{project.description}</p>
           <div className="tag-list"><span>Backend</span></div>
@@ -33,7 +33,7 @@ export function ProjectCard({ project }) {
       <div className="project-copy">
         <div className="project-meta">
           <time dateTime={project.isoDate} itemProp="datePublished">{project.date}</time>
-          <span>{project.category}</span>
+          <span><Icon name={project.icon} size={15} /> {project.category}</span>
         </div>
         <h3 itemProp="name">{project.title}</h3>
         <p itemProp="description">{project.description}</p>

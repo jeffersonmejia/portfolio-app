@@ -8,7 +8,7 @@ export function Header({ currentPage, onThemeToggle }) {
       <nav className="site-nav" aria-label="Navegación principal">
         {navigation.map(({ path, key, label, icon }) => (
           <a
-            className={`nav-link ${currentPage === key ? 'is-active' : ''}`}
+            className={`nav-link nav-link-${key} ${currentPage === key ? 'is-active' : ''}`}
             href={routeHref(path)}
             key={key}
             aria-label={label}

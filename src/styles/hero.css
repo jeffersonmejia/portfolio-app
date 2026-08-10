@@ -28,6 +28,13 @@
   gap: 1.1rem;
   align-items: center;
 }
+.profile-card {
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--profile-card-surface);
+}
+.profile-card .eyebrow { color: var(--profile-card-accent); }
+.profile-card h1 { color: var(--profile-card-text); }
 .profile-image {
   width: var(--profile-size);
   aspect-ratio: 1;
@@ -39,6 +46,7 @@
 .hero-heading h1 { font-size: var(--font-hero-name); letter-spacing: -.05em; line-height: 1; }
 .hero-career { max-width: 33rem; color: var(--muted); font-style: italic; font-weight: var(--weight-regular); }
 .hero-career, .hero-study { font-size: var(--font-profile-meta); }
+.profile-card :is(.hero-career, .hero-study) { color: var(--profile-card-muted); }
 
 .hero-objective {
   display: grid;
@@ -46,7 +54,7 @@
   gap: .3rem;
   padding: .8rem 1rem;
   border-radius: var(--radius-md);
-  background: var(--pastel-mist);
+  background: var(--objective-card-surface);
   box-shadow: none;
 }
 .hero-objective h2 {
@@ -57,5 +65,7 @@
   font-size: var(--font-small);
   font-weight: var(--weight-bold);
 }
+.hero-objective h2 svg { color: var(--objective-card-accent); }
 .hero-objective p { font-size: var(--font-body-small); }
 .hero-actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+.hero-actions .button { font-size: .8rem; }

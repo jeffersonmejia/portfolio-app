@@ -28,7 +28,7 @@ body {
   background-attachment: fixed;
 }
 
-:root[data-theme='dark'] :is(.hero-card, .project-card, .certificate-card, .contact, .modal) {
+:root[data-theme='dark'] :is(.modal) {
   border: var(--border-width) solid var(--glass-line);
   background: var(--sheen), var(--surface);
   box-shadow: var(--shadow);
@@ -37,13 +37,9 @@ body {
 }
 
 :root[data-theme='dark'] :is(
-  .hero-objective,
-  .timeline-item,
   .timeline-controls button,
   .button-quiet,
-  .contact-link,
   .provider-logo,
-  .tag-list span,
   .filter-list button:not(.is-active),
   .modal-close,
   .contact-form input,
@@ -54,7 +50,7 @@ body {
   box-shadow: none;
 }
 
-:root[data-theme='light'] :is(.hero-card, .project-card, .certificate-card, .contact, .modal) {
+:root[data-theme='light'] :is(.modal) {
   border: var(--border-width) solid var(--glass-line);
   background: var(--sheen), var(--surface);
   box-shadow: var(--shadow);
@@ -63,13 +59,9 @@ body {
 }
 
 :root[data-theme='light'] :is(
-  .hero-objective,
-  .timeline-item,
   .timeline-controls button,
   .button-quiet,
-  .contact-link,
   .provider-logo,
-  .tag-list span,
   .filter-list button:not(.is-active),
   .modal-close,
   .contact-form input,

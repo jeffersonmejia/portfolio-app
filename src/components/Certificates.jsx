@@ -10,7 +10,7 @@ export function Certificates() {
   const [selected, setSelected] = useState(null)
 
   return (
-    <section className="content-section page-shell" id="certificados" aria-labelledby="certificates-title">
+    <section className="content-section page-shell roadmap-page" id="certificados" aria-labelledby="certificates-title">
       <SectionIntro
         eyebrow="Formación"
         title="Capacitaciones profesionales que respaldan mi experiencia."
@@ -19,9 +19,9 @@ export function Certificates() {
         src="assets/img/vectors/skills.svg"
         alt="Ilustración sobre capacitación profesional y habilidades técnicas"
       />
-      <div className="certificate-roadmap">
+      <div className="certificate-roadmap roadmap-list">
         {certificates.map((certificate) => (
-          <article className="certificate-card" key={certificate.id} itemScope itemType="https://schema.org/EducationalOccupationalCredential">
+          <article className="certificate-card roadmap-entry" key={certificate.id} itemScope itemType="https://schema.org/EducationalOccupationalCredential">
             <span className="roadmap-step" aria-hidden="true" />
             <div className="certificate-provider">
               <span className="provider-logo" aria-hidden="true">

@@ -11,7 +11,7 @@ export const profile = {
   career: 'Ingeniería en Tecnologías de Información y Comunicación',
   university: 'Universidad de las Fuerzas Armadas ESPE',
   semester: '7 de 8 semestres',
-  objective: 'Desarrollo soluciones backend claras, mantenibles y preparadas para crecer.',
+  objective: 'Desarrollar soluciones backend seguras, escalables y mantenibles que reduzcan riesgos y acompañen el crecimiento del producto.',
 }
 
 export const contact = {

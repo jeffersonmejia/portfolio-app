@@ -24,6 +24,7 @@ export const projects = [
     date: 'Enero de 2026',
     isoDate: '2026-01-01',
     category: 'Ciberseguridad',
+    icon: 'shield',
     description:
       'Pentesting con explotación de RCE, autenticación débil, FTP anónimo, escalación de privilegios y valoración CVSS.',
     technologies: ['Samba', 'PostgreSQL', 'Linux', 'CVSS'],
@@ -36,6 +37,7 @@ export const projects = [
     date: 'Enero de 2026',
     isoDate: '2026-01-13',
     category: 'Aplicaciones móviles',
+    icon: 'smartphone',
     description:
       'Aplicación comunitaria de alertas para Luz de América, El Esfuerzo y Puerto Limón. Proyecto de Vinculación con la Sociedad.',
     technologies: ['Flutter', 'Firebase', 'Python'],
@@ -48,6 +50,7 @@ export const projects = [
     date: 'Septiembre de 2025',
     isoDate: '2025-09-01',
     category: 'Aplicaciones web',
+    icon: 'code',
     description:
       'Aplicación web con autenticación y panel para crear, consultar, actualizar y eliminar notas en una arquitectura con contenedores.',
     technologies: ['Docker', 'MySQL', 'Apache', 'PHP'],
@@ -60,6 +63,7 @@ export const projects = [
     date: 'Enero de 2023',
     isoDate: '2023-01-01',
     category: 'Frontend',
+    icon: 'cloud',
     description:
       'Consulta del clima, sensación térmica, humedad y presión mediante JavaScript y OpenWeather API.',
     technologies: ['HTML', 'CSS', 'JavaScript', 'API'],

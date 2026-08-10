@@ -11,7 +11,7 @@ export function Projects() {
     : projects.filter((project) => project.category === category)
 
   return (
-    <section className="content-section page-shell" id="proyectos" aria-labelledby="projects-title">
+    <section className="content-section page-shell roadmap-page" id="proyectos" aria-labelledby="projects-title">
       <SectionIntro
         eyebrow="Proyectos"
         title="Backend es mi especialidad."
@@ -26,8 +26,13 @@ export function Projects() {
         selected={category}
         onSelect={setCategory}
       />
-      <div className="project-grid" aria-live="polite">
-        {visible.map((project) => <ProjectCard key={project.id} project={project} />)}
+      <div className="project-roadmap roadmap-list" aria-live="polite">
+        {visible.map((project) => (
+          <div className="roadmap-entry" key={project.id}>
+            <span className="roadmap-step" aria-hidden="true" />
+            <ProjectCard project={project} />
+          </div>
+        ))}
       </div>
     </section>
   )

@@ -10,7 +10,7 @@ export function Hero() {
     <section className="hero page-shell" id="inicio" aria-labelledby="hero-title">
       <article className="hero-card">
         <section className="hero-profile">
-          <header className="hero-heading">
+          <header className="hero-heading profile-card">
             <ProgressiveImage
               shellClassName="profile-image"
               src={asset('assets/img/profile-large.webp')}

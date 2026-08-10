@@ -1,5 +1,7 @@
 import {
   Award,
+  Building2,
+  CalendarDays,
   ChevronDown,
   ChevronLeft,
   ChevronRight,
@@ -25,6 +27,8 @@ import {
 
 const icons = {
   award: Award,
+  building: Building2,
+  calendar: CalendarDays,
   chevron: ChevronDown,
   cloud: CloudSun,
   code: CodeXml,
