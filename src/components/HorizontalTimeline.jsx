@@ -21,10 +21,7 @@ export function HorizontalTimeline() {
   return (
     <section className="home-timeline" aria-labelledby="home-timeline-title">
       <header>
-        <div className="timeline-heading">
-          <span className="eyebrow" id="home-timeline-title">Trayectoria</span>
-          <small>Usa las flechas izquierda y derecha para cambiar de página</small>
-        </div>
+        <span className="eyebrow" id="home-timeline-title">Trayectoria</span>
         <div className="timeline-controls">
           <small>Página {activePage + 1} de {pageCount}</small>
           <button type="button" onClick={goBack} disabled={activePage === 0} aria-label="Ver página anterior">

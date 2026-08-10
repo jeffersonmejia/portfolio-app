@@ -22,13 +22,13 @@
   border-radius: 1rem;
   color: var(--text);
   background: var(--surface-strong);
-  box-shadow: inset 0 2px 6px rgba(255,255,255,.48), 0 6px 20px rgba(31,31,41,.035);
+  box-shadow: inset 0 2px 6px rgba(255,255,255,.48), 0 6px 20px rgba(255,45,85,.035);
   text-align: left;
   text-decoration: none;
   cursor: pointer;
 }
 .contact-link { transition: transform .4s var(--liquid-ease), box-shadow .4s ease; }
-.contact-link:hover { transform: translateY(-2px) scale(1.012); box-shadow: inset 0 2px 7px rgba(255,255,255,.6), 0 10px 28px rgba(31,31,41,.055); }
+.contact-link:hover { transform: translateY(-2px) scale(1.012); box-shadow: inset 0 2px 7px rgba(255,255,255,.6), 0 10px 28px rgba(255,45,85,.055); }
 .contact-link:active { transform: scale(.975); }
 .contact-link:nth-child(2) { background: var(--pastel-blush); }
 .contact-link:nth-child(3) { background: var(--pastel-berry); }
@@ -49,10 +49,10 @@
   border-radius: .75rem;
   color: var(--text);
   background: var(--surface-strong);
-  box-shadow: inset 0 1px 2px rgba(31,31,41,.08), inset 0 -1px 1px rgba(255,255,255,.8);
+  box-shadow: inset 0 1px 2px rgba(255,45,85,.06), inset 0 -1px 1px rgba(255,255,255,.8);
   transition: box-shadow .3s ease, background .3s ease;
 }
-.contact-form input:focus, .contact-form textarea:focus { background: var(--surface); box-shadow: inset 0 1px 2px rgba(31,31,41,.06), 0 0 0 4px rgba(255,45,85,.1); }
+.contact-form input:focus, .contact-form textarea:focus { background: var(--surface); box-shadow: inset 0 1px 2px rgba(255,45,85,.045), 0 0 0 4px rgba(255,45,85,.1); }
 .contact-form textarea { resize: vertical; }
 .form-wide { grid-column: 1 / -1; }
 .consent { display: grid !important; grid-template-columns: auto 1fr; align-items: start; }

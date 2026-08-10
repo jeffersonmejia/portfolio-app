@@ -5,14 +5,15 @@
 }
 
 @media (max-width: 720px) {
-  body { padding-top: 5rem; }
+  body { padding-top: 1rem; padding-bottom: calc(5.5rem + env(safe-area-inset-bottom)); }
   main { gap: 3rem; }
   .page-shell { width: min(100% - 1rem, 680px); }
-  .site-header { padding-inline: .5rem; }
-  .site-nav { justify-content: flex-start; width: 100%; overflow-x: auto; scrollbar-width: none; }
-  .site-nav::-webkit-scrollbar { display: none; }
-  .nav-link { flex: 0 0 auto; padding-inline: .7rem; }
+  .site-header { inset: auto 0 0; padding: .5rem .5rem calc(.5rem + env(safe-area-inset-bottom)); }
+  .site-nav { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); width: min(100%, 32rem); overflow: visible; }
+  .nav-link { justify-content: center; min-width: 0; min-height: 2.9rem; padding: .65rem .35rem; }
   .nav-link span { display: none; }
+  .site-nav .icon-button { width: 100%; height: auto; min-height: 2.9rem; margin: 0; }
+  .page-skeleton { inset: 0 0 calc(4.5rem + env(safe-area-inset-bottom)); }
   .hero { min-height: calc(100dvh - 9.5rem); }
   .hero { width: min(100% - 1rem, 680px); }
   .hero-card { gap: 1.25rem; padding: 1.2rem; }

@@ -31,7 +31,7 @@
   width: clamp(6.5rem, 9vw, 8rem);
   aspect-ratio: 1;
   border-radius: 50%;
-  box-shadow: inset 0 2px 6px rgba(255,255,255,.55), 0 8px 24px rgba(31,31,41,.055);
+  box-shadow: inset 0 2px 6px rgba(255,255,255,.55), 0 8px 24px rgba(255,45,85,.055);
 }
 .profile-image img { width: 100%; height: 100%; object-fit: cover; }
 .hero-heading > div { display: grid; gap: .25rem; }
