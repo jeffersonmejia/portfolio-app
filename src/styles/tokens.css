@@ -49,6 +49,8 @@
   --contact-accent-two: #137333;
   --contact-accent-three: #a33b35;
   --roadmap-main-surface: #fff;
+  --primary-action-surface: #e4e7ff;
+  --primary-action-hover: #d8ddff;
   --surface: rgba(255, 255, 255, .76);
   --surface-strong: rgba(255, 255, 255, .68);
   --subsurface: var(--page);
@@ -161,6 +163,8 @@
   --contact-accent-two: #83dfa5;
   --contact-accent-three: #ffaaa4;
   --roadmap-main-surface: rgba(255, 255, 255, .045);
+  --primary-action-surface: rgba(116, 128, 255, .18);
+  --primary-action-hover: rgba(116, 128, 255, .26);
   --surface: rgba(255, 255, 255, .035);
   --surface-strong: rgba(116, 128, 255, .055);
   --nav: rgba(24, 10, 17, .48);

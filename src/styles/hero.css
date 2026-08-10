@@ -68,4 +68,6 @@
 .hero-objective h2 svg { color: var(--objective-card-accent); }
 .hero-objective p { font-size: var(--font-body-small); }
 .hero-actions { display: flex; flex-wrap: wrap; gap: .5rem; }
-.hero-actions .button { font-size: .8rem; }
+.hero-actions .button { gap: .4rem; font-size: .8rem; }
+.hero-actions .button-primary { color: var(--accent-contrast); background: var(--primary-action-surface); }
+.hero-actions .button-primary:hover { background: var(--primary-action-hover); }
