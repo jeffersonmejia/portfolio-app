@@ -1,6 +1,7 @@
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { PageSkeleton } from './components/PageSkeleton'
+import { useNavigation } from './hooks/useNavigation'
 import { useTheme } from './hooks/useTheme'
 import { CertificatesPage } from './pages/CertificatesPage'
 import { ContactPage } from './pages/ContactPage'
@@ -18,7 +19,8 @@ const pages = {
 
 export default function App({ pathname = '/' }) {
   const theme = useTheme()
-  const currentPage = pageFromPath(pathname)
+  const activePathname = useNavigation(pathname)
+  const currentPage = pageFromPath(activePathname)
   const Page = pages[currentPage]
 
   return (

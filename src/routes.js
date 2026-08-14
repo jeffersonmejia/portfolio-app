@@ -1,3 +1,5 @@
+export const siteUrl = 'https://jeffersonmejia.github.io/portfolio-app'
+
 export const routeDefinitions = [
   {
     key: 'inicio',
@@ -25,11 +27,13 @@ export const routeDefinitions = [
   },
 ]
 
-export function pageFromPath(pathname) {
+export function routeFromPath(pathname) {
   const normalized = pathname.replace(/\/portfolio-app/, '').replace(/\/+$/, '')
   const segment = normalized.split('/').filter(Boolean).at(-1)
-  return routeDefinitions.find(({ key }) => key === segment)?.key ?? 'inicio'
+  return routeDefinitions.find(({ key }) => key === segment) ?? routeDefinitions[0]
 }
+
+export function pageFromPath(pathname) { return routeFromPath(pathname).key }
 
 export function routeHref(path) {
   const base = import.meta.env.BASE_URL.replace(/\/$/, '')

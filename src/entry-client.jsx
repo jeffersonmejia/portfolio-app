@@ -1,8 +1,9 @@
 import { StrictMode } from 'react'
-import { hydrateRoot } from 'react-dom/client'
+import { createRoot, hydrateRoot } from 'react-dom/client'
 import App from './App'
 
-hydrateRoot(
-  document.getElementById('root'),
-  <StrictMode><App pathname={window.location.pathname} /></StrictMode>,
-)
+const container = document.getElementById('root')
+const app = <StrictMode><App pathname={window.location.pathname} /></StrictMode>
+
+if (container.hasChildNodes()) hydrateRoot(container, app)
+else createRoot(container).render(app)

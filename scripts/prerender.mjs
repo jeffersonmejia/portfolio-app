@@ -1,7 +1,7 @@
 import { cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { render, routeDefinitions } from '../dist-server/entry-server.js'
+import { render, routeDefinitions, siteUrl } from '../dist-server/entry-server.js'
 
 const projectPath = dirname(dirname(fileURLToPath(import.meta.url)))
 const distPath = join(projectPath, 'dist')
@@ -9,7 +9,6 @@ const indexPath = join(distPath, 'index.html')
 const serverPath = join(projectPath, 'dist-server')
 const template = await readFile(indexPath, 'utf8')
 const marker = '<div id="root"></div>'
-const siteUrl = 'https://jeffersonmejia.github.io/portfolio-app'
 
 if (!template.includes(marker)) {
   throw new Error('No se encontró el contenedor principal para prerenderizar.')
