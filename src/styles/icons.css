@@ -41,8 +41,38 @@
   color: currentColor;
 }
 
+:is(
+  .timeline-action,
+  .project-action,
+  .certificate-action,
+  .hero-destination-actions .button
+) .fluent-icon {
+  width: 1.42rem;
+  height: 1.42rem;
+  padding: .25rem;
+  border-radius: .42rem;
+  background: linear-gradient(145deg,
+    var(--surface-strong),
+    color-mix(in srgb, currentColor 16%, var(--surface-strong)));
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, .8), 0 2px 5px color-mix(in srgb, currentColor 18%, transparent);
+  filter: none;
+}
+
 :root[data-theme='dark'] .fluent-icon {
   filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .5));
+}
+
+:root[data-theme='dark'] :is(
+  .timeline-action,
+  .project-action,
+  .certificate-action,
+  .hero-destination-actions .button
+) .fluent-icon {
+  background: linear-gradient(145deg,
+    rgba(255, 255, 255, .12),
+    color-mix(in srgb, currentColor 18%, var(--surface-strong)));
+  box-shadow: inset 0 1px rgba(255, 255, 255, .16), 0 2px 4px rgba(0, 0, 0, .28);
+  filter: none;
 }
 
 :root[data-theme='dark'] :is(.timeline-icon, .contact-link > .fluent-icon) {

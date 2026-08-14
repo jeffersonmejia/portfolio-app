@@ -35,9 +35,13 @@
 .certificate-card h3 { color: var(--card-accent); font-size: 1.15rem; }
 .certificate-card p { color: color-mix(in srgb, var(--card-accent) 40%, var(--text)); font-size: .88rem; line-height: 1.5; }
 .certificate-card .text-link { margin-top: auto; color: var(--card-accent); }
-.certificate-action { min-height: 2.35rem; padding: .5rem .8rem; border-radius: .7rem; background: var(--white); box-shadow: var(--shadow-soft); font-size: .78rem; text-decoration: none; transition: background var(--duration-fast) ease, box-shadow var(--duration-fast) ease, transform var(--duration-fast) var(--liquid-ease); }
-.certificate-action:hover { background: color-mix(in srgb, var(--card-accent) 5%, var(--white)); box-shadow: var(--shadow); text-decoration: none; transform: translateY(-1px); }
+.certificate-action { min-height: 2.35rem; padding: .5rem .8rem; border-radius: .7rem; background: var(--roadmap-main-surface); box-shadow: var(--shadow-soft); font-size: .78rem; text-decoration: none; transition: background var(--duration-fast) ease, box-shadow var(--duration-fast) ease, transform var(--duration-fast) var(--liquid-ease); }
+.certificate-action:hover { background: color-mix(in srgb, var(--card-accent) 5%, var(--roadmap-main-surface)); box-shadow: var(--shadow); text-decoration: none; transform: translateY(-1px); }
 .certificate-action:active { box-shadow: var(--shadow-soft); transform: scale(.97); }
+:root[data-theme='dark'] .certificate-action {
+  background: var(--roadmap-main-surface);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .24);
+}
 .modal {
   width: min(900px, calc(100% - 1.5rem));
   max-height: calc(100dvh - 2rem);

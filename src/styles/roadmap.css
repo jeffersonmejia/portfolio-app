@@ -24,6 +24,7 @@
 .roadmap-entry {
   position: relative;
   min-width: 0;
+  border-radius: var(--radius-lg);
   content-visibility: auto;
   contain-intrinsic-block-size: auto 15rem;
 }
