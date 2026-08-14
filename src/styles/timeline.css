@@ -85,8 +85,18 @@
 .timeline-action-primary { color: var(--white) !important; background: var(--timeline-item-accent); box-shadow: var(--shadow-button); }
 .timeline-action-primary:hover { color: var(--white); background: color-mix(in srgb, var(--timeline-item-accent) 88%, #000); box-shadow: var(--shadow-soft); }
 :root[data-theme='dark'] .timeline-action:not(.timeline-action-primary) {
-  background: var(--surface-strong);
+  color: color-mix(in srgb, var(--timeline-item-accent) 78%, var(--text));
+  background: color-mix(in srgb, var(--timeline-item-accent) 6%, var(--surface-strong));
   box-shadow: 0 2px 5px rgba(0, 0, 0, .24);
+}
+:root[data-theme='dark'] .timeline-action-primary {
+  color: color-mix(in srgb, var(--timeline-item-accent) 78%, var(--text)) !important;
+  background: color-mix(in srgb, var(--timeline-item-accent) 15%, var(--surface-strong));
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .26);
+}
+:root[data-theme='dark'] .timeline-action-primary:hover {
+  color: var(--text) !important;
+  background: color-mix(in srgb, var(--timeline-item-accent) 22%, var(--surface-strong));
 }
 .timeline-pages { position: relative; display: flex; justify-self: center; gap: .55rem; }
 .timeline-pages::before {
