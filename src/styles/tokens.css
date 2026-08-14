@@ -1,72 +1,86 @@
 :root {
   --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --brand: #0003ff;
-  --accent: #3346eb;
-  --accent-strong: #1424ef;
-  --accent-contrast: #2637c7;
-  --text: #1d1d1f;
-  --muted: #5f5b60;
-  --page: #f5f5f7;
+  --brand: #0067c0;
+  --accent: #0067c0;
+  --accent-strong: #005a9e;
+  --accent-contrast: #004578;
+  --text: #242424;
+  --muted: #616161;
+  --page: #f3f3f3;
   --white: #fff;
-  --pastel-blue: rgba(185, 192, 255, .76);
-  --pastel-mist: rgba(225, 228, 255, .82);
-  --pastel-periwinkle: rgba(204, 213, 255, .76);
-  --pastel-lavender: rgba(216, 209, 255, .76);
-  --pastel-indigo: rgba(190, 202, 245, .72);
-  --timeline-card-one: #fce8e6;
-  --timeline-card-two: #f3e8fd;
-  --timeline-card-three: #ffe8d6;
-  --timeline-accent-one: #a43f38;
-  --timeline-accent-two: #74459b;
-  --timeline-accent-three: #a84f16;
+  --blue-50: #f5faff;
+  --blue-100: #e9f4ff;
+  --blue-200: #d7ebff;
+  --blue-300: #b4d6f7;
+  --blue-500: #0078d4;
+  --blue-700: #005a9e;
+  --pastel-blue: rgba(215, 235, 255, .86);
+  --pastel-mist: rgba(239, 247, 255, .9);
+  --pastel-periwinkle: rgba(224, 232, 255, .84);
+  --pastel-lavender: rgba(231, 230, 255, .84);
+  --pastel-indigo: rgba(207, 223, 250, .8);
+  --timeline-card-one: #eaf4ff;
+  --timeline-card-two: #eef0ff;
+  --timeline-card-three: #e8f7ff;
+  --timeline-accent-one: #005a9e;
+  --timeline-accent-two: #4f4bb8;
+  --timeline-accent-three: #006b82;
   --timeline-icon-surface: rgba(255, 255, 255, .68);
   --timeline-skeleton-line: rgba(255, 255, 255, .76);
-  --profile-card-surface: #dff3ff;
-  --profile-card-accent: #176b96;
-  --profile-card-text: #173f61;
-  --profile-card-muted: #42657d;
-  --project-card-one: #e8f0fe;
-  --project-card-two: #fce8e6;
-  --project-card-three: #e6f4ea;
-  --project-card-four: #fef7e0;
-  --project-accent-one: #185abc;
-  --project-accent-two: #a33b35;
-  --project-accent-three: #137333;
-  --project-accent-four: #8a5a00;
-  --certificate-card-one: #f3e8fd;
-  --certificate-card-two: #e0f2f1;
-  --certificate-card-three: #fff1d6;
-  --certificate-accent-one: #74459b;
-  --certificate-accent-two: #176f67;
-  --certificate-accent-three: #8a5a00;
+  --profile-card-surface: #e5f2ff;
+  --profile-card-accent: #0067c0;
+  --profile-card-text: #14395b;
+  --profile-card-muted: #45647f;
+  --project-card-one: #edf6ff;
+  --project-card-two: #f0f1ff;
+  --project-card-three: #e9f7fb;
+  --project-card-four: #eaf3fc;
+  --project-accent-one: #005a9e;
+  --project-accent-two: #4f4bb8;
+  --project-accent-three: #006b82;
+  --project-accent-four: #245a8d;
+  --certificate-card-one: #eff1ff;
+  --certificate-card-two: #e8f7fb;
+  --certificate-card-three: #edf6ff;
+  --certificate-accent-one: #4f4bb8;
+  --certificate-accent-two: #006b82;
+  --certificate-accent-three: #005a9e;
   --contact-card-surface: #fff;
-  --contact-link-one: #e8f0fe;
-  --contact-link-two: #e6f4ea;
-  --contact-link-three: #fce8e6;
-  --contact-accent-one: #185abc;
-  --contact-accent-two: #137333;
-  --contact-accent-three: #a33b35;
+  --contact-link-one: #edf6ff;
+  --contact-link-two: #e8f7fb;
+  --contact-link-three: #f0f1ff;
+  --contact-accent-one: #005a9e;
+  --contact-accent-two: #006b82;
+  --contact-accent-three: #4f4bb8;
   --roadmap-main-surface: #fff;
-  --primary-action-surface: #e4e7ff;
-  --primary-action-hover: #d8ddff;
-  --surface: rgba(255, 255, 255, .76);
-  --surface-strong: rgba(255, 255, 255, .68);
+  --primary-action-surface: #dceeff;
+  --primary-action-hover: #c7e3ff;
+  --surface: rgba(255, 255, 255, .88);
+  --surface-strong: rgba(255, 255, 255, .96);
   --subsurface: var(--page);
-  --nav: rgba(255, 255, 255, .76);
-  --nav-hover: rgba(255, 255, 255, .38);
-  --logo-surface: rgba(255, 255, 255, .82);
+  --nav: rgba(255, 255, 255, .78);
+  --nav-hover: rgba(0, 103, 192, .08);
+  --logo-surface: rgba(255, 255, 255, .92);
   --modal-backdrop: rgba(20, 20, 24, .16);
   --media-tint: rgba(45, 37, 41, .08);
   --media-tint-hover: rgba(45, 37, 41, .04);
   --skeleton-shine: rgba(255, 255, 255, .52);
-  --glass-line: rgba(45, 37, 41, .075);
-  --subline: rgba(45, 37, 41, .13);
-  --line: rgba(110, 110, 115, .2);
-  --focus: rgba(51, 70, 235, .45);
+  --glass-line: rgba(255, 255, 255, .72);
+  --subline: rgba(0, 0, 0, .08);
+  --line: rgba(0, 0, 0, .11);
+  --focus: rgba(0, 103, 192, .42);
   --page-background: var(--page);
   --sheen: linear-gradient(145deg, rgba(255,255,255,.86), rgba(255,255,255,.28) 36%, transparent 58%, rgba(255,255,255,.18));
-  --shadow: none;
-  --subshadow: none;
+  --shadow-color: rgba(0, 0, 0, .09);
+  --shadow: 0 2px 4px rgba(0, 0, 0, .04), 0 8px 24px var(--shadow-color);
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, .05), 0 4px 12px rgba(0, 0, 0, .06);
+  --shadow-hover: 0 4px 8px rgba(0, 0, 0, .06), 0 14px 32px rgba(0, 80, 150, .13);
+  --shadow-flyout: 0 8px 16px rgba(0, 0, 0, .10), 0 24px 48px rgba(0, 0, 0, .12);
+  --shadow-button: 0 1px 2px rgba(0, 0, 0, .12), inset 0 1px rgba(255, 255, 255, .18);
+  --subshadow: var(--shadow-soft);
+  --icon-surface: linear-gradient(145deg, #fff 4%, #eaf5ff 48%, #b9dcfa 100%);
+  --icon-highlight: inset 0 1px 1px rgba(255, 255, 255, .9);
+  --icon-shadow: 0 2px 3px rgba(0, 69, 120, .14), 0 6px 12px rgba(0, 103, 192, .1);
   --space-1: .25rem;
   --space-2: .5rem;
   --space-3: .75rem;
@@ -100,7 +114,6 @@
   --mobile-content-max: 42.5rem;
   --button-min-height: 2.8rem;
   --profile-size: clamp(6.5rem, 9vw, 8rem);
-  --border-width: 1px;
   --glass-blur: 10px;
   --glass-saturation: 120%;
   --nav-blur: 12px;
@@ -114,12 +127,12 @@
 }
 
 :root[data-theme='dark'] {
-  --accent: #7480ff;
-  --accent-strong: #929bff;
-  --accent-contrast: #4254df;
+  --accent: #60aeea;
+  --accent-strong: #75b9eb;
+  --accent-contrast: #2899f5;
   --text: #f5f5f7;
   --muted: #bdb8bc;
-  --page: #08080b;
+  --page: #202020;
   --pastel-blue: rgba(116, 128, 255, .12);
   --pastel-mist: rgba(146, 155, 255, .075);
   --pastel-periwinkle: rgba(89, 109, 255, .095);
@@ -133,7 +146,7 @@
   --timeline-accent-three: #ffad78;
   --timeline-icon-surface: rgba(255, 255, 255, .09);
   --timeline-skeleton-line: rgba(255, 255, 255, .13);
-  --profile-card-surface: rgba(67, 169, 224, .2);
+  --profile-card-surface: rgba(40, 153, 245, .18);
   --profile-card-accent: #86d5ff;
   --profile-card-text: #e0f3ff;
   --profile-card-muted: #b6d9ec;
@@ -161,30 +174,23 @@
   --roadmap-main-surface: rgba(255, 255, 255, .045);
   --primary-action-surface: rgba(116, 128, 255, .18);
   --primary-action-hover: rgba(116, 128, 255, .26);
-  --surface: rgba(255, 255, 255, .035);
-  --surface-strong: rgba(116, 128, 255, .055);
-  --nav: rgba(24, 10, 17, .48);
+  --surface: rgba(45, 45, 45, .82);
+  --surface-strong: rgba(53, 53, 53, .92);
+  --nav: rgba(40, 40, 40, .78);
   --nav-hover: rgba(255, 255, 255, .075);
-  --glass-line: rgba(255, 255, 255, .16);
+  --glass-line: rgba(255, 255, 255, .12);
   --subline: rgba(255, 255, 255, .12);
   --line: rgba(255, 255, 255, .1);
   --sheen: linear-gradient(145deg, rgba(255,255,255,.19), rgba(255,255,255,.035) 34%, transparent 58%, rgba(255,255,255,.025));
-  --page-background: radial-gradient(circle at 12% 8%, rgba(255,255,255,.075), transparent 24rem), radial-gradient(circle at 88% 82%, rgba(255,255,255,.035), transparent 30rem), var(--page);
+  --page-background: radial-gradient(circle at 12% 8%, rgba(40,153,245,.12), transparent 24rem), radial-gradient(circle at 88% 82%, rgba(96,174,234,.06), transparent 30rem), var(--page);
+  --shadow-color: rgba(0, 0, 0, .32);
+  --shadow: 0 2px 4px rgba(0, 0, 0, .16), 0 8px 24px var(--shadow-color);
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, .24);
+  --shadow-hover: 0 5px 12px rgba(0, 0, 0, .24), 0 16px 36px rgba(0, 0, 0, .32);
+  --shadow-flyout: 0 12px 28px rgba(0, 0, 0, .42);
   --glass-blur: 16px;
   --glass-saturation: 130%;
 }
 
-@media (max-width: 720px) {
-  :root { --profile-size: 7rem; }
-}
-
-@media (max-width: 520px) {
-  :root {
-    font-size: 15px;
-    --font-heading: 2rem;
-    --font-hero-name: 2rem;
-    --font-profile-meta: .72rem;
-    --font-nav-mobile: .58rem;
-    --profile-size: 5.25rem;
-  }
-}
+@media (max-width: 720px) { :root { --profile-size: 7rem; } }
+@media (max-width: 520px) { :root { font-size: 15px; --font-heading: 2rem; --font-hero-name: 2rem; --font-profile-meta: .72rem; --font-nav-mobile: .58rem; --profile-size: 5.25rem; } }

@@ -17,8 +17,7 @@
   border-radius: var(--radius-pill);
   background: var(--sheen), var(--nav);
   background-blend-mode: screen, normal;
-  border: var(--border-width) solid var(--glass-line);
-  box-shadow: none;
+  box-shadow: var(--shadow-soft);
   -webkit-backdrop-filter: blur(var(--nav-blur)) saturate(var(--nav-saturation));
   backdrop-filter: blur(var(--nav-blur)) saturate(var(--nav-saturation));
   pointer-events: auto;
@@ -39,7 +38,7 @@
 }
 .nav-link:hover { color: var(--text); background: var(--nav-hover); transform: scale(1.025); }
 .nav-link:active { transform: scale(.96); }
-.nav-link.is-active { color: var(--accent); background: transparent; box-shadow: none; }
+.nav-link.is-active { color: var(--accent); background: var(--nav-hover); box-shadow: none; }
 .site-nav .icon-button { margin-left: .1rem; }
 .theme-icon { display: grid; place-items: center; }
 .theme-icon-dark { display: none; }
@@ -47,7 +46,7 @@
 :root[data-theme='dark'] .theme-icon-light { display: none; }
 :root[data-theme='dark'] .theme-icon-dark { display: grid; }
 :root[data-theme='dark'] .site-nav {
-  box-shadow: none;
+  box-shadow: var(--shadow);
 }
 :root[data-theme='dark'] .nav-link:hover { background: var(--nav-hover); }
-:root[data-theme='dark'] .nav-link.is-active { background: transparent; }
+:root[data-theme='dark'] .nav-link.is-active { background: var(--nav-hover); }

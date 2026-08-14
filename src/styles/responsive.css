@@ -31,6 +31,9 @@
   .hero-objective { grid-template-columns: 1fr; gap: .25rem; }
   .hero-actions .button { flex: 1 1 auto; min-height: 2.4rem; padding: .5rem .7rem; font-size: .76rem; }
   .timeline-stage { grid-template-columns: 1fr; }
+  .home-timeline > header { gap: .45rem; }
+  .timeline-controls { gap: .15rem; }
+  .timeline-controls small { margin-right: .1rem; font-size: .7rem; }
   .timeline-skeleton:nth-child(n+2) { display: none; }
   .timeline-item { min-height: 6.5rem; }
   .project-card { grid-template-columns: 1fr; }

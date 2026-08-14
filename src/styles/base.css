@@ -29,7 +29,6 @@ body {
 }
 
 :root[data-theme='dark'] :is(.modal) {
-  border: var(--border-width) solid var(--glass-line);
   background: var(--sheen), var(--surface);
   box-shadow: var(--shadow);
   -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
@@ -44,13 +43,11 @@ body {
   .contact-form input,
   .contact-form textarea
 ) {
-  border: var(--border-width) solid var(--subline);
   background: var(--sheen), var(--surface-strong);
   box-shadow: none;
 }
 
 :root[data-theme='light'] :is(.modal) {
-  border: var(--border-width) solid var(--glass-line);
   background: var(--sheen), var(--surface);
   box-shadow: var(--shadow);
   -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
@@ -65,7 +62,6 @@ body {
   .contact-form input,
   .contact-form textarea
 ) {
-  border: var(--border-width) solid var(--subline);
   background: var(--subsurface);
   box-shadow: var(--subshadow);
 }
@@ -111,10 +107,10 @@ button:focus-visible, a:focus-visible, summary:focus-visible, input:focus-visibl
   box-shadow: none;
   transition: transform .35s var(--liquid-ease), background .35s ease, box-shadow .35s ease;
 }
-.button-primary { color: white; background: var(--accent-contrast); box-shadow: none; }
-.button-primary:hover { background: var(--accent-strong); transform: translateY(-1px) scale(1.015); }
+.button-primary { color: white; background: var(--accent); box-shadow: var(--shadow-button); }
+.button-primary:hover { background: var(--accent-strong); transform: translateY(-1px) scale(1.015); box-shadow: var(--shadow-soft); }
 .button-quiet { color: var(--text); background: var(--surface-strong); }
-.button-quiet:hover { transform: translateY(-1px) scale(1.015); box-shadow: none; }
+.button-quiet:hover { transform: translateY(-1px) scale(1.015); box-shadow: var(--shadow-soft); }
 .button:active { transform: scale(.97); }
 .button:disabled { opacity: .58; cursor: wait; }
 

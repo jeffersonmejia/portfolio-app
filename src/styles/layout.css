@@ -1,6 +1,7 @@
 #root { min-height: 100vh; }
 #root:has(.page-inicio) { min-height: auto; }
-main { display: grid; gap: calc(var(--space-12) + var(--space-2)); }
+main { display: grid; min-width: 0; gap: calc(var(--space-12) + var(--space-2)); padding-bottom: var(--space-4); }
+.page, .page-shell, .page-shell > * { min-width: 0; }
 .page:not(.page-inicio) { min-height: calc(100vh - 13rem); padding-top: 1rem; }
 
 .page-shell {
@@ -12,6 +13,7 @@ main { display: grid; gap: calc(var(--space-12) + var(--space-2)); }
 
 .section-heading {
   display: grid;
+  min-width: 0;
   max-width: 760px;
   gap: .45rem;
 }
@@ -35,6 +37,7 @@ main { display: grid; gap: calc(var(--space-12) + var(--space-2)); }
 }
 
 .section-heading p { max-width: 620px; font-size: 1.02rem; }
+.section-heading :is(h2, p) { overflow-wrap: break-word; }
 
 .section-intro {
   display: grid;

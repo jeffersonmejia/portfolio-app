@@ -19,24 +19,26 @@
   grid-template-columns: auto 1fr;
   gap: .75rem;
   align-items: center;
+  min-width: 0;
   width: 100%;
   padding: .9rem;
   border: 0;
   border-radius: var(--radius-md);
   color: var(--text);
   background: var(--contact-link-one);
-  box-shadow: none;
+  box-shadow: var(--shadow-soft);
   text-align: left;
   text-decoration: none;
   cursor: pointer;
 }
 .contact-link { transition: transform .4s var(--liquid-ease), box-shadow .4s ease; }
-.contact-link:hover { transform: translateY(-2px) scale(1.012); box-shadow: none; }
+.contact-link:hover { transform: translateY(-2px) scale(1.012); box-shadow: var(--shadow-hover); }
 .contact-link:active { transform: scale(.975); }
 .contact-link:nth-child(2) { --card-accent: var(--contact-accent-two); background: var(--contact-link-two); }
 .contact-link:nth-child(3) { --card-accent: var(--contact-accent-three); background: var(--contact-link-three); }
-.contact-link > svg, .contact-link strong { color: var(--card-accent); }
-.contact-link span { display: grid; gap: .15rem; }
+.contact-link > .fluent-icon, .contact-link strong { color: var(--card-accent); }
+.contact-link span { display: grid; min-width: 0; gap: .15rem; }
+.contact-link :is(strong, small) { overflow-wrap: anywhere; }
 .contact-link small { color: var(--muted); }
 
 .form-modal { display: grid; min-width: 0; max-width: 100%; gap: .7rem; padding: .5rem; }
@@ -52,10 +54,10 @@
   border-radius: var(--radius-sm);
   color: var(--text);
   background: var(--surface-strong);
-  box-shadow: none;
+  box-shadow: var(--shadow-soft);
   transition: box-shadow .3s ease, background .3s ease;
 }
-.contact-form input:focus, .contact-form textarea:focus { background: var(--surface); box-shadow: none; }
+.contact-form input:focus, .contact-form textarea:focus { background: var(--surface); box-shadow: 0 0 0 1px var(--accent), var(--shadow-soft); }
 .contact-form textarea { resize: vertical; }
 .form-wide { grid-column: 1 / -1; }
 .consent { display: grid !important; grid-template-columns: auto 1fr; align-items: start; }

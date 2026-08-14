@@ -34,6 +34,7 @@
   padding: var(--space-4);
   border-radius: var(--radius-md);
   background: var(--profile-card-surface);
+  box-shadow: var(--shadow-soft);
 }
 .profile-card .eyebrow { color: var(--profile-card-accent); }
 .profile-card h1 { color: var(--profile-card-text); }
@@ -41,7 +42,7 @@
   width: var(--profile-size);
   aspect-ratio: 1;
   border-radius: 50%;
-  box-shadow: none;
+  box-shadow: 0 4px 14px rgba(0, 80, 150, .16);
 }
 .profile-image img { width: 100%; height: 100%; object-fit: cover; }
 .hero-heading > div { display: grid; gap: .25rem; }

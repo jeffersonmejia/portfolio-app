@@ -29,7 +29,7 @@
 }
 .skeleton-profile { display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: center; }
 .skeleton-profile > div { display: grid; gap: .7rem; }
-.skeleton-block { position: relative; display: block; overflow: hidden; border: var(--border-width) solid var(--subline); border-radius: var(--radius-md); background: linear-gradient(135deg, var(--surface-strong), var(--surface)); }
+.skeleton-block { position: relative; display: block; overflow: hidden; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--surface-strong), var(--surface)); }
 .skeleton-block::after {
   position: absolute;
   inset: 0;
