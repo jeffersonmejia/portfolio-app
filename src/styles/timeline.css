@@ -89,9 +89,13 @@
   background: color-mix(in srgb, var(--timeline-item-accent) 6%, var(--surface-strong));
   box-shadow: 0 2px 5px rgba(0, 0, 0, .24);
 }
+:root[data-theme='dark'] .timeline-action-close {
+  color: var(--muted);
+  background: var(--surface-strong);
+}
 :root[data-theme='dark'] .timeline-action-primary {
   color: color-mix(in srgb, var(--timeline-item-accent) 78%, var(--text)) !important;
-  background: color-mix(in srgb, var(--timeline-item-accent) 15%, var(--surface-strong));
+  background: color-mix(in srgb, var(--timeline-item-accent) 24%, var(--surface-strong));
   box-shadow: 0 2px 5px rgba(0, 0, 0, .26);
 }
 :root[data-theme='dark'] .timeline-action-primary:hover {
@@ -128,3 +132,12 @@
 }
 .timeline-pages button:hover { opacity: .7; }
 .timeline-pages button.is-active { opacity: .12; }
+:root[data-theme='dark'] .timeline-pages::before {
+  background: color-mix(in srgb, var(--accent) 66%, var(--page));
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+}
+:root[data-theme='dark'] .timeline-pages button {
+  background: color-mix(in srgb, var(--muted) 32%, var(--page));
+  opacity: 1;
+}
+:root[data-theme='dark'] .timeline-pages button.is-active { opacity: .18; }
