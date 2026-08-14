@@ -28,6 +28,8 @@ export function ProjectCard({ project }) {
           width="720"
           height="480"
           loading="lazy"
+          decoding="async"
+          fetchPriority="low"
           itemProp="image"
         />
       </a>

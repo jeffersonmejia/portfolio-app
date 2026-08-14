@@ -1,8 +1,11 @@
 import { projects } from '../data/projects'
+import { useProgressiveRoadmap } from '../hooks/useProgressiveRoadmap'
 import { ProjectCard } from './ProjectCard'
 import { SectionIntro } from './SectionIntro'
 
 export function Projects() {
+  const roadmapRef = useProgressiveRoadmap()
+
   return (
     <section className="content-section page-shell roadmap-page" id="proyectos" aria-labelledby="projects-title">
       <SectionIntro
@@ -13,7 +16,7 @@ export function Projects() {
         src="assets/img/vectors/projects.svg"
         alt="Ilustración sobre desarrollo y organización de proyectos"
       />
-      <div className="project-roadmap roadmap-list" aria-live="polite">
+      <div className="project-roadmap roadmap-list" ref={roadmapRef}>
         {projects.map((project) => (
           <div className="roadmap-entry" key={project.id}>
             <span className="roadmap-step" aria-hidden="true" />

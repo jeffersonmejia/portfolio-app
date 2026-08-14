@@ -21,7 +21,21 @@
   opacity: .34;
 }
 
-.roadmap-entry { position: relative; min-width: 0; }
+.roadmap-entry {
+  position: relative;
+  min-width: 0;
+  content-visibility: auto;
+  contain-intrinsic-block-size: auto 15rem;
+}
+.roadmap-list[data-progressive='true'] .roadmap-entry {
+  opacity: 0;
+  transform: translateY(10px) scale(.994);
+  transition: opacity .38s ease, transform .42s var(--liquid-ease);
+}
+.roadmap-list[data-progressive='true'] .roadmap-entry.is-revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
 .roadmap-step {
   position: absolute;
   top: var(--space-6);
