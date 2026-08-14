@@ -1,5 +1,5 @@
 @media (max-width: 950px) {
-  .hero-card { grid-template-columns: 1fr; min-height: auto; }
+  .hero-card, .hero-card.is-expanded { grid-template-columns: 1fr; min-height: auto; }
 }
 
 @media (max-width: 720px) {

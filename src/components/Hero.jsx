@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { profile } from '../data/site'
 import { routeHref } from '../routes'
 import { asset } from '../utils/asset'
@@ -6,9 +7,11 @@ import { Icon } from './Icon'
 import { ProgressiveImage } from './ProgressiveImage'
 
 export function Hero() {
+  const [showMore, setShowMore] = useState(false)
+
   return (
     <section className="hero page-shell" id="inicio" aria-labelledby="hero-title">
-      <article className="hero-card">
+      <article className={`hero-card ${showMore ? 'is-expanded' : ''}`}>
         <section className="hero-profile">
           <section className="profile-card">
             <header className="hero-heading">
@@ -32,12 +35,36 @@ export function Hero() {
               <p>{profile.objective}</p>
             </section>
           </section>
-          <nav className="hero-actions" aria-label="Enlaces destacados">
-            <a className="button button-primary" href={routeHref('/certificados/')}><Icon name="award" size={16} /> Capacitaciones</a>
-            <a className="button button-quiet" href={routeHref('/proyectos/')}><Icon name="folder" size={16} /> Proyectos</a>
-          </nav>
+          <div className="hero-actions">
+            <button
+              className="button button-primary hero-more-toggle"
+              type="button"
+              aria-controls="home-more-content"
+              aria-expanded={showMore}
+              onClick={() => setShowMore((current) => !current)}
+            >
+              <Icon name={showMore ? 'up' : 'chevron'} size={16} />
+              {showMore ? 'Mostrar menos' : 'Conocer más'}
+            </button>
+            <nav
+              className="hero-destination-actions"
+              aria-label="Enlaces destacados"
+              aria-hidden={!showMore}
+              inert={!showMore}
+            >
+              <a className="button button-quiet" href={routeHref('/certificados/')}><Icon name="award" size={16} /> Capacitaciones</a>
+              <a className="button button-quiet" href={routeHref('/proyectos/')}><Icon name="folder" size={16} /> Proyectos</a>
+            </nav>
+          </div>
         </section>
-        <HorizontalTimeline />
+        <div
+          className="hero-more-panel"
+          id="home-more-content"
+          aria-hidden={!showMore}
+          inert={!showMore}
+        >
+          <div><HorizontalTimeline /></div>
+        </div>
       </article>
     </section>
   )
