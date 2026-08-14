@@ -47,7 +47,9 @@
   border-radius: var(--radius-md);
   background: var(--profile-card-surface);
   box-shadow: var(--shadow-soft);
+  transition: background var(--hero-reveal-duration) var(--liquid-ease);
 }
+.hero-card:not(.is-expanded) .profile-card { background: var(--surface-strong); }
 .profile-card :is(.eyebrow, h1) { color: var(--profile-card-text); }
 .profile-image {
   width: var(--profile-size);
@@ -73,11 +75,26 @@
   display: flex;
   align-items: center;
   gap: .4rem;
-  color: var(--text);
+  color: var(--profile-card-accent);
   font-size: var(--font-small);
   font-weight: var(--weight-bold);
 }
-.hero-objective h2 svg { color: var(--profile-card-accent); }
+.hero-objective-icon {
+  display: grid;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: .55rem;
+  place-items: center;
+  color: var(--profile-card-accent);
+  background: linear-gradient(145deg,
+    color-mix(in srgb, var(--profile-card-accent) 5%, var(--surface-strong)),
+    color-mix(in srgb, var(--profile-card-accent) 20%, var(--surface-strong)));
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, .84),
+    0 2px 3px color-mix(in srgb, var(--profile-card-accent) 20%, transparent),
+    0 7px 13px color-mix(in srgb, var(--profile-card-accent) 15%, transparent);
+  transform: translateY(-1px) rotate(-2deg);
+}
+.hero-objective-icon svg { filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .16)); }
 .hero-objective p { color: var(--profile-card-muted); font-size: var(--font-body-small); }
 .hero-actions, .hero-destination-actions { display: flex; flex-wrap: wrap; gap: .5rem; }
 .hero-actions .button { gap: .4rem; font-size: .8rem; }
@@ -102,6 +119,16 @@
   transition: max-width .72s var(--liquid-ease), opacity .42s ease .3s, transform .55s var(--liquid-ease) .2s, visibility 0s;
 }
 .hero-destination-actions .button { flex: 0 0 auto; }
+.hero-destination-actions .button {
+  color: var(--project-accent-one);
+  background: var(--surface-strong);
+  box-shadow: var(--shadow-soft);
+}
+.hero-destination-actions .button:first-child { color: var(--certificate-accent-two); }
+.hero-destination-actions .button:hover {
+  background: color-mix(in srgb, currentColor 13%, var(--surface-strong));
+  box-shadow: var(--shadow);
+}
 .hero-more-panel {
   display: grid;
   grid-template-rows: 0fr;

@@ -31,7 +31,10 @@ export function Hero() {
               </div>
             </header>
             <section className="hero-objective" aria-labelledby="objective-title">
-              <h2 id="objective-title"><Icon name="route" size={18} /> Objetivo profesional</h2>
+              <h2 id="objective-title">
+                <span className="hero-objective-icon"><Icon name="route" size={17} /></span>
+                Objetivo profesional
+              </h2>
               <p>{profile.objective}</p>
             </section>
           </section>
