@@ -62,12 +62,12 @@
   border-radius: 1.15rem;
   background: var(--timeline-card-one);
   box-shadow: var(--shadow-soft);
-  transition: transform .4s var(--liquid-ease), box-shadow .4s ease;
+  transition: transform .42s cubic-bezier(.34, 1.56, .64, 1), box-shadow .4s ease;
   animation: timeline-fade-in .24s ease both;
 }
 .timeline-item:nth-child(3n+2) { --timeline-item-accent: var(--timeline-accent-two); background: var(--timeline-card-two); }
 .timeline-item:nth-child(3n+3) { --timeline-item-accent: var(--timeline-accent-three); background: var(--timeline-card-three); }
-.timeline-item:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+.timeline-item:hover { transform: translateY(-2px) scale(1.01); box-shadow: var(--shadow-hover); }
 .timeline-item.is-expanded { grid-column: 1 / -1; min-height: 13rem; padding: 1.35rem; }
 .timeline-icon {
   display: grid;
@@ -90,7 +90,6 @@
 .timeline-item .text-link { color: var(--timeline-item-accent); }
 .timeline-toggle svg { transition: transform .35s var(--liquid-ease); }
 .timeline-item.is-expanded .timeline-toggle svg { transform: rotate(180deg); }
-.timeline-hint { color: var(--muted); font-size: .66rem; text-align: center; }
 .timeline-pages { display: flex; justify-content: center; gap: .55rem; }
 .timeline-pages button {
   width: .5rem;

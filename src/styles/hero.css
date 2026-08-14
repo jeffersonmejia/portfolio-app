@@ -4,6 +4,7 @@
   width: calc(100% - var(--content-gutter));
   max-width: none;
   min-height: calc(100dvh - 10.5rem);
+  padding-block: clamp(var(--space-6), 6vh, var(--space-16));
 }
 .page-inicio .hero { min-height: auto; }
 
@@ -12,13 +13,11 @@
   grid-template-columns: minmax(25rem, .9fr) minmax(0, 1.35fr);
   gap: clamp(var(--space-8), 4vw, 4.5rem);
   width: 100%;
-  min-height: min(66dvh, 43rem);
+  min-height: 0;
   margin-inline: auto;
-  padding: clamp(var(--space-5), 3vw, var(--space-8));
-  border-radius: var(--radius-lg);
-  background: var(--sheen), var(--surface);
-  box-shadow: var(--shadow);
-  animation: glass-materialize .6s var(--liquid-ease) both;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
 }
 .hero-profile { display: grid; align-content: center; gap: var(--space-5); min-width: 0; }
 
@@ -34,7 +33,7 @@
   padding: var(--space-4);
   border-radius: var(--radius-md);
   background: var(--profile-card-surface);
-  box-shadow: var(--shadow-soft);
+  box-shadow: none;
 }
 .profile-card .eyebrow { color: var(--profile-card-accent); }
 .profile-card h1 { color: var(--profile-card-text); }

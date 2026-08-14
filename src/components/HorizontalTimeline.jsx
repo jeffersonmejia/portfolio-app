@@ -83,7 +83,6 @@ export function HorizontalTimeline() {
           />
         ))}
       </div>
-      <small className="timeline-hint">Usa las flechas del teclado para cambiar de página</small>
       <nav className="timeline-pages" aria-label="Páginas de la trayectoria">
         {Array.from({ length: pageCount }, (_, index) => (
           <button

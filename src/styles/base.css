@@ -114,6 +114,32 @@ button:focus-visible, a:focus-visible, summary:focus-visible, input:focus-visibl
 .button:active { transform: scale(.97); }
 .button:disabled { opacity: .58; cursor: wait; }
 
+:is(
+  .button,
+  .nav-link,
+  .icon-button,
+  .timeline-controls button,
+  .timeline-pages button,
+  .timeline-item,
+  .project-card,
+  .certificate-card,
+  .contact-link
+) { transform-origin: center; }
+
+:is(
+  .button,
+  .nav-link,
+  .icon-button,
+  .timeline-controls button,
+  .timeline-pages button,
+  .contact-link
+):not(:disabled):hover { animation: fluent-pop .4s var(--liquid-ease) both; }
+
+:is(.button, .nav-link, .icon-button, .timeline-controls button, .timeline-pages button, .contact-link):not(:disabled):active {
+  animation: none;
+  transform: translateY(0) scale(.97);
+}
+
 html.theme-transition::view-transition-old(root) { animation: none; }
 html.theme-transition::view-transition-new(root) {
   clip-path: circle(0 at var(--theme-x) var(--theme-y));
@@ -123,6 +149,12 @@ html.theme-transition::view-transition-new(root) {
 @keyframes glass-materialize {
   from { opacity: 0; transform: translateY(8px) scale(.985); }
   to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes fluent-pop {
+  0% { transform: translate3d(0, 0, 0) scale(.99); }
+  52% { transform: translate3d(0, -3px, 0) scale(1.014); }
+  76% { transform: translate3d(0, -1px, 0) scale(1.003); }
+  100% { transform: translate3d(0, -2px, 0) scale(1.01); }
 }
 
 @media (prefers-reduced-motion: reduce) {

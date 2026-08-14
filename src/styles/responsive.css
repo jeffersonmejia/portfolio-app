@@ -17,7 +17,7 @@
   .page-skeleton { inset: 0 0 calc(4.5rem + env(safe-area-inset-bottom)); }
   .hero { min-height: calc(100dvh - 9.5rem); }
   .hero { width: min(100% - var(--content-gutter-mobile), var(--mobile-content-max)); }
-  .hero-card { gap: var(--space-5); padding: 1.2rem; }
+  .hero-card { gap: var(--space-5); }
   .hero-heading { gap: var(--space-4); }
   .hero-actions { justify-content: center; }
   .timeline-stage { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -26,7 +26,7 @@
 }
 
 @media (max-width: 520px) {
-  .hero-card { gap: var(--space-3); padding: var(--space-4); }
+  .hero-card { gap: var(--space-3); }
   .profile-card { gap: var(--space-3); padding: var(--space-3); }
   .hero-objective { grid-template-columns: 1fr; gap: .25rem; }
   .hero-actions .button { flex: 1 1 auto; min-height: 2.4rem; padding: .5rem .7rem; font-size: .76rem; }
