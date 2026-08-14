@@ -118,8 +118,6 @@ button:focus-visible, a:focus-visible, summary:focus-visible, input:focus-visibl
   .button,
   .nav-link,
   .icon-button,
-  .timeline-controls button,
-  .timeline-pages button,
   .timeline-item,
   .project-card,
   .certificate-card,
@@ -130,12 +128,10 @@ button:focus-visible, a:focus-visible, summary:focus-visible, input:focus-visibl
   .button,
   .nav-link,
   .icon-button,
-  .timeline-controls button,
-  .timeline-pages button,
   .contact-link
 ):not(:disabled):hover { animation: fluent-pop .4s var(--liquid-ease) both; }
 
-:is(.button, .nav-link, .icon-button, .timeline-controls button, .timeline-pages button, .contact-link):not(:disabled):active {
+:is(.button, .nav-link, .icon-button, .contact-link):not(:disabled):active {
   animation: none;
   transform: translateY(0) scale(.97);
 }

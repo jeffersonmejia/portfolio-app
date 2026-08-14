@@ -33,7 +33,7 @@ export function Hero() {
             </section>
           </section>
           <nav className="hero-actions" aria-label="Enlaces destacados">
-            <a className="button button-primary" href={routeHref('/certificados/')}><Icon name="award" size={16} /> Capacitaciones profesionales</a>
+            <a className="button button-primary" href={routeHref('/certificados/')}><Icon name="award" size={16} /> Capacitaciones</a>
             <a className="button button-quiet" href={routeHref('/proyectos/')}><Icon name="folder" size={16} /> Proyectos</a>
           </nav>
         </section>

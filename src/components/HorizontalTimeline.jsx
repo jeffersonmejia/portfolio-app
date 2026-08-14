@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { timeline } from '../data/timeline'
 import { Icon } from './Icon'
 import { TimelineItem } from './TimelineItem'
@@ -8,26 +8,14 @@ export function HorizontalTimeline() {
   const pageCount = Math.ceil(timeline.length / itemsPerPage)
   const [activePage, setActivePage] = useState(0)
   const [expandedIndex, setExpandedIndex] = useState(null)
-  const [loading, setLoading] = useState(false)
-  const [itemTransitioning, setItemTransitioning] = useState(false)
-  const transitionTimer = useRef(null)
-  const itemTimer = useRef(null)
   const start = activePage * itemsPerPage
   const pageItems = timeline.slice(start, start + itemsPerPage).map((item, offset) => ({ item, index: start + offset }))
   const visibleItems = expandedIndex === null ? pageItems : pageItems.filter(({ index }) => index === expandedIndex)
-  useEffect(() => () => {
-    clearTimeout(transitionTimer.current)
-    clearTimeout(itemTimer.current)
-  }, [])
   const changePage = useCallback((page) => {
-    if (page === activePage || loading) return
+    if (page === activePage) return
     setExpandedIndex(null)
-    setLoading(true)
-    transitionTimer.current = setTimeout(() => {
-      setActivePage(page)
-      setLoading(false)
-    }, 560)
-  }, [activePage, loading])
+    setActivePage(page)
+  }, [activePage])
   useEffect(() => {
     const handleArrowKeys = (event) => {
       if (event.target.matches('input, textarea, select') || event.altKey || event.ctrlKey || event.metaKey) return
@@ -45,36 +33,24 @@ export function HorizontalTimeline() {
   }, [activePage, changePage, pageCount])
   const goBack = () => changePage(Math.max(0, activePage - 1))
   const goForward = () => changePage(Math.min(pageCount - 1, activePage + 1))
-  const toggleItem = (index) => {
-    if (itemTransitioning) return
-    setItemTransitioning(true)
-    itemTimer.current = setTimeout(() => {
-      setExpandedIndex((current) => current === index ? null : index)
-      requestAnimationFrame(() => setItemTransitioning(false))
-    }, 180)
-  }
+  const toggleItem = (index) => setExpandedIndex((current) => current === index ? null : index)
 
   return (
     <section className="home-timeline" aria-labelledby="home-timeline-title">
       <header>
         <span className="eyebrow" id="home-timeline-title">Trayectoria</span>
         <div className="timeline-controls">
-          <small>Página {activePage + 1} de {pageCount}</small>
-          <button type="button" onClick={goBack} disabled={activePage === 0 || loading} aria-label="Ver página anterior">
+          <small>{activePage + 1} / {pageCount}</small>
+          <button type="button" onClick={goBack} disabled={activePage === 0} aria-label="Ver página anterior">
             <Icon name="left" size={18} />
           </button>
-          <button type="button" onClick={goForward} disabled={activePage === pageCount - 1 || loading} aria-label="Ver siguiente página">
+          <button type="button" onClick={goForward} disabled={activePage === pageCount - 1} aria-label="Ver siguiente página">
             <Icon name="right" size={18} />
           </button>
         </div>
       </header>
-      <div className={`timeline-stage ${loading ? 'is-loading' : ''} ${itemTransitioning ? 'is-switching' : ''}`} aria-busy={loading || itemTransitioning} aria-live="polite">
-        {loading ? Array.from({ length: itemsPerPage }, (_, index) => (
-          <article className="timeline-skeleton" key={index} aria-hidden="true">
-            <span className="timeline-skeleton-icon" />
-            <span className="timeline-skeleton-copy"><i /><i /><i /></span>
-          </article>
-        )) : visibleItems.map(({ item, index }) => (
+      <div className="timeline-stage" aria-live="polite">
+        {visibleItems.map(({ item, index }) => (
           <TimelineItem
             expanded={expandedIndex === index}
             item={item}
@@ -90,7 +66,6 @@ export function HorizontalTimeline() {
             key={index}
             type="button"
             onClick={() => changePage(index)}
-            disabled={loading}
             aria-label={`Ver página ${index + 1}`}
             aria-current={activePage === index ? 'step' : undefined}
           />

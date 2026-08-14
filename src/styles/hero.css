@@ -15,8 +15,9 @@
   width: 100%;
   min-height: 0;
   margin-inline: auto;
-  padding: 0;
-  background: transparent;
+  padding: clamp(var(--space-5), 3vw, var(--space-8));
+  border-radius: var(--radius-lg);
+  background: var(--surface-strong);
   box-shadow: none;
 }
 .hero-profile { display: grid; align-content: center; gap: var(--space-5); min-width: 0; }
@@ -33,7 +34,7 @@
   padding: var(--space-4);
   border-radius: var(--radius-md);
   background: var(--profile-card-surface);
-  box-shadow: none;
+  box-shadow: var(--shadow-soft);
 }
 .profile-card .eyebrow { color: var(--profile-card-accent); }
 .profile-card h1 { color: var(--profile-card-text); }

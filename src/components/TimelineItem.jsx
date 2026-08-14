@@ -8,13 +8,13 @@ export function TimelineItem({ expanded, item, onToggle }) {
     <article className={`timeline-item ${expanded ? 'is-expanded' : ''}`}>
       <span className="timeline-icon"><Icon name={item.icon} size={19} /></span>
       <div>
-        <time><Icon name="calendar" size={14} /> {item.year}</time>
+        <time>{item.year}</time>
         <h3>{item.title}</h3>
-        <small className="timeline-organization"><Icon name="building" size={14} /> {item.organization}</small>
+        {expanded && <small className="timeline-organization">{item.organization}</small>}
         {expanded && <p>{item.description}</p>}
         <div className="timeline-item-actions">
           <button className="timeline-toggle" type="button" onClick={onToggle} aria-expanded={expanded}>
-            {expanded ? 'Mostrar menos' : 'Leer más'}
+            {expanded ? 'Cerrar' : 'Detalles'}
             <Icon name="chevron" size={16} />
           </button>
           {expanded && href && (

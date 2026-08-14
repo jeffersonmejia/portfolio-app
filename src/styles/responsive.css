@@ -34,7 +34,6 @@
   .home-timeline > header { gap: .45rem; }
   .timeline-controls { gap: .15rem; }
   .timeline-controls small { margin-right: .1rem; font-size: .7rem; }
-  .timeline-skeleton:nth-child(n+2) { display: none; }
   .timeline-item { min-height: 6.5rem; }
   .project-card { grid-template-columns: 1fr; }
   .project-image, .project-placeholder { min-height: 13rem; }
