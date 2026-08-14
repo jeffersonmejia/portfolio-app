@@ -41,7 +41,7 @@ export function ProjectCard({ project }) {
         <div className="tag-list">
           {project.technologies.map((technology) => <TechnologyIcon key={technology} name={technology} />)}
         </div>
-        <a className="text-link" href={project.href} target="_blank" rel="noreferrer" itemProp="url">
+        <a className="text-link project-action" href={project.href} target="_blank" rel="noreferrer" itemProp="url">
           Ver proyecto <Icon name="external" size={16} />
         </a>
       </div>

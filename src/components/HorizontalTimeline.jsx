@@ -40,7 +40,6 @@ export function HorizontalTimeline() {
       <header>
         <span className="eyebrow" id="home-timeline-title">Trayectoria</span>
         <div className="timeline-controls">
-          <small>{activePage + 1} / {pageCount}</small>
           <button type="button" onClick={goBack} disabled={activePage === 0} aria-label="Ver página anterior">
             <Icon name="left" size={18} />
           </button>

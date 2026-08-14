@@ -4,7 +4,7 @@
   width: calc(100% - var(--content-gutter));
   max-width: none;
   min-height: calc(100dvh - 10.5rem);
-  padding-block: clamp(var(--space-6), 6vh, var(--space-16));
+  padding-block: clamp(var(--space-6), 6vh, var(--space-16)) var(--space-2);
 }
 .page-inicio .hero { min-height: auto; }
 

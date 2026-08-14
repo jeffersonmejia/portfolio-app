@@ -6,7 +6,6 @@
   align-items: center;
   gap: .35rem;
 }
-.timeline-controls small { margin-right: .25rem; color: var(--muted); white-space: nowrap; }
 .timeline-controls button {
   display: grid;
   width: 2rem;
@@ -65,9 +64,10 @@
 .timeline-item small { color: var(--muted); font-size: .72rem; line-height: 1.35; }
 .timeline-item small svg { flex: 0 0 auto; color: var(--timeline-item-accent); }
 .timeline-stage p { margin-top: .4rem; color: var(--muted); font-size: .86rem; line-height: 1.55; }
-.timeline-item-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem; margin-top: auto; padding-top: .6rem; }
-.timeline-toggle { display: inline-flex; align-items: center; gap: .25rem; padding: 0; border: 0; color: var(--timeline-item-accent); background: transparent; font-size: .76rem; font-weight: 760; cursor: pointer; }
-.timeline-item .text-link { color: var(--timeline-item-accent); }
+.timeline-item-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem; margin-top: auto; padding-top: .6rem; }
+.timeline-action { display: inline-flex; align-items: center; gap: .3rem; min-height: 2.25rem; padding: .46rem .7rem; border: 0; border-radius: .65rem; color: var(--timeline-item-accent); background: color-mix(in srgb, var(--timeline-item-accent) 9%, var(--surface-strong)); box-shadow: var(--shadow-soft); font-size: .76rem; font-weight: 760; line-height: 1; text-decoration: none; cursor: pointer; transition: background var(--duration-fast) ease, box-shadow var(--duration-fast) ease, transform var(--duration-fast) var(--liquid-ease); }
+.timeline-action:hover { background: color-mix(in srgb, var(--timeline-item-accent) 14%, var(--surface-strong)); box-shadow: var(--shadow); text-decoration: none; transform: translateY(-1px); }
+.timeline-action:active { box-shadow: var(--shadow-soft); transform: scale(.97); }
 .timeline-toggle svg { transition: transform .35s var(--liquid-ease); }
 .timeline-item.is-expanded .timeline-toggle svg { transform: rotate(180deg); }
 .timeline-pages { display: flex; justify-content: center; gap: .55rem; }

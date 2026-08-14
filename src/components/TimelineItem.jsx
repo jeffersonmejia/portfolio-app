@@ -13,12 +13,12 @@ export function TimelineItem({ expanded, item, onToggle }) {
         {expanded && <small className="timeline-organization">{item.organization}</small>}
         {expanded && <p>{item.description}</p>}
         <div className="timeline-item-actions">
-          <button className="timeline-toggle" type="button" onClick={onToggle} aria-expanded={expanded}>
+          <button className="timeline-action timeline-toggle" type="button" onClick={onToggle} aria-expanded={expanded}>
             {expanded ? 'Cerrar' : 'Detalles'}
             <Icon name="chevron" size={16} />
           </button>
           {expanded && href && (
-            <a className="text-link" href={href} target={item.href ? '_blank' : undefined} rel={item.href ? 'noreferrer' : undefined}>
+            <a className="text-link timeline-action" href={href} target={item.href ? '_blank' : undefined} rel={item.href ? 'noreferrer' : undefined}>
               {item.linkLabel} <Icon name="external" size={15} />
             </a>
           )}
