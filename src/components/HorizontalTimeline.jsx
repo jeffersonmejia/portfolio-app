@@ -59,7 +59,11 @@ export function HorizontalTimeline() {
           />
         ))}
       </div>
-      <nav className="timeline-pages" aria-label="Páginas de la trayectoria">
+      <nav
+        className="timeline-pages"
+        aria-label="Páginas de la trayectoria"
+        style={{ '--timeline-active-page': activePage }}
+      >
         {Array.from({ length: pageCount }, (_, index) => (
           <button
             className={activePage === index ? 'is-active' : ''}

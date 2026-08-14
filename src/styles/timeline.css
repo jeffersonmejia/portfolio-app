@@ -52,11 +52,15 @@
   border-radius: .6rem;
   place-items: center;
   color: var(--timeline-item-accent);
-  background: color-mix(in srgb, var(--timeline-item-accent) 9%, transparent);
-  box-shadow: none;
-  transform: none;
+  background: linear-gradient(145deg,
+    color-mix(in srgb, var(--timeline-item-accent) 5%, var(--surface-strong)),
+    color-mix(in srgb, var(--timeline-item-accent) 20%, var(--surface-strong)));
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, .82),
+    0 2px 3px color-mix(in srgb, var(--timeline-item-accent) 18%, transparent),
+    0 7px 13px color-mix(in srgb, var(--timeline-item-accent) 15%, transparent);
+  transform: translateY(-1px) rotate(-2deg);
 }
-.timeline-icon .fluent-icon { filter: none; transform: none; }
+.timeline-icon .fluent-icon { filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .16)); transform: translateY(-.5px); }
 .timeline-item > div { display: grid; align-content: start; gap: .25rem; min-width: 0; }
 .timeline-stage time, .timeline-organization { display: flex; align-items: center; gap: .3rem; }
 .timeline-stage time { color: var(--timeline-item-accent); font-size: .72rem; font-weight: 800; }
@@ -73,8 +77,24 @@
 .timeline-action-close:hover { color: var(--timeline-item-accent); background: color-mix(in srgb, var(--timeline-item-accent) 5%, var(--white)); box-shadow: var(--shadow); }
 .timeline-action-primary { color: var(--white) !important; background: var(--timeline-item-accent); box-shadow: var(--shadow-button); }
 .timeline-action-primary:hover { color: var(--white); background: color-mix(in srgb, var(--timeline-item-accent) 88%, #000); box-shadow: var(--shadow-soft); }
-.timeline-pages { display: flex; justify-content: center; gap: .55rem; }
+.timeline-pages { position: relative; display: flex; justify-self: center; gap: .55rem; }
+.timeline-pages::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: .5rem;
+  height: .5rem;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 2px 6px color-mix(in srgb, var(--accent) 28%, transparent);
+  content: '';
+  pointer-events: none;
+  transform: translate3d(calc(var(--timeline-active-page, 0) * 1.05rem), 0, 0);
+  transition: transform .32s cubic-bezier(.2, .8, .2, 1);
+}
 .timeline-pages button {
+  position: relative;
   width: .5rem;
   height: .5rem;
   padding: 0;
@@ -86,4 +106,4 @@
   transition: opacity .25s ease, background .25s ease;
 }
 .timeline-pages button:hover { opacity: .7; }
-.timeline-pages button.is-active { background: var(--accent); opacity: 1; }
+.timeline-pages button.is-active { opacity: .12; }
