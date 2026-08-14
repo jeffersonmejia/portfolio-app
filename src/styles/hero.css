@@ -47,9 +47,9 @@
   border-radius: var(--radius-md);
   background: var(--profile-card-surface);
   box-shadow: var(--shadow-soft);
-  transition: background var(--hero-reveal-duration) var(--liquid-ease);
+  transition: background var(--hero-reveal-duration) var(--liquid-ease), box-shadow var(--hero-reveal-duration) ease;
 }
-.hero-card:not(.is-expanded) .profile-card { background: var(--surface-strong); }
+.hero-card:not(.is-expanded) .profile-card { background: var(--surface-strong); box-shadow: none; }
 .profile-card :is(.eyebrow, h1) { color: var(--profile-card-text); }
 .profile-image {
   width: var(--profile-size);
