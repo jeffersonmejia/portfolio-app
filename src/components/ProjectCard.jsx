@@ -1,6 +1,7 @@
 import { asset } from '../utils/asset'
 import { Icon } from './Icon'
 import { ProgressiveImage } from './ProgressiveImage'
+import { TechnologyIcon } from './TechnologyIcon'
 
 export function ProjectCard({ project }) {
   if (project.upcoming) {
@@ -11,7 +12,7 @@ export function ProjectCard({ project }) {
           <span className="project-meta"><Icon name={project.icon} size={15} /> {project.date}</span>
           <h3>{project.title}</h3>
           <p>{project.description}</p>
-          <div className="tag-list"><span>Backend</span></div>
+          <div className="tag-list"><TechnologyIcon name="Backend" /></div>
         </div>
       </article>
     )
@@ -38,7 +39,7 @@ export function ProjectCard({ project }) {
         <h3 itemProp="name">{project.title}</h3>
         <p itemProp="description">{project.description}</p>
         <div className="tag-list">
-          {project.technologies.map((technology) => <span key={technology}>{technology}</span>)}
+          {project.technologies.map((technology) => <TechnologyIcon key={technology} name={technology} />)}
         </div>
         <a className="text-link" href={project.href} target="_blank" rel="noreferrer" itemProp="url">
           Ver proyecto <Icon name="external" size={16} />

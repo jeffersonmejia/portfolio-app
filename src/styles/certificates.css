@@ -27,8 +27,8 @@
   padding: .45rem;
   border-radius: .9rem;
   place-items: center;
-  background: var(--logo-surface);
-  box-shadow: var(--shadow-soft);
+  background: color-mix(in srgb, var(--card-accent) 9%, var(--logo-surface));
+  box-shadow: inset 0 1px rgba(255,255,255,.86), 0 3px 9px color-mix(in srgb, var(--card-accent) 14%, transparent);
 }
 .provider-logo img { width: 100%; height: 100%; object-fit: contain; }
 .certificate-provider time { color: var(--card-accent); font-weight: 800; }

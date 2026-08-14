@@ -13,7 +13,7 @@ export function Certificates() {
     <section className="content-section page-shell roadmap-page" id="certificados" aria-labelledby="certificates-title">
       <SectionIntro
         eyebrow="Formación"
-        title="Capacitaciones profesionales que respaldan mi experiencia."
+        title="Capacitaciones."
         description="Estas credenciales representan formación académica. No definen por sí solas mi especialidad profesional."
         titleId="certificates-title"
         src="assets/img/vectors/skills.svg"
