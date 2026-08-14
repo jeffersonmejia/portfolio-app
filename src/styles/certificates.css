@@ -7,15 +7,19 @@
   min-height: 0;
   padding: 1.15rem;
   border-radius: var(--radius-lg);
-  background: var(--certificate-card-one);
+  background: color-mix(in srgb, var(--card-accent) 9%, var(--surface-strong));
   box-shadow: var(--shadow);
   animation: glass-materialize .5s var(--liquid-ease) both;
-  transition: transform .45s var(--liquid-ease), box-shadow .45s ease;
+  transition: transform .44s cubic-bezier(.34, 1.56, .64, 1), box-shadow .45s ease;
 }
-.certificate-card:nth-of-type(3n+2) { --card-accent: var(--certificate-accent-two); background: var(--certificate-card-two); }
-.certificate-card:nth-of-type(3n+3) { --card-accent: var(--certificate-accent-three); background: var(--certificate-card-three); }
+.certificate-roadmap { --roadmap-line: linear-gradient(var(--certificate-accent-one), var(--certificate-accent-two), var(--certificate-accent-three), var(--certificate-accent-four), var(--certificate-accent-five), var(--certificate-accent-six)); }
+.certificate-card:nth-of-type(2) { --card-accent: var(--certificate-accent-two); }
+.certificate-card:nth-of-type(3) { --card-accent: var(--certificate-accent-three); }
+.certificate-card:nth-of-type(4) { --card-accent: var(--certificate-accent-four); }
+.certificate-card:nth-of-type(5) { --card-accent: var(--certificate-accent-five); }
+.certificate-card:nth-of-type(6) { --card-accent: var(--certificate-accent-six); }
 .certificate-card:hover { transform: translateY(-3px) scale(1.008); box-shadow: var(--shadow-hover); }
-.certificate-provider { display: grid; grid-template-columns: auto 1fr auto; gap: .7rem; align-items: center; color: var(--muted); font-size: .78rem; }
+.certificate-provider { display: grid; grid-template-columns: auto 1fr auto; gap: .7rem; align-items: center; color: color-mix(in srgb, var(--card-accent) 52%, var(--text)); font-size: .78rem; }
 .provider-logo {
   display: grid;
   width: 3.25rem;
@@ -29,7 +33,7 @@
 .provider-logo img { width: 100%; height: 100%; object-fit: contain; }
 .certificate-provider time { color: var(--card-accent); font-weight: 800; }
 .certificate-card h3 { color: var(--card-accent); font-size: 1.15rem; }
-.certificate-card p { font-size: .88rem; line-height: 1.5; }
+.certificate-card p { color: color-mix(in srgb, var(--card-accent) 40%, var(--text)); font-size: .88rem; line-height: 1.5; }
 .certificate-card .text-link { margin-top: auto; color: var(--card-accent); }
 .modal {
   width: min(900px, calc(100% - 1.5rem));

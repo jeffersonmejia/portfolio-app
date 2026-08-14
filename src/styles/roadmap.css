@@ -7,8 +7,18 @@
 .roadmap-list {
   position: relative;
   display: grid;
-  gap: var(--space-4);
+  gap: var(--space-8);
   padding-left: var(--space-8);
+}
+
+.roadmap-list::before {
+  position: absolute;
+  inset: 0 auto 0 .4rem;
+  width: 2px;
+  border-radius: var(--radius-pill);
+  background: var(--roadmap-line, var(--line));
+  content: '';
+  opacity: .34;
 }
 
 .roadmap-entry { position: relative; min-width: 0; }
@@ -19,9 +29,9 @@
   z-index: 1;
   width: .9rem;
   aspect-ratio: 1;
-  border: 0;
+  border: 2px solid var(--card-accent, var(--muted));
   border-radius: var(--radius-pill);
-  background: var(--card-accent, var(--muted));
+  background: var(--roadmap-main-surface);
   box-shadow: var(--shadow-soft);
   transform: translateX(-.05rem);
 }
@@ -29,6 +39,6 @@
 
 @media (max-width: 720px) {
   .roadmap-page { padding: var(--space-4); }
-  .roadmap-list { padding-left: var(--space-6); }
+  .roadmap-list { gap: var(--space-6); padding-left: var(--space-6); }
   .roadmap-step { left: calc(var(--space-6) * -1); }
 }
