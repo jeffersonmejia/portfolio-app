@@ -21,14 +21,6 @@ export const timeline = [
   },
   {
     year: '2025',
-    icon: 'code',
-    title: 'Desarrollador Android Flutter',
-    organization: 'Universidad de las Fuerzas Armadas ESPE',
-    description:
-      'Aporté al desarrollo de Scholar Security para las comunidades de Luz de América, Puerto Limón y El Esfuerzo.',
-  },
-  {
-    year: '2025',
     icon: 'folder',
     title: 'Stay App',
     organization: 'Proyecto de aplicación web',

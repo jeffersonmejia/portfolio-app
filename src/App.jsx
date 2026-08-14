@@ -28,7 +28,7 @@ export default function App({ pathname = '/' }) {
       <a className="skip-link" href="#contenido">Saltar al contenido</a>
       <Header currentPage={currentPage} onThemeToggle={theme.toggle} />
       <PageSkeleton />
-      <main className={`page page-${currentPage}`} id="contenido">
+      <main className={`page page-${currentPage}`} id="contenido" key={currentPage}>
         <Page />
       </main>
       <Footer />

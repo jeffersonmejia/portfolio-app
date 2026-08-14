@@ -68,6 +68,8 @@ body {
 
 body.theme-ready { transition: color .25s ease, background .25s ease; }
 
+.page { animation: page-route-enter .34s var(--liquid-ease) both; }
+
 button, input, textarea { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 a { color: inherit; }
@@ -151,6 +153,10 @@ html.theme-transition::view-transition-new(root) {
   52% { transform: translate3d(0, -3px, 0) scale(1.014); }
   76% { transform: translate3d(0, -1px, 0) scale(1.003); }
   100% { transform: translate3d(0, -2px, 0) scale(1.01); }
+}
+@keyframes page-route-enter {
+  from { opacity: .35; transform: translateY(6px) scale(.992); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 @media (prefers-reduced-motion: reduce) {
