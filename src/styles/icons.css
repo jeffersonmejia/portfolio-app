@@ -1,0 +1,50 @@
+.fluent-icon {
+  flex: 0 0 auto;
+  overflow: visible;
+  filter: drop-shadow(0 1px 1px rgba(0, 69, 120, .2));
+  transition: filter var(--duration-fast) ease, transform var(--duration-fast) var(--liquid-ease);
+}
+
+:is(a, button):hover .fluent-icon {
+  filter: drop-shadow(0 2px 2px rgba(0, 69, 120, .24));
+  transform: translateY(-1px);
+}
+
+.timeline-icon,
+.contact-link > .fluent-icon {
+  color: var(--card-accent, var(--timeline-item-accent));
+  background: var(--icon-surface);
+  box-shadow: var(--icon-highlight), var(--icon-shadow);
+}
+
+.timeline-icon {
+  border-radius: .7rem;
+  transform: rotate(-2deg);
+}
+
+.timeline-icon .fluent-icon { transform: rotate(2deg); }
+
+.contact-link > .fluent-icon {
+  width: 2.6rem;
+  height: 2.6rem;
+  padding: .56rem;
+  border-radius: .78rem;
+}
+
+.project-placeholder .fluent-icon {
+  filter: drop-shadow(0 6px 7px rgba(0, 69, 120, .22));
+}
+
+.button .fluent-icon,
+.site-nav .fluent-icon,
+.text-link .fluent-icon {
+  color: currentColor;
+}
+
+:root[data-theme='dark'] .fluent-icon {
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .5));
+}
+
+:root[data-theme='dark'] :is(.timeline-icon, .contact-link > .fluent-icon) {
+  background: linear-gradient(145deg, rgba(255,255,255,.18), rgba(40,153,245,.18));
+}

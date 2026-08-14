@@ -54,7 +54,8 @@ const icons = {
   x: X,
 }
 
-export function Icon({ name, size = 20, ...props }) {
+export function Icon({ name, size = 20, className = '', ...props }) {
   const Component = icons[name] ?? CodeXml
-  return <Component aria-hidden="true" size={size} strokeWidth={1.8} {...props} />
+  const classes = ['fluent-icon', className].filter(Boolean).join(' ')
+  return <Component aria-hidden="true" className={classes} size={size} strokeWidth={2} {...props} />
 }
