@@ -7,9 +7,10 @@
 }
 
 .site-nav {
+  position: relative;
   display: flex;
   justify-content: center;
-  gap: var(--space-1);
+  gap: 0;
   width: fit-content;
   max-width: 100%;
   margin: 0 auto;
@@ -24,11 +25,29 @@
   animation: glass-materialize .55s var(--liquid-ease) both;
 }
 
+.site-nav::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--nav-active-width, 0);
+  height: var(--nav-active-height, 0);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface-strong));
+  box-shadow: var(--shadow-soft);
+  content: '';
+  opacity: var(--nav-active-opacity, 0);
+  pointer-events: none;
+  transform: translate3d(var(--nav-active-x, 0), var(--nav-active-y, 0), 0);
+  transition: width .3s var(--liquid-ease), height .3s var(--liquid-ease), opacity .16s ease, transform .32s cubic-bezier(.2, .8, .2, 1);
+}
+
 .nav-link {
+  position: relative;
+  z-index: 1;
   display: inline-flex;
   align-items: center;
   gap: .35rem;
-  padding: .58rem .85rem;
+  padding: .52rem .7rem;
   border-radius: var(--radius-pill);
   color: var(--muted);
   font-size: var(--font-nav);
@@ -38,8 +57,9 @@
 }
 .nav-link:hover { color: var(--text); background: var(--nav-hover); transform: scale(1.025); }
 .nav-link:active { transform: scale(.96); }
-.nav-link.is-active { color: var(--accent); background: var(--nav-hover); box-shadow: none; }
-.site-nav .icon-button { margin-left: .1rem; }
+.nav-link.is-active { color: var(--accent); background: transparent; box-shadow: none; }
+.nav-link.is-active:hover { background: transparent; }
+.site-nav .icon-button { position: relative; z-index: 1; margin-left: .1rem; }
 .theme-icon { display: grid; place-items: center; }
 .theme-icon-dark { display: none; }
 .theme-label { display: none; }
@@ -49,4 +69,4 @@
   box-shadow: var(--shadow);
 }
 :root[data-theme='dark'] .nav-link:hover { background: var(--nav-hover); }
-:root[data-theme='dark'] .nav-link.is-active { background: var(--nav-hover); }
+:root[data-theme='dark'] .nav-link.is-active { background: transparent; }

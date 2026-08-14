@@ -55,6 +55,7 @@ export function HorizontalTimeline() {
             item={item}
             key={`${item.year}-${item.title}`}
             onToggle={() => toggleItem(index)}
+            tone={(index % itemsPerPage) + 1}
           />
         ))}
       </div>

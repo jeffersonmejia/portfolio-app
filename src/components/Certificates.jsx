@@ -32,7 +32,7 @@ export function Certificates() {
             </div>
             <h3 itemProp="name">{certificate.title}</h3>
             <p itemProp="description">{certificate.description}</p>
-            <button className="text-link" type="button" onClick={() => setSelected(certificate)}>
+            <button className="text-link certificate-action" type="button" onClick={() => setSelected(certificate)}>
               Ver certificado <Icon name="external" size={16} />
             </button>
           </article>
