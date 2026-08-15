@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react'
-import { Icon } from './Icon'
 
-export function Modal({ children, label, open, onClose }) {
+export function Modal({ children, className = '', label, open, onClose }) {
   const dialogRef = useRef(null)
 
   useEffect(() => {
@@ -14,16 +13,14 @@ export function Modal({ children, label, open, onClose }) {
   return (
     <dialog
       ref={dialogRef}
-      className="modal"
+      className={`modal ${className}`.trim()}
       aria-label={label}
       onClose={onClose}
       onClick={(event) => {
         if (event.target === event.currentTarget) onClose()
       }}
     >
-      <button className="modal-close icon-button" type="button" onClick={onClose} aria-label="Cerrar">
-        <Icon name="x" />
-      </button>
+      <button className="modal-close modal-cancel" type="button" onClick={onClose}>Cancelar</button>
       {children}
     </dialog>
   )

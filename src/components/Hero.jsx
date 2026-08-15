@@ -1,15 +1,17 @@
 import { useEffect, useState } from 'react'
-import { profile } from '../data/site'
-import { routeHref } from '../routes'
+import { contact, profile } from '../data/site'
 import { asset } from '../utils/asset'
+import { ContactForm } from './ContactForm'
 import { GitHubSection } from './GitHubSection'
 import { Icon } from './Icon'
+import { Modal } from './Modal'
 import { ProgressiveImage } from './ProgressiveImage'
 
 let homeMountedInThisSession = false
 
 export function Hero({ collapseOnFullLoad = false }) {
   const [showMore, setShowMore] = useState(() => !collapseOnFullLoad || homeMountedInThisSession)
+  const [formOpen, setFormOpen] = useState(false)
 
   useEffect(() => { homeMountedInThisSession = true }, [])
 
@@ -61,9 +63,12 @@ export function Hero({ collapseOnFullLoad = false }) {
               aria-hidden={!showMore}
               inert={!showMore}
             >
-              <a className="button button-quiet" href={routeHref('/certificados/')}><Icon name="award" size={16} /> Capacitaciones</a>
-              <a className="button button-quiet" href={routeHref('/proyectos/')}><Icon name="folder" size={16} /> Proyectos</a>
-              <a className="button button-quiet" href={routeHref('/contacto/')}><Icon name="contact" size={16} /> Contacto</a>
+              <button className="button button-quiet hero-cv-action" type="button" onClick={() => setFormOpen(true)}>
+                <Icon name="mail" size={16} /> Solicitar currículum
+              </button>
+              <a className="button button-quiet hero-linkedin-action" href={contact.linkedin} target="_blank" rel="noreferrer">
+                <Icon name="linkedin" size={16} /> LinkedIn
+              </a>
             </nav>
           </div>
         </section>
@@ -76,6 +81,14 @@ export function Hero({ collapseOnFullLoad = false }) {
           <div><GitHubSection active={showMore} /></div>
         </div>
       </article>
+      <Modal className="resume-modal" open={formOpen} onClose={() => setFormOpen(false)} label="Solicitar currículum">
+        <div className="form-modal">
+          <span className="eyebrow">Contacto</span>
+          <h2>Solicitar currículum</h2>
+          <p>Usaré tus datos únicamente para responder. No los compartiré con terceros.</p>
+          <ContactForm />
+        </div>
+      </Modal>
     </section>
   )
 }

@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react'
 import { backendLanguages, featuredRepositories, githubUser } from '../data/github'
 
-const cacheKey = `portfolio-github-${githubUser}-${featuredRepositories.join('-')}`
-const cacheLifetime = 15 * 60 * 1000
+const cacheKey = `portfolio-github-api-v2-${githubUser}`
+const freshCacheLifetime = 6 * 60 * 60 * 1000
 const initialState = { profile: null, repositories: [], metrics: null, loading: true, error: false }
 
 function readCache() {
   try {
     const cached = JSON.parse(localStorage.getItem(cacheKey))
-    return cached && Date.now() - cached.savedAt < cacheLifetime ? cached.data : null
+    if (!cached?.responses?.profile || !Array.isArray(cached.responses.repositories)) return null
+    return cached
   } catch {
     return null
   }
@@ -21,12 +22,22 @@ function selectFeatured(repositories) {
     .filter(Boolean)
 }
 
-function createMetrics(repositories, commitsLastYear) {
+function createMetrics(repositories, commits) {
   const usedLanguages = new Set(repositories.map(({ language }) => language).filter(Boolean))
   return {
     backendLanguages: backendLanguages.filter((language) => usedLanguages.has(language)),
     totalStars: repositories.reduce((total, repository) => total + repository.stargazers_count, 0),
-    commitsLastYear,
+    commitsLastYear: commits && !commits.incomplete_results ? commits.total_count : null,
+  }
+}
+
+function createViewData({ profile, repositories, commits }) {
+  return {
+    profile,
+    repositories: selectFeatured(repositories),
+    metrics: createMetrics(repositories, commits),
+    loading: false,
+    error: false,
   }
 }
 
@@ -36,13 +47,12 @@ export function useGitHubProfile(active) {
   useEffect(() => {
     if (!active) return undefined
     const cached = readCache()
-    if (cached) {
-      setState(cached)
-      return undefined
-    }
+    if (cached) setState(createViewData(cached.responses))
+    if (cached && Date.now() - cached.savedAt < freshCacheLifetime) return undefined
 
     const controller = new AbortController()
     const request = (url) => fetch(url, {
+      cache: 'default',
       headers: { Accept: 'application/vnd.github+json' },
       signal: controller.signal,
     }).then((response) => {
@@ -54,25 +64,18 @@ export function useGitHubProfile(active) {
     since.setUTCFullYear(since.getUTCFullYear() - 1)
     const commitQuery = encodeURIComponent(`author:${githubUser} committer-date:>=${since.toISOString().slice(0, 10)}`)
     const commitsRequest = request(`https://api.github.com/search/commits?q=${commitQuery}&per_page=1`)
-      .then((result) => result.incomplete_results ? null : result.total_count)
-      .catch(() => null)
+      .catch(() => cached?.responses.commits ?? null)
 
     Promise.all([
       request(`https://api.github.com/users/${githubUser}`),
       request(`https://api.github.com/users/${githubUser}/repos?sort=updated&direction=desc&per_page=100`),
       commitsRequest,
-    ]).then(([profile, repositories, commitsLastYear]) => {
-      const data = {
-        profile,
-        repositories: selectFeatured(repositories),
-        metrics: createMetrics(repositories, commitsLastYear),
-        loading: false,
-        error: false,
-      }
-      setState(data)
-      try { localStorage.setItem(cacheKey, JSON.stringify({ savedAt: Date.now(), data })) } catch { /* optional cache */ }
+    ]).then(([profile, repositories, commits]) => {
+      const responses = { profile, repositories, commits }
+      setState(createViewData(responses))
+      try { localStorage.setItem(cacheKey, JSON.stringify({ savedAt: Date.now(), responses })) } catch { /* optional cache */ }
     }).catch((error) => {
-      if (error.name !== 'AbortError') setState({ ...initialState, loading: false, error: true })
+      if (error.name !== 'AbortError' && !cached) setState({ ...initialState, loading: false, error: true })
     })
 
     return () => controller.abort()

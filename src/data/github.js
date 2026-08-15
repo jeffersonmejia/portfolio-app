@@ -12,4 +12,4 @@ export const repositoryTitles = {
   'app-music': 'React Music Gallery',
 }
 
-export const backendLanguages = ['C#', 'Java', 'JavaScript', 'PHP', 'Python', 'TypeScript']
+export const backendLanguages = ['Java', 'C#', 'JavaScript']
