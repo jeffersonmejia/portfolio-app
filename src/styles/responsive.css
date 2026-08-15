@@ -31,9 +31,13 @@
   .profile-card { gap: var(--space-3); padding: var(--space-3); }
   .hero-objective { grid-template-columns: 1fr; gap: .25rem; }
   .hero-actions .button { flex: 1 1 auto; min-height: 2.4rem; padding: .5rem .7rem; font-size: .76rem; }
-  .timeline-stage { grid-template-columns: 1fr; }
+  .timeline-stage { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .timeline-stage.is-serpentine::before { display: none; }
+  .timeline-stage.is-serpentine .timeline-item:nth-child(3) { grid-area: 2 / 2; }
+  .timeline-stage.is-serpentine .timeline-item:nth-child(4) { grid-area: 2 / 1; }
+  .timeline-stage.is-serpentine .timeline-item:nth-child(5) { grid-area: 3 / 1; }
+  .timeline-stage.is-serpentine .timeline-item:nth-child(6) { grid-area: 3 / 2; }
   .home-timeline > header { gap: .45rem; }
-  .timeline-controls { gap: .15rem; }
   .timeline-item { min-height: 6.5rem; }
   .project-card { grid-template-columns: 1fr; }
   .project-image, .project-placeholder { min-height: 13rem; }
