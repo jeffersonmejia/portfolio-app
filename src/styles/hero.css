@@ -5,8 +5,10 @@
   max-width: none;
   min-height: calc(100dvh - 10.5rem);
   padding-block: clamp(var(--space-6), 6vh, var(--space-16)) var(--space-2);
+  transition: padding-top .72s var(--liquid-ease);
 }
 .page-inicio .hero { min-height: auto; }
+.page-inicio .hero:has(.hero-card.is-expanded) { padding-top: clamp(var(--space-4), 3vh, var(--space-6)); }
 
 .hero-card {
   --hero-card-padding: clamp(var(--space-5), 3vw, var(--space-8));
