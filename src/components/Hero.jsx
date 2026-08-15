@@ -43,16 +43,18 @@ export function Hero({ collapseOnFullLoad = false }) {
             </section>
           </section>
           <div className="hero-actions">
-            <button
-              className="button button-primary hero-more-toggle"
-              type="button"
-              aria-controls="home-more-content"
-              aria-expanded={showMore}
-              onClick={() => setShowMore((current) => !current)}
-            >
-              <Icon name={showMore ? 'up' : 'chevron'} size={16} />
-              {showMore ? 'Mostrar menos' : 'Conocer más'}
-            </button>
+            {!showMore && (
+              <button
+                className="button button-primary hero-more-toggle"
+                type="button"
+                aria-controls="home-more-content"
+                aria-expanded="false"
+                onClick={() => setShowMore(true)}
+              >
+                <Icon name="chevron" size={16} />
+                Conocer más
+              </button>
+            )}
             <nav
               className="hero-destination-actions"
               aria-label="Enlaces destacados"
