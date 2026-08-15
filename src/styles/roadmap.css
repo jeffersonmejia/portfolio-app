@@ -25,8 +25,6 @@
   position: relative;
   min-width: 0;
   border-radius: var(--radius-lg);
-  content-visibility: auto;
-  contain-intrinsic-block-size: auto 15rem;
 }
 .roadmap-list[data-progressive='true'] .roadmap-entry {
   opacity: 0;
