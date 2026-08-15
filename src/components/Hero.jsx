@@ -81,12 +81,12 @@ export function Hero({ collapseOnFullLoad = false }) {
           <div><GitHubSection active={showMore} /></div>
         </div>
       </article>
-      <Modal className="resume-modal" open={formOpen} onClose={() => setFormOpen(false)} label="Solicitar currículum">
+      <Modal className="resume-modal" open={formOpen} onClose={() => setFormOpen(false)} label="Solicitar currículum" showClose={false}>
         <div className="form-modal">
           <span className="eyebrow">Contacto</span>
           <h2>Solicitar currículum</h2>
           <p>Usaré tus datos únicamente para responder. No los compartiré con terceros.</p>
-          <ContactForm />
+          <ContactForm onCancel={() => setFormOpen(false)} />
         </div>
       </Modal>
     </section>

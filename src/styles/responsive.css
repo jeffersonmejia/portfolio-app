@@ -49,4 +49,5 @@
   .contact { padding: 1.2rem; border-radius: var(--radius-lg); }
   .contact-form { grid-template-columns: 1fr; }
   .form-wide { grid-column: auto; }
+  .resume-modal .form-actions .button { flex: 1; min-width: 0; padding-inline: .55rem; }
 }

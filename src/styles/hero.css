@@ -60,6 +60,7 @@
   box-shadow: 0 4px 14px rgba(0, 80, 150, .16);
 }
 .profile-image img { width: 100%; height: 100%; object-fit: cover; }
+:root[data-theme='dark'] .profile-image img { opacity: 1; filter: grayscale(1) contrast(1.04); mix-blend-mode: normal; }
 .hero-heading > div { display: grid; gap: .25rem; }
 .hero-heading h1 { font-size: var(--font-hero-name); letter-spacing: -.05em; line-height: 1; }
 .hero-career { max-width: 33rem; color: var(--muted); font-style: italic; font-weight: var(--weight-regular); }

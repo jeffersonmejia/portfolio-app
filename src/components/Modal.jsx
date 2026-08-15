@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 
-export function Modal({ children, className = '', label, open, onClose }) {
+export function Modal({ children, className = '', label, open, onClose, showClose = true }) {
   const dialogRef = useRef(null)
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export function Modal({ children, className = '', label, open, onClose }) {
         if (event.target === event.currentTarget) onClose()
       }}
     >
-      <button className="modal-close modal-cancel" type="button" onClick={onClose}>Cancelar</button>
+      {showClose && <button className="modal-close modal-cancel" type="button" onClick={onClose}>Cancelar</button>}
       {children}
     </dialog>
   )

@@ -3,7 +3,7 @@ import { contact } from '../data/site'
 
 const emptyForm = { entity: '', name: '', email: '', position: '', message: '' }
 
-export function ContactForm({ onSuccess }) {
+export function ContactForm({ onCancel, onSuccess }) {
   const [form, setForm] = useState(emptyForm)
   const [status, setStatus] = useState('')
   const [sending, setSending] = useState(false)
@@ -45,10 +45,13 @@ export function ContactForm({ onSuccess }) {
         <input type="checkbox" required />
         <span>Acepto que mis datos se usen únicamente para responder esta solicitud. Puedo pedir su eliminación.</span>
       </label>
-      <button className="button button-primary form-wide" type="submit" disabled={sending}>
-        {sending ? 'Enviando' : 'Enviar solicitud'}
-      </button>
       <p className="form-status form-wide" role="status">{status}</p>
+      <div className="form-actions form-wide">
+        <button className="button button-quiet form-cancel" type="button" onClick={onCancel}>Cancelar</button>
+        <button className="button button-primary" type="submit" disabled={sending}>
+          {sending ? 'Enviando' : 'Enviar solicitud'}
+        </button>
+      </div>
     </form>
   )
 }
