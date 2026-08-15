@@ -1,17 +1,29 @@
+import { useState } from 'react'
 import { githubUser } from '../data/github'
+import { softSkillGroups, technicalSkillGroups } from '../data/skills'
 import { useGitHubProfile } from '../hooks/useGitHubProfile'
 import { GitHubRepositoryCard } from './GitHubRepositoryCard'
 import { Icon } from './Icon'
 import { ProgressiveImage } from './ProgressiveImage'
+import { SkillsPanel } from './SkillsPanel'
 
 const githubUrl = `https://github.com/${githubUser}`
+const pages = ['GitHub', 'Habilidades técnicas', 'Habilidades blandas']
 
 export function GitHubSection({ active }) {
+  const [activePage, setActivePage] = useState(0)
   const { profile, repositories, metrics, loading, error } = useGitHubProfile(active)
 
   return (
-    <section className="home-github" aria-labelledby="home-github-title" aria-busy={loading}>
-      <header><span className="eyebrow" id="home-github-title">GitHub</span></header>
+    <section className="home-github" aria-label="Perfil y habilidades" aria-busy={activePage === 0 && loading}>
+      <header className="github-section-header">
+        <nav className="github-tabs" aria-label="Secciones del perfil" role="tablist" style={{ '--github-active-page': activePage }}>
+          {pages.map((page, index) => (
+            <button aria-controls={`github-page-${index}`} aria-selected={activePage === index} id={`github-tab-${index}`} key={page} onClick={() => setActivePage(index)} role="tab" type="button">{page}</button>
+          ))}
+        </nav>
+      </header>
+      <div className="github-page-content" hidden={activePage !== 0} id="github-page-0" role="tabpanel" aria-labelledby="github-tab-0">
       {loading && (
         <div className="github-loading" role="status" aria-label="Cargando perfil de GitHub">
           <span className="github-loading-profile" />
@@ -53,6 +65,13 @@ export function GitHubSection({ active }) {
           </div>
         </>
       )}
+      </div>
+      <div className="github-page-content" hidden={activePage !== 1} id="github-page-1" role="tabpanel" aria-labelledby="github-tab-1">
+        <SkillsPanel groups={technicalSkillGroups} technical />
+      </div>
+      <div className="github-page-content" hidden={activePage !== 2} id="github-page-2" role="tabpanel" aria-labelledby="github-tab-2">
+        <SkillsPanel groups={softSkillGroups} />
+      </div>
     </section>
   )
 }

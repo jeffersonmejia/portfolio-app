@@ -63,6 +63,7 @@ export function Hero({ collapseOnFullLoad = false }) {
             >
               <a className="button button-quiet" href={routeHref('/certificados/')}><Icon name="award" size={16} /> Capacitaciones</a>
               <a className="button button-quiet" href={routeHref('/proyectos/')}><Icon name="folder" size={16} /> Proyectos</a>
+              <a className="button button-quiet" href={routeHref('/contacto/')}><Icon name="contact" size={16} /> Contacto</a>
             </nav>
           </div>
         </section>
