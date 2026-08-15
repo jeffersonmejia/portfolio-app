@@ -3,7 +3,18 @@
   inset: 0 0 auto;
   z-index: var(--z-header);
   padding: var(--space-3) var(--space-4);
+  opacity: 1;
+  visibility: visible;
   pointer-events: none;
+  transform: translateY(0);
+  transition: opacity .42s ease .26s, transform .62s var(--liquid-ease) .18s, visibility 0s;
+}
+
+body:has(.page-inicio .hero-card:not(.is-expanded)) .site-header {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-140%);
+  transition: opacity .18s ease, transform .35s ease, visibility 0s .35s;
 }
 
 .site-nav {

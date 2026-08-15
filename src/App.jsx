@@ -20,6 +20,7 @@ const pages = {
 export default function App({ pathname = '/' }) {
   const theme = useTheme()
   const activePathname = useNavigation(pathname)
+  const initialPage = pageFromPath(pathname)
   const currentPage = pageFromPath(activePathname)
   const Page = pages[currentPage]
 
@@ -29,7 +30,7 @@ export default function App({ pathname = '/' }) {
       <Header currentPage={currentPage} onThemeToggle={theme.toggle} />
       <PageSkeleton />
       <main className={`page page-${currentPage}`} id="contenido" key={currentPage}>
-        <Page />
+        <Page collapseOnFullLoad={initialPage === 'inicio'} />
       </main>
       <Footer />
     </>

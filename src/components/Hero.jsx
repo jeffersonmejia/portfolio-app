@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { profile } from '../data/site'
 import { routeHref } from '../routes'
 import { asset } from '../utils/asset'
@@ -6,8 +6,12 @@ import { HorizontalTimeline } from './HorizontalTimeline'
 import { Icon } from './Icon'
 import { ProgressiveImage } from './ProgressiveImage'
 
-export function Hero() {
-  const [showMore, setShowMore] = useState(false)
+let homeMountedInThisSession = false
+
+export function Hero({ collapseOnFullLoad = false }) {
+  const [showMore, setShowMore] = useState(() => !collapseOnFullLoad || homeMountedInThisSession)
+
+  useEffect(() => { homeMountedInThisSession = true }, [])
 
   return (
     <section className="hero page-shell" id="inicio" aria-labelledby="hero-title">

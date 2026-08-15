@@ -64,4 +64,10 @@
 .consent input { width: 1rem; margin-top: .2rem; accent-color: var(--accent); }
 .form-status { min-height: 1.5rem; color: var(--muted); }
 
-.site-footer { display: flex; justify-content: center; padding-block: var(--space-8); color: var(--muted); font-size: .86rem; text-align: center; }
+.site-footer { display: flex; justify-content: center; padding-block: var(--space-8); color: var(--muted); font-size: .86rem; text-align: center; opacity: 1; visibility: visible; transform: translateY(0); transition: opacity .42s ease .3s, transform .62s var(--liquid-ease) .22s, visibility 0s; }
+body:has(.page-inicio .hero-card:not(.is-expanded)) .site-footer {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(1.25rem);
+  transition: opacity .16s ease, transform .3s ease, visibility 0s .3s;
+}
