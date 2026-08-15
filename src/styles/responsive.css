@@ -37,6 +37,10 @@
   .timeline-stage.is-serpentine .timeline-item:nth-child(4) { grid-area: 2 / 1; }
   .timeline-stage.is-serpentine .timeline-item:nth-child(5) { grid-area: 3 / 1; }
   .timeline-stage.is-serpentine .timeline-item:nth-child(6) { grid-area: 3 / 2; }
+  .timeline-stage.is-serpentine.is-partial .timeline-item:nth-child(1) { grid-area: 1 / 1 / 2 / -1; }
+  .timeline-stage.is-serpentine.is-partial .timeline-item:nth-child(2) { grid-area: 2 / 1; }
+  .timeline-stage.is-serpentine.is-partial .timeline-item:nth-child(3) { grid-area: 3 / 1 / 4 / -1; }
+  .timeline-stage.is-serpentine.is-partial .timeline-item:nth-child(4) { grid-area: 2 / 2; }
   .home-timeline > header { gap: .45rem; }
   .timeline-item { min-height: 6.5rem; }
   .project-card { grid-template-columns: 1fr; }
