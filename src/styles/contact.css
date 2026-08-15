@@ -4,7 +4,7 @@
   gap: var(--space-4);
   padding: clamp(var(--space-6), 5vw, var(--space-16));
   border-radius: var(--radius-xl);
-  background: var(--contact-card-surface);
+  background: var(--roadmap-main-surface);
   box-shadow: var(--shadow);
   animation: glass-materialize .55s var(--liquid-ease) both;
 }
@@ -12,7 +12,7 @@
 .contact-copy { display: grid; align-content: center; gap: .8rem; }
 .contact-copy h2 { font-size: var(--font-heading); }
 .contact-copy p { max-width: 520px; }
-.contact-actions { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .55rem; }
+.contact-actions { display: grid; grid-template-columns: 1fr; gap: 1rem; animation: contact-actions-enter .52s var(--liquid-ease) both; }
 .contact-link {
   --card-accent: var(--contact-accent-one);
   display: grid;
@@ -31,15 +31,17 @@
   text-decoration: none;
   cursor: pointer;
 }
-.contact-link { transition: transform .4s var(--liquid-ease), box-shadow .4s ease; }
-.contact-link:hover { transform: translateY(-2px) scale(1.012); box-shadow: var(--shadow-hover); }
-.contact-link:active { transform: scale(.975); }
-.contact-link:nth-child(2) { --card-accent: var(--contact-accent-two); background: var(--contact-link-two); }
-.contact-link:nth-child(3) { --card-accent: var(--contact-accent-three); background: var(--contact-link-three); }
+.contact-link { transition: background .25s ease, box-shadow .28s ease, transform .28s cubic-bezier(.2, .8, .2, 1); }
+.contact-actions .contact-link:hover { animation: none; box-shadow: var(--shadow-hover); transform: translateY(-2px) scale(1.008); }
+.contact-actions .contact-link:active { animation: none; box-shadow: var(--shadow-soft); transform: translateY(0) scale(.98); transition-duration: .12s; }
 .contact-link > .fluent-icon, .contact-link strong { color: var(--card-accent); }
 .contact-link span { display: grid; min-width: 0; gap: .15rem; }
 .contact-link :is(strong, small) { overflow-wrap: anywhere; }
 .contact-link small { color: var(--muted); }
+@keyframes contact-actions-enter {
+  from { opacity: 0; transform: translateX(10px) scale(.975); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
 
 .form-modal { display: grid; min-width: 0; max-width: 100%; gap: .7rem; padding: .5rem; }
 .form-modal > p { max-width: 600px; }
