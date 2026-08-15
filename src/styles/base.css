@@ -16,6 +16,27 @@ html {
   scroll-padding-top: 6.5rem;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  html {
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+  }
+  :is(html, .modal)::-webkit-scrollbar { width: var(--scrollbar-size); height: var(--scrollbar-size); }
+  :is(html, .modal)::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+  :is(html, .modal)::-webkit-scrollbar-thumb {
+    min-height: 2.75rem;
+    border: 2px solid transparent;
+    border-radius: var(--radius-pill);
+    background: var(--scrollbar-thumb);
+    background-clip: padding-box;
+  }
+  :is(html, .modal)::-webkit-scrollbar-thumb:hover { background-color: var(--scrollbar-thumb-hover); }
+  :is(html, .modal)::-webkit-scrollbar-thumb:active { background-color: var(--scrollbar-thumb-active); }
+  :is(html, .modal)::-webkit-scrollbar-button { display: none; }
+  .modal { --scrollbar-size: 8px; scrollbar-color: var(--scrollbar-thumb) transparent; scrollbar-width: thin; }
+}
+
 body {
   min-width: 320px;
   min-height: 100vh;

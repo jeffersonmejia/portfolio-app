@@ -105,6 +105,11 @@
   --glass-saturation: 120%;
   --nav-blur: 12px;
   --nav-saturation: 135%;
+  --scrollbar-size: 10px;
+  --scrollbar-thumb: rgba(72, 72, 72, .34);
+  --scrollbar-thumb-hover: rgba(54, 103, 145, .58);
+  --scrollbar-thumb-active: rgba(0, 103, 192, .76);
+  --scrollbar-track: transparent;
   --duration-fast: .25s;
   --duration-normal: .35s;
   --duration-slow: .55s;
@@ -168,6 +173,9 @@
   --shadow-soft: 0 2px 8px rgba(0, 0, 0, .24);
   --shadow-hover: 0 5px 12px rgba(0, 0, 0, .24), 0 16px 36px rgba(0, 0, 0, .32);
   --shadow-flyout: 0 12px 28px rgba(0, 0, 0, .42);
+  --scrollbar-thumb: rgba(220, 220, 220, .3);
+  --scrollbar-thumb-hover: rgba(134, 194, 235, .58);
+  --scrollbar-thumb-active: rgba(96, 174, 234, .78);
   --glass-blur: 16px;
   --glass-saturation: 130%;
 }
