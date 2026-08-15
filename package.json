@@ -7,6 +7,7 @@
     "dev": "vite",
     "check": "node scripts/check-lines.mjs",
     "build": "npm run check && vite build && vite build --ssr src/entry-server.jsx --outDir dist-server && node scripts/prerender.mjs",
+    "deploy": "git push origin main",
     "preview": "vite preview"
   },
   "dependencies": {

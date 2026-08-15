@@ -4,7 +4,6 @@ import { softSkillGroups, technicalSkillGroups } from '../data/skills'
 import { useGitHubProfile } from '../hooks/useGitHubProfile'
 import { GitHubRepositoryCard } from './GitHubRepositoryCard'
 import { Icon } from './Icon'
-import { ProgressiveImage } from './ProgressiveImage'
 import { SkillsPanel } from './SkillsPanel'
 
 const githubUrl = `https://github.com/${githubUser}`
@@ -40,7 +39,7 @@ export function GitHubSection({ active }) {
       {profile && (
         <>
           <article className="github-profile-card">
-            <ProgressiveImage shellClassName="github-avatar" src={profile.avatar_url} alt={profile.name || githubUser} width="80" height="80" loading="lazy" />
+            <span className="github-avatar" aria-hidden="true"><Icon name="github" size={25} /></span>
             <div className="github-profile-copy">
               <h2>{profile.name || githubUser}</h2>
               <span>@{profile.login}</span>
@@ -49,8 +48,8 @@ export function GitHubSection({ active }) {
                 <span><strong>{profile.followers}</strong> seguidores</span>
               </div>
             </div>
-            <a className="github-profile-action" href={profile.html_url} target="_blank" rel="noreferrer">
-              <Icon name="github" size={17} /> Abrir GitHub
+            <a className="github-profile-action" href={profile.html_url} target="_blank" rel="noreferrer" aria-label="Abrir perfil de GitHub">
+              <Icon name="github" size={17} /> Ir a GitHub
             </a>
           </article>
           {metrics && (

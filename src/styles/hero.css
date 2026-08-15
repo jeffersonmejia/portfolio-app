@@ -115,7 +115,7 @@
   transition: max-width .62s var(--liquid-ease) .12s, opacity .14s ease, transform .18s ease, visibility 0s .14s;
 }
 .hero-card.is-expanded .hero-destination-actions {
-  max-width: 24rem;
+  max-width: 26rem;
   opacity: 1;
   visibility: visible;
   transform: translateX(0);
@@ -127,7 +127,8 @@
   background: var(--surface-strong);
   box-shadow: var(--shadow-soft);
 }
-.hero-destination-actions .button:first-child { color: var(--certificate-accent-two); }
+.hero-destination-actions .hero-cv-action { color: var(--certificate-accent-two); }
+.hero-destination-actions .hero-linkedin-action { color: var(--project-accent-one); }
 .hero-destination-actions .button:hover {
   background: color-mix(in srgb, currentColor 13%, var(--surface-strong));
   box-shadow: var(--shadow);

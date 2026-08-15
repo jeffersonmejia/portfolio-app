@@ -7,9 +7,34 @@ export const technicalSkillGroups = [
 ]
 
 export const softSkillGroups = [
-  { title: 'Comunicación', icon: 'contact', skills: ['Comunicación clara', 'Escucha activa'] },
-  { title: 'Colaboración', icon: 'plus', skills: ['Trabajo en equipo', 'Empatía'] },
-  { title: 'Resolución', icon: 'route', skills: ['Pensamiento crítico', 'Resolución de problemas'] },
-  { title: 'Adaptabilidad', icon: 'up', skills: ['Aprendizaje continuo', 'Apertura al cambio'] },
-  { title: 'Gestión personal', icon: 'shield', skills: ['Organización', 'Responsabilidad'] },
+  {
+    title: 'Pensamiento crítico',
+    icon: 'code',
+    description: 'Cuestiono decisiones técnicas, arquitecturas y enfoques antes de aceptarlos, evaluando qué aporta valor práctico al producto y a mi perfil.',
+  },
+  {
+    title: 'Resolución de problemas',
+    icon: 'route',
+    description: 'Busco causas concretas en errores de despliegue, integración, autenticación, Docker, bases de datos, redes y seguridad; no solo hacer que funcione.',
+  },
+  {
+    title: 'Aprendizaje autónomo',
+    icon: 'graduation',
+    description: 'He construido conocimientos de Spring, backend, Azure, Docker, seguridad, IA y arquitectura mientras continúo mi formación de pregrado.',
+  },
+  {
+    title: 'Adaptabilidad',
+    icon: 'up',
+    description: 'Trabajo con stacks distintos como Java, C#, React, Vue, Docker, PostgreSQL, redes, seguridad, IA y cloud sin atarme a una sola tecnología.',
+  },
+  {
+    title: 'Atención al detalle',
+    icon: 'shield',
+    description: 'Cuido la estructura, nomenclatura, documentación, formato, endpoints, pruebas y presentación de resultados.',
+  },
+  {
+    title: 'Comunicación técnica',
+    icon: 'presentation',
+    description: 'Traduzco trabajo técnico a explicaciones comprensibles mediante papers, defensas, documentación, README, diagramas y presentaciones.',
+  },
 ]

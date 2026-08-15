@@ -18,8 +18,7 @@
   box-shadow: var(--shadow-soft);
   animation: github-card-enter .48s var(--liquid-ease) both;
 }
-.github-avatar { width: 3.6rem; height: 3.6rem; border-radius: 1rem; box-shadow: var(--shadow-soft); }
-.github-avatar img { width: 100%; height: 100%; border-radius: inherit; object-fit: cover; }
+.github-avatar { display: grid; width: 2.8rem; height: 2.8rem; border-radius: 50%; place-items: center; color: var(--project-accent-one); background: linear-gradient(145deg, var(--surface-strong), color-mix(in srgb, var(--project-accent-one) 15%, var(--surface-strong))); box-shadow: inset 0 1px rgba(255,255,255,.72), var(--shadow-soft); }
 .github-profile-copy { display: grid; gap: .1rem; min-width: 0; }
 .github-profile-copy h2 { color: color-mix(in srgb, var(--project-accent-one) 65%, var(--text)); font-size: 1rem; }
 .github-profile-copy > span { color: var(--muted); font-size: .72rem; }
@@ -86,17 +85,17 @@
 .skill-group h3 { color: color-mix(in srgb, var(--project-accent-one) 68%, var(--text)); font-size: .75rem; }
 .skill-items { display: flex; flex-wrap: wrap; gap: .34rem; }
 .skills-grid.is-technical .skill-group:nth-child(3) { grid-column: 1 / -1; }
-.skills-grid.is-soft .skill-group:last-child { grid-column: 1 / -1; }
 .skill-soft-icon { display: grid; width: 1.75rem; height: 1.75rem; border-radius: .55rem; place-items: center; color: var(--project-accent-one); background: linear-gradient(145deg, var(--surface-strong), color-mix(in srgb, var(--project-accent-one) 18%, var(--surface-strong))); box-shadow: inset 0 1px rgba(255,255,255,.72), 0 4px 8px color-mix(in srgb, var(--project-accent-one) 15%, transparent); transform: rotate(-2deg); }
-.soft-skill { padding: .28rem .48rem; border-radius: var(--radius-pill); color: color-mix(in srgb, var(--project-accent-one) 60%, var(--text)); background: color-mix(in srgb, var(--project-accent-one) 7%, var(--surface-strong)); font-size: .66rem; font-weight: 680; }
+.soft-skill-description { color: var(--muted); font-size: .66rem; line-height: 1.42; }
 @keyframes github-card-enter { from { opacity: 0; transform: translateY(7px) scale(.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
 @keyframes github-page-enter { from { opacity: 0; transform: translateX(8px) scale(.992); } to { opacity: 1; transform: translateX(0) scale(1); } }
-@media (max-width: 620px) {
+@media (max-width: 720px) {
+  .github-section-header { position: sticky; top: .5rem; z-index: 8; margin: -.2rem; padding: .2rem; border-radius: .85rem; background: color-mix(in srgb, var(--surface) 82%, transparent); backdrop-filter: blur(14px) saturate(130%); }
+  .github-tabs button { min-height: 2.35rem; padding: .38rem .2rem; font-size: .6rem; text-wrap: balance; }
   .github-profile-card { grid-template-columns: auto 1fr; }
   .github-profile-action { grid-column: 1 / -1; justify-self: stretch; justify-content: center; }
   .github-overview, .github-repositories, .github-loading { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
   .skills-grid.is-technical .skill-group:nth-child(3) { grid-column: auto; }
-  .skills-grid.is-soft .skill-group:last-child { grid-column: auto; }
   .github-loading .github-loading-profile { grid-column: auto; }
 }

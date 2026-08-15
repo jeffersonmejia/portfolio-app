@@ -19,12 +19,6 @@ export const routeDefinitions = [
     title: 'Capacitaciones | Jefferson Mejía',
     description: 'Capacitaciones en bases de datos, JavaScript, inglés y ciberseguridad realizadas por Jefferson Mejía.',
   },
-  {
-    key: 'contacto',
-    path: '/contacto/',
-    title: 'Contacto | Jefferson Mejía',
-    description: 'Contacto profesional con Jefferson Mejía y formulario para solicitar su currículum.',
-  },
 ]
 
 export function routeFromPath(pathname) {

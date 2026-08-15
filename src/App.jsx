@@ -4,7 +4,6 @@ import { PageSkeleton } from './components/PageSkeleton'
 import { useNavigation } from './hooks/useNavigation'
 import { useTheme } from './hooks/useTheme'
 import { CertificatesPage } from './pages/CertificatesPage'
-import { ContactPage } from './pages/ContactPage'
 import { HomePage } from './pages/HomePage'
 import { ProjectsPage } from './pages/ProjectsPage'
 import { pageFromPath } from './routes'
@@ -14,7 +13,6 @@ const pages = {
   inicio: HomePage,
   proyectos: ProjectsPage,
   certificados: CertificatesPage,
-  contacto: ContactPage,
 }
 
 export default function App({ pathname = '/' }) {

@@ -11,9 +11,9 @@ export function SkillsPanel({ groups, technical = false }) {
             <h3>{group.title}</h3>
           </header>
           <div className="skill-items">
-            {group.skills.map((skill) => technical
-              ? <TechnologyIcon key={skill} name={skill} />
-              : <span className="soft-skill" key={skill}>{skill}</span>)}
+            {technical
+              ? group.skills.map((skill) => <TechnologyIcon key={skill} name={skill} />)
+              : <p className="soft-skill-description">{group.description}</p>}
           </div>
         </article>
       ))}
