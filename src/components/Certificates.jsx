@@ -32,22 +32,23 @@ export function Certificates() {
                     <ProgressiveImage src={asset(certificate.logo)} alt="" width="52" height="52" loading="lazy" decoding="async" fetchPriority="low" />
                   </span>
                   <span itemProp="recognizedBy">{certificate.provider}</span>
-                  <time itemProp="dateCreated" dateTime={certificate.year}>{certificate.year}</time>
+                  <span className="certificate-provider-actions">
+                    <time itemProp="dateCreated" dateTime={certificate.year}>{certificate.year}</time>
+                    {expanded ? (
+                      <button className="certificate-inline-close" type="button" onClick={() => setSelected(null)}><Icon name="x" size={16} /> Cerrar</button>
+                    ) : (
+                      <button className="text-link certificate-action" type="button" onClick={() => setSelected(certificate)} aria-expanded="false">
+                        Ver certificado <Icon name="external" size={16} />
+                      </button>
+                    )}
+                  </span>
                 </div>
                 <h3 itemProp="name">{certificate.title}</h3>
                 <p itemProp="description">{certificate.description}</p>
-                {!expanded && (
-                  <button className="text-link certificate-action" type="button" onClick={() => setSelected(certificate)} aria-expanded="false">
-                    Ver certificado <Icon name="external" size={16} />
-                  </button>
-                )}
               </div>
               <div className="certificate-inline-preview" aria-hidden={!expanded} inert={!expanded}>
                 {expanded && (
-                  <>
-                    <button className="certificate-inline-close" type="button" onClick={() => setSelected(null)}><Icon name="x" size={16} /> Cerrar</button>
-                    <ProgressiveImage shellClassName="certificate-preview" src={asset(certificate.image)} alt={`Certificado ${certificate.title}`} />
-                  </>
+                  <ProgressiveImage shellClassName="certificate-preview" src={asset(certificate.image)} alt={`Certificado ${certificate.title}`} />
                 )}
               </div>
             </article>

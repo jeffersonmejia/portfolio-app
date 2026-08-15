@@ -35,6 +35,8 @@
 }
 .provider-logo img { width: 100%; height: 100%; object-fit: contain; }
 .certificate-provider time { color: var(--card-accent); font-weight: 800; }
+.certificate-provider-actions { display: flex; align-items: center; gap: .55rem; }
+.certificate-provider-actions .certificate-action.text-link { min-height: 2rem; margin-top: 0; padding: .38rem .58rem; white-space: nowrap; }
 .certificate-card h3 { color: var(--card-accent); font-size: 1.15rem; }
 .certificate-card p { color: color-mix(in srgb, var(--card-accent) 40%, var(--text)); font-size: .88rem; line-height: 1.5; }
 .certificate-card .text-link { margin-top: auto; color: var(--card-accent); }
@@ -66,7 +68,7 @@
 .modal-close { position: sticky; top: 0; z-index: 2; margin-left: auto; color: var(--text); background: var(--surface-strong); }
 .certificate-inline-preview { position: relative; min-width: 0; max-height: 0; opacity: 0; visibility: hidden; overflow: hidden; transform: translateX(1.5rem) scale(.99); }
 .certificate-card.is-expanded .certificate-inline-preview { max-height: 42rem; opacity: 1; visibility: visible; animation: certificate-inline-reveal .72s var(--liquid-ease) .12s both; }
-.certificate-inline-close { position: absolute; top: .75rem; right: .75rem; z-index: 2; display: inline-flex; align-items: center; gap: .3rem; min-height: 2.2rem; padding: .45rem .65rem; border: 0; border-radius: .7rem; color: var(--card-accent); background: var(--roadmap-main-surface); box-shadow: var(--shadow-soft); font-size: .74rem; font-weight: 700; cursor: pointer; }
+.certificate-inline-close { display: inline-flex; align-items: center; gap: .3rem; min-height: 2rem; padding: .38rem .58rem; border: 0; border-radius: .7rem; color: var(--card-accent); background: var(--roadmap-main-surface); box-shadow: var(--shadow-soft); font-size: .74rem; font-weight: 700; white-space: nowrap; cursor: pointer; }
 .certificate-preview { width: 100%; border-radius: var(--radius-md); }
 .certificate-preview img { width: 100%; max-height: 36rem; border-radius: inherit; object-fit: contain; }
 @keyframes certificate-inline-reveal {
@@ -75,4 +77,6 @@
 }
 @media (max-width: 720px) {
   .certificate-card.is-expanded { grid-template-columns: 1fr; }
+  .certificate-provider { grid-template-columns: auto 1fr; }
+  .certificate-provider-actions { grid-column: 1 / -1; justify-content: flex-end; }
 }
