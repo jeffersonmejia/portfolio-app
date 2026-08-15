@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { profile } from '../data/site'
 import { routeHref } from '../routes'
 import { asset } from '../utils/asset'
-import { HorizontalTimeline } from './HorizontalTimeline'
+import { GitHubSection } from './GitHubSection'
 import { Icon } from './Icon'
 import { ProgressiveImage } from './ProgressiveImage'
 
@@ -72,7 +72,7 @@ export function Hero({ collapseOnFullLoad = false }) {
           aria-hidden={!showMore}
           inert={!showMore}
         >
-          <div><HorizontalTimeline /></div>
+          <div><GitHubSection active={showMore} /></div>
         </div>
       </article>
     </section>

@@ -1,0 +1,83 @@
+.home-github { display: grid; align-content: center; gap: .75rem; min-width: 0; }
+.home-github > header { display: flex; align-items: center; min-height: 1.75rem; }
+#home-github-title { color: var(--project-accent-one); }
+.github-profile-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: .85rem;
+  align-items: center;
+  padding: .9rem;
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--project-accent-one) 7%, var(--surface-strong));
+  box-shadow: var(--shadow-soft);
+  animation: github-card-enter .48s var(--liquid-ease) both;
+}
+.github-avatar { width: 3.6rem; height: 3.6rem; border-radius: 1rem; box-shadow: var(--shadow-soft); }
+.github-avatar img { width: 100%; height: 100%; border-radius: inherit; object-fit: cover; }
+.github-profile-copy { display: grid; gap: .1rem; min-width: 0; }
+.github-profile-copy h2 { color: color-mix(in srgb, var(--project-accent-one) 65%, var(--text)); font-size: 1rem; }
+.github-profile-copy > span { color: var(--muted); font-size: .72rem; }
+.github-stats { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: .28rem; color: var(--muted); font-size: .69rem; }
+.github-stats strong { color: var(--project-accent-one); }
+.github-overview { display: grid; grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(0, .75fr)); gap: .45rem; }
+.github-overview.is-partial { grid-template-columns: minmax(0, 1.5fr) minmax(0, .75fr); }
+.github-overview > span { display: grid; gap: .16rem; min-width: 0; padding: .48rem .58rem; border-radius: .7rem; background: color-mix(in srgb, var(--project-accent-one) 5%, var(--surface-strong)); box-shadow: var(--shadow-soft); }
+.github-overview small { color: var(--muted); font-size: .56rem; }
+.github-overview strong { overflow: hidden; color: color-mix(in srgb, var(--project-accent-one) 72%, var(--text)); font-size: .66rem; text-overflow: ellipsis; white-space: nowrap; }
+.github-profile-action, .github-repository-card footer a, .github-error a {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  min-height: 2rem;
+  padding: .4rem .62rem;
+  border-radius: .65rem;
+  color: var(--project-accent-one);
+  background: var(--surface-strong);
+  box-shadow: var(--shadow-soft);
+  font-size: .7rem;
+  font-weight: 750;
+  text-decoration: none;
+  transition: transform .28s var(--liquid-ease), box-shadow .28s ease;
+}
+:is(.github-profile-action, .github-repository-card footer a, .github-error a):hover { box-shadow: var(--shadow); transform: translateY(-1px) scale(1.01); }
+.github-repositories { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .62rem; }
+.github-repository-card {
+  display: grid;
+  align-content: start;
+  gap: .55rem;
+  min-width: 0;
+  padding: .78rem;
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--project-accent-two) 6%, var(--surface-strong));
+  box-shadow: var(--shadow-soft);
+  transition: transform .36s var(--liquid-ease), box-shadow .36s ease;
+  animation: github-card-enter .52s var(--liquid-ease) both;
+}
+.github-repository-card:nth-child(2) { animation-delay: .08s; }
+.github-repository-card:nth-child(3) { animation-delay: .16s; }
+.github-repository-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px) scale(1.006); }
+.github-repository-heading, .github-repository-metrics, .github-repository-card footer { display: flex; align-items: center; justify-content: space-between; gap: .45rem; }
+.github-repository-metrics { justify-content: flex-end; color: var(--muted); font-size: .65rem; }
+.github-repository-metrics span { display: inline-flex; align-items: center; gap: .15rem; }
+.github-repository-copy { display: grid; gap: .25rem; }
+.github-repository-copy h3 { overflow: hidden; color: color-mix(in srgb, var(--project-accent-one) 65%, var(--text)); font-size: .84rem; text-overflow: ellipsis; white-space: nowrap; }
+.github-repository-copy p { display: -webkit-box; min-height: 2.5em; overflow: hidden; color: var(--muted); font-size: .69rem; line-height: 1.25; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.github-topics { display: flex; flex-wrap: wrap; gap: .25rem; }
+.github-topics span { padding: .18rem .38rem; border-radius: var(--radius-pill); color: var(--project-accent-two); background: color-mix(in srgb, var(--project-accent-two) 8%, var(--surface-strong)); font-size: .58rem; font-weight: 700; }
+.github-repository-card footer { align-self: end; margin-top: auto; }
+.github-repository-card time { color: var(--muted); font-size: .58rem; }
+.github-loading { display: grid; grid-template-columns: repeat(2, 1fr); gap: .7rem; }
+.github-loading span { position: relative; min-height: 8rem; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--surface-strong), var(--surface)); overflow: hidden; }
+.github-loading span::after { position: absolute; inset: 0; background: linear-gradient(100deg, transparent 20%, var(--skeleton-shine) 45%, transparent 70%); content: ''; transform: translateX(-100%); animation: skeleton-wave 1.35s ease-in-out infinite; }
+.github-loading .github-loading-profile { grid-column: 1 / -1; min-height: 4.8rem; }
+.github-error { display: grid; grid-template-columns: auto 1fr auto; gap: .7rem; align-items: center; padding: 1rem; border-radius: var(--radius-md); background: var(--surface-strong); box-shadow: var(--shadow-soft); }
+.github-error div { display: grid; gap: .15rem; }
+.github-error :is(strong, small) { font-size: .72rem; }
+.github-error small { color: var(--muted); }
+@keyframes github-card-enter { from { opacity: 0; transform: translateY(7px) scale(.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@media (max-width: 620px) {
+  .github-profile-card { grid-template-columns: auto 1fr; }
+  .github-profile-action { grid-column: 1 / -1; justify-self: stretch; justify-content: center; }
+  .github-overview, .github-repositories, .github-loading { grid-template-columns: 1fr; }
+  .github-loading .github-loading-profile { grid-column: auto; }
+}

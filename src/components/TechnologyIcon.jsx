@@ -8,20 +8,24 @@ import {
   SiJavascript,
   SiLinux,
   SiMysql,
+  SiOpenjdk,
   SiPhp,
   SiPostgresql,
   SiPython,
+  SiSharp,
 } from 'react-icons/si'
 import { Icon } from './Icon'
 
 const technologies = {
   Apache: { component: SiApache, color: '#d22128' },
   CSS: { component: SiCss, color: '#663399' },
+  'C#': { component: SiSharp, color: '#512bd4' },
   Docker: { component: SiDocker, color: '#2496ed' },
   Firebase: { component: SiFirebase, color: '#e66000' },
   Flutter: { component: SiFlutter, color: '#02569b' },
   HTML: { component: SiHtml5, color: '#e34f26' },
   JavaScript: { component: SiJavascript, color: '#b28a00' },
+  Java: { component: SiOpenjdk, color: '#e76f00' },
   Linux: { component: SiLinux, color: '#9a7600' },
   MySQL: { component: SiMysql, color: '#4479a1' },
   PHP: { component: SiPhp, color: '#777bb4' },

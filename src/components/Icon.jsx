@@ -12,6 +12,7 @@ import {
   Database,
   ExternalLink,
   FolderCode,
+  GitFork,
   GraduationCap,
   Home,
   Languages,
@@ -24,9 +25,11 @@ import {
   Server,
   ShieldCheck,
   Smartphone,
+  Star,
   Sun,
   X,
 } from 'lucide-react'
+import { SiGithub } from 'react-icons/si'
 
 const icons = {
   award: Award,
@@ -39,7 +42,8 @@ const icons = {
   database: Database,
   external: ExternalLink,
   folder: FolderCode,
-  github: CodeXml,
+  fork: GitFork,
+  github: SiGithub,
   graduation: GraduationCap,
   home: Home,
   languages: Languages,
@@ -56,6 +60,7 @@ const icons = {
   server: Server,
   shield: ShieldCheck,
   smartphone: Smartphone,
+  star: Star,
   sun: Sun,
   x: X,
 }
