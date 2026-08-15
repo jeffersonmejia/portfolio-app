@@ -1,13 +1,15 @@
 import { useEffect, useRef } from 'react'
 
-export function useProgressiveRoadmap() {
+export function useProgressiveRoadmap({ initialCount = 0, revealBatch = false, rootMargin = '180px 0px' } = {}) {
   const roadmapRef = useRef(null)
 
   useEffect(() => {
     const roadmap = roadmapRef.current
     if (!roadmap) return undefined
     const entries = [...roadmap.querySelectorAll('.roadmap-entry')]
+    const deferredEntries = entries.slice(initialCount)
     roadmap.dataset.progressive = 'true'
+    entries.slice(0, initialCount).forEach((entry) => entry.classList.add('is-revealed'))
 
     if (!('IntersectionObserver' in window)) {
       entries.forEach((entry) => entry.classList.add('is-revealed'))
@@ -17,14 +19,17 @@ export function useProgressiveRoadmap() {
     const observer = new IntersectionObserver((observed) => {
       observed.forEach(({ isIntersecting, target }) => {
         if (!isIntersecting) return
-        target.classList.add('is-revealed')
-        observer.unobserve(target)
+        const entriesToReveal = revealBatch ? deferredEntries : [target]
+        entriesToReveal.forEach((entry) => {
+          entry.classList.add('is-revealed')
+          observer.unobserve(entry)
+        })
       })
-    }, { rootMargin: '180px 0px', threshold: .01 })
+    }, { rootMargin, threshold: .01 })
 
-    entries.forEach((entry) => observer.observe(entry))
+    deferredEntries.forEach((entry) => observer.observe(entry))
     return () => observer.disconnect()
-  }, [])
+  }, [initialCount, revealBatch, rootMargin])
 
   return roadmapRef
 }

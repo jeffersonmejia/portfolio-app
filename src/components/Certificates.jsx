@@ -6,9 +6,19 @@ import { Icon } from './Icon'
 import { ProgressiveImage } from './ProgressiveImage'
 import { SectionIntro } from './SectionIntro'
 
+function alignCertificate(event) {
+  const card = event.currentTarget.closest('.certificate-card')
+  if (!card) return
+  window.setTimeout(() => {
+    if (!card.classList.contains('is-expanded')) return
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    card.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'center' })
+  }, 140)
+}
+
 export function Certificates() {
   const [selected, setSelected] = useState(null)
-  const roadmapRef = useProgressiveRoadmap()
+  const roadmapRef = useProgressiveRoadmap({ initialCount: 3, revealBatch: true, rootMargin: '90px 0px' })
 
   return (
     <section className="content-section page-shell roadmap-page" id="certificados" aria-labelledby="certificates-title">
@@ -25,7 +35,9 @@ export function Certificates() {
           const expanded = selected?.id === certificate.id
           return (
             <article className={`certificate-card roadmap-entry ${expanded ? 'is-expanded' : ''}`} key={certificate.id} itemScope itemType="https://schema.org/EducationalOccupationalCredential">
-              <span className="roadmap-step" aria-hidden="true" />
+              <time className="roadmap-step roadmap-year" itemProp="dateCreated" dateTime={certificate.year}>
+                {certificate.year}
+              </time>
               <div className="certificate-copy">
                 <div className="certificate-provider">
                   <span className="provider-logo" aria-hidden="true">
@@ -33,12 +45,11 @@ export function Certificates() {
                   </span>
                   <span itemProp="recognizedBy">{certificate.provider}</span>
                   <span className="certificate-provider-actions">
-                    <time itemProp="dateCreated" dateTime={certificate.year}>{certificate.year}</time>
                     {expanded ? (
                       <button className="certificate-inline-close" type="button" onClick={() => setSelected(null)}><Icon name="x" size={16} /> Cerrar</button>
                     ) : (
                       <button className="text-link certificate-action" type="button" onClick={() => setSelected(certificate)} aria-expanded="false">
-                        Ver certificado <Icon name="external" size={16} />
+                        Ver certificado <Icon name="expand" size={16} />
                       </button>
                     )}
                   </span>
@@ -48,7 +59,7 @@ export function Certificates() {
               </div>
               <div className="certificate-inline-preview" aria-hidden={!expanded} inert={!expanded}>
                 {expanded && (
-                  <ProgressiveImage shellClassName="certificate-preview" src={asset(certificate.image)} alt={`Certificado ${certificate.title}`} />
+                  <ProgressiveImage shellClassName="certificate-preview" src={asset(certificate.image)} alt={`Certificado ${certificate.title}`} onLoad={alignCertificate} />
                 )}
               </div>
             </article>

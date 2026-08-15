@@ -19,7 +19,11 @@ export function Projects() {
       <div className="project-roadmap roadmap-list" ref={roadmapRef}>
         {projects.map((project) => (
           <div className="roadmap-entry" key={project.id}>
-            <span className="roadmap-step" aria-hidden="true" />
+            {project.isoDate ? (
+              <time className="roadmap-step roadmap-year" dateTime={project.isoDate}>
+                {project.isoDate.slice(0, 4)}
+              </time>
+            ) : <span className="roadmap-step" aria-hidden="true" />}
             <ProjectCard project={project} />
           </div>
         ))}

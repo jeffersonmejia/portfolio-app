@@ -20,6 +20,7 @@ export function ProjectCard({ project }) {
 
   return (
     <article className="project-card" itemScope itemType="https://schema.org/SoftwareApplication">
+      <meta itemProp="datePublished" content={project.isoDate} />
       <a className="project-image" href={project.href} target="_blank" rel="noreferrer" tabIndex="-1">
         <ProgressiveImage
           shellClassName="project-image-media"
@@ -35,7 +36,6 @@ export function ProjectCard({ project }) {
       </a>
       <div className="project-copy">
         <div className="project-meta">
-          <time dateTime={project.isoDate} itemProp="datePublished">{project.date}</time>
           <span><Icon name={project.icon} size={15} /> {project.category}</span>
         </div>
         <h3 itemProp="name">{project.title}</h3>

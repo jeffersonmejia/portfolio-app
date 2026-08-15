@@ -27,7 +27,6 @@
 .project-copy p { color: color-mix(in srgb, var(--card-accent) 44%, var(--text)); font-size: .91rem; line-height: 1.55; }
 .project-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem; color: var(--card-accent); font-size: .74rem; font-weight: 800; }
 .project-meta span { display: inline-flex; align-items: center; gap: .25rem; }
-.project-meta span::before { content: '·'; margin-right: .45rem; }
 .tag-list { display: flex; flex-wrap: wrap; gap: .3rem; }
 .technology-tag { display: inline-flex; align-items: center; gap: .38rem; padding: .25rem .52rem .25rem .28rem; border-radius: var(--radius-pill); color: var(--technology-color); background: color-mix(in srgb, var(--technology-color) 7%, var(--surface-strong)); box-shadow: inset 0 1px rgba(255,255,255,.85), 0 2px 5px color-mix(in srgb, var(--technology-color) 14%, transparent); font-size: .72rem; font-weight: 700; }
 .technology-icon-shell { display: grid; width: 1.45rem; height: 1.45rem; border-radius: .45rem; place-items: center; color: var(--technology-color); background: linear-gradient(145deg, #fff, color-mix(in srgb, var(--technology-color) 18%, #fff)); box-shadow: inset 0 1px rgba(255,255,255,.9), 0 3px 6px color-mix(in srgb, var(--technology-color) 24%, transparent); transform: translateY(-1px) rotate(-2deg); }
