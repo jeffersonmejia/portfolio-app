@@ -44,8 +44,8 @@ export function GitHubSection({ active }) {
           {metrics && (
             <div className={`github-overview ${metrics.commitsLastYear === null ? 'is-partial' : ''}`} aria-label="Métricas generales de GitHub">
               <span><small>Backend</small><strong>{metrics.backendLanguages.join(' · ') || '—'}</strong></span>
-              <span><small>Stars totales</small><strong>{metrics.totalStars}</strong></span>
-              {metrics.commitsLastYear !== null && <span><small>Commits · 12 meses</small><strong>{metrics.commitsLastYear}</strong></span>}
+              <span><small>Stars</small><strong>{metrics.totalStars}</strong></span>
+              {metrics.commitsLastYear !== null && <span><small>Contribuciones · últimos 12 meses</small><strong>{metrics.commitsLastYear}</strong></span>}
             </div>
           )}
           <div className="github-repositories">
