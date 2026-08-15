@@ -40,7 +40,7 @@ export function Certificates() {
           </article>
         ))}
       </div>
-      <Modal open={Boolean(selected)} onClose={() => setSelected(null)} label={selected?.title}>
+      <Modal className="certificate-drawer" closeOnScroll open={Boolean(selected)} onClose={() => setSelected(null)} label={selected?.title} showCloseLabel>
         {selected && (
           <figure className="certificate-modal">
             <ProgressiveImage
@@ -48,10 +48,6 @@ export function Certificates() {
               src={asset(selected.image)}
               alt={`Certificado ${selected.title}`}
             />
-            <figcaption>
-              <strong>{selected.title}</strong>
-              <span>{selected.provider} · {selected.year}</span>
-            </figcaption>
           </figure>
         )}
       </Modal>
