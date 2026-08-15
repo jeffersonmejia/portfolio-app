@@ -18,7 +18,11 @@ export function Projects() {
       />
       <div className="project-roadmap roadmap-list" ref={roadmapRef}>
         {projects.map((project) => (
-          <div className="roadmap-entry" key={project.id}>
+          <div
+            className="roadmap-entry"
+            key={project.id}
+            style={{ '--project-light-accent': project.accent, '--project-dark-accent': project.darkAccent }}
+          >
             <span className="roadmap-step" aria-hidden="true" />
             <ProjectCard project={project} />
           </div>

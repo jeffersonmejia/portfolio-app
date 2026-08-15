@@ -9,7 +9,7 @@ export const certificateCategories = [
 export const certificates = [
   {
     id: 'web-security',
-    title: 'Hacking de aplicaciones web',
+    title: 'Hacking de aplicaciones web: Server Side',
     provider: 'Platzi',
     category: 'Ciberseguridad',
     logo: 'assets/img/icons/platzi-logo.svg',
@@ -19,7 +19,7 @@ export const certificates = [
   },
   {
     id: 'fullstack',
-    title: 'JavaScript Full Stack',
+    title: 'Full Stack Developer con JavaScript',
     provider: 'Platzi',
     category: 'Desarrollo',
     logo: 'assets/img/icons/platzi-logo.svg',
@@ -39,7 +39,7 @@ export const certificates = [
   },
   {
     id: 'ethical-hacking',
-    title: 'Cisco Hacking Ético',
+    title: 'Hacker ético',
     provider: 'Cisco',
     category: 'Ciberseguridad',
     logo: 'assets/img/icons/cisco-logo.svg',

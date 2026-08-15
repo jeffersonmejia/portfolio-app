@@ -7,7 +7,9 @@ export const projects = [
     description:
       'Plataforma de reservas con API REST y arquitectura hexagonal por features. Procesa 56 millones de registros con consultas optimizadas, caché e índices; integra JWT, OAuth, MFA, pagos PayPal transaccionales y pruebas unitarias y de arquitectura.',
     technologies: ['ASP.NET Core', 'PostgreSQL', 'JWT', 'PayPal'],
-    image: 'assets/img/projects/airport-booking-cover.webp',
+    image: 'assets/img/projects/aiport_app.png',
+    accent: '#b83268',
+    darkAccent: '#ff8fb7',
     href: 'https://github.com/jeffersonmejia/airport-app',
   },
   {
@@ -18,7 +20,9 @@ export const projects = [
     description:
       'Backend de comercio y entregas para más de un millón de registros, con autorización por roles, pagos, inventario y paginación optimizada. Usa caché, índices, Docker Swarm, secrets, backups e IA contextual con acceso restringido por usuario.',
     technologies: ['ASP.NET Core', 'PostgreSQL', 'Docker Swarm', 'Ollama'],
-    image: 'assets/img/projects/orbi-commerce-cover.webp',
+    image: 'assets/img/projects/orbi_app.png',
+    accent: '#b8465f',
+    darkAccent: '#ff9bad',
     href: 'https://github.com/jeffersonmejia/ollama-orbi-app',
   },
   {

@@ -10,31 +10,31 @@ export const softSkillGroups = [
   {
     title: 'Pensamiento crítico',
     icon: 'code',
-    description: 'Cuestiono decisiones técnicas, arquitecturas y enfoques antes de aceptarlos, evaluando qué aporta valor práctico al producto y a mi perfil.',
+    description: 'Analizo información, supuestos y alternativas antes de decidir, valorando el impacto práctico de cada opción.',
   },
   {
     title: 'Resolución de problemas',
     icon: 'route',
-    description: 'Busco causas concretas en errores de despliegue, integración, autenticación, Docker, bases de datos, redes y seguridad; no solo hacer que funcione.',
+    description: 'Busco la causa de cada problema, lo divido en partes manejables y compruebo la solución antes de darlo por resuelto.',
   },
   {
     title: 'Aprendizaje autónomo',
     icon: 'graduation',
-    description: 'He construido conocimientos de Spring, backend, Azure, Docker, seguridad, IA y arquitectura mientras continúo mi formación de pregrado.',
+    description: 'Investigo por iniciativa propia, practico lo aprendido y documento los resultados para convertir el estudio en experiencia aplicable.',
   },
   {
     title: 'Adaptabilidad',
     icon: 'up',
-    description: 'Trabajo con stacks distintos como Java, C#, React, Vue, Docker, PostgreSQL, redes, seguridad, IA y cloud sin atarme a una sola tecnología.',
+    description: 'Me adapto a cambios de contexto, prioridades y formas de trabajo sin perder calidad ni continuidad en los objetivos.',
   },
   {
     title: 'Atención al detalle',
     icon: 'shield',
-    description: 'Cuido la estructura, nomenclatura, documentación, formato, endpoints, pruebas y presentación de resultados.',
+    description: 'Reviso la coherencia, la claridad y la presentación de cada entrega para detectar errores antes de que lleguen al resultado final.',
   },
   {
     title: 'Comunicación técnica',
     icon: 'presentation',
-    description: 'Traduzco trabajo técnico a explicaciones comprensibles mediante papers, defensas, documentación, README, diagramas y presentaciones.',
+    description: 'Explico ideas complejas con claridad y adapto el nivel de detalle al contexto, la audiencia y el objetivo de la conversación.',
   },
 ]
