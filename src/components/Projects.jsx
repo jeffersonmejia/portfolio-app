@@ -11,7 +11,7 @@ export function Projects() {
       <SectionIntro
         eyebrow="Proyectos"
         title="Backend es mi especialidad."
-        description="Mis proyectos backend estarán disponibles pronto. También conservo los trabajos realizados durante mi formación."
+        description="Sistemas centrados en arquitectura backend, seguridad, datos, rendimiento e integraciones de negocio."
         titleId="projects-title"
         src="assets/img/vectors/projects.svg"
         alt="Ilustración sobre desarrollo y organización de proyectos"
@@ -19,11 +19,7 @@ export function Projects() {
       <div className="project-roadmap roadmap-list" ref={roadmapRef}>
         {projects.map((project) => (
           <div className="roadmap-entry" key={project.id}>
-            {project.isoDate ? (
-              <time className="roadmap-step roadmap-year" dateTime={project.isoDate}>
-                {project.isoDate.slice(0, 4)}
-              </time>
-            ) : <span className="roadmap-step" aria-hidden="true" />}
+            <span className="roadmap-step" aria-hidden="true" />
             <ProjectCard project={project} />
           </div>
         ))}

@@ -35,9 +35,7 @@ export function Certificates() {
           const expanded = selected?.id === certificate.id
           return (
             <article className={`certificate-card roadmap-entry ${index < 3 ? 'is-revealed' : ''} ${expanded ? 'is-expanded' : ''}`} key={certificate.id} itemScope itemType="https://schema.org/EducationalOccupationalCredential">
-              <time className="roadmap-step roadmap-year" itemProp="dateCreated" dateTime={certificate.year}>
-                {certificate.year}
-              </time>
+              <span className="roadmap-step" aria-hidden="true" />
               <div className="certificate-copy">
                 <div className="certificate-provider">
                   <span className="provider-logo" aria-hidden="true">

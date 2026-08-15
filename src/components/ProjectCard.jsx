@@ -4,23 +4,8 @@ import { ProgressiveImage } from './ProgressiveImage'
 import { TechnologyIcon } from './TechnologyIcon'
 
 export function ProjectCard({ project }) {
-  if (project.upcoming) {
-    return (
-      <article className="project-card project-card-upcoming">
-        <div className="project-placeholder"><Icon name="server" size={42} /></div>
-        <div className="project-copy">
-          <span className="project-meta"><Icon name={project.icon} size={15} /> {project.date}</span>
-          <h3>{project.title}</h3>
-          <p>{project.description}</p>
-          <div className="tag-list"><TechnologyIcon name="Backend" /></div>
-        </div>
-      </article>
-    )
-  }
-
   return (
     <article className="project-card" itemScope itemType="https://schema.org/SoftwareApplication">
-      <meta itemProp="datePublished" content={project.isoDate} />
       <a className="project-image" href={project.href} target="_blank" rel="noreferrer" tabIndex="-1">
         <ProgressiveImage
           shellClassName="project-image-media"
