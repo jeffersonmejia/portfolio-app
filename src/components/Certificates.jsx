@@ -18,7 +18,7 @@ function alignCertificate(event) {
 
 export function Certificates() {
   const [selected, setSelected] = useState(null)
-  const roadmapRef = useProgressiveRoadmap({ initialCount: 3, revealBatch: true, rootMargin: '90px 0px' })
+  const roadmapRef = useProgressiveRoadmap({ initialCount: 3, revealBatch: true, rootMargin: '90px 0px', waitForScroll: true })
 
   return (
     <section className="content-section page-shell roadmap-page" id="certificados" aria-labelledby="certificates-title">
@@ -30,11 +30,11 @@ export function Certificates() {
         src="assets/img/vectors/skills.svg"
         alt="Ilustración sobre capacitación profesional y habilidades técnicas"
       />
-      <div className="certificate-roadmap roadmap-list" ref={roadmapRef}>
-        {certificates.map((certificate) => {
+      <div className="certificate-roadmap roadmap-list" data-progressive="true" ref={roadmapRef}>
+        {certificates.map((certificate, index) => {
           const expanded = selected?.id === certificate.id
           return (
-            <article className={`certificate-card roadmap-entry ${expanded ? 'is-expanded' : ''}`} key={certificate.id} itemScope itemType="https://schema.org/EducationalOccupationalCredential">
+            <article className={`certificate-card roadmap-entry ${index < 3 ? 'is-revealed' : ''} ${expanded ? 'is-expanded' : ''}`} key={certificate.id} itemScope itemType="https://schema.org/EducationalOccupationalCredential">
               <time className="roadmap-step roadmap-year" itemProp="dateCreated" dateTime={certificate.year}>
                 {certificate.year}
               </time>

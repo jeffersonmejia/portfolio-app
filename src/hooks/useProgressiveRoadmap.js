@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 
-export function useProgressiveRoadmap({ initialCount = 0, revealBatch = false, rootMargin = '180px 0px' } = {}) {
+export function useProgressiveRoadmap({ initialCount = 0, revealBatch = false, rootMargin = '180px 0px', waitForScroll = false } = {}) {
   const roadmapRef = useRef(null)
 
   useEffect(() => {
@@ -27,9 +27,21 @@ export function useProgressiveRoadmap({ initialCount = 0, revealBatch = false, r
       })
     }, { rootMargin, threshold: .01 })
 
-    deferredEntries.forEach((entry) => observer.observe(entry))
-    return () => observer.disconnect()
-  }, [initialCount, revealBatch, rootMargin])
+    const observeDeferred = () => deferredEntries.forEach((entry) => observer.observe(entry))
+    const initialScrollY = window.scrollY
+    const handleScroll = () => {
+      if (Math.abs(window.scrollY - initialScrollY) < 24) return
+      observeDeferred()
+      window.removeEventListener('scroll', handleScroll)
+    }
+
+    if (waitForScroll) window.addEventListener('scroll', handleScroll, { passive: true })
+    else observeDeferred()
+    return () => {
+      observer.disconnect()
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [initialCount, revealBatch, rootMargin, waitForScroll])
 
   return roadmapRef
 }
