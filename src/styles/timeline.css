@@ -83,7 +83,7 @@
 .timeline-action-close { color: var(--timeline-item-accent); background: var(--surface-strong); box-shadow: var(--shadow-soft); }
 .timeline-action-close:hover { color: var(--timeline-item-accent); background: color-mix(in srgb, var(--timeline-item-accent) 5%, var(--surface-strong)); box-shadow: var(--shadow); }
 .timeline-action-primary { color: var(--white) !important; background: var(--timeline-item-accent); box-shadow: var(--shadow-button); }
-.timeline-action-primary .fluent-icon {
+.timeline-action.timeline-action-primary .fluent-icon {
   color: var(--white);
   background: linear-gradient(145deg,
     color-mix(in srgb, var(--timeline-item-accent) 84%, #fff),
