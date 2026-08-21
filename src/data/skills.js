@@ -1,9 +1,10 @@
 export const technicalSkillGroups = [
-  { title: 'Backend', skills: ['Java', 'Spring Boot', 'C#', 'ASP.NET Core'] },
+  { title: 'Backend', skills: ['Java', 'Spring Boot', 'GraalVM Native', 'Spring Security', 'JPA', 'Flyway', 'C#', 'ASP.NET Core'] },
+  { title: 'Frontend', skills: ['Angular', 'Material Design 3', 'SSR', 'React', 'TypeScript', 'JavaScript', 'Sass'] },
+  { title: 'Cloud e infraestructura', skills: ['Azure Container Apps', 'ACR', 'Key Vault', 'Managed Identity', 'Azure Monitor', 'Terraform'] },
   { title: 'Bases de datos', skills: ['PostgreSQL', 'SQL'] },
-  { title: 'Arquitectura y APIs', skills: ['REST', 'Arquitectura hexagonal', 'JWT', 'OAuth', 'MFA'] },
-  { title: 'DevOps', skills: ['Docker', 'Docker Swarm', 'Git', 'GitHub'] },
-  { title: 'Frontend', skills: ['React', 'JavaScript', 'TypeScript'] },
+  { title: 'Arquitectura y seguridad', skills: ['Microservicios', 'REST', 'AOT', 'JWT', 'OIDC', 'Arquitectura hexagonal'] },
+  { title: 'DevOps y entrega', skills: ['GitHub Actions', 'Docker', 'Docker Swarm', 'Git', 'GitHub'] },
 ]
 
 export const softSkillGroups = [

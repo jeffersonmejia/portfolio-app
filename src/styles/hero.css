@@ -33,7 +33,7 @@
   max-width: 25rem;
   aspect-ratio: 1.05;
 }
-.hero-card.is-expanded { grid-template-columns: minmax(25rem, .9fr) minmax(0, 1.35fr); width: 100%; max-width: 100%; }
+.hero-card.is-expanded { grid-template-columns: minmax(24rem, .86fr) minmax(0, 1.5fr); gap: clamp(var(--space-6), 3vw, 3rem); width: 100%; max-width: 100%; }
 .hero-profile { display: grid; align-content: center; justify-self: center; gap: var(--space-5); width: min(100%, 40rem); min-width: 0; }
 .hero-card:not(.is-expanded) .hero-profile { gap: .3rem; }
 .hero-card.is-expanded .hero-profile { width: 100%; }
@@ -73,8 +73,11 @@
 :root[data-theme='dark'] .profile-image img { opacity: 1; filter: grayscale(1) contrast(1.04); mix-blend-mode: normal; }
 .hero-heading > div { display: grid; gap: .25rem; }
 .hero-heading h1 { font-size: var(--font-hero-name); letter-spacing: -.05em; line-height: 1; }
-.hero-career { max-width: 33rem; color: var(--muted); font-style: italic; font-weight: var(--weight-regular); }
+.hero-card.is-expanded .hero-heading h1 { font-size: clamp(1.7rem, 2.15vw, 2.35rem); }
+.hero-career { max-width: 33rem; color: var(--muted); font-style: italic; font-weight: var(--weight-regular); line-height: 1.3; }
 .hero-career, .hero-study { font-size: var(--font-profile-meta); }
+.hero-card.is-expanded .hero-career { font-size: clamp(.72rem, .9vw, .82rem); font-weight: var(--weight-regular); }
+.hero-card.is-expanded .hero-study { font-size: clamp(.62rem, .78vw, .7rem); line-height: 1.4; }
 .profile-card :is(.hero-career, .hero-study) { color: var(--profile-card-muted); }
 
 .hero-objective {

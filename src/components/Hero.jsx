@@ -43,9 +43,9 @@ export function Hero({ collapseOnFullLoad = false }) {
                 fetchPriority="high"
               />
               <div className="hero-title-copy">
-                <span className="eyebrow">{profile.eyebrow}</span>
+                <p className="eyebrow">{profile.eyebrow}</p>
                 <h1 id="hero-title">{profile.name}</h1>
-                <p className="hero-career">{profile.career}</p>
+                <h2 className="hero-career">{profile.career}</h2>
                 <p className="hero-study">{profile.university}</p>
               </div>
             </header>
