@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { flushSync } from 'react-dom'
 import { contact, profile } from '../data/site'
 import { asset } from '../utils/asset'
 import { ContactForm } from './ContactForm'
@@ -15,6 +16,18 @@ export function Hero({ collapseOnFullLoad = false }) {
 
   useEffect(() => { homeMountedInThisSession = true }, [])
 
+  const revealMore = () => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (!document.startViewTransition || reducedMotion) {
+      setShowMore(true)
+      return
+    }
+
+    document.documentElement.classList.add('hero-reveal-transition')
+    const transition = document.startViewTransition(() => flushSync(() => setShowMore(true)))
+    transition.finished.finally(() => document.documentElement.classList.remove('hero-reveal-transition'))
+  }
+
   return (
     <section className="hero page-shell" id="inicio" aria-labelledby="hero-title">
       <article className={`hero-card ${showMore ? 'is-expanded' : ''}`}>
@@ -29,7 +42,7 @@ export function Hero({ collapseOnFullLoad = false }) {
                 height="500"
                 fetchPriority="high"
               />
-              <div>
+              <div className="hero-title-copy">
                 <span className="eyebrow">{profile.eyebrow}</span>
                 <h1 id="hero-title">{profile.name}</h1>
                 <p className="hero-career">{profile.career}</p>
@@ -45,18 +58,18 @@ export function Hero({ collapseOnFullLoad = false }) {
             </section>
           </section>
           <div className="hero-actions">
-            {!showMore && (
-              <button
-                className="button button-primary hero-more-toggle"
-                type="button"
-                aria-controls="home-more-content"
-                aria-expanded="false"
-                onClick={() => setShowMore(true)}
-              >
-                <Icon name="chevron" size={16} />
-                Conocer más
-              </button>
-            )}
+            <button
+              className="button button-primary hero-more-toggle"
+              type="button"
+              aria-controls="home-more-content"
+              aria-expanded={showMore}
+              aria-hidden={showMore}
+              inert={showMore}
+              onClick={revealMore}
+            >
+              <Icon name="discover" size={16} />
+              Conocer más
+            </button>
             <nav
               className="hero-destination-actions"
               aria-label="Enlaces destacados"

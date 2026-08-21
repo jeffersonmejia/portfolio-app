@@ -20,6 +20,7 @@
   pointer-events: none;
   animation: skeleton-exit .28s ease .62s forwards;
 }
+body:has(.page-inicio .hero-card:not(.is-expanded)) .page-skeleton { display: none; }
 .skeleton-layout {
   display: grid;
   grid-template-columns: minmax(20rem, .8fr) minmax(0, 1.2fr);

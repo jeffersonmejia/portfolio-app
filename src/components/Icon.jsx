@@ -27,6 +27,7 @@ import {
   Smartphone,
   Star,
   Sun,
+  UserRoundSearch,
   X,
 } from 'lucide-react'
 import { SiGithub } from 'react-icons/si'
@@ -62,6 +63,7 @@ const icons = {
   smartphone: Smartphone,
   star: Star,
   sun: Sun,
+  discover: UserRoundSearch,
   x: X,
 }
 

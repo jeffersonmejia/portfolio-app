@@ -14,7 +14,7 @@ export function GitHubSection({ active }) {
   const { profile, repositories, metrics, loading, error } = useGitHubProfile(active)
 
   return (
-    <section className="home-github" aria-label="Perfil y habilidades" aria-busy={activePage === 0 && loading}>
+    <section className="home-github" aria-label="Perfil y habilidades" aria-busy={active && activePage === 0 && loading}>
       <header className="github-section-header">
         <nav className="github-tabs" aria-label="Secciones del perfil" role="tablist" style={{ '--github-active-page': activePage }}>
           {pages.map((page, index) => (
@@ -23,7 +23,7 @@ export function GitHubSection({ active }) {
         </nav>
       </header>
       <div className="github-page-content" hidden={activePage !== 0} id="github-page-0" role="tabpanel" aria-labelledby="github-tab-0">
-      {loading && (
+      {active && loading && (
         <div className="github-loading" role="status" aria-label="Cargando perfil de GitHub">
           <span className="github-loading-profile" />
           <span /><span />

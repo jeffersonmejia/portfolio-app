@@ -1,0 +1,38 @@
+html.hero-reveal-transition .profile-image { view-transition-name: hero-profile-image; }
+html.hero-reveal-transition .hero-title-copy { view-transition-name: hero-title-copy; }
+html.hero-reveal-transition .hero-more-toggle { view-transition-name: hero-more-button; }
+
+::view-transition-group(hero-profile-image),
+::view-transition-group(hero-title-copy) {
+  animation-duration: .82s;
+  animation-timing-function: var(--liquid-ease);
+}
+
+::view-transition-old(hero-more-button) { animation: hero-button-exit .34s ease both; }
+::view-transition-new(hero-more-button) { animation: none; opacity: 0; }
+
+@keyframes hero-button-exit {
+  to { opacity: 0; transform: translateY(-6px) scale(.94); }
+}
+
+.hero-card:not(.is-expanded) { animation: hero-intro-card .68s var(--liquid-ease) both; }
+.hero-card:not(.is-expanded) .eyebrow { animation: hero-intro-item .48s var(--liquid-ease) .2s both; }
+.hero-card:not(.is-expanded) .hero-title-copy h1 { animation: hero-intro-item .52s var(--liquid-ease) .3s both; }
+.hero-card:not(.is-expanded) .hero-career { animation: hero-intro-item .52s var(--liquid-ease) .4s both; }
+.hero-card:not(.is-expanded) .hero-study { animation: hero-intro-item .52s var(--liquid-ease) .5s both; }
+.hero-card:not(.is-expanded) .hero-more-toggle { animation: hero-intro-action .58s var(--liquid-ease) .65s both; }
+
+@keyframes hero-intro-card {
+  from { opacity: .25; transform: translateY(12px) scale(.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes hero-intro-item {
+  from { opacity: 0; transform: translateY(7px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes hero-intro-action {
+  from { opacity: 0; transform: translateY(8px) scale(.94); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
