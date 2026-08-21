@@ -6,7 +6,7 @@ import { TechnologyIcon } from './TechnologyIcon'
 export function ProjectCard({ project }) {
   return (
     <article className="project-card" itemScope itemType="https://schema.org/SoftwareApplication">
-      <a className="project-image" href={project.href} target="_blank" rel="noreferrer" tabIndex="-1">
+      <a className="project-image" href={project.href} target="_blank" rel="noreferrer" aria-label={`Abrir ${project.title} en GitHub`}>
         <ProgressiveImage
           shellClassName="project-image-media"
           src={asset(project.image)}
@@ -28,9 +28,7 @@ export function ProjectCard({ project }) {
         <div className="tag-list">
           {project.technologies.map((technology) => <TechnologyIcon key={technology} name={technology} />)}
         </div>
-        <a className="text-link project-action" href={project.href} target="_blank" rel="noreferrer" itemProp="url">
-          Ver proyecto <Icon name="external" size={16} />
-        </a>
+        <meta content={project.href} itemProp="url" />
       </div>
     </article>
   )

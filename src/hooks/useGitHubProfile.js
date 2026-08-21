@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import { backendLanguages, featuredRepositories, githubUser } from '../data/github'
+import { featuredRepositories, githubUser } from '../data/github'
 
-const cacheKey = `portfolio-github-api-v2-${githubUser}`
+const cacheKey = `portfolio-github-api-v5-${githubUser}`
 const freshCacheLifetime = 6 * 60 * 60 * 1000
 const initialState = { profile: null, repositories: [], metrics: null, loading: true, error: false }
 
@@ -17,25 +17,32 @@ function readCache() {
 
 function selectFeatured(repositories) {
   const byName = new Map(repositories.map((repository) => [repository.name.toLowerCase(), repository]))
-  return featuredRepositories
-    .map((name) => byName.get(name.toLowerCase()))
-    .filter(Boolean)
+  return featuredRepositories.map((name) => byName.get(name.toLowerCase())).filter(Boolean)
 }
 
-function createMetrics(repositories, commits) {
-  const usedLanguages = new Set(repositories.map(({ language }) => language).filter(Boolean))
+function selectRecentContributions(contributions) {
+  if (!contributions?.length) return []
+  const end = new Date(`${contributions.at(-1).date}T00:00:00Z`)
+  const start = new Date(end)
+  start.setUTCMonth(start.getUTCMonth() - 6)
+  start.setUTCDate(start.getUTCDate() - start.getUTCDay())
+  return contributions.filter((day) => new Date(`${day.date}T00:00:00Z`) >= start)
+}
+
+function createMetrics(repositories, calendar) {
+  const contributionDays = selectRecentContributions(calendar?.contributions)
   return {
-    backendLanguages: backendLanguages.filter((language) => usedLanguages.has(language)),
     totalStars: repositories.reduce((total, repository) => total + repository.stargazers_count, 0),
-    commitsLastYear: commits && !commits.incomplete_results ? commits.total_count : null,
+    contributionsRecent: contributionDays.reduce((total, day) => total + day.count, 0),
+    contributionDays,
   }
 }
 
-function createViewData({ profile, repositories, commits }) {
+function createViewData({ profile, repositories, calendar }) {
   return {
     profile,
     repositories: selectFeatured(repositories),
-    metrics: createMetrics(repositories, commits),
+    metrics: createMetrics(repositories, calendar),
     loading: false,
     error: false,
   }
@@ -60,18 +67,16 @@ export function useGitHubProfile(active) {
       return response.json()
     })
 
-    const since = new Date()
-    since.setUTCFullYear(since.getUTCFullYear() - 1)
-    const commitQuery = encodeURIComponent(`author:${githubUser} committer-date:>=${since.toISOString().slice(0, 10)}`)
-    const commitsRequest = request(`https://api.github.com/search/commits?q=${commitQuery}&per_page=1`)
-      .catch(() => cached?.responses.commits ?? null)
+    const calendarRequest = fetch(`https://github-contributions-api.jogruber.de/v4/${githubUser}?y=last`, { signal: controller.signal })
+      .then((response) => response.ok ? response.json() : Promise.reject(new Error(`Contributions API: ${response.status}`)))
+      .catch(() => cached?.responses.calendar ?? null)
 
     Promise.all([
       request(`https://api.github.com/users/${githubUser}`),
       request(`https://api.github.com/users/${githubUser}/repos?sort=updated&direction=desc&per_page=100`),
-      commitsRequest,
-    ]).then(([profile, repositories, commits]) => {
-      const responses = { profile, repositories, commits }
+      calendarRequest,
+    ]).then(([profile, repositories, calendar]) => {
+      const responses = { profile, repositories, calendar }
       setState(createViewData(responses))
       try { localStorage.setItem(cacheKey, JSON.stringify({ savedAt: Date.now(), responses })) } catch { /* optional cache */ }
     }).catch((error) => {
