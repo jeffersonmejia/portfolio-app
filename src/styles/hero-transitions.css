@@ -16,8 +16,8 @@ html.hero-reveal-transition .hero-more-toggle { view-transition-name: hero-more-
 }
 
 .hero-card:not(.is-expanded) { animation: hero-intro-card .68s var(--liquid-ease) both; }
-.hero-card:not(.is-expanded) .eyebrow { animation: hero-intro-item .48s var(--liquid-ease) .2s both; }
-.hero-card:not(.is-expanded) .hero-title-copy h1 { animation: hero-intro-item .52s var(--liquid-ease) .3s both; }
+.hero-card:not(.is-expanded) .hero-title-copy h1 { animation: hero-intro-item .48s var(--liquid-ease) .2s both; }
+.hero-card:not(.is-expanded) .hero-role { animation: hero-intro-item .52s var(--liquid-ease) .3s both; }
 .hero-card:not(.is-expanded) .hero-career { animation: hero-intro-item .52s var(--liquid-ease) .4s both; }
 .hero-card:not(.is-expanded) .hero-study { animation: hero-intro-item .52s var(--liquid-ease) .5s both; }
 .hero-card:not(.is-expanded) .hero-more-toggle { animation: hero-intro-action .58s var(--liquid-ease) .65s both; }

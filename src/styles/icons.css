@@ -78,3 +78,13 @@
 :root[data-theme='dark'] :is(.timeline-icon, .contact-link > .fluent-icon) {
   background: linear-gradient(145deg, rgba(255,255,255,.18), rgba(40,153,245,.18));
 }
+
+.hero-destination-actions .button .fluent-icon {
+  width: 1rem;
+  height: 1rem;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  filter: none;
+}

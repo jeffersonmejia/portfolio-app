@@ -3,7 +3,7 @@ import { TechnologyIcon } from './TechnologyIcon'
 
 function SkillGroup({ group, technical, index }) {
   return (
-    <article className="skill-group" style={technical ? { '--skill-order': index } : undefined}>
+    <article className="skill-group" style={{ '--skill-order': index }}>
       <header>
         {!technical && <span className="skill-soft-icon"><Icon name={group.icon} size={16} /></span>}
         <h3>{group.title}</h3>

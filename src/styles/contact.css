@@ -85,15 +85,15 @@
 }
 :root[data-theme] .resume-modal .contact-form :is(input:not([type='checkbox']), textarea):focus-visible {
   outline: none;
-  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  border-color: color-mix(in srgb, var(--accent) 28%, var(--line));
   background: var(--surface-strong);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 14%, transparent), inset 0 -2px var(--accent), 0 2px 5px rgba(0, 0, 0, .06);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 7%, transparent), 0 2px 4px rgba(0, 0, 0, .04);
 }
 .resume-modal .contact-form input:not([type='checkbox']) { min-height: 2.45rem; }
 .resume-modal .contact-form textarea { min-height: 5rem; }
 .resume-modal .consent { font-size: .68rem; font-weight: 500; line-height: 1.4; }
 .resume-modal .consent input { width: 1rem; height: 1rem; min-height: 0; padding: 0; border: 1px solid var(--line); border-radius: .25rem; box-shadow: none; }
-.resume-modal .consent input:focus-visible { outline: 2px solid color-mix(in srgb, var(--accent) 45%, transparent); outline-offset: 2px; }
+.resume-modal .consent input:focus-visible { outline: 2px solid color-mix(in srgb, var(--accent) 20%, transparent); outline-offset: 2px; }
 .resume-modal .form-status { min-height: 1rem; font-size: .72rem; text-align: right; }
 .resume-modal .form-actions { display: flex; justify-content: flex-end; gap: .55rem; }
 .resume-modal .form-actions .button { min-width: 8rem; min-height: 2.4rem; border-radius: .5rem; font-size: .76rem; }
