@@ -1,24 +1,12 @@
 import { useState } from 'react'
 import { certificates } from '../data/certificates'
-import { useProgressiveRoadmap } from '../hooks/useProgressiveRoadmap'
 import { asset } from '../utils/asset'
 import { Icon } from './Icon'
 import { ProgressiveImage } from './ProgressiveImage'
 import { SectionIntro } from './SectionIntro'
 
-function alignCertificate(event) {
-  const card = event.currentTarget.closest('.certificate-card')
-  if (!card) return
-  window.setTimeout(() => {
-    if (!card.classList.contains('is-expanded')) return
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    card.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'center' })
-  }, 140)
-}
-
 export function Certificates() {
   const [selected, setSelected] = useState(null)
-  const roadmapRef = useProgressiveRoadmap({ initialCount: 3, revealBatch: true, rootMargin: '90px 0px', waitForScroll: true })
 
   return (
     <section className="content-section page-shell roadmap-page" id="certificados" aria-labelledby="certificates-title">
@@ -30,12 +18,14 @@ export function Certificates() {
         src="assets/img/vectors/skills.svg"
         alt="Ilustración sobre capacitación profesional y habilidades técnicas"
       />
-      <div className="certificate-roadmap roadmap-list" data-progressive="true" ref={roadmapRef}>
-        {certificates.map((certificate, index) => {
+      <div className="certificate-grid">
+        {certificates.map((certificate) => {
           const expanded = selected?.id === certificate.id
           return (
-            <article className={`certificate-card roadmap-entry ${index < 3 ? 'is-revealed' : ''} ${expanded ? 'is-expanded' : ''}`} key={certificate.id} itemScope itemType="https://schema.org/EducationalOccupationalCredential">
-              <span className="roadmap-step" aria-hidden="true" />
+            <article className={`certificate-card ${expanded ? 'is-expanded' : ''}`} key={certificate.id} itemScope itemType="https://schema.org/EducationalOccupationalCredential">
+              <button className="certificate-thumbnail" type="button" onClick={() => setSelected(expanded ? null : certificate)} aria-expanded={expanded} aria-label={`${expanded ? 'Contraer' : 'Ampliar'} certificado: ${certificate.title}`}>
+                <ProgressiveImage src={asset(certificate.image)} alt={`Certificado ${certificate.title}`} loading="lazy" decoding="async" fetchPriority="low" itemProp="image" />
+              </button>
               <div className="certificate-copy">
                 <div className="certificate-provider">
                   <span className="provider-logo" aria-hidden="true">
@@ -54,11 +44,6 @@ export function Certificates() {
                 </div>
                 <h3 itemProp="name">{certificate.title}</h3>
                 <p itemProp="description">{certificate.description}</p>
-              </div>
-              <div className="certificate-inline-preview" aria-hidden={!expanded} inert={!expanded}>
-                {expanded && (
-                  <ProgressiveImage shellClassName="certificate-preview" src={asset(certificate.image)} alt={`Certificado ${certificate.title}`} onLoad={alignCertificate} />
-                )}
               </div>
             </article>
           )
