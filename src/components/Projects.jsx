@@ -8,7 +8,7 @@ export function Projects() {
       <SectionIntro
         eyebrow="Proyectos"
         title="Backend es mi especialidad."
-        description="Sistemas centrados en arquitectura backend, seguridad, datos, rendimiento e integraciones de negocio."
+        description="He trabajado en frontend y backend, aunque mi especialidad está en arquitectura backend, seguridad, datos, rendimiento e integraciones de negocio."
         titleId="projects-title"
         src="assets/img/vectors/projects.svg"
         alt="Ilustración sobre desarrollo y organización de proyectos"

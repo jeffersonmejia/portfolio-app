@@ -25,6 +25,17 @@
   background: color-mix(in srgb, var(--card-accent) 8%, var(--surface-strong));
   box-shadow: var(--shadow);
 }
+.certificate-card:first-child:not(.is-expanded) {
+  grid-column: 1 / -1;
+  grid-template: 14rem / minmax(18rem, .8fr) minmax(0, 1.2fr);
+  gap: var(--space-5);
+  padding: .75rem;
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--card-accent) 8%, var(--surface-strong));
+  box-shadow: var(--shadow);
+}
+.certificate-card:first-child:not(.is-expanded) .certificate-thumbnail { height: 14rem; aspect-ratio: auto; box-shadow: none; }
+.certificate-card:first-child:not(.is-expanded) .certificate-copy { align-content: center; padding: var(--space-4); }
 .certificate-thumbnail {
   display: block;
   width: 100%;
@@ -97,6 +108,8 @@
 @media (max-width: 950px) { .certificate-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 720px) {
   .certificate-card.is-expanded { grid-template-columns: 1fr; }
+  .certificate-card:first-child:not(.is-expanded) { grid-template: auto / 1fr; }
+  .certificate-card:first-child:not(.is-expanded) .certificate-thumbnail { height: auto; aspect-ratio: 16 / 10; }
   .certificate-provider { grid-template-columns: auto 1fr; }
   .certificate-provider-actions { grid-column: 1 / -1; justify-content: flex-end; }
 }
