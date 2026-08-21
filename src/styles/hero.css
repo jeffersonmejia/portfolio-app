@@ -146,7 +146,7 @@
   transform: translateY(-6px) scale(.94);
   transition: max-width .42s var(--liquid-ease), padding .42s var(--liquid-ease), opacity .22s ease, transform .34s var(--liquid-ease), visibility 0s .42s;
 }
-.hero-card:not(.is-expanded) .hero-actions { justify-content: center; }
+.hero-card:not(.is-expanded) .hero-actions { justify-content: center; margin-top: .8rem; }
 .hero-destination-actions {
   max-width: 0;
   opacity: 0;
