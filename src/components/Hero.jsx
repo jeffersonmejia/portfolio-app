@@ -43,8 +43,8 @@ export function Hero({ collapseOnFullLoad = false }) {
                 fetchPriority="high"
               />
               <div className="hero-title-copy">
-                <p className="eyebrow">{profile.eyebrow}</p>
                 <h1 id="hero-title">{profile.name}</h1>
+                <p className="hero-role"><Icon name="server" size={14} /> <strong>{profile.eyebrow}</strong></p>
                 <h2 className="hero-career">{profile.career}</h2>
                 <p className="hero-study">{profile.university}</p>
               </div>
@@ -56,34 +56,34 @@ export function Hero({ collapseOnFullLoad = false }) {
               </h2>
               <p>{profile.objective}</p>
             </section>
-          </section>
-          <div className="hero-actions">
-            <button
-              className="button button-primary hero-more-toggle"
-              type="button"
-              aria-controls="home-more-content"
-              aria-expanded={showMore}
-              aria-hidden={showMore}
-              inert={showMore}
-              onClick={revealMore}
-            >
-              <Icon name="discover" size={16} />
-              Conocer más
-            </button>
-            <nav
-              className="hero-destination-actions"
-              aria-label="Enlaces destacados"
-              aria-hidden={!showMore}
-              inert={!showMore}
-            >
-              <button className="button button-quiet hero-cv-action" type="button" onClick={() => setFormOpen(true)}>
-                <Icon name="mail" size={16} /> Solicitar currículum
+            <div className="hero-actions">
+              <button
+                className="button button-primary hero-more-toggle"
+                type="button"
+                aria-controls="home-more-content"
+                aria-expanded={showMore}
+                aria-hidden={showMore}
+                inert={showMore}
+                onClick={revealMore}
+              >
+                <Icon name="discover" size={16} />
+                Conocer más
               </button>
-              <a className="button button-quiet hero-linkedin-action" href={contact.linkedin} target="_blank" rel="noreferrer">
-                <Icon name="linkedin" size={16} /> LinkedIn
-              </a>
-            </nav>
-          </div>
+              <nav
+                className="hero-destination-actions"
+                aria-label="Enlaces destacados"
+                aria-hidden={!showMore}
+                inert={!showMore}
+              >
+                <button className="button button-quiet hero-cv-action" type="button" onClick={() => setFormOpen(true)}>
+                  <Icon name="mail" size={16} /> Solicitar currículum
+                </button>
+                <a className="button button-quiet hero-linkedin-action" href={contact.linkedin} target="_blank" rel="noreferrer">
+                  <Icon name="linkedin" size={16} /> LinkedIn
+                </a>
+              </nav>
+            </div>
+          </section>
         </section>
         <div
           className="hero-more-panel"

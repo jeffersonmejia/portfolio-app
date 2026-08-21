@@ -32,7 +32,7 @@ export function GitHubRepositoryCard({ repository }) {
       <footer>
         <time dateTime={repository.updated_at}>Actualizado {dateFormatter.format(new Date(repository.updated_at))}</time>
         <a href={repository.html_url} target="_blank" rel="noreferrer" aria-label={`Abrir ${repository.name} en GitHub`}>
-          Ver repo <Icon name="external" size={14} />
+          Ver <Icon name="external" size={14} />
         </a>
       </footer>
     </article>

@@ -41,10 +41,7 @@ export function Certificates() {
       <Modal className="certificate-preview-modal" open={Boolean(selected)} onClose={() => setSelected(null)} label={selected ? `Certificado: ${selected.title}` : 'Vista completa del certificado'} showClose={false}>
         {selected && (
           <div className="certificate-preview">
-            <header>
-              <div><span>{selected.provider}</span><h2>{selected.title}</h2></div>
-              <button className="certificate-preview-close" type="button" onClick={() => setSelected(null)} aria-label="Cerrar certificado"><Icon name="x" size={18} /></button>
-            </header>
+            <button className="certificate-preview-close" type="button" onClick={() => setSelected(null)} aria-label="Cerrar certificado"><Icon name="x" size={18} /></button>
             <ProgressiveImage src={asset(selected.image)} alt={`Certificado completo: ${selected.title}`} decoding="async" fetchPriority="high" />
           </div>
         )}
